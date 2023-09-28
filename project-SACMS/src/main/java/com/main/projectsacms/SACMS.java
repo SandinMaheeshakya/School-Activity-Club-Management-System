@@ -12,7 +12,7 @@ public class SACMS extends Application {
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(SACMS.class.getResource("dashboard.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 1280, 720 );
-        stage.setTitle("ClubSync");
+        stage.setTitle("ClubData");
         stage.setScene(scene);
         stage.show();
     }
