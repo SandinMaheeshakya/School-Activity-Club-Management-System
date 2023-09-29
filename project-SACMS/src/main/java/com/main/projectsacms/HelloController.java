@@ -1,67 +1,90 @@
 package com.main.projectsacms;
 
-import javafx.animation.FadeTransition;
+import javafx.animation.ScaleTransition;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.util.Duration;
 
-import java.nio.Buffer;
-
 public class HelloController {
-    @FXML
-    private Label welcomeText;
-
-    @FXML
-    private Button  registerButton;
 
     @FXML
     private Button loginButton;
 
     @FXML
-    protected void onHelloButtonClick() {
-        welcomeText.setText("Welcome to JavaFX Application!");
-    }
+    private Button registerButton;
+
+    @FXML
+    private ImageView exitButton;
 
 
-    FadeTransition fadeTransitionIn;
-    FadeTransition fadeTransitionOut;
+    ScaleTransition loginButtonIncrease;
+    ScaleTransition loginButtonDecrease;
+
+    ScaleTransition registerButtonIncrease;
+    ScaleTransition registerButtonDecrease;
+
+    ScaleTransition exitButtonIncrease;
+    ScaleTransition exitButtonDecrease;
+
 
     public void initialize(){
 
-        // Add a smooth hover effect using FadeTransition
-        FadeTransition fadeTransitionIn = new FadeTransition(Duration.millis(300), registerButton);
-        fadeTransitionIn.setFromValue(0.0);
-        fadeTransitionIn.setToValue(1.0);
 
-        FadeTransition fadeTransitionOut = new FadeTransition(Duration.millis(300), registerButton);
-        fadeTransitionOut.setFromValue(1.0);
-        fadeTransitionOut.setToValue(0.0);
+        loginButtonIncrease = new ScaleTransition(Duration.millis(200), loginButton );
+        loginButtonIncrease.setToX(1);
+        loginButtonIncrease.setToY(1);
+
+        loginButtonDecrease = new ScaleTransition(Duration.millis(200), loginButton);
+        loginButtonDecrease.setToX(0.9);
+        loginButtonDecrease.setToY(0.9);
 
 
+        registerButtonIncrease = new ScaleTransition(Duration.millis(200), registerButton );
+        registerButtonIncrease.setToX(1);
+        registerButtonIncrease.setToY(1);
+
+        registerButtonDecrease = new ScaleTransition(Duration.millis(200), registerButton);
+        registerButtonDecrease.setToX(0.9);
+        registerButtonDecrease.setToY(0.9);
+
+        exitButtonIncrease = new ScaleTransition(Duration.millis(200), exitButton );
+        exitButtonIncrease.setToX(1.2);
+        exitButtonIncrease.setToY(1.2);
+
+        exitButtonDecrease = new ScaleTransition(Duration.millis(200), exitButton);
+        exitButtonDecrease.setToX(1);
+        exitButtonDecrease.setToY(1);
 
     }
 
 
-
-
-
-    @FXML
-    public void registerButtonMouseEnter(){
-        fadeTransitionIn.play();
-
-    }
-    @FXML
-    public void registerButtonMouseExit() {
-        fadeTransitionOut.play();
-
-    }
-    @FXML
     public void loginButtonMouseEnter(MouseEvent mouseEvent) {
+        loginButtonDecrease.play();
+    }
+    public void loginButtonMouseExit(MouseEvent mouseEvent) {
+        loginButtonIncrease.play();
     }
 
-    @FXML
-    public void loginButtonMouseExit(MouseEvent mouseEvent) {
+
+    public void registerButtonMouseEnter(MouseEvent mouseEvent) {
+        registerButtonDecrease.play();
+    }
+
+    public void registerButtonMouseExit(MouseEvent mouseEvent) {
+        registerButtonIncrease.play();
+    }
+
+    public void exitButtonMouseEnter(MouseEvent mouseEvent) {
+        exitButtonIncrease.play();
+    }
+
+    public void exitButtonMouseExit(MouseEvent mouseEvent) {
+        exitButtonDecrease.play();
+    }
+
+    public void exitButtonClick(){
+        System.exit(1);
     }
 }
