@@ -1,10 +1,14 @@
 package com.main.projectsacms;
 
+import javafx.animation.FadeTransition;
+import javafx.animation.PauseTransition;
 import javafx.animation.ScaleTransition;
+import javafx.animation.SequentialTransition;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.text.Text;
 import javafx.util.Duration;
 
 public class HelloController {
@@ -18,6 +22,19 @@ public class HelloController {
     @FXML
     private ImageView exitButton;
 
+    @FXML
+    private ImageView minimizeButton;
+
+    @FXML
+    private Text quote1;
+
+    @FXML
+    private Text quote2;
+
+    @FXML
+    private Text quote3;
+
+
 
     ScaleTransition loginButtonIncrease;
     ScaleTransition loginButtonDecrease;
@@ -28,8 +45,46 @@ public class HelloController {
     ScaleTransition exitButtonIncrease;
     ScaleTransition exitButtonDecrease;
 
+    ScaleTransition minimizeButtonIncrease;
+    ScaleTransition minimizeButtonDecrease;
+
 
     public void initialize(){
+
+        FadeTransition quote1Transition = new FadeTransition(Duration.seconds(3), quote1);
+        quote1Transition.setFromValue(0);
+        quote1Transition.setToValue(1);
+        quote1Transition.play();
+
+
+        FadeTransition quote2Transition = new FadeTransition(Duration.seconds(3), quote2);
+        quote2Transition.setFromValue(0);
+        quote2Transition.setToValue(1);
+        quote2Transition.play();
+
+        FadeTransition quote3Transition = new FadeTransition(Duration.seconds(3), quote3);
+        quote3Transition.setFromValue(0);
+        quote3Transition.setToValue(1);
+        quote3Transition.play();
+
+
+
+        FadeTransition registerButtonTransition = new FadeTransition(Duration.seconds(3), registerButton);
+        registerButtonTransition.setFromValue(0);
+        registerButtonTransition.setToValue(1);
+
+        FadeTransition loginButtonTransition = new FadeTransition(Duration.seconds(3), loginButton);
+        loginButtonTransition.setFromValue(0);
+        loginButtonTransition.setToValue(1);
+
+
+        PauseTransition delay = new PauseTransition(Duration.seconds(2));
+        SequentialTransition registerButtonDelay = new SequentialTransition(delay, registerButtonTransition);
+        SequentialTransition loginButtonDelay = new SequentialTransition(delay, loginButtonTransition);
+
+        registerButtonDelay.play();
+        loginButtonDelay.play();
+
 
 
         loginButtonIncrease = new ScaleTransition(Duration.millis(200), loginButton );
@@ -56,6 +111,14 @@ public class HelloController {
         exitButtonDecrease = new ScaleTransition(Duration.millis(200), exitButton);
         exitButtonDecrease.setToX(1);
         exitButtonDecrease.setToY(1);
+
+        minimizeButtonIncrease = new ScaleTransition(Duration.millis(200), minimizeButton );
+        minimizeButtonIncrease.setToX(1.2);
+        minimizeButtonIncrease.setToY(1.2);
+
+        minimizeButtonDecrease = new ScaleTransition(Duration.millis(200), minimizeButton);
+        minimizeButtonDecrease.setToX(1);
+        minimizeButtonDecrease.setToY(1);
 
     }
 
@@ -86,5 +149,15 @@ public class HelloController {
 
     public void exitButtonClick(){
         System.exit(1);
+    }
+
+    public void minimizeButtonMouseEnter(MouseEvent mouseEvent) {
+        minimizeButtonIncrease.play();
+
+    }
+
+    public void minimizeButtonMouseExit(MouseEvent mouseEvent) {
+        minimizeButtonDecrease.play();
+
     }
 }
