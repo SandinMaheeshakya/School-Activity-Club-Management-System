@@ -130,7 +130,6 @@ public class HelloController {
         loginButtonIncrease.play();
     }
 
-
     public void registerButtonMouseEnter(MouseEvent mouseEvent) {
         registerButtonDecrease.play();
     }
