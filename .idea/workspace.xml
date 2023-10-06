@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="a8ca71fe-8637-49f1-ad3c-d400dc33b6e5" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/project-SACMS/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-SACMS/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-SACMS/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-SACMS/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-SACMS/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-SACMS/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-SACMS/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-SACMS/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-SACMS/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-SACMS/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-SACMS/src/main/java/com/main/projectsacms/HelloController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-SACMS/src/main/java/com/main/projectsacms/SACMS.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-SACMS/src/main/java/module-info.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-SACMS/src/main/resources/com/main/projectsacms/CSS Files/Dashboard.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-SACMS/src/main/resources/com/main/projectsacms/FXML Files/dashboard.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-SACMS/src/main/resources/com/main/projectsacms/Icons/Background/neon gif.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-SACMS/src/main/resources/com/main/projectsacms/Icons/Functional/close.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-SACMS/src/main/resources/com/main/projectsacms/Icons/Functional/fit to screen.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-SACMS/src/main/resources/com/main/projectsacms/Icons/Functional/logo.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-SACMS/src/main/resources/com/main/projectsacms/Icons/Functional/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-SACMS/src/main/resources/com/main/projectsacms/Icons/Functional/minimize.png" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: -1
+}</component>
+  <component name="ProjectId" id="2WFCjP3xiQsD3tR4pe7wiQwvXqS" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "D:/OOP CW/School-Activity-Club-Management-System/project-SACMS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="OOP CW" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="OOP CW" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a8ca71fe-8637-49f1-ad3c-d400dc33b6e5" name="Changes" comment="" />
+      <created>1696319080382</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1696319080382</updated>
+      <workItem from="1696319089484" duration="190000" />
+      <workItem from="1696320026973" duration="23000" />
+      <workItem from="1696409994486" duration="639000" />
+      <workItem from="1696416902097" duration="26000" />
+      <workItem from="1696416956418" duration="1476000" />
+      <workItem from="1696517052139" duration="919000" />
+      <workItem from="1696520224948" duration="804000" />
+      <workItem from="1696524989028" duration="10000" />
+      <workItem from="1696526444965" duration="34000" />
+      <workItem from="1696526490159" duration="133000" />
+      <workItem from="1696561631399" duration="48000" />
+      <workItem from="1696561707289" duration="463000" />
+      <workItem from="1696562315485" duration="89000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
