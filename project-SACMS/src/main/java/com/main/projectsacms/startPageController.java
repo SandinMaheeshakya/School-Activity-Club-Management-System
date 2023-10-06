@@ -11,7 +11,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
 import javafx.util.Duration;
 
-public class HelloController {
+public class startPageController {
 
     @FXML
     private Button loginButton;
@@ -62,7 +62,7 @@ public class HelloController {
         quote2Transition.setToValue(1);
         quote2Transition.play();
 
-        FadeTransition quote3Transition = new FadeTransition(Duration.seconds(3), quote3);
+        FadeTransition quote3Transition = new FadeTransition(Duration.seconds(4), quote3);
         quote3Transition.setFromValue(0);
         quote3Transition.setToValue(1);
         quote3Transition.play();
