@@ -16,7 +16,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: black;" stylesheets="" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.main.projectsacms.startPageController">
    <children>
-      <Group layoutX="616.0" layoutY="-167.0">
+      <Group fx:id="FirstGroup" layoutX="616.0" layoutY="-167.0">
          <children>
             <Text fx:id="quote1" fill="WHITE" layoutX="180.0" layoutY="462.0" strokeType="OUTSIDE" strokeWidth="0.0" text="&quot;Empowering clubs" wrappingWidth="375.0">
                <font>
@@ -28,7 +28,7 @@
                   <Font name="Calibri Bold" size="40.0" />
                </font>
             </Text>
-            <Button fx:id="registerButton" layoutX="182.0" layoutY="666.0" mnemonicParsing="false" onMouseEntered="#registerButtonMouseEnter" onMouseExited="#registerButtonMouseExit" prefHeight="53.0" prefWidth="170.0" style="-fx-background-radius: 30;" styleClass="RegisterButtons" stylesheets="@../CSS%20Files/Dashboard.css" text="Register" textFill="WHITE">
+            <Button fx:id="registerButton" layoutX="182.0" layoutY="666.0" mnemonicParsing="false" onAction="#onRegisterButtonClick" onMouseEntered="#registerButtonMouseEnter" onMouseExited="#registerButtonMouseExit" prefHeight="53.0" prefWidth="170.0" style="-fx-background-radius: 30;" styleClass="RegisterButtons" stylesheets="@../CSS%20Files/Dashboard.css" text="Register" textFill="WHITE">
                <font>
                   <Font name="Calibri Bold" size="22.0" />
                </font>
@@ -66,7 +66,7 @@
             <Image url="@../Icons/Functional/logo.png" />
          </image>
       </ImageView>
-      <Group disable="true" layoutX="820.0" layoutY="307.0" opacity="0.0">
+      <Group fx:id="SecondGroup" disable="true" layoutX="820.0" layoutY="307.0" opacity="0.0">
          <children>
             <Text fx:id="quote11" layoutX="98.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Your Are" wrappingWidth="186.0">
                <font>
@@ -148,7 +148,7 @@
             <Text fill="WHITE" layoutX="16.0" layoutY="311.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" />
             <TextField layoutX="5.0" layoutY="327.0" prefHeight="40.0" prefWidth="198.0" styleClass="form-area" stylesheets="@../CSS%20Files/Dashboard.css" />
             <TextField layoutX="306.0" layoutY="96.0" prefHeight="40.0" prefWidth="146.0" styleClass="form-area" stylesheets="@../CSS%20Files/Dashboard.css" />
-            <Text fill="WHITE" layoutX="320.0" layoutY="85.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Studeet ID" />
+            <Text fill="WHITE" layoutX="320.0" layoutY="85.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Student ID" />
             <Text fill="WHITE" layoutX="17.0" layoutY="231.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Grade" />
             <ChoiceBox layoutX="2.0" layoutY="245.0" prefHeight="37.0" prefWidth="204.0" styleClass="form-area" stylesheets="@../CSS%20Files/Dashboard.css" />
             <Text fill="WHITE" layoutX="256.0" layoutY="231.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date of Birth" />

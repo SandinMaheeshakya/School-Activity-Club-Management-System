@@ -4,7 +4,9 @@ import javafx.animation.FadeTransition;
 import javafx.animation.PauseTransition;
 import javafx.animation.ScaleTransition;
 import javafx.animation.SequentialTransition;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.Group;
 import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -34,6 +36,12 @@ public class startPageController {
     @FXML
     private Text quote3;
 
+    @FXML
+    private Group FirstGroup;
+
+    @FXML
+    private Group SecondGroup;
+
 
 
     ScaleTransition loginButtonIncrease;
@@ -47,6 +55,9 @@ public class startPageController {
 
     ScaleTransition minimizeButtonIncrease;
     ScaleTransition minimizeButtonDecrease;
+
+    ScaleTransition choosingRoleTeacher;
+    ScaleTransition choosingRoleStudent;
 
 
     public void initialize(){
@@ -84,6 +95,9 @@ public class startPageController {
 
         registerButtonDelay.play();
         loginButtonDelay.play();
+
+
+
 
 
 
@@ -157,6 +171,18 @@ public class startPageController {
 
     public void minimizeButtonMouseExit(MouseEvent mouseEvent) {
         minimizeButtonDecrease.play();
+
+    }
+
+    public void onRegisterButtonClick() {
+        FirstGroup.setOpacity(0);
+        SecondGroup.setOpacity(100);
+        SecondGroup.setDisable(false);
+
+        FadeTransition secondGroupTransition = new FadeTransition(Duration.seconds(3), SecondGroup);
+        secondGroupTransition.setFromValue(0);
+        secondGroupTransition.setToValue(1);
+        secondGroupTransition.play();
 
     }
 }
