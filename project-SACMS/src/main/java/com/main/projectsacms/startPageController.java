@@ -6,13 +6,14 @@ import javafx.animation.ScaleTransition;
 import javafx.animation.SequentialTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.Group;
 import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
 import javafx.util.Duration;
 
-public class HelloController {
+public class startPageController {
 
     @FXML
     private Button loginButton;
@@ -35,6 +36,12 @@ public class HelloController {
     @FXML
     private Text quote3;
 
+    @FXML
+    private Group FirstGroup;
+
+    @FXML
+    private Group SecondGroup;
+
 
 
     ScaleTransition loginButtonIncrease;
@@ -48,6 +55,9 @@ public class HelloController {
 
     ScaleTransition minimizeButtonIncrease;
     ScaleTransition minimizeButtonDecrease;
+
+    ScaleTransition choosingRoleTeacher;
+    ScaleTransition choosingRoleStudent;
 
 
     public void initialize(){
@@ -63,7 +73,7 @@ public class HelloController {
         quote2Transition.setToValue(1);
         quote2Transition.play();
 
-        FadeTransition quote3Transition = new FadeTransition(Duration.seconds(3), quote3);
+        FadeTransition quote3Transition = new FadeTransition(Duration.seconds(4), quote3);
         quote3Transition.setFromValue(0);
         quote3Transition.setToValue(1);
         quote3Transition.play();
@@ -85,6 +95,9 @@ public class HelloController {
 
         registerButtonDelay.play();
         loginButtonDelay.play();
+
+
+
 
 
 
@@ -161,6 +174,15 @@ public class HelloController {
 
     }
 
-    public void registerButton(ActionEvent actionEvent) {
+    public void onRegisterButtonClick() {
+        FirstGroup.setOpacity(0);
+        SecondGroup.setOpacity(100);
+        SecondGroup.setDisable(false);
+
+        FadeTransition secondGroupTransition = new FadeTransition(Duration.seconds(3), SecondGroup);
+        secondGroupTransition.setFromValue(0);
+        secondGroupTransition.setToValue(1);
+        secondGroupTransition.play();
+
     }
 }
