@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="341b03f4-a410-43dd-b493-2580ae4c8f54" name="Changes" comment="" />
+    <list default="true" id="341b03f4-a410-43dd-b493-2580ae4c8f54" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/project-SACMS/src/main/resources/com/main/projectsacms/FXML Files/chooseClub.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-SACMS/src/main/java/com/main/projectsacms/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/project-SACMS/src/main/java/com/main/projectsacms/HelloController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-SACMS/src/main/resources/com/main/projectsacms/FXML Files/dashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/project-SACMS/src/main/resources/com/main/projectsacms/FXML Files/dashboard.fxml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -25,18 +30,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/HP/Desktop/OOP CW/School-Activity-Club-Management-System/project-SACMS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/HP/Desktop/OOP CW/School-Activity-Club-Management-System/project-SACMS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -48,6 +53,8 @@
       <workItem from="1696007545090" duration="362000" />
       <workItem from="1696047216604" duration="58000" />
       <workItem from="1696047796268" duration="262000" />
+      <workItem from="1696342552009" duration="32000" />
+      <workItem from="1696405736603" duration="278000" />
     </task>
     <servers />
   </component>

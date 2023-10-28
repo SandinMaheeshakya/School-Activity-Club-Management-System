@@ -27,7 +27,7 @@
                   <Font name="Calibri Bold" size="40.0" />
                </font>
             </Text>
-            <Button fx:id="registerButton" layoutX="182.0" layoutY="666.0" mnemonicParsing="false" onMouseEntered="#registerButtonMouseEnter" onMouseExited="#registerButtonMouseExit" prefHeight="53.0" prefWidth="170.0" style="-fx-background-radius: 30;" styleClass="RegisterButtons" stylesheets="@../CSS%20Files/Dashboard.css" text="Register" textFill="WHITE">
+            <Button fx:id="registerButton" layoutX="182.0" layoutY="666.0" mnemonicParsing="false" onAction="#registerButton" onMouseEntered="#registerButtonMouseEnter" onMouseExited="#registerButtonMouseExit" prefHeight="53.0" prefWidth="170.0" style="-fx-background-radius: 30;" styleClass="RegisterButtons" stylesheets="@../CSS%20Files/Dashboard.css" text="Register" textFill="WHITE">
                <font>
                   <Font name="Calibri Bold" size="22.0" />
                </font>

@@ -4,6 +4,7 @@ import javafx.animation.FadeTransition;
 import javafx.animation.PauseTransition;
 import javafx.animation.ScaleTransition;
 import javafx.animation.SequentialTransition;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
@@ -158,5 +159,8 @@ public class HelloController {
     public void minimizeButtonMouseExit(MouseEvent mouseEvent) {
         minimizeButtonDecrease.play();
 
+    }
+
+    public void registerButton(ActionEvent actionEvent) {
     }
 }
