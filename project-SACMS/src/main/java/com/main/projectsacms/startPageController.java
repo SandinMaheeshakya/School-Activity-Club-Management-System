@@ -137,26 +137,26 @@ public class startPageController {
     }
 
 
-    public void loginButtonMouseEnter(MouseEvent mouseEvent) {
+    public void loginButtonMouseEnter() {
         loginButtonDecrease.play();
     }
-    public void loginButtonMouseExit(MouseEvent mouseEvent) {
+    public void loginButtonMouseExit() {
         loginButtonIncrease.play();
     }
 
-    public void registerButtonMouseEnter(MouseEvent mouseEvent) {
+    public void registerButtonMouseEnter() {
         registerButtonDecrease.play();
     }
 
-    public void registerButtonMouseExit(MouseEvent mouseEvent) {
+    public void registerButtonMouseExit() {
         registerButtonIncrease.play();
     }
 
-    public void exitButtonMouseEnter(MouseEvent mouseEvent) {
+    public void exitButtonMouseEnter() {
         exitButtonIncrease.play();
     }
 
-    public void exitButtonMouseExit(MouseEvent mouseEvent) {
+    public void exitButtonMouseExit() {
         exitButtonDecrease.play();
     }
 
@@ -164,12 +164,12 @@ public class startPageController {
         System.exit(1);
     }
 
-    public void minimizeButtonMouseEnter(MouseEvent mouseEvent) {
+    public void minimizeButtonMouseEnter() {
         minimizeButtonIncrease.play();
 
     }
 
-    public void minimizeButtonMouseExit(MouseEvent mouseEvent) {
+    public void minimizeButtonMouseExit() {
         minimizeButtonDecrease.play();
 
     }
