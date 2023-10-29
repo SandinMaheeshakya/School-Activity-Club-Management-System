@@ -22,6 +22,12 @@ public class startPageController {
     private Button registerButton;
 
     @FXML
+    private Button advisorSignUpButton;
+
+    @FXML
+    private Button studentSignUpButton;
+
+    @FXML
     private ImageView exitButton;
 
     @FXML
@@ -42,6 +48,11 @@ public class startPageController {
     @FXML
     private Group SecondGroup;
 
+    @FXML
+    private Group advisorDetails;
+
+    @FXML
+    private Group studentDetails;
 
 
     ScaleTransition loginButtonIncrease;
@@ -95,10 +106,6 @@ public class startPageController {
 
         registerButtonDelay.play();
         loginButtonDelay.play();
-
-
-
-
 
 
         loginButtonIncrease = new ScaleTransition(Duration.millis(200), loginButton );
@@ -184,5 +191,31 @@ public class startPageController {
         secondGroupTransition.setToValue(1);
         secondGroupTransition.play();
 
+    }
+
+    public void onAdvisorButtonClick(ActionEvent actionEvent) {
+
+        SecondGroup.setOpacity(0);
+        SecondGroup.setDisable(true);
+
+        advisorDetails.setDisable(false);
+
+        FadeTransition advisorDetailsTransition = new FadeTransition(Duration.seconds(3), advisorDetails);
+        advisorDetailsTransition.setFromValue(0);
+        advisorDetailsTransition.setToValue(1);
+        advisorDetailsTransition.play();
+
+    }
+
+    public void onStudentButtonClick(ActionEvent actionEvent) {
+        SecondGroup.setOpacity(0);
+        SecondGroup.setDisable(true);
+
+        studentDetails.setDisable(false);
+
+        FadeTransition studentDetailsTransition = new FadeTransition(Duration.seconds(3), studentDetails);
+        studentDetailsTransition.setFromValue(0);
+        studentDetailsTransition.setToValue(1);
+        studentDetailsTransition.play();
     }
 }
