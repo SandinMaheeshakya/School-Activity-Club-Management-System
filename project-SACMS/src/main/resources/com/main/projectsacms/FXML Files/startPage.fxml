@@ -66,7 +66,7 @@
             <Image url="@../Icons/Functional/logo.png" />
          </image>
       </ImageView>
-      <Group fx:id="SecondGroup" layoutX="820.0" layoutY="307.0" opacity="0.0">
+      <Group fx:id="SecondGroup" disable="true" layoutX="820.0" layoutY="307.0" opacity="0.0">
          <children>
             <Text fx:id="quote11" layoutX="98.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Your Are" wrappingWidth="186.0">
                <font>

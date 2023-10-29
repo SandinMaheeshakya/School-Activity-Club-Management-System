@@ -193,23 +193,22 @@ public class startPageController {
 
     }
 
-    public void onAdvisorButtonClick(ActionEvent actionEvent) {
-
-        SecondGroup.setOpacity(0);
-        SecondGroup.setDisable(true);
-
-        advisorDetails.setDisable(false);
+    public void onAdvisorButtonClick() {
 
         FadeTransition advisorDetailsTransition = new FadeTransition(Duration.seconds(3), advisorDetails);
         advisorDetailsTransition.setFromValue(0);
         advisorDetailsTransition.setToValue(1);
         advisorDetailsTransition.play();
 
+        advisorDetails.setDisable(false);
+
+        SecondGroup.setVisible(false);
+        SecondGroup.setDisable(true);
+
+
     }
 
-    public void onStudentButtonClick(ActionEvent actionEvent) {
-        SecondGroup.setOpacity(0);
-        SecondGroup.setDisable(true);
+    public void onStudentButtonClick() {
 
         studentDetails.setDisable(false);
 
@@ -217,5 +216,8 @@ public class startPageController {
         studentDetailsTransition.setFromValue(0);
         studentDetailsTransition.setToValue(1);
         studentDetailsTransition.play();
+
+        SecondGroup.setVisible(false);
+        SecondGroup.setDisable(true);
     }
 }
