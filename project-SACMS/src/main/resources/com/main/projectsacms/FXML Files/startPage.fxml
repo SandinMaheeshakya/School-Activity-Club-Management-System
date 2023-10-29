@@ -68,7 +68,7 @@
       </ImageView>
       <Group fx:id="SecondGroup" disable="true" layoutX="820.0" layoutY="307.0" opacity="0.0">
          <children>
-            <Text fx:id="quote11" layoutX="98.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Your Are" wrappingWidth="186.0">
+            <Text fx:id="quote11" layoutX="108.0" layoutY="14.0" strokeType="OUTSIDE" strokeWidth="0.0" text="You Are" wrappingWidth="155.0">
                <font>
                   <Font name="Calibri Bold" size="44.0" />
                </font>
@@ -89,19 +89,19 @@
                   </LinearGradient>
                </fill>
             </Text>
-            <Button fx:id="loginButton1" layoutY="114.0" mnemonicParsing="false" onMouseEntered="#loginButtonMouseEnter" onMouseExited="#loginButtonMouseExit" prefHeight="60.0" prefWidth="170.0" styleClass="role-Buttons" stylesheets="@../CSS%20Files/Dashboard.css" text=" Teacher" textFill="WHITE">
+            <Button fx:id="advisorSignUpButton" layoutY="66.0" mnemonicParsing="false" onAction="#onAdvisorButtonClick" onMouseEntered="#advisorButtonMouseEnter" onMouseExited="#advisorButtonMouseExit" prefHeight="60.0" prefWidth="170.0" styleClass="role-Buttons" stylesheets="@../CSS%20Files/Dashboard.css" text="Advisor" textFill="WHITE">
                <font>
                   <Font name="Calibri Bold" size="30.0" />
                </font>
             </Button>
-            <Button fx:id="loginButton11" layoutX="200.0" layoutY="114.0" mnemonicParsing="false" onMouseEntered="#loginButtonMouseEnter" onMouseExited="#loginButtonMouseExit" prefHeight="60.0" prefWidth="170.0" styleClass="role-Buttons" stylesheets="@../CSS%20Files/Dashboard.css" text="Student" textFill="WHITE">
+            <Button fx:id="studentSignUpButton" layoutX="200.0" layoutY="66.0" mnemonicParsing="false" onAction="#onStudentButtonClick" onMouseEntered="#studentButtonMouseEnter" onMouseExited="#studentButtonMouseExit" prefHeight="60.0" prefWidth="170.0" styleClass="role-Buttons" stylesheets="@../CSS%20Files/Dashboard.css" text="Student" textFill="WHITE">
                <font>
                   <Font name="Calibri Bold" size="30.0" />
                </font>
             </Button>
          </children>
       </Group>
-      <Group disable="true" layoutX="757.0" layoutY="209.0" opacity="0.0">
+      <Group fx:id="advisorDetails" disable="true" layoutX="757.0" layoutY="209.0" opacity="0.0">
          <children>
             <TextField layoutX="247.0" layoutY="22.0" prefHeight="40.0" prefWidth="207.0" style="-fx-background-radius: 30;" styleClass="form-area" stylesheets="@../CSS%20Files/Dashboard.css" />
             <TextField layoutY="22.0" prefHeight="40.0" prefWidth="207.0" styleClass="form-area" stylesheets="@../CSS%20Files/Dashboard.css" />
@@ -128,7 +128,7 @@
             <DatePicker layoutX="256.0" layoutY="246.0" prefHeight="36.0" prefWidth="191.0" styleClass="formDate" stylesheets="@../CSS%20Files/Dashboard.css" />
          </children>
       </Group>
-      <Group disable="true" layoutX="757.0" layoutY="209.0" opacity="0.0">
+      <Group fx:id="studentDetails" disable="true" layoutX="757.0" layoutY="209.0" opacity="0.0">
          <children>
             <TextField layoutX="247.0" layoutY="22.0" prefHeight="40.0" prefWidth="207.0" style="-fx-background-radius: 30;" styleClass="form-area" stylesheets="@../CSS%20Files/Dashboard.css" />
             <TextField layoutY="22.0" prefHeight="40.0" prefWidth="207.0" styleClass="form-area" stylesheets="@../CSS%20Files/Dashboard.css" />

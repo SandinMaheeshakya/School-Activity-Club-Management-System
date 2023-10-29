@@ -4,7 +4,6 @@ import javafx.animation.FadeTransition;
 import javafx.animation.PauseTransition;
 import javafx.animation.ScaleTransition;
 import javafx.animation.SequentialTransition;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Group;
 import javafx.scene.control.Button;
@@ -20,6 +19,12 @@ public class startPageController {
 
     @FXML
     private Button registerButton;
+
+    @FXML
+    private Button advisorSignUpButton;
+
+    @FXML
+    private Button studentSignUpButton;
 
     @FXML
     private ImageView exitButton;
@@ -42,6 +47,11 @@ public class startPageController {
     @FXML
     private Group SecondGroup;
 
+    @FXML
+    private Group advisorDetails;
+
+    @FXML
+    private Group studentDetails;
 
 
     ScaleTransition loginButtonIncrease;
@@ -56,9 +66,11 @@ public class startPageController {
     ScaleTransition minimizeButtonIncrease;
     ScaleTransition minimizeButtonDecrease;
 
-    ScaleTransition choosingRoleTeacher;
-    ScaleTransition choosingRoleStudent;
+    ScaleTransition studentButtonIncrease;
+    ScaleTransition studentButtonDecrease;
 
+    ScaleTransition advisorButtonIncrease;
+    ScaleTransition advisorButtonDecrease;
 
     public void initialize(){
 
@@ -97,10 +109,6 @@ public class startPageController {
         loginButtonDelay.play();
 
 
-
-
-
-
         loginButtonIncrease = new ScaleTransition(Duration.millis(200), loginButton );
         loginButtonIncrease.setToX(1);
         loginButtonIncrease.setToY(1);
@@ -134,29 +142,46 @@ public class startPageController {
         minimizeButtonDecrease.setToX(1);
         minimizeButtonDecrease.setToY(1);
 
+
+        studentButtonIncrease = new ScaleTransition(Duration.millis(200), studentSignUpButton );
+        studentButtonIncrease.setToX(1);
+        studentButtonIncrease.setToY(1);
+
+        studentButtonDecrease = new ScaleTransition(Duration.millis(200), studentSignUpButton);
+        studentButtonDecrease.setToX(0.9);
+        studentButtonDecrease.setToY(0.9);
+
+        advisorButtonIncrease = new ScaleTransition(Duration.millis(200), advisorSignUpButton );
+        advisorButtonIncrease.setToX(1);
+        advisorButtonIncrease.setToY(1);
+
+        advisorButtonDecrease = new ScaleTransition(Duration.millis(200), advisorSignUpButton);
+        advisorButtonDecrease.setToX(0.9);
+        advisorButtonDecrease.setToY(0.9);
+
     }
 
 
-    public void loginButtonMouseEnter(MouseEvent mouseEvent) {
+    public void loginButtonMouseEnter() {
         loginButtonDecrease.play();
     }
-    public void loginButtonMouseExit(MouseEvent mouseEvent) {
+    public void loginButtonMouseExit() {
         loginButtonIncrease.play();
     }
 
-    public void registerButtonMouseEnter(MouseEvent mouseEvent) {
+    public void registerButtonMouseEnter() {
         registerButtonDecrease.play();
     }
 
-    public void registerButtonMouseExit(MouseEvent mouseEvent) {
+    public void registerButtonMouseExit() {
         registerButtonIncrease.play();
     }
 
-    public void exitButtonMouseEnter(MouseEvent mouseEvent) {
+    public void exitButtonMouseEnter() {
         exitButtonIncrease.play();
     }
 
-    public void exitButtonMouseExit(MouseEvent mouseEvent) {
+    public void exitButtonMouseExit() {
         exitButtonDecrease.play();
     }
 
@@ -164,12 +189,12 @@ public class startPageController {
         System.exit(1);
     }
 
-    public void minimizeButtonMouseEnter(MouseEvent mouseEvent) {
+    public void minimizeButtonMouseEnter() {
         minimizeButtonIncrease.play();
 
     }
 
-    public void minimizeButtonMouseExit(MouseEvent mouseEvent) {
+    public void minimizeButtonMouseExit() {
         minimizeButtonDecrease.play();
 
     }
@@ -184,5 +209,49 @@ public class startPageController {
         secondGroupTransition.setToValue(1);
         secondGroupTransition.play();
 
+    }
+
+    public void onAdvisorButtonClick() {
+
+        FadeTransition advisorDetailsTransition = new FadeTransition(Duration.seconds(3), advisorDetails);
+        advisorDetailsTransition.setFromValue(0);
+        advisorDetailsTransition.setToValue(1);
+        advisorDetailsTransition.play();
+
+        advisorDetails.setDisable(false);
+
+        SecondGroup.setVisible(false);
+        SecondGroup.setDisable(true);
+
+
+    }
+
+    public void onStudentButtonClick() {
+
+        studentDetails.setDisable(false);
+
+        FadeTransition studentDetailsTransition = new FadeTransition(Duration.seconds(3), studentDetails);
+        studentDetailsTransition.setFromValue(0);
+        studentDetailsTransition.setToValue(1);
+        studentDetailsTransition.play();
+
+        SecondGroup.setVisible(false);
+        SecondGroup.setDisable(true);
+    }
+
+    public void studentButtonMouseEnter(MouseEvent mouseEvent) {
+        studentButtonDecrease.play();
+    }
+
+    public void studentButtonMouseExit(MouseEvent mouseEvent) {
+        studentButtonIncrease.play();
+    }
+
+    public void advisorButtonMouseEnter(MouseEvent mouseEvent) {
+        advisorButtonDecrease.play();
+    }
+
+    public void advisorButtonMouseExit(MouseEvent mouseEvent) {
+        advisorButtonIncrease.play();
     }
 }
