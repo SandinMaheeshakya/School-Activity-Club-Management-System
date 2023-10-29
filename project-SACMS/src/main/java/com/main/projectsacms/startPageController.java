@@ -4,7 +4,6 @@ import javafx.animation.FadeTransition;
 import javafx.animation.PauseTransition;
 import javafx.animation.ScaleTransition;
 import javafx.animation.SequentialTransition;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Group;
 import javafx.scene.control.Button;
@@ -67,9 +66,11 @@ public class startPageController {
     ScaleTransition minimizeButtonIncrease;
     ScaleTransition minimizeButtonDecrease;
 
-    ScaleTransition choosingRoleTeacher;
-    ScaleTransition choosingRoleStudent;
+    ScaleTransition studentButtonIncrease;
+    ScaleTransition studentButtonDecrease;
 
+    ScaleTransition advisorButtonIncrease;
+    ScaleTransition advisorButtonDecrease;
 
     public void initialize(){
 
@@ -140,6 +141,23 @@ public class startPageController {
         minimizeButtonDecrease = new ScaleTransition(Duration.millis(200), minimizeButton);
         minimizeButtonDecrease.setToX(1);
         minimizeButtonDecrease.setToY(1);
+
+
+        studentButtonIncrease = new ScaleTransition(Duration.millis(200), studentSignUpButton );
+        studentButtonIncrease.setToX(1);
+        studentButtonIncrease.setToY(1);
+
+        studentButtonDecrease = new ScaleTransition(Duration.millis(200), studentSignUpButton);
+        studentButtonDecrease.setToX(0.9);
+        studentButtonDecrease.setToY(0.9);
+
+        advisorButtonIncrease = new ScaleTransition(Duration.millis(200), advisorSignUpButton );
+        advisorButtonIncrease.setToX(1);
+        advisorButtonIncrease.setToY(1);
+
+        advisorButtonDecrease = new ScaleTransition(Duration.millis(200), advisorSignUpButton);
+        advisorButtonDecrease.setToX(0.9);
+        advisorButtonDecrease.setToY(0.9);
 
     }
 
@@ -219,5 +237,21 @@ public class startPageController {
 
         SecondGroup.setVisible(false);
         SecondGroup.setDisable(true);
+    }
+
+    public void studentButtonMouseEnter(MouseEvent mouseEvent) {
+        studentButtonDecrease.play();
+    }
+
+    public void studentButtonMouseExit(MouseEvent mouseEvent) {
+        studentButtonIncrease.play();
+    }
+
+    public void advisorButtonMouseEnter(MouseEvent mouseEvent) {
+        advisorButtonDecrease.play();
+    }
+
+    public void advisorButtonMouseExit(MouseEvent mouseEvent) {
+        advisorButtonIncrease.play();
     }
 }
