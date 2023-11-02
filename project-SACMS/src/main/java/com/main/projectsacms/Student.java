@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Student extends Human {
+    private String studentId;
+    private String grade;
+    private List<String> selectedClubs;
     public String getStudentId() {
         return studentId;
     }
@@ -20,12 +23,20 @@ public class Student extends Human {
         this.selectedClubs = selectedClubs;
     }
 
-    private String studentId;
-    private List<String> selectedClubs;
 
-    public Student(int NIC, String name, int contactNo, String address, String email, String password, String studentId) {
-        super(NIC, name, contactNo, address, email, password, studentId );
+
+    public String getGrade() {
+        return grade;
+    }
+
+    public void setGrade(String grade) {
+        this.grade = grade;
+    }
+
+    public Student(String firstName, String lastName, String userName, String email, int dob, String password, String confirm_password, String studentId) {
+        super(firstName, lastName, userName, email, email, dob, password, confirm_password, studentId );
         this.studentId = studentId;
+
         this.selectedClubs = new ArrayList<>();
     }
 }

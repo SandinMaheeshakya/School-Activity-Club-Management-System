@@ -1,48 +1,55 @@
 package com.main.projectsacms;
 
 public class Human {
-    private int NIC;
-    private String name;
-    private int contactNo;
-    private String address;
-    
+    private String firstName;
+    private String lastName;
+    private String userName;
+    private String email;
+    private int dob;
+    private String password;
+    private String confirm_password;
 
-    public Human(int nic, String name, int contactNo, String address, String email, String password, String studentId) {
+    public Human(String firstName, String lastName, String userName, String email, String email1, int dob, String password, String confirmPassword, String studentId) {
     }
 
-    public Human(String name, String email, String password) {
+    public String getFirstName() {
+        return firstName;
     }
 
-    public int getNIC() {
-        return NIC;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
-    public void setNIC(int NIC) {
-        this.NIC = NIC;
+    public String getLastName() {
+        return lastName;
     }
 
-    public String getName() {
-        return name;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public String getUserName() {
+        return userName;
     }
 
-    public int getContactNo() {
-        return contactNo;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
-    public void setContactNo(int contactNo) {
-        this.contactNo = contactNo;
+    public String getEmail() {
+        return email;
     }
 
-    public String getAddress() {
-        return address;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    public int getDob() {
+        return dob;
+    }
+
+    public void setDob(int dob) {
+        this.dob = dob;
     }
 
     public String getPassword() {
@@ -53,5 +60,11 @@ public class Human {
         this.password = password;
     }
 
-    private String password;
+    public String getConfirm_password() {
+        return confirm_password;
+    }
+
+    public void setConfirm_password(String confirm_password) {
+        this.confirm_password = confirm_password;
+    }
 }

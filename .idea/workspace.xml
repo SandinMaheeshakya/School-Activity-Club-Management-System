@@ -5,10 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="341b03f4-a410-43dd-b493-2580ae4c8f54" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/project-SACMS/src/main/resources/com/main/projectsacms/FXML Files/chooseClub.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project-SACMS/src/main/java/com/main/projectsacms/RegistrationController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-SACMS/src/main/java/com/main/projectsacms/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/project-SACMS/src/main/java/com/main/projectsacms/HelloController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-SACMS/src/main/resources/com/main/projectsacms/FXML Files/dashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/project-SACMS/src/main/resources/com/main/projectsacms/FXML Files/dashboard.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-SACMS/src/main/java/com/main/projectsacms/Advisor.java" beforeDir="false" afterPath="$PROJECT_DIR$/project-SACMS/src/main/java/com/main/projectsacms/Advisor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-SACMS/src/main/java/com/main/projectsacms/Human.java" beforeDir="false" afterPath="$PROJECT_DIR$/project-SACMS/src/main/java/com/main/projectsacms/Human.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-SACMS/src/main/java/com/main/projectsacms/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/project-SACMS/src/main/java/com/main/projectsacms/Student.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-SACMS/src/main/java/com/main/projectsacms/startPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/project-SACMS/src/main/java/com/main/projectsacms/startPageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-SACMS/src/main/resources/com/main/projectsacms/FXML Files/startPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/project-SACMS/src/main/resources/com/main/projectsacms/FXML Files/startPage.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,18 +33,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/HP/Desktop/OOP CW/School-Activity-Club-Management-System/project-SACMS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/HP/Desktop/OOP CW/School-Activity-Club-Management-System/project-SACMS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -55,10 +62,17 @@
       <workItem from="1696047796268" duration="262000" />
       <workItem from="1696342552009" duration="32000" />
       <workItem from="1696405736603" duration="278000" />
+      <workItem from="1698906976616" duration="409000" />
+      <workItem from="1698907416719" duration="363000" />
+      <workItem from="1698907850407" duration="428000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

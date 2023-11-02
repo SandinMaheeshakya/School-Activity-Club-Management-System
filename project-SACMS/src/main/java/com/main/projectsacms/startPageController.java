@@ -4,10 +4,12 @@ import javafx.animation.FadeTransition;
 import javafx.animation.PauseTransition;
 import javafx.animation.ScaleTransition;
 import javafx.animation.SequentialTransition;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Group;
 import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.InputMethodEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
 import javafx.util.Duration;
@@ -253,5 +255,37 @@ public class startPageController {
 
     public void advisorButtonMouseExit(MouseEvent mouseEvent) {
         advisorButtonIncrease.play();
+    }
+
+    public void OnClickAdvisorRegister(ActionEvent actionEvent) {
+
+
+    }
+
+    public void FirstNameA(InputMethodEvent inputMethodEvent) {
+    }
+
+    public void LastNameA(InputMethodEvent inputMethodEvent) {
+    }
+
+    public void EmailAddressA(InputMethodEvent inputMethodEvent) {
+    }
+
+    public void UserNameA(InputMethodEvent inputMethodEvent) {
+    }
+
+    public void TeachingId(InputMethodEvent inputMethodEvent) {
+    }
+
+    public void Department(InputMethodEvent inputMethodEvent) {
+    }
+
+    public void AdvisorDOB(InputMethodEvent inputMethodEvent) {
+    }
+
+    public void PasswordA(InputMethodEvent inputMethodEvent) {
+    }
+
+    public void ConfirmPasswordA(InputMethodEvent inputMethodEvent) {
     }
 }
