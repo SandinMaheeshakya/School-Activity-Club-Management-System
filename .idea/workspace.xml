@@ -4,6 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+<<<<<<< Updated upstream
     <list default="true" id="a8ca71fe-8637-49f1-ad3c-d400dc33b6e5" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/project-SACMS/.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/project-SACMS/.idea/.gitignore" beforeDir="false" />
@@ -27,6 +28,9 @@
       <change beforePath="$PROJECT_DIR$/project-SACMS/src/main/resources/com/main/projectsacms/Icons/Functional/logo.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/project-SACMS/src/main/resources/com/main/projectsacms/Icons/Functional/minimize.png" beforeDir="false" />
     </list>
+=======
+    <list default="true" id="a8ca71fe-8637-49f1-ad3c-d400dc33b6e5" name="Changes" comment="" />
+>>>>>>> Stashed changes
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -34,7 +38,10 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+<<<<<<< Updated upstream
     <option name="ROOT_SYNC" value="DONT_SYNC" />
+=======
+>>>>>>> Stashed changes
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -52,7 +59,10 @@
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
+<<<<<<< Updated upstream
     "last_opened_file_path": "D:/OOP CW/School-Activity-Club-Management-System/project-SACMS",
+=======
+>>>>>>> Stashed changes
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -93,10 +103,13 @@
       <workItem from="1696520224948" duration="804000" />
       <workItem from="1696524989028" duration="10000" />
       <workItem from="1696526444965" duration="34000" />
+<<<<<<< Updated upstream
       <workItem from="1696526490159" duration="133000" />
       <workItem from="1696561631399" duration="48000" />
       <workItem from="1696561707289" duration="463000" />
       <workItem from="1696562315485" duration="89000" />
+=======
+>>>>>>> Stashed changes
     </task>
     <servers />
   </component>
