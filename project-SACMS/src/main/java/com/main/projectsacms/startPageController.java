@@ -54,6 +54,7 @@ public class startPageController {
     private Group studentDetails;
 
 
+
     ScaleTransition loginButtonIncrease;
     ScaleTransition loginButtonDecrease;
 
@@ -239,19 +240,19 @@ public class startPageController {
         SecondGroup.setDisable(true);
     }
 
-    public void studentButtonMouseEnter(MouseEvent mouseEvent) {
+    public void studentButtonMouseEnter() {
         studentButtonDecrease.play();
     }
 
-    public void studentButtonMouseExit(MouseEvent mouseEvent) {
+    public void studentButtonMouseExit() {
         studentButtonIncrease.play();
     }
 
-    public void advisorButtonMouseEnter(MouseEvent mouseEvent) {
+    public void advisorButtonMouseEnter() {
         advisorButtonDecrease.play();
     }
 
-    public void advisorButtonMouseExit(MouseEvent mouseEvent) {
+    public void advisorButtonMouseExit() {
         advisorButtonIncrease.play();
     }
 }
