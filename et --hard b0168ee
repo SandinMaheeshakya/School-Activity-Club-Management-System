@@ -1,0 +1,77 @@
+[33mb1087a9[m[33m ([m[1;36mHEAD -> [m[1;32mStudent-4-Sandin[m[33m, [m[1;31morigin/Student-4[m[33m)[m HEAD@{0}: reset: moving to HEAD
+[33mb1087a9[m[33m ([m[1;36mHEAD -> [m[1;32mStudent-4-Sandin[m[33m, [m[1;31morigin/Student-4[m[33m)[m HEAD@{1}: reset: moving to HEAD
+[33mb1087a9[m[33m ([m[1;36mHEAD -> [m[1;32mStudent-4-Sandin[m[33m, [m[1;31morigin/Student-4[m[33m)[m HEAD@{2}: reset: moving to b1087a91b2d23e1d9eb624e8d5db46482840ba6e
+[33m3656c58[m HEAD@{3}: pull --no-stat -v --progress origin Student-3: Merge made by the 'ort' strategy.
+[33mb1087a9[m[33m ([m[1;36mHEAD -> [m[1;32mStudent-4-Sandin[m[33m, [m[1;31morigin/Student-4[m[33m)[m HEAD@{4}: checkout: moving from Student-3-Shamal to Student-4-Sandin
+[33mdd191c4[m[33m ([m[1;31morigin/Student-3[m[33m, [m[1;32mStudent-3-Shamal[m[33m)[m HEAD@{5}: checkout: moving from Student-4-Sandin to Student-3-Shamal
+[33mb1087a9[m[33m ([m[1;36mHEAD -> [m[1;32mStudent-4-Sandin[m[33m, [m[1;31morigin/Student-4[m[33m)[m HEAD@{6}: commit: minor changes on design
+[33ma87cf53[m HEAD@{7}: commit: Some of Appearance Changes
+[33m5d87787[m HEAD@{8}: commit: Additional Changes
+[33m010ecc9[m HEAD@{9}: commit: edited transitions for details gathering pages
+[33ma1fd6a4[m HEAD@{10}: commit: User Login Screen transitions
+[33m70face9[m HEAD@{11}: commit: changed the Inteface of Login Screen
+[33maa2360a[m HEAD@{12}: commit: Designing the Dashboard
+[33ma8101d8[m HEAD@{13}: checkout: moving from Student-3-Shamal to Student-4-Sandin
+[33mf350344[m HEAD@{14}: checkout: moving from student-2-Yoousuf to Student-3-Shamal
+[33m76128e8[m[33m ([m[1;31morigin/student-2[m[33m, [m[1;32mstudent-2-Yoousuf[m[33m)[m HEAD@{15}: checkout: moving from Student-4-Sandin to student-2-Yoousuf
+[33ma8101d8[m HEAD@{16}: checkout: moving from main to Student-4-Sandin
+[33m6a16ebe[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m HEAD@{17}: checkout: moving from Student-3-Shamal to main
+[33mf350344[m HEAD@{18}: checkout: moving from Student-1-Vanuja to Student-3-Shamal
+[33m617eeea[m HEAD@{19}: checkout: moving from Student-4-Sandin to Student-1-Vanuja
+[33ma8101d8[m HEAD@{20}: checkout: moving from Student-3-Shamal to Student-4-Sandin
+[33m56a52fb[m HEAD@{21}: checkout: moving from Student-4-Sandin to Student-3-Shamal
+[33ma8101d8[m HEAD@{22}: commit: additional changes
+[33mec981ea[m HEAD@{23}: commit: made a few transitions in Dashboard Page
+[33m4ee9ac2[m HEAD@{24}: checkout: moving from Student-1-Vanuja to Student-4-Sandin
+[33m617eeea[m HEAD@{25}: commit (merge): Merge branch 'Student-4' of https://github.com/SandinMaheeshakya/School-Activity-Club-Management-System into Student-1-Vanuja
+[33m5e56af5[m HEAD@{26}: checkout: moving from Student-4-Sandin to Student-1-Vanuja
+[33m4ee9ac2[m HEAD@{27}: checkout: moving from Student-1-Vanuja to Student-4-Sandin
+[33m5e56af5[m HEAD@{28}: checkout: moving from Student-4-Sandin to Student-1-Vanuja
+[33m4ee9ac2[m HEAD@{29}: commit: dashboard page creation
+[33mb099e9c[m HEAD@{30}: commit: dashboard changes
+[33me645e34[m HEAD@{31}: checkout: moving from main to Student-4-Sandin
+[33m6a16ebe[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m HEAD@{32}: checkout: moving from Student-1-Vanuja to main
+[33m5e56af5[m HEAD@{33}: commit (merge): Merge remote-tracking branch 'origin' into Student-1-Vanuja
+[33m596f9d7[m HEAD@{34}: checkout: moving from student-2-Yoousuf to Student-1-Vanuja
+[33m76128e8[m[33m ([m[1;31morigin/student-2[m[33m, [m[1;32mstudent-2-Yoousuf[m[33m)[m HEAD@{35}: commit (merge): Merge remote-tracking branch 'origin' into student-2-Yoousuf
+[33m6861150[m HEAD@{36}: checkout: moving from main to student-2-Yoousuf
+[33m72b224f[m HEAD@{37}: checkout: moving from Student-4-Sandin to main
+[33me645e34[m HEAD@{38}: commit: updated the name in student - 4 branch
+[33m0ffc460[m HEAD@{39}: checkout: moving from main to Student-4-Sandin
+[33m72b224f[m HEAD@{40}: checkout: moving from Student-4-Sandin to main
+[33m0ffc460[m HEAD@{41}: checkout: moving from main to Student-4-Sandin
+[33m72b224f[m HEAD@{42}: checkout: moving from student-2-Yoousuf to main
+[33m6861150[m HEAD@{43}: checkout: moving from Student-1-Vanuja to student-2-Yoousuf
+[33m596f9d7[m HEAD@{44}: checkout: moving from main to Student-1-Vanuja
+[33m72b224f[m HEAD@{45}: checkout: moving from Student-4-Sandin to main
+[33m0ffc460[m HEAD@{46}: checkout: moving from main to Student-4-Sandin
+[33m72b224f[m HEAD@{47}: commit: updated the Application Name
+[33m0ffc460[m HEAD@{48}: checkout: moving from Student-1-Vanuja to main
+[33m596f9d7[m HEAD@{49}: checkout: moving from main to Student-1-Vanuja
+[33m0ffc460[m HEAD@{50}: checkout: moving from Student-1-Vanuja to main
+[33m596f9d7[m HEAD@{51}: checkout: moving from Student-4-Sandin to Student-1-Vanuja
+[33m0ffc460[m HEAD@{52}: Branch: renamed refs/heads/Student-4 to refs/heads/Student-4-Sandin
+[33m0ffc460[m HEAD@{54}: checkout: moving from main to Student-4
+[33m0ffc460[m HEAD@{55}: checkout: moving from Student-1 to main
+[33m596f9d7[m HEAD@{56}: checkout: moving from Student-3 to Student-1
+[33m0ffc460[m HEAD@{57}: checkout: moving from student-2 to Student-3
+[33m6861150[m HEAD@{58}: checkout: moving from Student-3 to student-2
+[33m0ffc460[m HEAD@{59}: checkout: moving from student-2 to Student-3
+[33m6861150[m HEAD@{60}: checkout: moving from main to student-2
+[33m0ffc460[m HEAD@{61}: checkout: moving from student-2 to main
+[33m6861150[m HEAD@{62}: commit: changing the name according to student 2
+[33m0ffc460[m HEAD@{63}: checkout: moving from Student-1 to student-2
+[33m596f9d7[m HEAD@{64}: checkout: moving from main to Student-1
+[33m0ffc460[m HEAD@{65}: checkout: moving from Student-1 to main
+[33m596f9d7[m HEAD@{66}: checkout: moving from Student-2 to Student-1
+[33m0ffc460[m HEAD@{67}: checkout: moving from Student-1 to Student-2
+[33m596f9d7[m HEAD@{68}: checkout: moving from main to Student-1
+[33m0ffc460[m HEAD@{69}: checkout: moving from Student-1 to main
+[33m596f9d7[m HEAD@{70}: commit: changing the Club name to ClubData
+[33m0ffc460[m HEAD@{71}: checkout: moving from Student-4 to Student-1
+[33m0ffc460[m HEAD@{72}: checkout: moving from Student-3 to Student-4
+[33m0ffc460[m HEAD@{73}: checkout: moving from Studen-2 to Student-3
+[33m0ffc460[m HEAD@{74}: checkout: moving from Student-1 to Studen-2
+[33m0ffc460[m HEAD@{75}: checkout: moving from main to Student-1
+[33m0ffc460[m HEAD@{76}: commit: Additional Changes
+[33m512d68a[m HEAD@{77}: commit (initial): Creating the Project Folder
