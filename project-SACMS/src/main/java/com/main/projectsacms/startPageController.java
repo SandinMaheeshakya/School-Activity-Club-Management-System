@@ -7,7 +7,11 @@ import javafx.animation.SequentialTransition;
 import javafx.fxml.FXML;
 import javafx.scene.Group;
 import javafx.scene.control.Button;
+import javafx.scene.control.DatePicker;
+import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.InputMethodEvent;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
 import javafx.util.Duration;
@@ -52,6 +56,32 @@ public class startPageController {
 
     @FXML
     private Group studentDetails;
+
+
+    @FXML
+    private TextField advisorEmail;
+
+    @FXML
+    private TextField advisorUsername;
+
+    @FXML
+    private TextField advisorFirstName;
+
+    @FXML
+    private TextField advisorLastName;
+
+    @FXML
+    private TextField advisorTeachingID;
+
+    @FXML
+    private TextField advisorPassword;
+
+    @FXML
+    private TextField advisorConfirmPassword;
+
+    @FXML
+    private DatePicker advisorDOB;
+
 
 
 
@@ -255,4 +285,59 @@ public class startPageController {
     public void advisorButtonMouseExit() {
         advisorButtonIncrease.play();
     }
+
+
+
+    //User Input Validation (Advisor)
+
+    boolean allValidated = true;
+
+    public void advisorFirstNameValidation() {
+
+        if (advisorFirstName.getText().length() == 0){
+            advisorFirstName.setStyle("-fx-border-color: red");
+            allValidated = false;
+
+        } else if (!advisorFirstName.getText().matches( "^[A-Za-z]*$")) {
+            advisorFirstName.setStyle("-fx-border-color: red");
+            allValidated = false;
+
+
+        } else {
+            advisorFirstName.setStyle("");
+
+        }
+    }
+
+    public void advisorLastNameValidation() {
+
+        if (advisorLastName.getText().length() == 0){
+            advisorLastName.setStyle("-fx-border-color: red");
+            allValidated = false;
+
+
+        } else if (!advisorLastName.getText().matches( "^[A-Za-z]*$")) {
+            advisorLastName.setStyle("-fx-border-color: red");
+            allValidated = false;
+
+
+        } else {
+            advisorLastName.setStyle("");
+
+        }
+    }
+
+    public void advisorUserNameValidation() {
+
+        if (advisorUsername.getText().length() == 0) {
+            advisorUsername.setStyle("-fx-border-color: red");
+
+        } else {
+            advisorUsername.setStyle("");
+            allValidated = true;
+        }
+
+    }
+
+    
 }
