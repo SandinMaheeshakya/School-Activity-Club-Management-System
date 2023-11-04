@@ -8,9 +8,6 @@ import javafx.fxml.FXML;
 import javafx.scene.Group;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.InputMethodEvent;
-import javafx.scene.input.KeyEvent;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
 import javafx.util.Duration;
 
@@ -76,6 +73,27 @@ public class startPageController {
 
     @FXML
     private PasswordField advisorConfirmPassword;
+
+    @FXML
+    private TextField studentEmailAddress;
+
+    @FXML
+    private TextField studentUsername;
+
+    @FXML
+    private TextField studentFirstName;
+
+    @FXML
+    private TextField studentLastName;
+
+    @FXML
+    private TextField studentID;
+
+    @FXML
+    private PasswordField studentPassword;
+
+    @FXML
+    private PasswordField studentConfirmPassword;
 
     @FXML
     private ChoiceBox<String> advisorDepartment;
@@ -297,17 +315,17 @@ public class startPageController {
 
     //User Input Validation (Advisor)
 
-    boolean allValidated = true;
+    boolean allValidatedAdvisor = true;
 
     public void advisorFirstNameValidation() {
 
         if (advisorFirstName.getText().length() == 0){
             advisorFirstName.setStyle("-fx-border-color: red");
-            allValidated = false;
+            allValidatedAdvisor = false;
 
         } else if (!advisorFirstName.getText().matches( "^[A-Za-z]*$")) {
             advisorFirstName.setStyle("-fx-border-color: red");
-            allValidated = false;
+            allValidatedAdvisor = false;
 
 
         } else {
@@ -320,12 +338,12 @@ public class startPageController {
 
         if (advisorLastName.getText().length() == 0){
             advisorLastName.setStyle("-fx-border-color: red");
-            allValidated = false;
+            allValidatedAdvisor = false;
 
 
         } else if (!advisorLastName.getText().matches( "^[A-Za-z]*$")) {
             advisorLastName.setStyle("-fx-border-color: red");
-            allValidated = false;
+            allValidatedAdvisor = false;
 
 
         } else {
@@ -341,7 +359,7 @@ public class startPageController {
 
         } else {
             advisorUsername.setStyle("");
-            allValidated = true;
+            allValidatedAdvisor = true;
         }
 
     }
@@ -350,12 +368,12 @@ public class startPageController {
 
         if (advisorEmail.getText().length() == 0){
             advisorEmail.setStyle("-fx-border-color: red");
-            allValidated = false;
+            allValidatedAdvisor = false;
 
 
         } else if (!advisorEmail.getText().matches( "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$")) {
             advisorEmail.setStyle("-fx-border-color: red");
-            allValidated = false;
+            allValidatedAdvisor = false;
 
 
         } else {
@@ -369,12 +387,12 @@ public class startPageController {
 
         if (advisorTeachingID.getText().length() == 0){
             advisorTeachingID.setStyle("-fx-border-color: red");
-            allValidated = false;
+            allValidatedAdvisor = false;
 
 
         } else if (!advisorTeachingID.getText().matches( "^[A-Za-z]{2}[0-9]{5}$")) {
             advisorTeachingID.setStyle("-fx-border-color: red");
-            allValidated = false;
+            allValidatedAdvisor = false;
 
 
         } else {
@@ -389,10 +407,113 @@ public class startPageController {
 
         if (! advisorConfirmPassword.getText().matches(advisorPassword.getText())) {
             advisorConfirmPassword.setStyle("-fx-border-color: red");
-            allValidated = false;
+            allValidatedAdvisor = false;
 
         } else {
             advisorConfirmPassword.setStyle("");
         }
     }
+
+    //User Input Validation (Student)
+
+    boolean allValidatedStudent = true;
+
+    public void studentFirstNameValidation() {
+
+        if (studentFirstName.getText().length() == 0){
+            studentFirstName.setStyle("-fx-border-color: red");
+            allValidatedStudent = false;
+
+        } else if (!studentFirstName.getText().matches( "^[A-Za-z]*$")) {
+            studentFirstName.setStyle("-fx-border-color: red");
+            allValidatedStudent = false;
+
+
+        } else {
+            studentFirstName.setStyle("");
+
+        }
+    }
+
+    public void studentLastNameValidation() {
+
+        if (studentLastName.getText().length() == 0){
+            studentLastName.setStyle("-fx-border-color: red");
+            allValidatedStudent = false;
+
+
+        } else if (!studentLastName.getText().matches( "^[A-Za-z]*$")) {
+            studentLastName.setStyle("-fx-border-color: red");
+            allValidatedStudent = false;
+
+
+        } else {
+            studentLastName.setStyle("");
+
+        }
+    }
+
+    public void studentUserNameValidation() {
+
+        if (studentUsername.getText().length() == 0) {
+            studentUsername.setStyle("-fx-border-color: red");
+
+        } else {
+            studentUsername.setStyle("");
+            allValidatedStudent = true;
+        }
+
+    }
+
+    public void studentEmailValidation() {
+
+        if (studentEmailAddress.getText().length() == 0){
+            studentEmailAddress.setStyle("-fx-border-color: red");
+            allValidatedStudent = false;
+
+
+        } else if (!studentEmailAddress.getText().matches( "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$")) {
+            studentEmailAddress.setStyle("-fx-border-color: red");
+            allValidatedStudent = false;
+
+
+        } else {
+            studentEmailAddress.setStyle("");
+
+        }
+
+    }
+
+    public void studentIDValidation() {
+
+        if (studentID.getText().length() == 0){
+            studentID.setStyle("-fx-border-color: red");
+            allValidatedStudent = false;
+
+
+        } else if (!studentID.getText().matches( "^[A-Za-z]{2}[0-9]{5}$")) {
+            studentID.setStyle("-fx-border-color: red");
+            allValidatedStudent = false;
+
+
+        } else {
+            studentID.setStyle("");
+
+        }
+
+    }
+
+    public void studentPasswordValidation() {
+
+
+        if (! studentConfirmPassword.getText().matches(studentPassword.getText())) {
+            studentConfirmPassword.setStyle("-fx-border-color: red");
+            allValidatedStudent = false;
+
+        } else {
+            studentConfirmPassword.setStyle("");
+        }
+    }
+
+
 }
