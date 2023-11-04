@@ -6,9 +6,7 @@ import javafx.animation.ScaleTransition;
 import javafx.animation.SequentialTransition;
 import javafx.fxml.FXML;
 import javafx.scene.Group;
-import javafx.scene.control.Button;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.InputMethodEvent;
 import javafx.scene.input.KeyEvent;
@@ -74,10 +72,13 @@ public class startPageController {
     private TextField advisorTeachingID;
 
     @FXML
-    private TextField advisorPassword;
+    private PasswordField advisorPassword;
 
     @FXML
-    private TextField advisorConfirmPassword;
+    private PasswordField advisorConfirmPassword;
+
+    @FXML
+    private ChoiceBox<String> advisorDepartment;
 
     @FXML
     private DatePicker advisorDOB;
@@ -189,6 +190,12 @@ public class startPageController {
         advisorButtonDecrease = new ScaleTransition(Duration.millis(200), advisorSignUpButton);
         advisorButtonDecrease.setToX(0.9);
         advisorButtonDecrease.setToY(0.9);
+
+
+        // Add choices to the ChoiceBox
+        advisorDepartment.getItems().addAll("IT", "Finance", "Sports", "History","Geography","Maths","Science");
+        advisorDepartment.setValue("IT");
+
 
     }
 
@@ -346,7 +353,7 @@ public class startPageController {
             allValidated = false;
 
 
-        } else if (!advisorEmail.getText().matches( "^[A-Za-z]*$")) {
+        } else if (!advisorEmail.getText().matches( "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$")) {
             advisorEmail.setStyle("-fx-border-color: red");
             allValidated = false;
 
@@ -356,5 +363,36 @@ public class startPageController {
 
         }
 
+    }
+
+    public void advisorTeachingIDValidation() {
+
+        if (advisorTeachingID.getText().length() == 0){
+            advisorTeachingID.setStyle("-fx-border-color: red");
+            allValidated = false;
+
+
+        } else if (!advisorTeachingID.getText().matches( "^[A-Za-z]{2}[0-9]{5}$")) {
+            advisorTeachingID.setStyle("-fx-border-color: red");
+            allValidated = false;
+
+
+        } else {
+            advisorTeachingID.setStyle("");
+
+        }
+
+    }
+
+    public void advisorPasswordValidation() {
+
+
+        if (! advisorConfirmPassword.getText().matches(advisorPassword.getText())) {
+            advisorConfirmPassword.setStyle("-fx-border-color: red");
+            allValidated = false;
+
+        } else {
+            advisorConfirmPassword.setStyle("");
+        }
     }
 }
