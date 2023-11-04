@@ -257,35 +257,13 @@ public class startPageController {
         advisorButtonIncrease.play();
     }
 
+
     public void OnClickAdvisorRegister(ActionEvent actionEvent) {
 
 
     }
 
-    public void FirstNameA(InputMethodEvent inputMethodEvent) {
-    }
+    public void OnClickStudentRegister(ActionEvent actionEvent) {
 
-    public void LastNameA(InputMethodEvent inputMethodEvent) {
-    }
-
-    public void EmailAddressA(InputMethodEvent inputMethodEvent) {
-    }
-
-    public void UserNameA(InputMethodEvent inputMethodEvent) {
-    }
-
-    public void TeachingId(InputMethodEvent inputMethodEvent) {
-    }
-
-    public void Department(InputMethodEvent inputMethodEvent) {
-    }
-
-    public void AdvisorDOB(InputMethodEvent inputMethodEvent) {
-    }
-
-    public void PasswordA(InputMethodEvent inputMethodEvent) {
-    }
-
-    public void ConfirmPasswordA(InputMethodEvent inputMethodEvent) {
     }
 }
