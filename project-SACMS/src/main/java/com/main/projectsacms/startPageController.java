@@ -339,5 +339,22 @@ public class startPageController {
 
     }
 
-    
+    public void advisorEmailValidation() {
+
+        if (advisorEmail.getText().length() == 0){
+            advisorEmail.setStyle("-fx-border-color: red");
+            allValidated = false;
+
+
+        } else if (!advisorEmail.getText().matches( "^[A-Za-z]*$")) {
+            advisorEmail.setStyle("-fx-border-color: red");
+            allValidated = false;
+
+
+        } else {
+            advisorEmail.setStyle("");
+
+        }
+
+    }
 }
