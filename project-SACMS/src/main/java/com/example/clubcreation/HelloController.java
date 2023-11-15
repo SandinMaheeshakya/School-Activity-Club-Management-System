@@ -11,6 +11,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.stage.FileChooser;
 import java.io.File;
+import java.io.FileInputStream;
 import java.sql.SQLException;
 
 public class HelloController {
@@ -59,7 +60,6 @@ public class HelloController {
 
 
 
-
     @FXML
     void clearProfile(ActionEvent event) {
 
@@ -73,8 +73,8 @@ public class HelloController {
             String clubCategory = txtCategory.getText();
             String clubAdvisor = txtAdvisor.getText();
             String email = txtEmail.getText();
-            int contact = 0;
-            Image image = imgView.getImage();
+            int contact = Integer.parseInt(txtContact.getText());
+            String image = String.valueOf(imgView.getImage());
 
             CreateClub club = new CreateClub(clubName, description, clubCategory, clubAdvisor, email, contact, image);
 

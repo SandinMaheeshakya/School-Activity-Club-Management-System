@@ -9,6 +9,7 @@ public class CreateClub {
     String clubAdvisor;
     String email;
     int contact;
+    String image;
 
     public String getClubName() {
         return clubName;
@@ -58,17 +59,15 @@ public class CreateClub {
         this.contact = contact;
     }
 
-    private Image image;
-
-    public Image getImage() {
+    public String getImage() {
         return image;
     }
 
-    public void setImage(Image image) {
+    public void setImage(String image) {
         this.image = image;
     }
 
-    public CreateClub(String clubName, String description, String clubCategory, String clubAdvisor, String email, int contact, Image image){
+    public CreateClub(String clubName, String description, String clubCategory, String clubAdvisor, String email, int contact, String image){
         this.clubName = clubName;
         this.clubCategory = clubAdvisor;
         this.description = description;

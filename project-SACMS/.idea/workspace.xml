@@ -5,11 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="160022ca-5992-48fb-a410-4036c377095f" name="Changes" comment="edited doc">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_14_11_2023_14_41__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_14_11_2023_14_41__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_11_2023_10_56__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_11_2023_10_56__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_11_2023_11_43__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_11_2023_11_43__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/clubcreation/CreateClub.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/clubcreation/CreateClub.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/clubcreation/DatabaseConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/clubcreation/DatabaseConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/clubcreation/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/clubcreation/HelloController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/clubcreation/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/clubcreation/hello-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/clubcreation/DatabaseConnection.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/clubcreation/DatabaseConnection.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/clubcreation/HelloController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/clubcreation/HelloController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/clubcreation/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/clubcreation/hello-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -139,7 +142,7 @@
       <workItem from="1699879582226" duration="6078000" />
       <workItem from="1699952666395" duration="2141000" />
       <workItem from="1700028863157" duration="600000" />
-      <workItem from="1700030230911" duration="3813000" />
+      <workItem from="1700030230911" duration="10161000" />
     </task>
     <task id="LOCAL-00001" summary="edited doc">
       <option name="closed" value="true" />

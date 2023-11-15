@@ -37,33 +37,11 @@ public class DatabaseConnection {
             statement.setString(5, club.getEmail());
             statement.setInt(6, club.getContact());
 
-            String base64Image = imageToBase64(club.getImage());
-            statement.setString(7, base64Image);
+            statement.setString(7, club.getImage());
 
             statement.executeUpdate();
 
         }
-    }
-
-    private String imageToBase64(Image image) {
-        // Convert Image to byte array
-        // Assuming you have a method to convert JavaFX Image to byte array
-        byte[] imageBytes = imageToByteArray(image);
-
-        // Encode byte array to Base64 string
-        return Base64.getEncoder().encodeToString(imageBytes);
-    }
-
-    private byte[] imageToByteArray(Image image) {
-        // Implement this method to convert JavaFX Image to byte array
-        // Example: Convert the Image to BufferedImage, then extract the byte array
-        // Refer to JavaFX documentation or other sources for appropriate conversion
-        // This example assumes BufferedImage conversion for simplicity
-        // BufferedImage bufferedImage = SwingFXUtils.fromFXImage(image, null);
-        // ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
-        // ImageIO.write(bufferedImage, "png", byteArrayOutputStream);
-        // return byteArrayOutputStream.toByteArray();
-        return new byte[0]; // Placeholder, replace with actual implementation
     }
 }
 
