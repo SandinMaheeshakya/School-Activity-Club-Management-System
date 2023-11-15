@@ -1,0 +1,70 @@
+.background{
+    -fx-background-color: #1f1f1f;
+}
+
+.transparent{
+    -fx-background-color: rgba(0 ,0 ,0 ,0);
+}
+
+.clubs{
+    -fx-font-style: #1DB954;
+}
+
+.search-bar{
+    -fx-border-radius: 50;
+    -fx-border-color: #D7D7D7;
+}
+
+.shadow{
+    -fx-effect: dropShadow(three-pass-box, rgba(0,0,0,0),10, 0, 0, 10);
+}
+
+.linear-grad
+{
+    -fx-background-color: linear-gradient(to bottom , #6d6d6d, #1f1f1f);
+}
+
+.pane{
+    -fx-background-color: linear-gradient(to bottom, #ffffff, #000000);
+}
+
+.pane2{
+    -fx-background-color: #373737;
+}
+
+.input {
+    border: none;
+    -fx-background-color: rgba(0, 0, 0, 0);
+    -fx-border-color: transparent transparent white transparent;
+    -fx-border-width: 0 0 1 0;
+    -fx-text-fill: white;
+}
+
+.text-area {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent transparent white transparent;
+    -fx-border-width: 0 0 1 0;
+}
+
+.button {
+    -fx-background-color: transparent;
+}
+
+.image{
+    -fx-perspective: 200px;
+    -fx-background-color: derive(#1f1f1f, -30%);
+}
+
+.spotifyButton {
+    -fx-background-color: #1DB954;
+}
+
+.closeButton {
+    -fx-background-color: #e4717a;
+}
+
+
+
+
+
+

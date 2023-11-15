@@ -1,0 +1,176 @@
+Index: src/main/java/module-info.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>module com.example.clubcreation {\r\n    requires javafx.controls;\r\n    requires javafx.fxml;\r\n\r\n\r\n    opens com.example.clubcreation to javafx.fxml;\r\n    exports com.example.clubcreation;\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/module-info.java b/src/main/java/module-info.java
+--- a/src/main/java/module-info.java	(revision 144e79afa74fb4cf2ab2fc5ed9637c8568957277)
++++ b/src/main/java/module-info.java	(date 1699281687127)
+@@ -1,6 +1,8 @@
+ module com.example.clubcreation {
+     requires javafx.controls;
+     requires javafx.fxml;
++    requires java.sql;
++    requires mysql.connector.j;
+ 
+ 
+     opens com.example.clubcreation to javafx.fxml;
+Index: src/main/java/com/example/clubcreation/DatabaseConnection.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/example/clubcreation/DatabaseConnection.java b/src/main/java/com/example/clubcreation/DatabaseConnection.java
+new file mode 100644
+--- /dev/null	(date 1699451004208)
++++ b/src/main/java/com/example/clubcreation/DatabaseConnection.java	(date 1699451004208)
+@@ -0,0 +1,41 @@
++package com.example.clubcreation;
++import java.sql.*;
++
++public class DatabaseConnection {
++    private Connection connection;
++    private String url;
++    private String userName;
++    private String password;
++
++    public DatabaseConnection(String url, String userName, String password) {
++        this.url = url;
++        this.userName = userName;
++        this.password = password;
++    }
++
++    public void connect() throws SQLException {
++        connection = DriverManager.getConnection(url, userName, password);
++    }
++
++    public void disconnect() throws SQLException {
++        if (connection != null && !connection.isClosed()) {
++            connection.close();
++        }
++    }
++
++    public void insertClub(CreateClub club) throws SQLException {
++        String insertQuery = "INSERT INTO club_creation (clubName, description, clubCategory, advisorName, email, contact) VALUES (?, ?, ?, ?, ?, ?)";
++
++        try (PreparedStatement statement = connection.prepareStatement(insertQuery)) {
++            statement.setString(1, club.getClubName());
++            statement.setString(2, club.getDescription());
++            statement.setString(3, club.getClubCategory());
++            statement.setString(4, club.getClubAdvisor());
++            statement.setString(5, club.getEmail());
++            statement.setInt(6, club.getContact());
++
++            statement.executeUpdate();
++        }
++    }
++}
++
+Index: src/main/java/com/example/clubcreation/CreateClub.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/example/clubcreation/CreateClub.java b/src/main/java/com/example/clubcreation/CreateClub.java
+new file mode 100644
+--- /dev/null	(date 1699019835592)
++++ b/src/main/java/com/example/clubcreation/CreateClub.java	(date 1699019835592)
+@@ -0,0 +1,81 @@
++package com.example.clubcreation;
++
++import javafx.scene.image.Image;
++
++public class CreateClub {
++    String clubName;
++    String description;
++    String clubCategory;
++    String clubAdvisor;
++    String email;
++    int contact;
++
++    public String getClubName() {
++        return clubName;
++    }
++
++    public void setClubName(String clubName) {
++        this.clubName = clubName;
++    }
++
++    public String getDescription() {
++        return description;
++    }
++
++    public void setDescription(String description) {
++        this.description = description;
++    }
++
++    public String getClubCategory() {
++        return clubCategory;
++    }
++
++    public void setClubCategory(String clubCategory) {
++        this.clubCategory = clubCategory;
++    }
++
++    public String getClubAdvisor() {
++        return clubAdvisor;
++    }
++
++    public void setClubAdvisor(String clubAdvisor) {
++        this.clubAdvisor = clubAdvisor;
++    }
++
++    public String getEmail() {
++        return email;
++    }
++
++    public void setEmail(String email) {
++        this.email = email;
++    }
++
++    public int getContact() {
++        return contact;
++    }
++
++    public void setContact(int contact) {
++        this.contact = contact;
++    }
++
++    private Image image;
++
++    public Image getItemImage() {
++        return image;
++    }
++
++    public void setItemImage(Image itemImage) {
++        this.image = itemImage;
++    }
++
++    public CreateClub(String clubName, String description, String clubCategory, String clubAdvisor, String email, int contact, Image image){
++        this.clubName = clubName;
++        this.clubCategory = clubAdvisor;
++        this.description = description;
++        this.clubAdvisor = clubAdvisor;
++        this.email = email;
++        this.contact = contact;
++        this.image = image;
++    }
++
++}
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><project version=\"4\">\r\n  <component name=\"ExternalStorageConfigurationManager\" enabled=\"true\" />\r\n  <component name=\"MavenProjectsManager\">\r\n    <option name=\"originalFiles\">\r\n      <list>\r\n        <option value=\"$PROJECT_DIR$/pom.xml\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"ProjectRootManager\" version=\"2\" languageLevel=\"JDK_X\" default=\"true\" project-jdk-name=\"openjdk-21\" project-jdk-type=\"JavaSDK\">\r\n    <output url=\"file://$PROJECT_DIR$/out\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	(revision 144e79afa74fb4cf2ab2fc5ed9637c8568957277)
++++ b/.idea/misc.xml	(date 1698910523944)
+@@ -1,3 +1,4 @@
++<?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+   <component name="ExternalStorageConfigurationManager" enabled="true" />
+   <component name="MavenProjectsManager">

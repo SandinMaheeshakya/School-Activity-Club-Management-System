@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #000000;" stylesheets="@../../main/projectsacms/CSS%20Files/styles.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.clubcreation.HelloController">
+   <children>
+      <VBox layoutX="8.0" layoutY="169.0" prefHeight="542.0" prefWidth="258.0" style="-fx-background-radius: 15px;" styleClass="background" stylesheets="@../../main/projectsacms/CSS%20Files/styles.css" />
+      <StackPane layoutX="275.0" layoutY="25.0" prefHeight="686.0" prefWidth="998.0" style="-fx-background-radius: 15px;">
+         <children>
+            <Pane fx:id="pnlCreateClub" prefHeight="593.0" prefWidth="1023.0" style="-fx-background-radius: 15px;" styleClass="linear-grad" stylesheets="@../../main/projectsacms/CSS%20Files/styles.css">
+               <children>
+                  <Pane prefHeight="236.0" prefWidth="998.0" style="-fx-background-radius: 15px 15px 0px 0px;" styleClass="pane2" stylesheets="@../../main/projectsacms/CSS%20Files/styles.css">
+                     <children>
+                        <ImageView fx:id="imgView" fitHeight="200.0" fitWidth="200.0" layoutX="17.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true" styleClass="image" />
+                        <Button fx:id="btnChooseImage" layoutX="72.0" layoutY="107.0" mnemonicParsing="false" onAction="#choosePhoto" text="Choose photo" textFill="WHITE">
+                           <font>
+                              <Font name="Arial" size="12.0" />
+                           </font>
+                        </Button>
+                     </children></Pane>
+                  <VBox layoutX="58.0" layoutY="286.0" prefHeight="228.0" prefWidth="141.0">
+                     <children>
+                        <Label text="Club name:" textFill="WHITE">
+                           <font>
+                              <Font name="Arial Bold" size="13.0" />
+                           </font>
+                        </Label>
+                        <Pane prefHeight="38.0" prefWidth="142.0" />
+                        <Label text="Description:" textFill="WHITE">
+                           <font>
+                              <Font name="Arial Bold" size="13.0" />
+                           </font>
+                        </Label>
+                        <Pane prefHeight="38.0" prefWidth="142.0" />
+                        <Label text="Club category or type:" textFill="WHITE">
+                           <font>
+                              <Font name="Arial Bold" size="13.0" />
+                           </font>
+                        </Label>
+                        <Pane prefHeight="38.0" prefWidth="142.0" />
+                        <Label text="Club advisor's name:" textFill="WHITE">
+                           <font>
+                              <Font name="Arial Bold" size="13.0" />
+                           </font>
+                        </Label>
+                        <Pane prefHeight="38.0" prefWidth="142.0" />
+                        <Label text="Email:" textFill="WHITE">
+                           <font>
+                              <Font name="Arial Bold" size="13.0" />
+                           </font>
+                        </Label>
+                        <Pane prefHeight="38.0" prefWidth="142.0" />
+                        <Label text="Contact number:" textFill="WHITE">
+                           <font>
+                              <Font name="Arial Bold" size="13.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <VBox layoutX="288.0" layoutY="259.0" prefHeight="270.0" prefWidth="642.0">
+                     <children>
+                        <Pane prefHeight="38.0" prefWidth="386.0" />
+                        <TextField fx:id="txtClubName" prefHeight="25.0" prefWidth="400.0" styleClass="input" stylesheets="@../../main/projectsacms/CSS%20Files/styles.css" />
+                        <Pane prefHeight="38.0" prefWidth="142.0" />
+                        <TextField fx:id="txtDescription" prefHeight="25.0" prefWidth="400.0" styleClass="input" stylesheets="@../../main/projectsacms/CSS%20Files/styles.css" />
+                        <Pane prefHeight="38.0" prefWidth="142.0" />
+                        <TextField fx:id="txtCategory" prefHeight="25.0" prefWidth="400.0" styleClass="input" stylesheets="@../../main/projectsacms/CSS%20Files/styles.css" />
+                        <Pane prefHeight="38.0" prefWidth="142.0" />
+                        <TextField fx:id="txtAdvisor" prefHeight="25.0" prefWidth="400.0" styleClass="input" stylesheets="@../../main/projectsacms/CSS%20Files/styles.css" />
+                        <Pane prefHeight="38.0" prefWidth="386.0" />
+                        <TextField fx:id="txtEmail" prefHeight="25.0" prefWidth="400.0" styleClass="input" stylesheets="@../../main/projectsacms/CSS%20Files/styles.css" />
+                        <Pane prefHeight="38.0" prefWidth="386.0" />
+                        <TextField fx:id="txtContact" prefHeight="25.0" prefWidth="400.0" styleClass="input" stylesheets="@../../main/projectsacms/CSS%20Files/styles.css" />
+                        <Pane prefHeight="38.0" prefWidth="142.0" />
+                     </children>
+                  </VBox>
+                  <Button fx:id="btnCreate" layoutX="708.0" layoutY="606.0" mnemonicParsing="false" onAction="#createProfile" styleClass="spotifyButton" stylesheets="@../../main/projectsacms/CSS%20Files/styles.css" text="Create" textFill="WHITE" />
+                  <Button fx:id="btnClear" layoutX="833.0" layoutY="606.0" mnemonicParsing="false" onAction="#clearProfile" styleClass="closeButton" stylesheets="@../../main/projectsacms/CSS%20Files/styles.css" text="Clear" textFill="WHITE" />
+               </children>
+            </Pane>
+            <Pane fx:id="pnlWelcomePage" prefHeight="606.0" prefWidth="1023.0" style="-fx-background-radius: 15px;" styleClass="pane" stylesheets="@../../main/projectsacms/CSS%20Files/styles.css" visible="false">
+               <children>
+                  <Label layoutX="337.0" layoutY="94.0" text="Welcome to the SACMS!">
+                     <font>
+                        <Font name="Arial Bold" size="30.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="250.0" fitWidth="250.0" layoutX="198.0" layoutY="234.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../main/projectsacms/IMG/Create.png" />
+                     </image>
+                  </ImageView>
+                  <Button fx:id="btnClubCreate" layoutX="257.0" layoutY="502.0" mnemonicParsing="false" onAction="#goToCreateClub" stylesheets="@../../main/projectsacms/CSS%20Files/styles.css" text="Create a new club" textFill="WHITE">
+                     <font>
+                        <Font name="Arial" size="14.0" />
+                     </font>
+                  </Button>
+                  <ImageView fitHeight="228.0" fitWidth="230.0" layoutX="642.0" layoutY="276.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../main/projectsacms/IMG/Manage.png" />
+                     </image>
+                  </ImageView>
+                  <Button fx:id="btnClubProfile" layoutX="695.0" layoutY="502.0" mnemonicParsing="false" onAction="#goToManageClub" stylesheets="@../../main/projectsacms/CSS%20Files/styles.css" text="Mange club profiles" textFill="WHITE">
+                     <font>
+                        <Font name="Arial" size="14.0" />
+                     </font>
+                  </Button>
+               </children>
+            </Pane>
+            <Pane prefHeight="606.0" prefWidth="1023.0" style="-fx-background-radius: 15px;" styleClass="linear-grad" stylesheets="@../../main/projectsacms/CSS%20Files/styles.css" visible="false">
+               <children>
+                  <Label layoutX="59.0" layoutY="44.0" prefHeight="22.0" prefWidth="113.0" text="Clubs" textFill="WHITE">
+                     <font>
+                        <Font name="Bell MT Bold" size="34.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+         </children>
+      </StackPane>
+      <Pane layoutX="8.0" layoutY="25.0" prefHeight="134.0" prefWidth="258.0" style="-fx-background-radius: 15px;" styleClass="background" stylesheets="@../../main/projectsacms/CSS%20Files/styles.css">
+         <children>
+            <ImageView fitHeight="26.0" fitWidth="26.0" layoutX="18.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../main/projectsacms/IMG/HomeIcon.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="btnHome" layoutX="53.0" layoutY="16.0" mnemonicParsing="false" onAction="#goToHomePage" prefHeight="34.0" prefWidth="76.0" stylesheets="@../../main/projectsacms/CSS%20Files/styles.css" text="Home" textAlignment="RIGHT" textFill="WHITE">
+               <font>
+                  <Font name="Arial Bold" size="18.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
