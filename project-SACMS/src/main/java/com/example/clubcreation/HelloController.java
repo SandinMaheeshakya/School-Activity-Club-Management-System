@@ -3,6 +3,7 @@ package com.example.clubcreation;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
@@ -85,7 +86,7 @@ public class HelloController implements Initializable {
 
     @FXML
     void createProfile(ActionEvent event) {
-        if(event.getSource() == btnCreate){
+        if (event.getSource() == btnCreate) {
             String clubName = txtClubName.getText();
             String description = txtDescription.getText();
             String clubCategory = txtCategory.getText();
@@ -97,68 +98,88 @@ public class HelloController implements Initializable {
             boolean isValid = true;
             String errorMessage = "";
 
-            if (clubName.isEmpty()){
+            if (clubName.isEmpty()) {
                 isValid = false;
-                txtClubName.setStyle("-fx-background-color: red");
-                errorMessage += "Please enter proper name for the club\n";
+                txtClubName.setStyle("-fx-border-color: #a33a3a");
+                errorMessage += "Please enter proper name for the club.\n";
             } else {
-                if (!clubName.matches("[a-zA-Z ]+")){
+                if (!clubName.matches("[a-zA-Z ]+")) {
                     isValid = false;
-                    txtClubName.setStyle("-fx-background-color: red");
-                    errorMessage += "Club name should be only letters\n";
+                    txtClubName.setStyle("-fx-border-color: #a33a3a");
+                    errorMessage += "Club name should be only letters.\n";
                 }
             }
-            if (clubAdvisor.isEmpty()){
+            if (clubAdvisor.isEmpty()) {
                 isValid = false;
-                txtAdvisor.setStyle("-fx-background-color: red");
-                errorMessage += "Please enter advisor name\n";
+                txtAdvisor.setStyle("-fx-border-color: #a33a3a");
+                errorMessage += "Please enter advisor name.\n";
             }
-            if (clubCategory.isEmpty()){
+            if (clubCategory.isEmpty()) {
                 isValid = false;
-                txtCategory.setStyle("-fx-background-color: red");
-                errorMessage += "Please enter type of the club\n";
+                txtCategory.setStyle("-fx-border-color: #a33a3a");
+                errorMessage += "Please enter type of the club.\n";
+            }
+            if (email.isEmpty()) {
+                isValid = false;
+                txtEmail.setStyle("-fx-border-color: #a33a3a");
+                errorMessage += "Please enter your email.\n";
+            }
+            if (description.isEmpty()) {
+                isValid = false;
+                txtDescription.setStyle("-fx-border-color: #a33a3a");
+                errorMessage += "Please enter a description.\n";
             }
             int clubContact = 0;
-            if(contact.isEmpty()){
+            if (contact.isEmpty()) {
                 isValid = false;
-                txtContact.setStyle("-fx-border-color: red");
-                errorMessage += "Please enter a valid contact\n";
+                txtContact.setStyle("-fx-border-color: #a33a3a");
+                errorMessage += "Please enter a valid contact.\n";
             } else {
                 try {
                     clubContact = Integer.parseInt(contact);
                     if (clubContact < 0) {
                         isValid = false;
-                        txtContact.setStyle("-fx-border-color: red");
-                        errorMessage += "Please enter a valid contact\n";
+                        txtContact.setStyle("-fx-border-color: #a33a3a");
+                        errorMessage += "Please enter a valid contact.\n";
                     }
                 } catch (NumberFormatException e) {
                     isValid = false;
-                    txtContact.setStyle("-fx-border-color: red");
-                    errorMessage += "Please enter a valid contact\n";
+                    txtContact.setStyle("-fx-border-color: #a33a3a");
+                    errorMessage += "Please enter a valid contact.\n";
                 }
             }
+            if (isValid) {
+                CreateClub club = new CreateClub(clubName, description, clubCategory, clubAdvisor, email, Integer.parseInt(contact), image);
 
-            CreateClub club = new CreateClub(clubName, description, clubCategory, clubAdvisor, email, Integer.parseInt(contact), image);
+                // Create an instance of DatabaseHandler and save the club data to the database
+                DatabaseConnection databaseHandler = new DatabaseConnection("jdbc:mysql://localhost:3306/sacms", "root", "");
+                try {
+                    databaseHandler.connect();
+                    databaseHandler.insertClub(club);
+                    databaseHandler.disconnect();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
 
-            // Create an instance of DatabaseHandler and save the club data to the database
-            DatabaseConnection databaseHandler = new DatabaseConnection("jdbc:mysql://localhost:3306/sacms", "root", "");
-            try {
-                databaseHandler.connect();
-                databaseHandler.insertClub(club);
-                databaseHandler.disconnect();
-            } catch (SQLException e) {
-                e.printStackTrace();
+                txtClubName.clear();
+                txtDescription.clear();
+                txtCategory.clear();
+                txtAdvisor.clear();
+                txtEmail.clear();
+                txtContact.clear();
+                imgView.setImage(null);
+            } else {
+                showAlert("Invalid Input", errorMessage);
             }
         }
-        txtClubName.clear();
-        txtDescription.clear();
-        txtCategory.clear();
-        txtAdvisor.clear();
-        txtEmail.clear();
-        txtContact.clear();
-        imgView.setImage(null);
+    }
 
-
+    private void showAlert(String title, String message){ //setting the alert message
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle(title);
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.showAndWait();
     }
 
     @FXML

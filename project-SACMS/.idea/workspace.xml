@@ -5,18 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="160022ca-5992-48fb-a410-4036c377095f" name="Changes" comment="edited doc">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/clubcreation/CardController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/clubcreation/Club.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/main/projectsacms/FXML Files/card.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_11_2023_10_56_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_11_2023_10_56__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_11_2023_11_43_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_11_2023_11_43__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/clubcreation/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/clubcreation/HelloController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/clubcreation/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/clubcreation/hello-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/main/projectsacms/IMG/searchIcon.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/main/projectsacms/IMG/searchIcon.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/clubcreation/CardController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/clubcreation/CardController.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -147,7 +137,7 @@
       <workItem from="1699952666395" duration="2141000" />
       <workItem from="1700028863157" duration="600000" />
       <workItem from="1700030230911" duration="12421000" />
-      <workItem from="1700124195238" duration="8496000" />
+      <workItem from="1700124195238" duration="10816000" />
     </task>
     <task id="LOCAL-00001" summary="edited doc">
       <option name="closed" value="true" />
