@@ -11,7 +11,7 @@ import java.io.IOException;
 public class SACMS extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(SACMS.class.getResource("FXML Files/startPage.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(SACMS.class.getResource("FXML Files/Attendance/AttendancePage.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 1280, 720 );
         stage.setTitle("StudentSync");
         stage.initStyle(StageStyle.UNDECORATED);

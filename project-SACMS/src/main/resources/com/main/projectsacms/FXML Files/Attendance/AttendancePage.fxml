@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.main.projectsacms.AttendanceTrackingController">
+   <children>
+      <Pane prefHeight="39.0" prefWidth="1283.0" style="-fx-background-color: #75e3eb;">
+         <children>
+            <ImageView fitHeight="17.0" fitWidth="17.0" layoutX="1252.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Icons/Functional/close.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="31.0" fitWidth="17.0" layoutX="1225.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Icons/Functional/minimize.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="252.0" fitWidth="317.0" layoutX="-24.0" layoutY="-106.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Icons/Functional/logo.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <Rectangle arcHeight="20.0" arcWidth="20.0" height="75.0" layoutX="211.0" layoutY="81.0" stroke="#00fff7" strokeType="INSIDE" strokeWidth="4.0" width="151.0" />
+      <ImageView fitHeight="47.0" fitWidth="39.0" layoutX="265.0" layoutY="88.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../Icons/Functional/Clubs.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="263.0" layoutY="127.0" text="Home" textFill="WHITE">
+         <font>
+            <Font name="Calibri Bold" size="17.0" />
+         </font>
+      </Label>
+      <Rectangle arcHeight="20.0" arcWidth="20.0" height="75.0" layoutX="675.0" layoutY="81.0" stroke="#00fff7" strokeType="INSIDE" strokeWidth="4.0" width="151.0" />
+      <Rectangle arcHeight="20.0" arcWidth="20.0" height="75.0" layoutX="928.0" layoutY="81.0" stroke="#00fff7" strokeType="INSIDE" strokeWidth="4.0" width="151.0" />
+      <Rectangle arcHeight="20.0" arcWidth="20.0" height="75.0" layoutX="428.0" layoutY="81.0" stroke="#00fff7" strokeType="INSIDE" strokeWidth="4.0" width="151.0" />
+      <ImageView fitHeight="39.0" fitWidth="39.0" layoutX="484.0" layoutY="88.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../Icons/Functional/ClubManage.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="484.0" layoutY="127.0" text="Clubs" textFill="WHITE">
+         <font>
+            <Font name="Calibri Bold" size="17.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="39.0" fitWidth="39.0" layoutX="731.0" layoutY="88.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../Icons/Functional/Events.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="727.0" layoutY="129.0" text="Events" textFill="WHITE">
+         <font>
+            <Font name="Calibri Bold" size="17.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="39.0" fitWidth="39.0" layoutX="984.0" layoutY="88.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../Icons/Functional/Attendence.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="962.0" layoutY="129.0" text="Attendence" textFill="WHITE">
+         <font>
+            <Font name="Calibri Bold" size="17.0" />
+         </font>
+      </Label>
+      <Rectangle arcHeight="40.0" arcWidth="40.0" fill="#1b2b32" height="119.0" layoutX="209.0" layoutY="173.0" stroke="BLACK" strokeType="INSIDE" width="874.0" />
+      <TextField layoutX="408.0" layoutY="198.0" prefHeight="25.0" prefWidth="396.0" />
+      <ChoiceBox layoutX="314.0" layoutY="253.0" prefHeight="25.0" prefWidth="174.0" />
+      <Button layoutX="914.0" layoutY="213.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="83.0" text="Filter" />
+      <Label layoutX="421.0" layoutY="178.0" prefHeight="17.0" prefWidth="68.0" text="Search" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="314.0" layoutY="232.0" prefHeight="17.0" prefWidth="68.0" text="Club" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <DatePicker layoutX="507.0" layoutY="253.0" />
+      <DatePicker layoutX="702.0" layoutY="253.0" />
+      <Label layoutX="507.0" layoutY="232.0" prefHeight="17.0" prefWidth="68.0" text="From" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="702.0" layoutY="232.0" prefHeight="17.0" prefWidth="68.0" text="To" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Button fx:id="switchToPageOneButton" layoutX="907.0" layoutY="660.0" mnemonicParsing="false" onAction="#switchToPageOne" prefHeight="25.0" prefWidth="26.0" text="1" />
+      <Button fx:id="switchToPageFourButton" layoutX="1004.0" layoutY="660.0" mnemonicParsing="false" onAction="#switchToPageFour" prefHeight="25.0" prefWidth="26.0" text="4" />
+      <Button fx:id="switchToPageTwoButton" layoutX="939.0" layoutY="660.0" mnemonicParsing="false" onAction="#switchToPageTwo" prefHeight="25.0" prefWidth="26.0" text="2" />
+      <Button fx:id="switchToPageThreeButton" layoutX="971.0" layoutY="660.0" mnemonicParsing="false" onAction="#switchToPageThree" prefHeight="25.0" prefWidth="26.0" text="3" />
+      <Button fx:id="changePageToLeftButton" layoutX="876.0" layoutY="660.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="26.0" text="&lt;" />
+      <Button fx:id="changePageToRightButton" layoutX="1036.0" layoutY="660.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="26.0" text="&gt;" />
+      <AnchorPane fx:id="EventsDisplayPageOne" layoutX="214.0" layoutY="301.0" prefHeight="354.0" prefWidth="874.0">
+         <children>
+            <Pane fx:id="PageOneSubEventPaneOne" layoutX="14.0" layoutY="6.0" prefHeight="98.0" prefWidth="860.0" />
+            <Pane fx:id="PageOneSubEventPaneTwo" layoutX="14.0" layoutY="128.0" prefHeight="98.0" prefWidth="860.0" />
+            <Pane fx:id="PageOneSubEventPaneThree" layoutX="14.0" layoutY="242.0" prefHeight="98.0" prefWidth="860.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="EventsDisplayPageTwo" layoutX="214.0" layoutY="301.0" prefHeight="354.0" prefWidth="874.0" visible="false">
+         <children>
+            <Pane fx:id="PageTwoSubEventPaneOne" layoutX="14.0" layoutY="6.0" prefHeight="98.0" prefWidth="860.0" />
+            <Pane fx:id="PageTwoSubEventPaneTwo" layoutX="14.0" layoutY="128.0" prefHeight="98.0" prefWidth="860.0" />
+            <Pane fx:id="PageTwoSubEventPaneThree" layoutX="14.0" layoutY="242.0" prefHeight="98.0" prefWidth="860.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="EventsDisplayPageThree" layoutX="214.0" layoutY="301.0" prefHeight="354.0" prefWidth="874.0" visible="false">
+         <children>
+            <Pane fx:id="PageThreeSubEventPaneOne" layoutX="14.0" layoutY="6.0" prefHeight="98.0" prefWidth="860.0" />
+            <Pane fx:id="PageThreeSubEventPaneTwo" layoutX="14.0" layoutY="128.0" prefHeight="98.0" prefWidth="860.0" />
+            <Pane fx:id="PageThreeSubEventPaneThree" layoutX="14.0" layoutY="242.0" prefHeight="98.0" prefWidth="860.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="EventsDisplayPageFour" layoutX="214.0" layoutY="301.0" prefHeight="354.0" prefWidth="874.0" visible="false">
+         <children>
+            <Pane fx:id="PageFourSubEventPaneOne" layoutX="14.0" layoutY="6.0" prefHeight="98.0" prefWidth="860.0" />
+            <Pane fx:id="PageFourSubEventPaneTwo" layoutX="14.0" layoutY="128.0" prefHeight="98.0" prefWidth="860.0" />
+            <Pane fx:id="PageFourSubEventPaneThree" layoutX="14.0" layoutY="242.0" prefHeight="98.0" prefWidth="860.0" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
