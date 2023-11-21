@@ -3,17 +3,17 @@ package com.example.clubcreation;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.stage.FileChooser;
 import java.io.File;
+import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class HelloController implements Initializable {
@@ -35,6 +35,9 @@ public class HelloController implements Initializable {
 
     @FXML
     private Button btnHome;
+
+    @FXML
+    private TextField txtClubID;
 
     @FXML
     private TextField txtAdvisor;
@@ -65,15 +68,46 @@ public class HelloController implements Initializable {
 
     @FXML
     private Pane pnlClubProfiles;
+    @FXML
+    private TableView <CreateClub> tblManage;
 
     @FXML
-    private HBox cardLayout;
+    private TableColumn<CreateClub, String> colAdvisorName;
+
+    @FXML
+    private TableColumn<CreateClub, String> colClubName;
+
+    @FXML
+    private TableColumn<CreateClub, String> colClubType;
+
+    @FXML
+    private TableColumn<CreateClub, Integer> colContact;
+
+    @FXML
+    private TableColumn<CreateClub, String> colDescription;
+
+    @FXML
+    private TableColumn<CreateClub, String> colEmail;
+
+    @FXML
+    private TableColumn<CreateClub, String> colProfilePicture;
+
+    @FXML
+    private TableColumn<CreateClub, String> colClubID;
+
+
+    @FXML
+    private Button btnDelete;
+
+    @FXML
+    private Button btnUpdate;
 
 
 
     @FXML
     void clearProfile(ActionEvent event) {
         if (event.getSource() == btnClear){
+            txtClubID.clear();
             txtClubName.clear();
             txtDescription.clear();
             txtCategory.clear();
@@ -85,8 +119,9 @@ public class HelloController implements Initializable {
     }
 
     @FXML
-    void createProfile(ActionEvent event) {
+    void createProfile(ActionEvent event) throws IOException {
         if (event.getSource() == btnCreate) {
+            String clubID = txtClubID.getId();
             String clubName = txtClubName.getText();
             String description = txtDescription.getText();
             String clubCategory = txtCategory.getText();
@@ -108,6 +143,11 @@ public class HelloController implements Initializable {
                     txtClubName.setStyle("-fx-border-color: #a33a3a");
                     errorMessage += "Club name should be only letters.\n";
                 }
+            }
+            if (clubID.isEmpty()) {
+                isValid = false;
+                txtClubID.setStyle("-fx-border-color: #a33a3a");
+                errorMessage += "Please enter Club ID.\n";
             }
             if (clubAdvisor.isEmpty()) {
                 isValid = false;
@@ -149,7 +189,7 @@ public class HelloController implements Initializable {
                 }
             }
             if (isValid) {
-                CreateClub club = new CreateClub(clubName, description, clubCategory, clubAdvisor, email, Integer.parseInt(contact), image);
+                CreateClub club = new CreateClub(clubID, clubName, description, clubCategory, clubAdvisor, email, Integer.parseInt(contact), image);
 
                 // Create an instance of DatabaseHandler and save the club data to the database
                 DatabaseConnection databaseHandler = new DatabaseConnection("jdbc:mysql://localhost:3306/sacms", "root", "");
@@ -160,7 +200,7 @@ public class HelloController implements Initializable {
                 } catch (SQLException e) {
                     e.printStackTrace();
                 }
-
+                txtClubID.clear();
                 txtClubName.clear();
                 txtDescription.clear();
                 txtCategory.clear();
@@ -168,6 +208,18 @@ public class HelloController implements Initializable {
                 txtEmail.clear();
                 txtContact.clear();
                 imgView.setImage(null);
+
+                txtClubID.setStyle("");
+                txtClubName.setStyle("");
+                txtDescription.setStyle("");
+                txtCategory.setStyle("");
+                txtAdvisor.setStyle("");
+                txtEmail.setStyle("");
+                txtContact.setStyle("");
+
+                settingTheTable();
+                tblManage.getColumns();
+
             } else {
                 showAlert("Invalid Input", errorMessage);
             }
@@ -211,7 +263,7 @@ public class HelloController implements Initializable {
     }
 
     @FXML
-    void choosePhoto(ActionEvent event) {
+    void choosePhoto (ActionEvent event) {
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Open Image File");
         fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Image Files", "*.png", "*.jpg", "*.jpeg", "*.gif"));
@@ -220,10 +272,9 @@ public class HelloController implements Initializable {
 
         if (selectedFile != null) {
             try {
-                // Load the selected image file into an Image object
                 Image image = new Image(selectedFile.toURI().toString());
-                // Set the Image object to the ImageView
                 imgView.setImage(image);
+
 
             } catch (Exception e) {
                 e.printStackTrace();
@@ -231,9 +282,61 @@ public class HelloController implements Initializable {
         }
     }
 
+    public void settingTheTable(){
+        List<CreateClub> clubList = DatabaseConnection.clubDeatils();
+        tblManage.getItems().setAll(clubList);
+    }
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        colClubID.setCellValueFactory(new PropertyValueFactory<>("clubID"));
+        colClubName.setCellValueFactory(new PropertyValueFactory<>("clubName"));
+        colDescription.setCellValueFactory(new PropertyValueFactory<>("description"));
+        colClubType.setCellValueFactory(new PropertyValueFactory<>("clubCategory"));
+        colAdvisorName.setCellValueFactory(new PropertyValueFactory<>("clubAdvisor"));
+        colEmail.setCellValueFactory(new PropertyValueFactory<>("email"));
+        colContact.setCellValueFactory(new PropertyValueFactory<>("contact"));
+        colProfilePicture.setCellValueFactory(new PropertyValueFactory<>("image"));
+        colProfilePicture.setCellFactory(column -> new TableCell<CreateClub, String>() {
+            private final ImageView imageView = new ImageView();
+
+            {
+                imageView.setFitWidth(50);
+                imageView.setFitHeight(50);
+            }
+            @Override
+            protected void updateItem(String imagePath, boolean empty) {
+                super.updateItem(imagePath, empty);
+
+                if (empty || imagePath == null || imagePath.isEmpty()) {
+                    setGraphic(null);
+                } else {
+                    try {
+                        Image image = new Image(new File(imagePath).toURI().toString());
+                        imageView.setImage(image);
+                        setGraphic(imageView);
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+
+        });
+        settingTheTable();
+
     }
+
+    @FXML
+    void updateClubs(ActionEvent event) {
+
+
+    }
+
+    @FXML
+    void deleteClubs(ActionEvent event) {}
+
+
+
 }
 

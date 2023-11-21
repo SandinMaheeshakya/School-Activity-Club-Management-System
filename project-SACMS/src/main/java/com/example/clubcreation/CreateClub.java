@@ -3,6 +3,7 @@ package com.example.clubcreation;
 import javafx.scene.image.Image;
 
 public class CreateClub {
+    String clubID;
     String clubName;
     String description;
     String clubCategory;
@@ -10,6 +11,14 @@ public class CreateClub {
     String email;
     int contact;
     String image;
+
+    public String getClubID() {
+        return clubID;
+    }
+
+    public void setClubID(String clubID) {
+        this.clubID = clubID;
+    }
 
     public String getClubName() {
         return clubName;
@@ -67,7 +76,8 @@ public class CreateClub {
         this.image = image;
     }
 
-    public CreateClub(String clubName, String description, String clubCategory, String clubAdvisor, String email, int contact, String image){
+    public CreateClub(String clubID, String clubName, String description, String clubCategory, String clubAdvisor, String email, int contact, String image){
+        this.clubID = clubID;
         this.clubName = clubName;
         this.clubCategory = clubAdvisor;
         this.description = description;

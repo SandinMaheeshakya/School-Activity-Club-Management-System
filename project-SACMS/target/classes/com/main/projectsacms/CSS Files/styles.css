@@ -56,12 +56,93 @@
 }
 
 .spotifyButton {
-    -fx-background-color: #1DB954;
+    -fx-background-color: linear-gradient(from 0% 0% to 100% 100%, #7FFF00, #00FF00 50%, #00DDEB);
+    -fx-font-weight: bold;
 }
 
-.closeButton {
-    -fx-background-color: #e4717a;
+.spotifyButton:hover {
+    -fx-background-color: linear-gradient(from 0% 0% to 100% 100%, #7FFF00, #00FF00 50%, #00DDEB);
+    -fx-background-radius: 8px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 255, 0, 0.4), 0, 5, 15, -5);
 }
+
+
+.closeButton {
+    -fx-background-color: linear-gradient(from 0% 0% to 100% 100%, #FF3333, #FF6666 50%, #FF0000);
+    -fx-font-weight: bold;
+}
+
+.closeButton:hover{
+    -fx-background-color: linear-gradient(from 0% 0% to 100% 100%, #FF3333, #FF6666 50%, #FF0000);
+    -fx-background-radius: 8px;
+    -fx-effect: dropshadow(gaussian, rgba(255, 0, 0, 0.4), 0, 5, 15, -5);
+}
+
+.updateButton{
+    -fx-background-color: linear-gradient(from 0% 0% to 100% 100%, #3366FF, #6699FF 50%, #0033FF);
+    -fx-font-weight: bold;
+}
+
+.updateButton:hover{
+    -fx-background-color: linear-gradient(from 0% 0% to 100% 100%, #3366FF, #6699FF 50%, #0033FF);
+    -fx-background-radius: 8px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 255, 0.4), 0, 5, 15, -5);
+
+}
+
+.pageButton {
+    -fx-align-items: center;
+    -fx-background-color: linear-gradient(from 0% 0% to 100% 100%, #AF40FF, #5B42F3 50%, #00DDEB);
+    -fx-border-width: 0;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+    -fx-box-sizing: border-box;
+    -fx-text-fill: #FFFFFF;
+    -fx-font-family: "Phantomsans", sans-serif;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-justify-content: center;
+    -fx-line-spacing: 1em;
+    -fx-max-width: 100%;
+    -fx-min-width: 140px;
+    -fx-padding: 12px 8px;
+    -fx-text-decoration: none;
+    -fx-cursor: hand;
+}
+
+.pageButton:hover {
+    -fx-background-color: linear-gradient(from 0% 0% to 100% 100%, #AF40FF, #5B42F3 50%, #00DDEB);
+    -fx-background-radius: 8px;
+    -fx-effect: dropshadow(gaussian, rgba(151, 65, 252, 0.4), 0, 15, 30, -5);
+}
+
+.five h1 {
+    text-align: center;
+    font-size: 22px;
+    font-weight: 700; color:#202020;
+    text-transform: uppercase;
+    word-spacing: 1px; letter-spacing:2px;
+}
+.header {
+    -fx-margin-top: 40px;
+    -fx-text-transform: none;
+    -fx-font-size: 45px;
+    -fx-font-weight: normal;
+    -fx-font-style: italic;
+    -fx-font-family: "Playfair Display","Bookman",serif;
+    -fx-font-weight: bold;
+    -fx-text-fill: linear-gradient(to right, #0d0a0b 0%, #009fc2 74%);
+    -fx-letter-spacing: -0.005em;
+    -fx-word-spacing: 1px;
+    -fx-border-color: linear-gradient(to left, #04619f 0%,#000000 74%);
+    -fx-border-width: 0 0 4px 0; /* Bottom border only */
+}
+
+
+
+
+
+
 
 
 
