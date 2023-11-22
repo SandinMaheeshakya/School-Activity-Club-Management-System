@@ -4,7 +4,6 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-
 public class DatabaseConnection {
     private Connection connection;
     private String url;
@@ -16,6 +15,7 @@ public class DatabaseConnection {
         this.userName = userName;
         this.password = password;
     }
+
 
     public void connect() throws SQLException {
         connection = DriverManager.getConnection(url, userName, password);
@@ -42,9 +42,59 @@ public class DatabaseConnection {
 
                 statement.executeUpdate();
             }
-
         } else {
             System.out.println("Invalid advisor_id. Please enter a valid advisor_id.");
+        }
+    }
+
+    public Connection getConnection() throws SQLException {
+        String url = "jdbc:mysql://localhost:3306/sacms";
+        String user = "root";
+        String password = "";
+
+        return DriverManager.getConnection(url, user, password);
+    }
+
+    public void closeResources(Connection connection, PreparedStatement preparedStatement, AutoCloseable resultSet) {
+        try {
+            if (resultSet != null) {
+                resultSet.close();
+            }
+            if (preparedStatement != null) {
+                preparedStatement.close();
+            }
+            if (connection != null && !connection.isClosed()) {
+                connection.close();
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public void updateClub(CreateClub club) throws SQLException {
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
+
+        try {
+            connection = getConnection();
+            String updateQuery = "UPDATE club_creation SET clubName=?, description=?, clubCategory=?, advisor_id=?, email=?, contact=?, image=? WHERE clubID=?";
+            preparedStatement = connection.prepareStatement(updateQuery);
+
+            preparedStatement.setString(1, club.getClubName());
+            preparedStatement.setString(2, club.getDescription());
+            preparedStatement.setString(3, club.getClubCategory());
+            preparedStatement.setString(4, club.getClubAdvisor());
+            preparedStatement.setString(5, club.getEmail());
+            preparedStatement.setInt(6, club.getContact());
+            preparedStatement.setString(7, club.getImage());
+            preparedStatement.setString(8, club.getClubID());
+
+            preparedStatement.executeUpdate();
+
+        } finally {
+            closeResources(connection, preparedStatement, null);
         }
     }
 
@@ -58,6 +108,7 @@ public class DatabaseConnection {
             return resultSet.next();
         }
     }
+
     public static List<CreateClub> clubDetails(String url, String userName, String password) {
         List<CreateClub> clubList = new ArrayList<>();
         try {

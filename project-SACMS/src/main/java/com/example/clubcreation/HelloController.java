@@ -9,6 +9,8 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.stage.FileChooser;
+import javafx.scene.input.MouseEvent;
+
 
 import java.io.File;
 import java.io.IOException;
@@ -102,6 +104,27 @@ public class HelloController implements Initializable {
 
     @FXML
     private Button btnUpdate;
+
+    @FXML
+    private TextField txtUpdateAdvisor;
+
+    @FXML
+    private TextField txtUpdateClubID;
+
+    @FXML
+    private TextField txtUpdateClubName;
+
+    @FXML
+    private TextField txtUpdateContact;
+
+    @FXML
+    private TextField txtUpdateDescription;
+
+    @FXML
+    private TextField txtUpdateEmail;
+
+    @FXML
+    private TextField txtUpdateType;
 
     @FXML
     void clearProfile(ActionEvent event) {
@@ -258,7 +281,7 @@ public class HelloController implements Initializable {
         alert.setContentText(message);
         alert.showAndWait();
     }
-    
+
     @FXML
     void choosePhoto(ActionEvent event) {
         FileChooser fileChooser = new FileChooser();
@@ -280,6 +303,7 @@ public class HelloController implements Initializable {
     public void settingTheTable() {
         List<CreateClub> clubList = DatabaseConnection.clubDetails("jdbc:mysql://localhost:3306/sacms", "root", "");
         tblManage.getItems().setAll(clubList);
+
     }
 
     @Override
@@ -318,13 +342,88 @@ public class HelloController implements Initializable {
                 }
             }
         });
-
         settingTheTable();
     }
 
     @FXML
     void updateClubs(ActionEvent event) {
+        CreateClub selectedClub = tblManage.getSelectionModel().getSelectedItem();
 
+        if (selectedClub == null) {
+            showAlert("No Club Selected", "Please select a club to update.");
+            return;
+        }
+
+        txtUpdateClubID.setText(selectedClub.getClubID());
+        txtUpdateClubName.setText(selectedClub.getClubName());
+        txtUpdateDescription.setText(selectedClub.getDescription());
+        txtUpdateType.setText(selectedClub.getClubCategory());
+        txtUpdateAdvisor.setText(selectedClub.getClubAdvisor());
+        txtUpdateEmail.setText(selectedClub.getEmail());
+        txtUpdateContact.setText(String.valueOf(selectedClub.getContact()));
+
+        btnUpdate.setOnAction(e -> saveUpdatedClub(selectedClub));
+    }
+
+    private void saveUpdatedClub(CreateClub selectedClub) {
+        // Retrieve updated values from the text fields
+        String updatedClubID = txtUpdateClubID.getText();
+        String updatedClubName = txtUpdateClubName.getText();
+        String updatedDescription = txtUpdateDescription.getText();
+        String updatedType = txtUpdateType.getText();
+        String updatedAdvisor = txtUpdateAdvisor.getText();
+        String updatedEmail = txtUpdateEmail.getText();
+        String updatedContactText = txtUpdateContact.getText();
+
+        int updatedContact;
+        try {
+            updatedContact = Integer.parseInt(updatedContactText);
+            if (updatedContact < 0) {
+                showAlert("Invalid Input", "Please enter a valid contact.");
+                return;
+            }
+        } catch (NumberFormatException e) {
+            showAlert("Invalid Input", "Please enter a valid contact.");
+            return;
+        }
+
+        selectedClub.setClubID(updatedClubID);
+        selectedClub.setClubName(updatedClubName);
+        selectedClub.setDescription(updatedDescription);
+        selectedClub.setClubCategory(updatedType);
+        selectedClub.setClubAdvisor(updatedAdvisor);
+        selectedClub.setEmail(updatedEmail);
+        selectedClub.setContact(updatedContact);
+
+        DatabaseConnection databaseHandler = new DatabaseConnection("jdbc:mysql://localhost:3306/sacms", "root", "");
+        try {
+            databaseHandler.connect();
+            databaseHandler.updateClub(selectedClub);
+            databaseHandler.disconnect();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        clearUpdateFields();
+        settingTheTable();
+        btnUpdate.setOnAction(this::updateClubs);
+    }
+
+    private void clearUpdateFields() {
+        txtUpdateClubID.clear();
+        txtUpdateClubName.clear();
+        txtUpdateDescription.clear();
+        txtUpdateType.clear();
+        txtUpdateAdvisor.clear();
+        txtUpdateEmail.clear();
+        txtUpdateContact.clear();
+    }
+
+    @FXML
+    void selectRow(MouseEvent event) {
+        if (event.getClickCount() == 1) {
+            updateClubs(new ActionEvent());
+        }
     }
 
     @FXML

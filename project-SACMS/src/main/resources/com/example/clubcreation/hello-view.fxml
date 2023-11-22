@@ -154,7 +154,7 @@
                         </ImageView>
                      </children>
                   </HBox>
-                  <TableView fx:id="tblManage" layoutX="-1.0" layoutY="89.0" prefHeight="200.0" prefWidth="998.0">
+                  <TableView fx:id="tblManage" layoutX="-1.0" layoutY="89.0" onMouseClicked="#selectRow" prefHeight="200.0" prefWidth="998.0">
                     <columns>
                       <TableColumn fx:id="colClubID" prefWidth="69.60000610351562" text="Club ID" />
                       <TableColumn fx:id="colClubName" prefWidth="154.39999389648438" text="Club Name" />
@@ -213,19 +213,19 @@
                   </VBox>
                   <VBox layoutX="430.0" layoutY="313.0" prefHeight="300.0" prefWidth="528.0">
                      <children>
-                        <TextField fx:id="txtClubName11" prefHeight="25.0" prefWidth="400.0" styleClass="input" stylesheets="@../../main/projectsacms/CSS%20Files/styles.css" />
+                        <TextField fx:id="txtUpdateClubID" prefHeight="25.0" prefWidth="400.0" styleClass="input" stylesheets="@../../main/projectsacms/CSS%20Files/styles.css" />
                         <Pane prefHeight="38.0" prefWidth="142.0" />
-                        <TextField fx:id="txtClubName1" prefHeight="25.0" prefWidth="400.0" styleClass="input" stylesheets="@../../main/projectsacms/CSS%20Files/styles.css" />
+                        <TextField fx:id="txtUpdateClubName" prefHeight="25.0" prefWidth="400.0" styleClass="input" stylesheets="@../../main/projectsacms/CSS%20Files/styles.css" />
                         <Pane prefHeight="38.0" prefWidth="142.0" />
-                        <TextField fx:id="txtDescription1" prefHeight="25.0" prefWidth="400.0" styleClass="input" stylesheets="@../../main/projectsacms/CSS%20Files/styles.css" />
+                        <TextField fx:id="txtUpdateDescription" prefHeight="25.0" prefWidth="400.0" styleClass="input" stylesheets="@../../main/projectsacms/CSS%20Files/styles.css" />
                         <Pane prefHeight="38.0" prefWidth="142.0" />
-                        <TextField fx:id="txtCategory1" prefHeight="25.0" prefWidth="400.0" styleClass="input" stylesheets="@../../main/projectsacms/CSS%20Files/styles.css" />
+                        <TextField fx:id="txtUpdateType" prefHeight="25.0" prefWidth="400.0" styleClass="input" stylesheets="@../../main/projectsacms/CSS%20Files/styles.css" />
                         <Pane prefHeight="38.0" prefWidth="142.0" />
-                        <TextField fx:id="txtAdvisor1" prefHeight="25.0" prefWidth="400.0" styleClass="input" stylesheets="@../../main/projectsacms/CSS%20Files/styles.css" />
+                        <TextField fx:id="txtUpdateAdvisor" prefHeight="25.0" prefWidth="400.0" styleClass="input" stylesheets="@../../main/projectsacms/CSS%20Files/styles.css" />
                         <Pane prefHeight="38.0" prefWidth="386.0" />
-                        <TextField fx:id="txtEmail1" prefHeight="25.0" prefWidth="400.0" styleClass="input" stylesheets="@../../main/projectsacms/CSS%20Files/styles.css" />
+                        <TextField fx:id="txtUpdateEmail" prefHeight="25.0" prefWidth="400.0" styleClass="input" stylesheets="@../../main/projectsacms/CSS%20Files/styles.css" />
                         <Pane prefHeight="38.0" prefWidth="386.0" />
-                        <TextField fx:id="txtContact1" prefHeight="25.0" prefWidth="400.0" styleClass="input" stylesheets="@../../main/projectsacms/CSS%20Files/styles.css" />
+                        <TextField fx:id="txtUpdateContact" prefHeight="25.0" prefWidth="400.0" styleClass="input" stylesheets="@../../main/projectsacms/CSS%20Files/styles.css" />
                         <Pane prefHeight="38.0" prefWidth="142.0" />
                      </children>
                   </VBox>
