@@ -5,24 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="160022ca-5992-48fb-a410-4036c377095f" name="Changes" comment="edited doc">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/main/projectsacms/GIF/rocket-158_512.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_14_11_2023_14_41_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_14_11_2023_14_41__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/clubcreation/CardController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/clubcreation/CreateClub.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/clubcreation/CreateClub.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/clubcreation/DatabaseConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/clubcreation/DatabaseConnection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/clubcreation/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/clubcreation/HelloController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/clubcreation/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/clubcreation/hello-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/main/projectsacms/CSS Files/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/main/projectsacms/CSS Files/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/main/projectsacms/FXML Files/card.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/clubcreation/CardController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/clubcreation/CreateClub.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/clubcreation/CreateClub.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/clubcreation/DatabaseConnection.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/clubcreation/DatabaseConnection.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/clubcreation/HelloController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/clubcreation/HelloController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/clubcreation/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/clubcreation/hello-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/main/projectsacms/CSS Files/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/main/projectsacms/CSS Files/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/main/projectsacms/FXML Files/card.fxml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -159,7 +142,8 @@
       <workItem from="1700455341604" duration="298000" />
       <workItem from="1700457125911" duration="601000" />
       <workItem from="1700550981057" duration="10900000" />
-      <workItem from="1700591050247" duration="2494000" />
+      <workItem from="1700591050247" duration="2811000" />
+      <workItem from="1700640486836" duration="476000" />
     </task>
     <task id="LOCAL-00001" summary="edited doc">
       <option name="closed" value="true" />
