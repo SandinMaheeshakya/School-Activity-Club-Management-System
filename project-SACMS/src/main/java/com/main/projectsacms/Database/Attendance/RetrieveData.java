@@ -11,9 +11,15 @@ import java.util.Map;
 
 public class RetrieveData extends Connection {
 
+    private  static int studentsCount = 0;
+
+    public static int getStudentsCount() {
+        return studentsCount;
+    }
 
     // Retrieving Event Data
     public static ArrayList<Map<String, String>> getEventsData() throws SQLException {
+        studentsCount = 0;
 
         ArrayList<Map<String, String>> events = new ArrayList<>();
 
@@ -97,6 +103,8 @@ public class RetrieveData extends Connection {
                 studentDetails.put("studentName", firstName + " " + lastName);
                 studentDetails.put("grade", grade);
 
+                studentsCount++;
+
                 if (count == 0) {
                     students.add(new ArrayList<>());
                 }
@@ -114,14 +122,39 @@ public class RetrieveData extends Connection {
         } catch (SQLException ex) {
             throw new RuntimeException(ex);
         }
-
+        System.out.println(studentsCount);
         return students;
     }
 
+    public static String retrieveAttendanceDataFromDatabase(String eventID,String studentID) {
+        establishConnection();
+        ArrayList<HashMap<String, String>> attendanceList = new ArrayList<>();
 
-    public static void main(String[] args) throws SQLException {
-        System.out.println(getEventsData());
-      }
+        String attendanceStatus = null;
+        try {
+            String query = "SELECT Student_ID, Attendance FROM event_attendance WHERE Event_ID = ? AND Student_ID = ?";
+
+            try (PreparedStatement statement = connection.prepareStatement(query)) {
+                statement.setString(1, eventID);
+                statement.setString(2, studentID);
+                ResultSet resultSet = statement.executeQuery();
+
+                while (resultSet.next()) {
+                    HashMap<String, String> attendanceData = new HashMap<>();
+                    attendanceStatus = resultSet.getString("Attendance");
+
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+
+        } finally {
+            closeConnection();
+        }
+
+        return attendanceStatus;
+    }
+
 
 }
 

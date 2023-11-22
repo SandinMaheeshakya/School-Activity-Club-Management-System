@@ -2,14 +2,19 @@ package com.main.projectsacms.AttendanceTracking;
 
 import javafx.scene.layout.Pane;
 
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+
 public class PhysicalEventsAttendance extends Attendance {
 
     private String venue;
     private boolean joinStatus;
 
 
-    public PhysicalEventsAttendance(String studentID, int studentGrade, String studentName, String venue, boolean joinStatus) {
-        super(studentID, studentGrade, studentName);
+    public PhysicalEventsAttendance(int groupNumber, int studentNumber, String venue, boolean joinStatus) throws SQLException {
+        super(groupNumber,studentNumber);
         this.venue = venue;
         this.joinStatus = joinStatus;
     }
@@ -29,8 +34,25 @@ public class PhysicalEventsAttendance extends Attendance {
     }
 
     @Override
-    public void logAttendance() {
+    public Map<String,String> registeredStudentLog() {
+
+        Map<String,String> studentDetails = new HashMap<>();
+        studentDetails.put("studentID", getStudentID());
+        studentDetails.put("studentName", getStudentName());
+        studentDetails.put("studentGrade", getStudentGrade());
+        studentDetails.put("studentJoinStatus", String.valueOf(isJoinStatus()));
+        studentDetails.put("eventVenue", getVenue());
+
+        return studentDetails;
+
 
     }
 
+    public boolean isJoinStatus() {
+        return joinStatus;
+    }
+
+    public void setJoinStatus(boolean joinStatus) {
+        this.joinStatus = joinStatus;
+    }
 }

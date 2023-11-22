@@ -1,17 +1,17 @@
 package com.main.projectsacms.AttendanceTracking;
 
-import com.main.projectsacms.AttendanceTracking.Attendance;
-import com.main.projectsacms.AttendanceTracking.PredefinedObjects;
 import com.main.projectsacms.Database.Attendance.RetrieveData;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 
 import javafx.scene.Group;
 import javafx.scene.control.Button;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
@@ -153,6 +153,8 @@ public class AttendanceTrackingController implements PredefinedObjects {
     public HashMap<String, AnchorPane> getPages() {
         return Pages;
     }
+
+    public ArrayList<Map<String,String>> attendedStudents = new ArrayList<>();
 
     public void initialize() throws SQLException {
 
@@ -319,7 +321,6 @@ public class AttendanceTrackingController implements PredefinedObjects {
         }
     }
 
-
     // Put Student Details
 
     public void putStudentId(Pane currentPane,String studentID){
@@ -354,17 +355,6 @@ public class AttendanceTrackingController implements PredefinedObjects {
 
     }
 
-    public void putStudentLoggedTime(Pane currentPane,String studentLoggedTime){
-        Label studentLoggedTimeLabel = new Label();
-        studentLoggedTimeLabel.setText(studentLoggedTime);
-        studentLoggedTimeLabel.setFont(new Font("Calibri", 18));
-        studentLoggedTimeLabel.setTextFill(Color.BLACK);
-        studentLoggedTimeLabel.setLayoutX(812);
-        studentLoggedTimeLabel.setLayoutY(17);
-        currentPane.getChildren().add(studentLoggedTimeLabel);
-
-    }
-
     public void putStudentRegistrationStatus(Pane currentPane,String studentRegistered){
         Label studentRegisterLabel = new Label();
         studentRegisterLabel.setText(studentRegistered);
@@ -376,31 +366,99 @@ public class AttendanceTrackingController implements PredefinedObjects {
 
     }
 
-    String eventID;
-    String eventType;
+    ArrayList<ArrayList<ChoiceBox<String>>> groupedChoicesBoxList = new ArrayList<>();
+    ArrayList<ChoiceBox<String>> choiceBoxArrayList = new ArrayList<>();
+    public ChoiceBox<String> putStudentAttendance(Pane currentPane) {
 
-    public void DisplayStudents(int pageNo) {
-        System.out.println(eventID);
-        ArrayList<ArrayList<Map<String,String>>> studentsGroups = RetrieveData.getStudentsData(eventID);
+        ChoiceBox<String> studentAttendanceCheck = new ChoiceBox<>();
+        studentAttendanceCheck.setValue("Absent");
 
-        //Need to take DB data as an ArrayList of HashMaps
-        int count = 0;
+        ObservableList<String> choices = FXCollections.observableArrayList(
+                "Present",
+                "Absent"
+        );
+        studentAttendanceCheck.setItems(choices);
+        studentAttendanceCheck.setLayoutX(693);
+        studentAttendanceCheck.setLayoutY(17);
+        currentPane.getChildren().add(studentAttendanceCheck);
 
-        for (Map<String,String> studentDetails : studentsGroups.get(pageNo)){
-
-            Pane currentPane = studentPaneMap.get(getStudentPanes(studentPaneNumbers).get(count));
-
-            //Adding the Details
-            putStudentId(currentPane,studentDetails.get("student_id"));
-            putStudentName(currentPane, studentDetails.get("studentName"));
-            putStudentGrade(currentPane, studentDetails.get("grade"));
-
-            count++;
-        }
+        return studentAttendanceCheck;
 
     }
 
-    public void switchToPageOne() {
+
+    public void saveButtonOnClick() throws SQLException {
+
+        OnlineAttendance.saveAttendance(OnlineAttendance.trackAttendance(choiceBoxArrayList,studentIDMapList,currentEventID));
+    }
+
+    String currentEventID;
+    String eventType;
+
+    ArrayList<HashMap<String,String>> studentIDMapList =  new ArrayList<>();
+
+    public ArrayList<ChoiceBox<String>> displayStudents(int groupNumber) throws SQLException {
+
+        attendedStudents = new ArrayList<>();
+        //Need to take DB data as an ArrayList of HashMaps
+        int studentNumber = 0;
+        System.out.println(RetrieveData.getStudentsCount());
+        choiceBoxArrayList = new ArrayList<>();
+
+
+        while (studentNumber < 6) {
+
+            HashMap<String, String> studentIDMap;
+            try {
+
+
+                studentIDMap = new HashMap<>();
+
+                OnlineAttendance attendance = new OnlineAttendance(groupNumber, studentNumber, true, "23:10");
+
+                //Creating the object
+                Pane currentPane = studentPaneMap.get(getStudentPanes(studentPaneNumbers).get(studentNumber));
+
+                //Attendance Check
+                Map<String, String> attendedStudentsDetails = new HashMap<>();
+
+                //Adding the Details
+                putStudentId(currentPane, attendance.getStudentID());
+                putStudentName(currentPane, attendance.getStudentName());
+                putStudentGrade(currentPane, attendance.getStudentGrade());
+
+
+                //Getting the data from Attendance Class
+                String attendanceStatus = Attendance.retrieveAttendanceData(currentEventID,attendance.getStudentID());
+
+                ChoiceBox<String> choice = putStudentAttendance(currentPane);
+
+                choice.setValue(attendanceStatus);
+
+                attendedStudents.add(attendedStudentsDetails);
+                choiceBoxArrayList.add(choice);
+
+                choice.setValue(choiceBoxArrayList.get(studentNumber).getValue());
+                studentIDMap.put("studentID", attendance.getStudentID());
+
+                studentNumber++;
+
+            } catch (IndexOutOfBoundsException e) {
+                break;
+            }
+            studentIDMapList.add(studentIDMap);
+
+        }
+
+        groupedChoicesBoxList.add(groupNumber,choiceBoxArrayList);
+        return choiceBoxArrayList;
+
+    }
+
+
+    public void switchToPageOne() throws SQLException {
+        studentIDMapList.clear();
+
 
         if (eventsGroup.isVisible()) {
             EventsDisplayPageOne.setVisible(true);
@@ -410,12 +468,21 @@ public class AttendanceTrackingController implements PredefinedObjects {
 
         } else {
             clearPanes();
-            DisplayStudents(0);
+            ArrayList<ChoiceBox<String>> choiceBoxes = displayStudents(0);
+
+
+            int student = 0;
+            for (ChoiceBox<String> choice : choiceBoxes){
+                choice.setValue(groupedChoicesBoxList.get(0).get(student).getValue());
+                student++;
+            }
+
+
         }
     }
 
-        public void switchToPageTwo(ActionEvent actionEvent) {
-
+        public void switchToPageTwo(ActionEvent actionEvent) throws SQLException {
+            studentIDMapList.clear();
             if (eventsGroup.isVisible()) {
                 EventsDisplayPageOne.setVisible(false);
                 EventsDisplayPageTwo.setVisible(true);
@@ -424,11 +491,18 @@ public class AttendanceTrackingController implements PredefinedObjects {
 
             }else {
                 clearPanes();
-                DisplayStudents(1);
+                ArrayList<ChoiceBox<String>> choiceBoxes = displayStudents(1);
+
+                int student = 0;
+                for (ChoiceBox<String> choice : choiceBoxes){
+                    choice.setValue(groupedChoicesBoxList.get(1).get(student).getValue());
+                    student++;
+                }
+
             }
         }
 
-    public void switchToPageThree() {
+    public void switchToPageThree() throws SQLException {
 
         if (eventsGroup.isVisible()) {
             EventsDisplayPageOne.setVisible(false);
@@ -437,11 +511,11 @@ public class AttendanceTrackingController implements PredefinedObjects {
             EventsDisplayPageFour.setVisible(false);
         } else {
             clearPanes();
-            DisplayStudents(2);
+            displayStudents(2);
         }
     }
 
-    public void switchToPageFour() {
+    public void switchToPageFour() throws SQLException {
         if (eventsGroup.isVisible()) {
             EventsDisplayPageOne.setVisible(false);
             EventsDisplayPageTwo.setVisible(false);
@@ -449,7 +523,7 @@ public class AttendanceTrackingController implements PredefinedObjects {
             EventsDisplayPageFour.setVisible(true);
         }else {
             clearPanes();
-            DisplayStudents(3);
+            displayStudents(3);
         }
     }
 
@@ -459,11 +533,13 @@ public class AttendanceTrackingController implements PredefinedObjects {
     //Attendance Object to Access elements in Attendance Class
 
     public void eventOneOnClick() throws SQLException {
-
         eventsGroup.setVisible(false);
 
+        currentEventID = Attendance.checkEventID(0);
+
         //Store data
-        eventID = events.get(0).get("eventID");
+        Attendance.setCurrentEventNumber(0);
+
         eventType = events.get(0).get("eventType");
 
         if (eventType.equals("Online")) {
@@ -471,75 +547,150 @@ public class AttendanceTrackingController implements PredefinedObjects {
         }else {
             eventTypeLabel.setText("Physical Events");
         }
-        DisplayStudents(0);
-
         studentsGroup.setVisible(true);
+        displayStudents(0);
 
     }
 
     public void eventTwoOnClick() throws SQLException {
-        eventID = events.get(1).get("Event_ID");
 
-        String eventType = Attendance.checkEventType(1);
+        currentEventID = Attendance.checkEventID(1);
+
+        eventsGroup.setVisible(false);
+
+        //Store data
+        Attendance.setCurrentEventNumber(1);
+
+        eventType = events.get(1).get("eventType");
+
+        if (eventType.equals("Online")) {
+            eventTypeLabel.setText("Online Events");
+        }else {
+            eventTypeLabel.setText("Physical Events");
+        }
+        studentsGroup.setVisible(true);
+        displayStudents(0);
 
     }
 
     public void eventThreeOnClick() throws SQLException {
-        eventID = events.get(2).get("Event_ID");
+        eventsGroup.setVisible(false);
 
-        String eventType = Attendance.checkEventType(2);
+        currentEventID = Attendance.checkEventID(2);
+
+        //Store data
+        Attendance.setCurrentEventNumber(2);
+
+        eventType = events.get(2).get("eventType");
+
+        if (eventType.equals("Online")) {
+            eventTypeLabel.setText("Online Events");
+        }else {
+            eventTypeLabel.setText("Physical Events");
+        }
+        studentsGroup.setVisible(true);
+        displayStudents(3);
 
     }
 
     public void eventFourOnClick() throws SQLException {
-        String eventType = Attendance.checkEventType(3);
+
+        currentEventID = Attendance.checkEventID(3);
+
+        eventsGroup.setVisible(false);
+
+        //Store data
+        Attendance.setCurrentEventNumber(3);
+
+        eventType = events.get(3).get("eventType");
+
+        if (eventType.equals("Online")) {
+            eventTypeLabel.setText("Online Events");
+        }else {
+            eventTypeLabel.setText("Physical Events");
+        }
+        studentsGroup.setVisible(true);
+        displayStudents(0);
 
     }
 
     public void eventFiveOnClick() throws SQLException {
-        String eventType = Attendance.checkEventType(4);
+
+        currentEventID = Attendance.checkEventID(4);
+
+        eventsGroup.setVisible(false);
+
+        //Store data
+        Attendance.setCurrentEventNumber(4);
+
+        eventType = events.get(4).get("eventType");
+
+        if (eventType.equals("Online")) {
+            eventTypeLabel.setText("Online Events");
+        }else {
+            eventTypeLabel.setText("Physical Events");
+        }
+        studentsGroup.setVisible(true);
+        displayStudents(0);
 
 
     }
 
     public void eventSixOnClick() throws SQLException {
-        String eventType = Attendance.checkEventType(5);
+
+        currentEventID = Attendance.checkEventID(5);
+
+        eventsGroup.setVisible(false);
+
+        //Store data
+        Attendance.setCurrentEventNumber(5);
+
+        eventType = events.get(5).get("eventType");
+
+        if (eventType.equals("Online")) {
+            eventTypeLabel.setText("Online Events");
+        }else {
+            eventTypeLabel.setText("Physical Events");
+        }
+        studentsGroup.setVisible(true);
+        displayStudents(0);
 
 
 
     }
 
     public void eventSevenOnClick() throws SQLException {
-        String eventType = Attendance.checkEventType(6);
+
+        currentEventID = Attendance.checkEventID(6);
 
     }
 
     public void eventEightOnClick() throws SQLException {
-        String eventType = Attendance.checkEventType(7);
+        currentEventID = Attendance.checkEventID(7);
 
     }
 
     public void eventNineOnClick() throws SQLException {
-        String eventType = Attendance.checkEventType(8);
+        currentEventID = Attendance.checkEventID(8);
 
 
     }
 
     public void eventTenOnClick() throws SQLException {
-        String eventType = Attendance.checkEventType(9);
+        currentEventID = Attendance.checkEventID(9);
 
 
     }
 
     public void eventElevenOnClick() throws SQLException {
-        String eventType = Attendance.checkEventType(10);
+        currentEventID = Attendance.checkEventID(10);
 
 
 
     }
 
     public void eventTwelveOnClick() throws SQLException {
-        String eventType = Attendance.checkEventType(11);
+        currentEventID = Attendance.checkEventID(11);
 
 
     }

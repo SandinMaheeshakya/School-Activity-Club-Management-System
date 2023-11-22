@@ -4,26 +4,37 @@ import com.main.projectsacms.Database.Attendance.RetrieveData;
 import javafx.scene.layout.Pane;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Map;
 
 public abstract class Attendance implements PredefinedObjects {
 
+
     private String studentID;
 
-    private int studentGrade;
+    private String studentGrade;
 
     private boolean registerStatus;
     private String studentName;
     private String eventDate;
     private String eventType;
     private String eventID;
-    private int currentEventNumber;
+    private static int currentEventNumber;
 
 
-    public Attendance(String studentID, int studentGrade, String studentName) {
-        this.studentID = studentID;
-        this.studentGrade = studentGrade;
-        this.studentName = studentName;
+    //Set values for each attribute from the data received from database (Constructor)
+    public Attendance(int groupNumber,int studentNumber) throws SQLException {
+
+        //Real Time Refresh
+        ArrayList<ArrayList<Map<String,String>>> studentData = currentEventStudentsData();
+
+        studentID = studentData.get(groupNumber).get(studentNumber).get("student_id");
+        studentName = studentData.get(groupNumber).get(studentNumber).get("studentName");
+        studentGrade = studentData.get(groupNumber).get(studentNumber).get("grade");
+
+        // Need to add register Status
+
+
     }
 
     //Getters and Setters
@@ -61,25 +72,21 @@ public abstract class Attendance implements PredefinedObjects {
 
     public abstract void editAttendance(Pane studentPane, Boolean attendance);
 
-    public abstract void logAttendance();
+    public abstract Map<String,String> registeredStudentLog();
 
 
     //Gathering Data from the Database
-    public ArrayList<ArrayList<Map<String,String>>> getStudentsData() throws SQLException {
+    public ArrayList<ArrayList<Map<String,String>>> currentEventStudentsData() throws SQLException {
        return RetrieveData.getStudentsData(checkEventID(currentEventNumber));
     }
 
-    //Set values for each attribute from the data received from database
-    public void setValues(int eventNumber) throws SQLException {
-        ArrayList<ArrayList<Map<String,String>>> studentData = getStudentsData();
-    }
-    
     //Checking types and IDs
 
-    public String checkEventID(int eventNumber) throws SQLException {
+    public static String checkEventID(int eventNumber) throws SQLException {
        return RetrieveData.getEventsData().get(eventNumber).get("eventID");
 
     }
+
     public static String checkEventType(int eventNumber) throws SQLException {
 
         ArrayList<Map<String,String>> eventDetails = RetrieveData.getEventsData();
@@ -88,16 +95,41 @@ public abstract class Attendance implements PredefinedObjects {
             return "Online";
 
         }else {
+
             return "Physical";
         }
     }
+
 
 
     public int getCurrentEventNumber() {
         return currentEventNumber;
     }
 
-    public void setCurrentEventNumber(int currentEventNumber) {
-        this.currentEventNumber = currentEventNumber;
+    public static void setCurrentEventNumber(int currentEventNumber) {
+        Attendance.currentEventNumber = currentEventNumber;
     }
+
+    public String getStudentName() {
+        return studentName;
+    }
+
+    public void setStudentName(String studentName) {
+        this.studentName = studentName;
+    }
+
+    public String getStudentGrade() {
+        return studentGrade;
+    }
+
+    public void setStudentGrade(String studentGrade) {
+        this.studentGrade = studentGrade;
+    }
+
+
+
+    public static String retrieveAttendanceData(String eventID,String studentID){
+        return RetrieveData.retrieveAttendanceDataFromDatabase(eventID,studentID);
+    }
+
 }
