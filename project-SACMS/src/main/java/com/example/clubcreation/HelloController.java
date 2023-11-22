@@ -9,6 +9,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.stage.FileChooser;
+
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
@@ -68,8 +69,9 @@ public class HelloController implements Initializable {
 
     @FXML
     private Pane pnlClubProfiles;
+
     @FXML
-    private TableView <CreateClub> tblManage;
+    private TableView<CreateClub> tblManage;
 
     @FXML
     private TableColumn<CreateClub, String> colAdvisorName;
@@ -95,40 +97,57 @@ public class HelloController implements Initializable {
     @FXML
     private TableColumn<CreateClub, String> colClubID;
 
-
     @FXML
     private Button btnDelete;
 
     @FXML
     private Button btnUpdate;
 
-
-
     @FXML
     void clearProfile(ActionEvent event) {
-        if (event.getSource() == btnClear){
-            txtClubID.clear();
-            txtClubName.clear();
-            txtDescription.clear();
-            txtCategory.clear();
-            txtAdvisor.clear();
-            txtEmail.clear();
-            txtContact.clear();
-            imgView.setImage(null);
+        if (event.getSource() == btnClear) {
+            clearFields();
+        }
+    }
+
+    @FXML
+    void goToCreateClub(ActionEvent event) {
+        if (event.getSource() == btnClubCreate) {
+            pnlCreateClub.setVisible(true);
+            pnlWelcomePage.setVisible(false);
+            pnlClubProfiles.setVisible(false);
+        }
+    }
+
+    @FXML
+    void goToManageClub(ActionEvent event) {
+        if (event.getSource() == btnClubProfile) {
+            pnlClubProfiles.setVisible(true);
+            pnlWelcomePage.setVisible(false);
+            pnlCreateClub.setVisible(false);
+        }
+    }
+
+    @FXML
+    void goToHomePage(ActionEvent event) {
+        if (event.getSource() == btnHome) {
+            pnlWelcomePage.setVisible(true);
+            pnlCreateClub.setVisible(false);
+            pnlClubProfiles.setVisible(false);
         }
     }
 
     @FXML
     void createProfile(ActionEvent event) throws IOException {
         if (event.getSource() == btnCreate) {
-            String clubID = txtClubID.getId();
+            String clubID = txtClubID.getText();
             String clubName = txtClubName.getText();
             String description = txtDescription.getText();
             String clubCategory = txtCategory.getText();
             String clubAdvisor = txtAdvisor.getText();
             String email = txtEmail.getText();
             String contact = txtContact.getText();
-            String image = String.valueOf(imgView.getImage());
+            String image = imgView.getImage() != null ? imgView.getImage().toString() : "";
 
             boolean isValid = true;
             String errorMessage = "";
@@ -191,7 +210,6 @@ public class HelloController implements Initializable {
             if (isValid) {
                 CreateClub club = new CreateClub(clubID, clubName, description, clubCategory, clubAdvisor, email, Integer.parseInt(contact), image);
 
-                // Create an instance of DatabaseHandler and save the club data to the database
                 DatabaseConnection databaseHandler = new DatabaseConnection("jdbc:mysql://localhost:3306/sacms", "root", "");
                 try {
                     databaseHandler.connect();
@@ -200,70 +218,49 @@ public class HelloController implements Initializable {
                 } catch (SQLException e) {
                     e.printStackTrace();
                 }
-                txtClubID.clear();
-                txtClubName.clear();
-                txtDescription.clear();
-                txtCategory.clear();
-                txtAdvisor.clear();
-                txtEmail.clear();
-                txtContact.clear();
-                imgView.setImage(null);
 
-                txtClubID.setStyle("");
-                txtClubName.setStyle("");
-                txtDescription.setStyle("");
-                txtCategory.setStyle("");
-                txtAdvisor.setStyle("");
-                txtEmail.setStyle("");
-                txtContact.setStyle("");
-
+                clearFields();
                 settingTheTable();
-                tblManage.getColumns();
-
-            } else {
+            }
+            else {
                 showAlert("Invalid Input", errorMessage);
             }
         }
     }
 
-    private void showAlert(String title, String message){ //setting the alert message
+    private void clearFields() {
+        txtClubID.clear();
+        txtClubName.clear();
+        txtDescription.clear();
+        txtCategory.clear();
+        txtAdvisor.clear();
+        txtEmail.clear();
+        txtContact.clear();
+        imgView.setImage(null);
+
+        resetStyles();
+    }
+
+    private void resetStyles() {
+        txtClubID.setStyle("");
+        txtClubName.setStyle("");
+        txtDescription.setStyle("");
+        txtCategory.setStyle("");
+        txtAdvisor.setStyle("");
+        txtEmail.setStyle("");
+        txtContact.setStyle("");
+    }
+
+    private void showAlert(String title, String message) {
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setTitle(title);
         alert.setHeaderText(null);
         alert.setContentText(message);
         alert.showAndWait();
     }
-
+    
     @FXML
-    void goToCreateClub(ActionEvent event) {
-        if (event.getSource() == btnClubCreate) {
-            pnlCreateClub.setVisible(true);
-            pnlWelcomePage.setVisible(false);
-            pnlClubProfiles.setVisible(false);
-        }
-    }
-
-    @FXML
-    void goToManageClub(ActionEvent event) {
-        if(event.getSource() == btnClubProfile){
-            pnlClubProfiles.setVisible(true);
-            pnlWelcomePage.setVisible(false);
-            pnlCreateClub.setVisible(false);
-        }
-    }
-
-    @FXML
-    void goToHomePage(ActionEvent event) {
-        if (event.getSource() == btnHome) {
-            pnlWelcomePage.setVisible(true);
-            pnlCreateClub.setVisible(false);
-            pnlClubProfiles.setVisible(false);
-        }
-
-    }
-
-    @FXML
-    void choosePhoto (ActionEvent event) {
+    void choosePhoto(ActionEvent event) {
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Open Image File");
         fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Image Files", "*.png", "*.jpg", "*.jpeg", "*.gif"));
@@ -274,19 +271,16 @@ public class HelloController implements Initializable {
             try {
                 Image image = new Image(selectedFile.toURI().toString());
                 imgView.setImage(image);
-
-
             } catch (Exception e) {
                 e.printStackTrace();
             }
         }
     }
 
-    public void settingTheTable(){
-        List<CreateClub> clubList = DatabaseConnection.clubDeatils();
+    public void settingTheTable() {
+        List<CreateClub> clubList = DatabaseConnection.clubDetails("jdbc:mysql://localhost:3306/sacms", "root", "");
         tblManage.getItems().setAll(clubList);
     }
-
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -298,6 +292,7 @@ public class HelloController implements Initializable {
         colEmail.setCellValueFactory(new PropertyValueFactory<>("email"));
         colContact.setCellValueFactory(new PropertyValueFactory<>("contact"));
         colProfilePicture.setCellValueFactory(new PropertyValueFactory<>("image"));
+
         colProfilePicture.setCellFactory(column -> new TableCell<CreateClub, String>() {
             private final ImageView imageView = new ImageView();
 
@@ -305,6 +300,7 @@ public class HelloController implements Initializable {
                 imageView.setFitWidth(50);
                 imageView.setFitHeight(50);
             }
+
             @Override
             protected void updateItem(String imagePath, boolean empty) {
                 super.updateItem(imagePath, empty);
@@ -321,22 +317,18 @@ public class HelloController implements Initializable {
                     }
                 }
             }
-
         });
-        settingTheTable();
 
+        settingTheTable();
     }
 
     @FXML
     void updateClubs(ActionEvent event) {
 
-
     }
 
     @FXML
-    void deleteClubs(ActionEvent event) {}
+    void deleteClubs(ActionEvent event) {
 
-
-
+    }
 }
-
