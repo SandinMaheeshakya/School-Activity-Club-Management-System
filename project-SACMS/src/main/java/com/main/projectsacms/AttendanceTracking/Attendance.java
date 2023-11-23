@@ -9,11 +9,9 @@ import java.util.Map;
 
 public abstract class Attendance implements PredefinedObjects {
 
-
     private String studentID;
 
     private String studentGrade;
-
     private boolean registerStatus;
     private String studentName;
     private String eventDate;
@@ -21,6 +19,7 @@ public abstract class Attendance implements PredefinedObjects {
     private String eventID;
     private static int currentEventNumber;
 
+    private int registeredStudentsCount;
 
     //Set values for each attribute from the data received from database (Constructor)
     public Attendance(int groupNumber,int studentNumber) throws SQLException {
@@ -34,7 +33,10 @@ public abstract class Attendance implements PredefinedObjects {
 
         // Need to add register Status
 
+    }
 
+    public Attendance (int noOfStudents){
+        this.registeredStudentsCount = noOfStudents;
     }
 
     //Getters and Setters
@@ -125,8 +127,6 @@ public abstract class Attendance implements PredefinedObjects {
     public void setStudentGrade(String studentGrade) {
         this.studentGrade = studentGrade;
     }
-
-
 
     public static String retrieveAttendanceData(String eventID,String studentID){
         return RetrieveData.retrieveAttendanceDataFromDatabase(eventID,studentID);

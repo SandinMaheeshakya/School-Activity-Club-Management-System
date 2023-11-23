@@ -82,7 +82,4 @@ public class OnlineAttendance extends Attendance{
         this.joinStatus = joinStatus;
     }
 
-    public static void main(String[] args) throws SQLException {
-
-    }
 }

@@ -228,6 +228,7 @@ public class AttendanceTrackingController implements PredefinedObjects {
     }
 
 
+
     //Events Data Add
     public void putClubImage(Pane currentPane, String ImageURL) {
         Image ClubImage = new Image(ImageURL);
@@ -397,7 +398,7 @@ public class AttendanceTrackingController implements PredefinedObjects {
 
     ArrayList<HashMap<String,String>> studentIDMapList =  new ArrayList<>();
 
-    public ArrayList<ChoiceBox<String>> displayStudents(int groupNumber) throws SQLException {
+    public void displayStudents(int groupNumber) throws SQLException {
 
         attendedStudents = new ArrayList<>();
         //Need to take DB data as an ArrayList of HashMaps
@@ -450,9 +451,6 @@ public class AttendanceTrackingController implements PredefinedObjects {
 
         }
 
-        groupedChoicesBoxList.add(groupNumber,choiceBoxArrayList);
-        return choiceBoxArrayList;
-
     }
 
 
@@ -468,15 +466,7 @@ public class AttendanceTrackingController implements PredefinedObjects {
 
         } else {
             clearPanes();
-            ArrayList<ChoiceBox<String>> choiceBoxes = displayStudents(0);
-
-
-            int student = 0;
-            for (ChoiceBox<String> choice : choiceBoxes){
-                choice.setValue(groupedChoicesBoxList.get(0).get(student).getValue());
-                student++;
-            }
-
+            displayStudents(0);
 
         }
     }
@@ -491,13 +481,7 @@ public class AttendanceTrackingController implements PredefinedObjects {
 
             }else {
                 clearPanes();
-                ArrayList<ChoiceBox<String>> choiceBoxes = displayStudents(1);
-
-                int student = 0;
-                for (ChoiceBox<String> choice : choiceBoxes){
-                    choice.setValue(groupedChoicesBoxList.get(1).get(student).getValue());
-                    student++;
-                }
+                displayStudents(1);
 
             }
         }
@@ -524,6 +508,18 @@ public class AttendanceTrackingController implements PredefinedObjects {
         }else {
             clearPanes();
             displayStudents(3);
+        }
+    }
+
+    public void switchToPageFive() throws SQLException {
+        if (eventsGroup.isVisible()) {
+            EventsDisplayPageOne.setVisible(false);
+            EventsDisplayPageTwo.setVisible(false);
+            EventsDisplayPageThree.setVisible(false);
+            EventsDisplayPageFour.setVisible(true);
+        }else {
+            clearPanes();
+            displayStudents(4);
         }
     }
 
@@ -589,7 +585,7 @@ public class AttendanceTrackingController implements PredefinedObjects {
             eventTypeLabel.setText("Physical Events");
         }
         studentsGroup.setVisible(true);
-        displayStudents(3);
+        displayStudents(0);
 
     }
 
@@ -673,25 +669,20 @@ public class AttendanceTrackingController implements PredefinedObjects {
     public void eventNineOnClick() throws SQLException {
         currentEventID = Attendance.checkEventID(8);
 
-
     }
 
     public void eventTenOnClick() throws SQLException {
         currentEventID = Attendance.checkEventID(9);
-
 
     }
 
     public void eventElevenOnClick() throws SQLException {
         currentEventID = Attendance.checkEventID(10);
 
-
-
     }
 
     public void eventTwelveOnClick() throws SQLException {
         currentEventID = Attendance.checkEventID(11);
-
 
     }
 }

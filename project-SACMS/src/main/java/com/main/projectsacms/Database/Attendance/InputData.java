@@ -13,13 +13,16 @@ public class InputData extends Connection {
         establishConnection();
 
         try {
-            String sql = "INSERT INTO event_attendance (Event_ID, Student_ID, Attendance) VALUES (?, ?, ?)";
+            String sql = "INSERT INTO event_attendance (Event_ID, Student_ID, Attendance) VALUES (?, ?, ?) " +
+                    "ON DUPLICATE KEY UPDATE Attendance = ?";
+
             try (PreparedStatement statement = connection.prepareStatement(sql)) {
 
                 for (HashMap<String, String> attendance : attendanceData) {
                     statement.setString(1, attendance.get("eventID"));
                     statement.setString(2, attendance.get("studentID"));
                     statement.setString(3, attendance.get("attendance"));
+                    statement.setString(4, attendance.get("attendance"));
                     statement.addBatch();
                 }
                 statement.executeBatch();
