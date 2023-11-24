@@ -137,13 +137,21 @@ public class AttendanceTrackingController implements PredefinedObjects {
     @FXML
     private Label eventTypeLabel;
 
+
+    @FXML
+    private ChoiceBox<String> clubChoosingDropBox;
+
     private final HashMap<String, Pane> PaneMap = new HashMap<>();
 
     private final HashMap<String, Pane> studentPaneMap = new HashMap<>();
 
     private final HashMap<String, AnchorPane> Pages = new HashMap<>();
 
-    private ArrayList<Map<String, String>> events = new ArrayList<>();
+    private static ArrayList<Map<String, String>> events = new ArrayList<>();
+
+    public static ArrayList<Map<String, String>> getEvents() {
+        return events;
+    }
 
     // Getters and Setters to Pane Details
     public HashMap<String, Pane> getPaneMap() {
@@ -167,6 +175,12 @@ public class AttendanceTrackingController implements PredefinedObjects {
 
         displayEvents();
 
+
+        ObservableList<String> choices = FXCollections.observableArrayList(
+                "Club A",
+                "Club B", "Club C");
+
+        clubChoosingDropBox.setItems(choices);
 
     }
 
@@ -295,7 +309,7 @@ public class AttendanceTrackingController implements PredefinedObjects {
 
     }
 
-    public void clearPanes(){
+    public void clearPanesStudents(){
         StudentDetailsPaneOne.getChildren().clear();
         StudentDetailsPaneTwo.getChildren().clear();
         StudentDetailsPaneThree.getChildren().clear();
@@ -305,20 +319,70 @@ public class AttendanceTrackingController implements PredefinedObjects {
 
     }
 
+    public void clearPanesEvents(){
+        PageOneSubEventPaneOne.getChildren().clear();
+        PageOneSubEventPaneTwo.getChildren().clear();
+        PageOneSubEventPaneThree.getChildren().clear();
+        PageTwoSubEventPaneOne.getChildren().clear();
+        PageTwoSubEventPaneTwo.getChildren().clear();
+        PageTwoSubEventPaneThree.getChildren().clear();
+        PageThreeSubEventPaneOne.getChildren().clear();
+        PageThreeSubEventPaneTwo.getChildren().clear();
+        PageThreeSubEventPaneThree.getChildren().clear();
+        PageFourSubEventPaneOne.getChildren().clear();
+        PageFourSubEventPaneTwo.getChildren().clear();
+        PageFourSubEventPaneThree.getChildren().clear();
 
-    public void displayEvents() throws SQLException {
+
+    }
+
+    public void onFilterButtonClick() {
+
+        clearPanesEvents();
+        displayEvents();
+
+    }
+
+    public void displayEvents() {
+
+
         int count = 0;
-        for (Map<String, String> event : events) {
+        int eventCount = 0;
+        while (eventCount < events.size()) {
 
-            Pane currentPane = PaneMap.get(getEventPages(eventPageNumbers).get(count));
 
-            //Setting Attributes
-            putEventName(currentPane, event.get("eventName"));
-            putEventDetails(currentPane,event.get("eventsDescription"));
-            putClubName(currentPane,event.get("clubName"));
-            putEventDate(currentPane,event.get("eventDate"));
+            //Filtering Process Begun
+            if (clubChoosingDropBox.getValue() != null) {
 
-            count++;
+                if (clubChoosingDropBox.getValue().equals(events.get(eventCount).get("clubName"))) {
+                    Pane currentPane = PaneMap.get(getEventPages(eventPageNumbers).get(count));
+
+                    //Setting Attributes
+                    putEventName(currentPane, events.get(eventCount).get("eventName"));
+                    putEventDetails(currentPane, events.get(eventCount).get("eventsDescription"));
+                    putClubName(currentPane, events.get(eventCount).get("clubName"));
+                    putEventDate(currentPane, events.get(eventCount).get("eventDate"));
+
+                    count++;
+                    eventCount++;
+
+                }else {
+                    events.remove(eventCount);
+                }
+            } else {
+
+                Pane currentPane = PaneMap.get(getEventPages(eventPageNumbers).get(count));
+
+                //Setting Attributes
+                putEventName(currentPane, events.get(eventCount).get("eventName"));
+                putEventDetails(currentPane, events.get(eventCount).get("eventsDescription"));
+                putClubName(currentPane, events.get(eventCount).get("clubName"));
+                putEventDate(currentPane, events.get(eventCount).get("eventDate"));
+
+                count++;
+                eventCount++;
+
+            }
         }
     }
 
@@ -412,7 +476,6 @@ public class AttendanceTrackingController implements PredefinedObjects {
             HashMap<String, String> studentIDMap;
             try {
 
-
                 studentIDMap = new HashMap<>();
 
                 OnlineAttendance attendance = new OnlineAttendance(groupNumber, studentNumber, true, "23:10");
@@ -427,7 +490,6 @@ public class AttendanceTrackingController implements PredefinedObjects {
                 putStudentId(currentPane, attendance.getStudentID());
                 putStudentName(currentPane, attendance.getStudentName());
                 putStudentGrade(currentPane, attendance.getStudentGrade());
-
 
                 //Getting the data from Attendance Class
                 String attendanceStatus = Attendance.retrieveAttendanceData(currentEventID,attendance.getStudentID());
@@ -465,7 +527,7 @@ public class AttendanceTrackingController implements PredefinedObjects {
             EventsDisplayPageFour.setVisible(false);
 
         } else {
-            clearPanes();
+            clearPanesStudents();
             displayStudents(0);
 
         }
@@ -480,7 +542,7 @@ public class AttendanceTrackingController implements PredefinedObjects {
                 EventsDisplayPageFour.setVisible(false);
 
             }else {
-                clearPanes();
+                clearPanesStudents();
                 displayStudents(1);
 
             }
@@ -494,7 +556,7 @@ public class AttendanceTrackingController implements PredefinedObjects {
             EventsDisplayPageThree.setVisible(true);
             EventsDisplayPageFour.setVisible(false);
         } else {
-            clearPanes();
+            clearPanesStudents();
             displayStudents(2);
         }
     }
@@ -506,7 +568,7 @@ public class AttendanceTrackingController implements PredefinedObjects {
             EventsDisplayPageThree.setVisible(false);
             EventsDisplayPageFour.setVisible(true);
         }else {
-            clearPanes();
+            clearPanesStudents();
             displayStudents(3);
         }
     }
@@ -518,7 +580,7 @@ public class AttendanceTrackingController implements PredefinedObjects {
             EventsDisplayPageThree.setVisible(false);
             EventsDisplayPageFour.setVisible(true);
         }else {
-            clearPanes();
+            clearPanesStudents();
             displayStudents(4);
         }
     }
@@ -534,7 +596,7 @@ public class AttendanceTrackingController implements PredefinedObjects {
         currentEventID = Attendance.checkEventID(0);
 
         //Store data
-        Attendance.setCurrentEventNumber(0);
+        Attendance.setCurrentEventNumber(0); // this is the piece I need to change
 
         eventType = events.get(0).get("eventType");
 

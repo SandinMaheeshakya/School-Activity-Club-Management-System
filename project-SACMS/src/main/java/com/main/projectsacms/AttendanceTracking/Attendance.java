@@ -84,8 +84,8 @@ public abstract class Attendance implements PredefinedObjects {
 
     //Checking types and IDs
 
-    public static String checkEventID(int eventNumber) throws SQLException {
-       return RetrieveData.getEventsData().get(eventNumber).get("eventID");
+    public static String checkEventID(int eventNumber)  {
+       return AttendanceTrackingController.getEvents().get(eventNumber).get("eventID");
 
     }
 

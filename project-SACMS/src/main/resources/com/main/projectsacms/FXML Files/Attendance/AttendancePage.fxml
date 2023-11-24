@@ -84,8 +84,8 @@
                <children>
                   <Rectangle arcHeight="40.0" arcWidth="40.0" fill="#1b2b32" height="119.0" stroke="BLACK" strokeType="INSIDE" width="874.0" />
                   <TextField layoutX="199.0" layoutY="25.0" prefHeight="25.0" prefWidth="396.0" />
-                  <ChoiceBox layoutX="105.0" layoutY="80.0" prefHeight="25.0" prefWidth="174.0" />
-                  <Button layoutX="705.0" layoutY="40.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="83.0" text="Filter" />
+                  <ChoiceBox fx:id="clubChoosingDropBox" layoutX="105.0" layoutY="80.0" prefHeight="25.0" prefWidth="174.0" />
+                  <Button layoutX="705.0" layoutY="40.0" mnemonicParsing="false" onAction="#onFilterButtonClick" prefHeight="39.0" prefWidth="83.0" text="Filter" />
                   <Label layoutX="212.0" layoutY="5.0" prefHeight="17.0" prefWidth="68.0" text="Search" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="14.0" />
@@ -96,7 +96,7 @@
                         <Font name="System Bold" size="14.0" />
                      </font>
                   </Label>
-                  <DatePicker layoutX="298.0" layoutY="80.0" />
+                  <DatePicker fx:id="filterEventDateFrom" layoutX="298.0" layoutY="80.0" />
                   <DatePicker layoutX="493.0" layoutY="80.0" />
                   <Label layoutX="298.0" layoutY="59.0" prefHeight="17.0" prefWidth="68.0" text="From" textFill="WHITE">
                      <font>
