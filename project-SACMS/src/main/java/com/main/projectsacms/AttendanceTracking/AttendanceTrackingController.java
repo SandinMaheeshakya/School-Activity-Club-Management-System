@@ -336,26 +336,27 @@ public class AttendanceTrackingController implements PredefinedObjects {
 
     }
 
-    public void onFilterButtonClick() {
+    public void onFilterButtonClick() throws SQLException {
 
         clearPanesEvents();
         displayEvents();
 
     }
 
-    public void displayEvents() {
+    public void displayEvents() throws SQLException {
 
+        events = RetrieveData.getEventsData();
 
         int count = 0;
         int eventCount = 0;
         while (eventCount < events.size()) {
 
+            Pane currentPane = PaneMap.get(getEventPages(eventPageNumbers).get(count));
 
             //Filtering Process Begun
             if (clubChoosingDropBox.getValue() != null) {
 
                 if (clubChoosingDropBox.getValue().equals(events.get(eventCount).get("clubName"))) {
-                    Pane currentPane = PaneMap.get(getEventPages(eventPageNumbers).get(count));
 
                     //Setting Attributes
                     putEventName(currentPane, events.get(eventCount).get("eventName"));
@@ -370,8 +371,6 @@ public class AttendanceTrackingController implements PredefinedObjects {
                     events.remove(eventCount);
                 }
             } else {
-
-                Pane currentPane = PaneMap.get(getEventPages(eventPageNumbers).get(count));
 
                 //Setting Attributes
                 putEventName(currentPane, events.get(eventCount).get("eventName"));
@@ -474,11 +473,18 @@ public class AttendanceTrackingController implements PredefinedObjects {
         while (studentNumber < 6) {
 
             HashMap<String, String> studentIDMap;
+            Attendance attendance;
             try {
 
                 studentIDMap = new HashMap<>();
+                if (eventType.equals("Online")){
 
-                OnlineAttendance attendance = new OnlineAttendance(groupNumber, studentNumber, true, "23:10");
+                     attendance = new OnlineAttendance(groupNumber, studentNumber, true, "23:10");
+
+                }else {
+
+                     attendance = new PhysicalEventsAttendance(groupNumber,studentNumber,"Maharagama",true);
+                }
 
                 //Creating the object
                 Pane currentPane = studentPaneMap.get(getStudentPanes(studentPaneNumbers).get(studentNumber));
