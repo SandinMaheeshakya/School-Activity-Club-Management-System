@@ -9,6 +9,7 @@ import javafx.fxml.FXML;
 import javafx.scene.Group;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -18,6 +19,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 
 import java.sql.SQLException;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -137,6 +139,11 @@ public class AttendanceTrackingController implements PredefinedObjects {
     @FXML
     private Label eventTypeLabel;
 
+    @FXML
+    private DatePicker filterEventDateFrom;
+
+    @FXML
+    private DatePicker filterEventDateTo;
 
     @FXML
     private ChoiceBox<String> clubChoosingDropBox;
@@ -356,7 +363,29 @@ public class AttendanceTrackingController implements PredefinedObjects {
             //Filtering Process Begun
             if (clubChoosingDropBox.getValue() != null) {
 
-                if (clubChoosingDropBox.getValue().equals(events.get(eventCount).get("clubName"))) {
+                if (filterEventDateFrom.getValue() != null && filterEventDateTo.getValue() != null && clubChoosingDropBox.getValue().equals(events.get(eventCount).get("clubName"))) {
+
+                    LocalDate eventBeforeDate = filterEventDateFrom.getValue();
+                    LocalDate eventAfterDate = filterEventDateTo.getValue();
+                    LocalDate currentEventDate = LocalDate.parse(events.get(eventCount).get("eventDate"));
+
+                    if (!currentEventDate.isBefore(eventBeforeDate) && !currentEventDate.isAfter(eventAfterDate)){
+
+                        //Setting Attributes
+                        putEventName(currentPane, events.get(eventCount).get("eventName"));
+                        putEventDetails(currentPane, events.get(eventCount).get("eventsDescription"));
+                        putClubName(currentPane, events.get(eventCount).get("clubName"));
+                        putEventDate(currentPane, events.get(eventCount).get("eventDate"));
+
+                        count++;
+                        eventCount++;
+
+                    }else {
+                    events.remove(eventCount);
+                }
+
+                }
+                else if (clubChoosingDropBox.getValue().equals(events.get(eventCount).get("clubName"))) {
 
                     //Setting Attributes
                     putEventName(currentPane, events.get(eventCount).get("eventName"));
@@ -370,6 +399,27 @@ public class AttendanceTrackingController implements PredefinedObjects {
                 }else {
                     events.remove(eventCount);
                 }
+
+            } else if (filterEventDateFrom.getValue() != null && filterEventDateTo.getValue() != null) {
+                LocalDate eventBeforeDate = filterEventDateFrom.getValue();
+                LocalDate eventAfterDate  = filterEventDateTo.getValue();
+                LocalDate currentEventDate = LocalDate.parse(events.get(eventCount).get("eventDate"));
+
+                if (!currentEventDate.isBefore(eventBeforeDate) && !currentEventDate.isAfter(eventAfterDate)){
+
+                    //Setting Attributes
+                    putEventName(currentPane, events.get(eventCount).get("eventName"));
+                    putEventDetails(currentPane, events.get(eventCount).get("eventsDescription"));
+                    putClubName(currentPane, events.get(eventCount).get("clubName"));
+                    putEventDate(currentPane, events.get(eventCount).get("eventDate"));
+
+                    count++;
+                    eventCount++;
+
+                }else {
+                    events.remove(eventCount);
+                }
+                
             } else {
 
                 //Setting Attributes

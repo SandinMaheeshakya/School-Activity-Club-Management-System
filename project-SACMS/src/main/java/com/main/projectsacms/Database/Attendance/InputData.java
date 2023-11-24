@@ -22,6 +22,8 @@ public class InputData extends Connection {
                     statement.setString(1, attendance.get("eventID"));
                     statement.setString(2, attendance.get("studentID"));
                     statement.setString(3, attendance.get("attendance"));
+
+                    //updated query
                     statement.setString(4, attendance.get("attendance"));
                     statement.addBatch();
                 }
