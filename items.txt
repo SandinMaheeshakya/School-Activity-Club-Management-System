@@ -1,0 +1,5 @@
+001       Macbook Air       Apple       Monitor       200000       50       2023-07-31       file:/D:/This%20PC/Documents/IIT/CM1606%20-%20PF/Sem%202/Programming%20Fundamentals%20Assignment/images/Macbook%20Air.jpg
+002       Keyboard M6A1       Armageddon       Keyboards       15000       60       2023-07-31       file:/D:/This%20PC/Documents/IIT/CM1606%20-%20PF/Sem%202/Programming%20Fundamentals%20Assignment/images/Armageddon%20Keyboard.png
+003       Monitor XA1       Samsung       Monitor       75000       40       2023-07-31       file:/D:/This%20PC/Documents/IIT/CM1606%20-%20PF/Sem%202/Programming%20Fundamentals%20Assignment/images/Samsung%20Monitor.jpg
+004       Air Q30       SoundCore       Headset       20000       40       2023-07-31       file:/D:/This%20PC/Documents/IIT/CM1606%20-%20PF/Sem%202/Programming%20Fundamentals%20Assignment/images/SoundCore%20Liberty%20Air%202.jpg
+005       CPU       ViewSonic       CPU       50000       15       2023-07-31       file:/D:/This%20PC/Documents/IIT/CM1606%20-%20PF/Sem%202/Programming%20Fundamentals%20Assignment/images/ViewSonic%20CPU.jpg

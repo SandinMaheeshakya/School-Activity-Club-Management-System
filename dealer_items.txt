@@ -1,0 +1,18 @@
+1,M260 Headphones,Sonic Gear,35000,60
+1,ROG Mouse,ASUS,10000,40
+1,Fireblade Monitor,MSI,65000,50
+2,X3 CPU,MSI,60000,50
+2,Q35 Headphones,Soundcore,39000,100
+2,M46 Keyboard,Armageddon,8500,150
+3,Desktop Mouse,HP,6000,50
+3,24 Monitor,Viewsonic,70000,45
+3,UPS,ProLink,9000,100
+4,23.8" Monitor,Dell,60000,100
+4,Optical Mouse,HP,4000,80
+4,Mech Keyboard,Logitech,6000,100
+5,s67 Headphones,Beats,15000,80
+5,CPU,ASUS,65000,100
+5,Gaming Mouse,Anker,9000,100
+6,Mech Keyboard,Dell,9000,100
+6,CPU,Seagate,78000,90
+6,24" Monitor,ASUS,80000,85
