@@ -29,76 +29,49 @@
             <Image url="@../Icons/Functional/logo.png" />
          </image>
       </ImageView>
-      <Rectangle arcHeight="20.0" arcWidth="20.0" height="75.0" layoutX="176.0" layoutY="71.0" stroke="#00fff7" strokeType="INSIDE" strokeWidth="4.0" width="151.0" />
-      <ImageView fitHeight="47.0" fitWidth="39.0" layoutX="230.0" layoutY="78.0" pickOnBounds="true" preserveRatio="true">
+      <Rectangle arcHeight="20.0" arcWidth="20.0" height="195.0" layoutX="287.0" layoutY="146.0" stroke="#00fff7" strokeType="INSIDE" strokeWidth="4.0" width="206.0" />
+      <ImageView fitHeight="85.0" fitWidth="90.0" layoutX="348.0" layoutY="181.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Icons/Functional/Clubs.png" />
          </image>
       </ImageView>
-      <Label layoutX="228.0" layoutY="117.0" text="Home" textFill="WHITE">
+      <Label layoutX="369.0" layoutY="273.0" text="Home" textFill="WHITE">
          <font>
             <Font name="Calibri Bold" size="17.0" />
          </font>
       </Label>
-      <Rectangle arcHeight="20.0" arcWidth="20.0" height="75.0" layoutX="656.0" layoutY="71.0" stroke="#00fff7" strokeType="INSIDE" strokeWidth="4.0" width="151.0" />
-      <Rectangle arcHeight="20.0" arcWidth="20.0" height="75.0" layoutX="903.0" layoutY="71.0" stroke="#00fff7" strokeType="INSIDE" strokeWidth="4.0" width="151.0" />
-      <Rectangle arcHeight="20.0" arcWidth="20.0" height="75.0" layoutX="416.0" layoutY="71.0" stroke="#00fff7" strokeType="INSIDE" strokeWidth="4.0" width="151.0" />
-      <ImageView fitHeight="39.0" fitWidth="39.0" layoutX="472.0" layoutY="78.0" pickOnBounds="true" preserveRatio="true">
+      <Rectangle arcHeight="20.0" arcWidth="20.0" height="195.0" layoutX="774.0" layoutY="146.0" stroke="#00fff7" strokeType="INSIDE" strokeWidth="4.0" width="206.0" />
+      <ImageView fitHeight="85.0" fitWidth="83.0" layoutX="836.0" layoutY="170.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Icons/Functional/ClubManage.png" />
          </image>
       </ImageView>
-      <Label layoutX="472.0" layoutY="117.0" text="Clubs" textFill="WHITE">
+      <Label layoutX="858.0" layoutY="273.0" text="Clubs" textFill="WHITE">
          <font>
             <Font name="Calibri Bold" size="17.0" />
          </font>
       </Label>
-      <ImageView fitHeight="39.0" fitWidth="39.0" layoutX="712.0" layoutY="78.0" pickOnBounds="true" preserveRatio="true">
+      <Rectangle arcHeight="20.0" arcWidth="20.0" height="195.0" layoutX="288.0" layoutY="461.0" stroke="#00fff7" strokeType="INSIDE" strokeWidth="4.0" width="206.0" />
+      <ImageView fitHeight="85.0" fitWidth="71.0" layoutX="355.0" layoutY="497.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Icons/Functional/Events.png" />
          </image>
       </ImageView>
-      <Label layoutX="708.0" layoutY="119.0" text="Events" textFill="WHITE">
+      <Label layoutX="367.0" layoutY="591.0" text="Events" textFill="WHITE">
          <font>
             <Font name="Calibri Bold" size="17.0" />
          </font>
       </Label>
-      <ImageView fitHeight="39.0" fitWidth="39.0" layoutX="959.0" layoutY="78.0" pickOnBounds="true" preserveRatio="true">
+      <Rectangle arcHeight="20.0" arcWidth="20.0" height="195.0" layoutX="775.0" layoutY="461.0" stroke="#00fff7" strokeType="INSIDE" strokeWidth="4.0" width="206.0" />
+      <ImageView fitHeight="83.0" fitWidth="71.0" layoutX="843.0" layoutY="497.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Icons/Functional/Attendence.png" />
          </image>
       </ImageView>
-      <Label layoutX="937.0" layoutY="119.0" text="Attendence" textFill="WHITE">
+      <Label layoutX="843.0" layoutY="578.0" text="Attendence" textFill="WHITE">
          <font>
             <Font name="Calibri Bold" size="17.0" />
          </font>
       </Label>
-      <AnchorPane layoutX="53.0" layoutY="206.0" prefHeight="188.0" prefWidth="877.0" style="-fx-background-color: #2a2a2a; -fx-background-radius: 40;">
-         <children>
-            <Label layoutX="58.0" layoutY="14.0" text="Trending Clubs" textFill="WHITE">
-               <font>
-                  <Font name="Calibri Bold" size="17.0" />
-               </font>
-            </Label>
-         </children>
-      </AnchorPane>
-      <AnchorPane layoutX="952.0" layoutY="186.0" prefHeight="481.0" prefWidth="292.0" style="-fx-background-color: #2a2a2a; -fx-background-radius: 40;">
-         <children>
-            <Label layoutX="85.0" layoutY="14.0" text="Upcoming Events" textFill="WHITE">
-               <font>
-                  <Font name="Calibri Bold" size="17.0" />
-               </font>
-            </Label>
-         </children>
-      </AnchorPane>
-      <AnchorPane layoutX="53.0" layoutY="463.0" prefHeight="188.0" prefWidth="877.0" style="-fx-background-color: #2a2a2a; -fx-background-radius: 40;">
-         <children>
-            <Label layoutX="58.0" layoutY="14.0" text="Recently Visited" textFill="WHITE">
-               <font>
-                  <Font name="Calibri Bold" size="17.0" />
-               </font>
-            </Label>
-         </children>
-      </AnchorPane>
    </children>
 </AnchorPane>
