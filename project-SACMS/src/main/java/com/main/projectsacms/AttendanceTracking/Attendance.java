@@ -93,7 +93,7 @@ public abstract class Attendance implements PredefinedObjects {
 
         ArrayList<Map<String,String>> eventDetails = RetrieveData.getEventsData();
 
-        if (eventDetails.get(eventNumber).get("Event_Type").equals("Online")){
+        if (eventDetails.get(eventNumber).get("eventType").equals("Online")){
             return "Online";
 
         }else {

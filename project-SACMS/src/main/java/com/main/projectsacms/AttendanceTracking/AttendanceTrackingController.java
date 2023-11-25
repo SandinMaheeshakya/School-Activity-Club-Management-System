@@ -363,6 +363,12 @@ public class AttendanceTrackingController implements PredefinedObjects {
 
             Pane currentPane = PaneMap.get(getEventPages(eventPageNumbers).get(count));
 
+            if (Attendance.checkEventType(eventCount).equals("Online")){
+                putClubImage(currentPane,"D:\\2nd Year\\Object Oriented Development\\CW\\CW Git\\School-Activity-Club-Management-System\\project-SACMS\\src\\main\\resources\\com\\main\\projectsacms\\Icons\\Functional\\online logo.png");
+            }else {
+                putClubImage(currentPane,"D:\\2nd Year\\Object Oriented Development\\CW\\CW Git\\School-Activity-Club-Management-System\\project-SACMS\\src\\main\\resources\\com\\main\\projectsacms\\Icons\\Functional\\physical event logo.png");
+
+            }
             //Filtering Process Begun
             if (clubChoosingDropBox.getValue() != null) {
 
@@ -664,9 +670,9 @@ public class AttendanceTrackingController implements PredefinedObjects {
         eventType = events.get(0).get("eventType");
 
         if (eventType.equals("Online")) {
-            eventTypeLabel.setText("Online Events");
+            eventTypeLabel.setText("Online Event");
         }else {
-            eventTypeLabel.setText("Physical Events");
+            eventTypeLabel.setText("Physical Event");
         }
         studentsGroup.setVisible(true);
         displayStudents(0);
@@ -685,9 +691,9 @@ public class AttendanceTrackingController implements PredefinedObjects {
         eventType = events.get(1).get("eventType");
 
         if (eventType.equals("Online")) {
-            eventTypeLabel.setText("Online Events");
+            eventTypeLabel.setText("Online Event");
         }else {
-            eventTypeLabel.setText("Physical Events");
+            eventTypeLabel.setText("Physical Event");
         }
         studentsGroup.setVisible(true);
         displayStudents(0);
@@ -705,9 +711,9 @@ public class AttendanceTrackingController implements PredefinedObjects {
         eventType = events.get(2).get("eventType");
 
         if (eventType.equals("Online")) {
-            eventTypeLabel.setText("Online Events");
+            eventTypeLabel.setText("Online Event");
         }else {
-            eventTypeLabel.setText("Physical Events");
+            eventTypeLabel.setText("Physical Event");
         }
         studentsGroup.setVisible(true);
         displayStudents(0);
@@ -726,9 +732,9 @@ public class AttendanceTrackingController implements PredefinedObjects {
         eventType = events.get(3).get("eventType");
 
         if (eventType.equals("Online")) {
-            eventTypeLabel.setText("Online Events");
+            eventTypeLabel.setText("Online Event");
         }else {
-            eventTypeLabel.setText("Physical Events");
+            eventTypeLabel.setText("Physical Event");
         }
         studentsGroup.setVisible(true);
         displayStudents(0);
@@ -747,9 +753,9 @@ public class AttendanceTrackingController implements PredefinedObjects {
         eventType = events.get(4).get("eventType");
 
         if (eventType.equals("Online")) {
-            eventTypeLabel.setText("Online Events");
+            eventTypeLabel.setText("Online Event");
         }else {
-            eventTypeLabel.setText("Physical Events");
+            eventTypeLabel.setText("Physical Event");
         }
         studentsGroup.setVisible(true);
         displayStudents(0);
@@ -769,9 +775,9 @@ public class AttendanceTrackingController implements PredefinedObjects {
         eventType = events.get(5).get("eventType");
 
         if (eventType.equals("Online")) {
-            eventTypeLabel.setText("Online Events");
+            eventTypeLabel.setText("Online Event");
         }else {
-            eventTypeLabel.setText("Physical Events");
+            eventTypeLabel.setText("Physical Event");
         }
         studentsGroup.setVisible(true);
         displayStudents(0);
