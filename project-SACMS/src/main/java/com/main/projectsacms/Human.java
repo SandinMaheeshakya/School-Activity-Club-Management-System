@@ -9,7 +9,14 @@ public class Human {
     private String password;
     private String confirm_password;
 
-    public Human(String firstName, String lastName, String userName, String email, String email1, String dob, String password, String confirmPassword) {
+
+    public Human(String firstName, String lastName, String userName, String email, String dob, String password) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.userName = userName;
+        this.email = email;
+        this.dob = dob;
+        this.password = password;
     }
 
     public String getFirstName() {
