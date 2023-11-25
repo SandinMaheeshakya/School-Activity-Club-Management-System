@@ -140,6 +140,9 @@ public class AttendanceTrackingController implements PredefinedObjects {
     private Label eventTypeLabel;
 
     @FXML
+    private Label meetingTimeOrVenueLabel;
+
+    @FXML
     private DatePicker filterEventDateFrom;
 
     @FXML
@@ -530,10 +533,14 @@ public class AttendanceTrackingController implements PredefinedObjects {
                 if (eventType.equals("Online")){
 
                      attendance = new OnlineAttendance(groupNumber, studentNumber, true, "23:10");
+                     meetingTimeOrVenueLabel.setText("Meeting Time");
 
                 }else {
 
                      attendance = new PhysicalEventsAttendance(groupNumber,studentNumber,"Maharagama",true);
+                    meetingTimeOrVenueLabel.setText("Venue");
+                    meetingTimeOrVenueLabel.setLayoutX(799);
+
                 }
 
                 //Creating the object
