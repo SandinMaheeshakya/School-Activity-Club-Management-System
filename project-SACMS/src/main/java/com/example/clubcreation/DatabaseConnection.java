@@ -4,11 +4,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DatabaseConnection {
-    private Connection connection;
-    private String url;
-    private String userName;
-    private String password;
+public class DatabaseConnection extends BaseDatabaseConnection {
 
     public DatabaseConnection(String url, String userName, String password) {
         this.url = url;
@@ -95,6 +91,14 @@ public class DatabaseConnection {
 
         } finally {
             closeResources(connection, preparedStatement, null);
+        }
+    }
+
+    public void deleteClub(CreateClub club) throws SQLException {
+        String deleteQuery = "DELETE FROM club_creation WHERE clubID = ?";
+        try (PreparedStatement preparedStatement = connection.prepareStatement(deleteQuery)) {
+            preparedStatement.setString(1, club.getClubID());
+            preparedStatement.executeUpdate();
         }
     }
 

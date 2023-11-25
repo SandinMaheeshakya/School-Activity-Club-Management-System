@@ -1,7 +1,5 @@
 package com.example.clubcreation;
 
-import javafx.scene.image.Image;
-
 public class CreateClub {
     String clubID;
     String clubName;

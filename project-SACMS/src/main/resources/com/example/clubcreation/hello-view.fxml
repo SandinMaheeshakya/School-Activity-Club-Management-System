@@ -146,7 +146,7 @@
                   <Separator layoutX="158.0" layoutY="33.0" orientation="VERTICAL" prefHeight="41.0" prefWidth="0.0" />
                   <HBox alignment="CENTER" layoutX="191.0" layoutY="40.0" prefHeight="25.0" prefWidth="290.0">
                      <children>
-                        <TextField prefHeight="26.0" prefWidth="256.0" promptText="Search" />
+                        <TextField fx:id="txtSearch" prefHeight="26.0" prefWidth="256.0" promptText="Search" />
                         <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../../main/projectsacms/IMG/searchIcon.png" />
@@ -166,81 +166,99 @@
                         <TableColumn fx:id="colProfilePicture" prefWidth="112.7999267578125" text="Profile Picture" />
                     </columns>
                   </TableView>
-                  <VBox layoutX="265.0" layoutY="324.0" prefHeight="270.0" prefWidth="141.0">
+                  <Pane fx:id="pnlUpdate" layoutX="-1.0" layoutY="289.0" prefHeight="384.0" prefWidth="998.0" visible="false">
                      <children>
-                        <Label text="Club ID:" textFill="WHITE">
+                        <VBox layoutX="428.0" layoutY="32.0" prefHeight="300.0" prefWidth="528.0">
+                           <children>
+                              <TextField fx:id="txtUpdateClubID" prefHeight="25.0" prefWidth="400.0" styleClass="input" stylesheets="@../../main/projectsacms/CSS%20Files/styles.css" />
+                              <Pane prefHeight="38.0" prefWidth="142.0" />
+                              <TextField fx:id="txtUpdateClubName" prefHeight="25.0" prefWidth="400.0" styleClass="input" stylesheets="@../../main/projectsacms/CSS%20Files/styles.css" />
+                              <Pane prefHeight="38.0" prefWidth="142.0" />
+                              <TextField fx:id="txtUpdateDescription" prefHeight="25.0" prefWidth="400.0" styleClass="input" stylesheets="@../../main/projectsacms/CSS%20Files/styles.css" />
+                              <Pane prefHeight="38.0" prefWidth="142.0" />
+                              <TextField fx:id="txtUpdateType" prefHeight="25.0" prefWidth="400.0" styleClass="input" stylesheets="@../../main/projectsacms/CSS%20Files/styles.css" />
+                              <Pane prefHeight="38.0" prefWidth="142.0" />
+                              <TextField fx:id="txtUpdateAdvisor" prefHeight="25.0" prefWidth="400.0" styleClass="input" stylesheets="@../../main/projectsacms/CSS%20Files/styles.css" />
+                              <Pane prefHeight="38.0" prefWidth="386.0" />
+                              <TextField fx:id="txtUpdateEmail" prefHeight="25.0" prefWidth="400.0" styleClass="input" stylesheets="@../../main/projectsacms/CSS%20Files/styles.css" />
+                              <Pane prefHeight="38.0" prefWidth="386.0" />
+                              <TextField fx:id="txtUpdateContact" prefHeight="25.0" prefWidth="400.0" styleClass="input" stylesheets="@../../main/projectsacms/CSS%20Files/styles.css" />
+                              <Pane prefHeight="38.0" prefWidth="142.0" />
+                           </children>
+                        </VBox>
+                        <VBox layoutX="260.0" layoutY="47.0" prefHeight="270.0" prefWidth="141.0">
+                           <children>
+                              <Label text="Club ID:" textFill="WHITE">
+                                 <font>
+                                    <Font name="Arial Bold" size="13.0" />
+                                 </font>
+                              </Label>
+                              <Pane prefHeight="38.0" prefWidth="142.0" />
+                              <Label text="Club name:" textFill="WHITE">
+                                 <font>
+                                    <Font name="Arial Bold" size="13.0" />
+                                 </font>
+                              </Label>
+                              <Pane prefHeight="38.0" prefWidth="142.0" />
+                              <Label text="Description:" textFill="WHITE">
+                                 <font>
+                                    <Font name="Arial Bold" size="13.0" />
+                                 </font>
+                              </Label>
+                              <Pane prefHeight="38.0" prefWidth="142.0" />
+                              <Label text="Club category or type:" textFill="WHITE">
+                                 <font>
+                                    <Font name="Arial Bold" size="13.0" />
+                                 </font>
+                              </Label>
+                              <Pane prefHeight="38.0" prefWidth="142.0" />
+                              <Label text="Advisor ID:" textFill="WHITE">
+                                 <font>
+                                    <Font name="Arial Bold" size="13.0" />
+                                 </font>
+                              </Label>
+                              <Pane prefHeight="38.0" prefWidth="142.0" />
+                              <Label text="Email:" textFill="WHITE">
+                                 <font>
+                                    <Font name="Arial Bold" size="13.0" />
+                                 </font>
+                              </Label>
+                              <Pane prefHeight="38.0" prefWidth="142.0" />
+                              <Label text="Contact number:" textFill="WHITE">
+                                 <font>
+                                    <Font name="Arial Bold" size="13.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <ImageView fx:id="imgUpdateImage" fitHeight="200.0" fitWidth="200.0" layoutX="28.0" layoutY="47.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../main/projectsacms/IMG/background.png" />
+                           </image>
+                        </ImageView>
+                        <Button layoutX="61.0" layoutY="135.0" mnemonicParsing="false" text="Select Profile Picture" textFill="WHITE">
                            <font>
-                              <Font name="Arial Bold" size="13.0" />
+                              <Font name="System Bold" size="12.0" />
                            </font>
-                        </Label>
-                        <Pane prefHeight="38.0" prefWidth="142.0" />
-                        <Label text="Club name:" textFill="WHITE">
-                           <font>
-                              <Font name="Arial Bold" size="13.0" />
-                           </font>
-                        </Label>
-                        <Pane prefHeight="38.0" prefWidth="142.0" />
-                        <Label text="Description:" textFill="WHITE">
-                           <font>
-                              <Font name="Arial Bold" size="13.0" />
-                           </font>
-                        </Label>
-                        <Pane prefHeight="38.0" prefWidth="142.0" />
-                        <Label text="Club category or type:" textFill="WHITE">
-                           <font>
-                              <Font name="Arial Bold" size="13.0" />
-                           </font>
-                        </Label>
-                        <Pane prefHeight="38.0" prefWidth="142.0" />
-                        <Label text="Advisor ID:" textFill="WHITE">
-                           <font>
-                              <Font name="Arial Bold" size="13.0" />
-                           </font>
-                        </Label>
-                        <Pane prefHeight="38.0" prefWidth="142.0" />
-                        <Label text="Email:" textFill="WHITE">
-                           <font>
-                              <Font name="Arial Bold" size="13.0" />
-                           </font>
-                        </Label>
-                        <Pane prefHeight="38.0" prefWidth="142.0" />
-                        <Label text="Contact number:" textFill="WHITE">
-                           <font>
-                              <Font name="Arial Bold" size="13.0" />
-                           </font>
-                        </Label>
+                        </Button>
+                        <Button fx:id="btnUpdate" layoutX="616.0" layoutY="346.0" mnemonicParsing="false" onAction="#updateClubs" prefHeight="34.0" prefWidth="83.0" styleClass="updateButton" stylesheets="@../../main/projectsacms/CSS%20Files/styles.css" text="Update" textFill="WHITE" />
+                        <Button fx:id="btnDelete" layoutX="756.0" layoutY="346.0" mnemonicParsing="false" onAction="#deleteClubs" prefHeight="34.0" prefWidth="83.0" styleClass="closeButton" stylesheets="@../../main/projectsacms/CSS%20Files/styles.css" text="Delete" textFill="WHITE" />
                      </children>
-                  </VBox>
-                  <VBox layoutX="430.0" layoutY="313.0" prefHeight="300.0" prefWidth="528.0">
+                  </Pane>
+                  <Pane fx:id="pnlAddEvent" layoutX="1.0" layoutY="289.0" prefHeight="384.0" prefWidth="998.0" visible="false">
                      <children>
-                        <TextField fx:id="txtUpdateClubID" prefHeight="25.0" prefWidth="400.0" styleClass="input" stylesheets="@../../main/projectsacms/CSS%20Files/styles.css" />
-                        <Pane prefHeight="38.0" prefWidth="142.0" />
-                        <TextField fx:id="txtUpdateClubName" prefHeight="25.0" prefWidth="400.0" styleClass="input" stylesheets="@../../main/projectsacms/CSS%20Files/styles.css" />
-                        <Pane prefHeight="38.0" prefWidth="142.0" />
-                        <TextField fx:id="txtUpdateDescription" prefHeight="25.0" prefWidth="400.0" styleClass="input" stylesheets="@../../main/projectsacms/CSS%20Files/styles.css" />
-                        <Pane prefHeight="38.0" prefWidth="142.0" />
-                        <TextField fx:id="txtUpdateType" prefHeight="25.0" prefWidth="400.0" styleClass="input" stylesheets="@../../main/projectsacms/CSS%20Files/styles.css" />
-                        <Pane prefHeight="38.0" prefWidth="142.0" />
-                        <TextField fx:id="txtUpdateAdvisor" prefHeight="25.0" prefWidth="400.0" styleClass="input" stylesheets="@../../main/projectsacms/CSS%20Files/styles.css" />
-                        <Pane prefHeight="38.0" prefWidth="386.0" />
-                        <TextField fx:id="txtUpdateEmail" prefHeight="25.0" prefWidth="400.0" styleClass="input" stylesheets="@../../main/projectsacms/CSS%20Files/styles.css" />
-                        <Pane prefHeight="38.0" prefWidth="386.0" />
-                        <TextField fx:id="txtUpdateContact" prefHeight="25.0" prefWidth="400.0" styleClass="input" stylesheets="@../../main/projectsacms/CSS%20Files/styles.css" />
-                        <Pane prefHeight="38.0" prefWidth="142.0" />
+                        <Button fx:id="btnAddEvent" layoutX="234.0" layoutY="166.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="215.0" styleClass="spotifyButton" stylesheets="@../../main/projectsacms/CSS%20Files/styles.css" text="Add Events" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="24.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="btnEditClubs" layoutX="626.0" layoutY="166.0" mnemonicParsing="false" onAction="#goToUpdate" prefHeight="52.0" prefWidth="215.0" styleClass="spotifyButton" stylesheets="@../../main/projectsacms/CSS%20Files/styles.css" text="Update Clubs" textFill="WHITE">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Button>
                      </children>
-                  </VBox>
-                  <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="21.0" layoutY="357.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../main/projectsacms/IMG/background.png" />
-                     </image>
-                  </ImageView>
-                  <Button layoutX="50.0" layoutY="439.0" mnemonicParsing="false" text="Select Profile Picture" textFill="WHITE">
-                     <font>
-                        <Font name="System Bold" size="12.0" />
-                     </font>
-                  </Button>
-                  <Button fx:id="btnUpdate" layoutX="662.0" layoutY="626.0" mnemonicParsing="false" onAction="#updateClubs" prefHeight="34.0" prefWidth="76.0" styleClass="updateButton" stylesheets="@../../main/projectsacms/CSS%20Files/styles.css" text="Update" textFill="WHITE" />
-                  <Button fx:id="btnDelete" layoutX="806.0" layoutY="626.0" mnemonicParsing="false" onAction="#deleteClubs" prefHeight="34.0" prefWidth="83.0" styleClass="closeButton" stylesheets="@../../main/projectsacms/CSS%20Files/styles.css" text="Delete" textFill="WHITE" />
+                  </Pane>
                </children>
             </Pane>
          </children>

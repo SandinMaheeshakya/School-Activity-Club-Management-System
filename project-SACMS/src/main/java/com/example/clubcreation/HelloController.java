@@ -1,5 +1,7 @@
 package com.example.clubcreation;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -10,8 +12,6 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.stage.FileChooser;
 import javafx.scene.input.MouseEvent;
-
-
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
@@ -125,6 +125,24 @@ public class HelloController implements Initializable {
 
     @FXML
     private TextField txtUpdateType;
+
+    @FXML
+    private ImageView imgUpdateImage;
+
+    @FXML
+    private TextField txtSearch;
+
+    @FXML
+    private Button btnAddEvent;
+
+    @FXML
+    private Button btnEditClubs;
+
+    @FXML
+    private Pane pnlAddEvent;
+
+    @FXML
+    private Pane pnlUpdate;
 
     @FXML
     void clearProfile(ActionEvent event) {
@@ -251,28 +269,6 @@ public class HelloController implements Initializable {
         }
     }
 
-    private void clearFields() {
-        txtClubID.clear();
-        txtClubName.clear();
-        txtDescription.clear();
-        txtCategory.clear();
-        txtAdvisor.clear();
-        txtEmail.clear();
-        txtContact.clear();
-        imgView.setImage(null);
-
-        resetStyles();
-    }
-
-    private void resetStyles() {
-        txtClubID.setStyle("");
-        txtClubName.setStyle("");
-        txtDescription.setStyle("");
-        txtCategory.setStyle("");
-        txtAdvisor.setStyle("");
-        txtEmail.setStyle("");
-        txtContact.setStyle("");
-    }
 
     private void showAlert(String title, String message) {
         Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -303,7 +299,6 @@ public class HelloController implements Initializable {
     public void settingTheTable() {
         List<CreateClub> clubList = DatabaseConnection.clubDetails("jdbc:mysql://localhost:3306/sacms", "root", "");
         tblManage.getItems().setAll(clubList);
-
     }
 
     @Override
@@ -342,8 +337,26 @@ public class HelloController implements Initializable {
                 }
             }
         });
-        settingTheTable();
+
+        ObservableList<CreateClub> allClubs = FXCollections.observableArrayList();
+        allClubs.addAll(DatabaseConnection.clubDetails("jdbc:mysql://localhost:3306/sacms", "root", ""));
+        tblManage.getItems().setAll(allClubs);
+
+        txtSearch.textProperty().addListener((observable, oldValue, newValue) -> {
+            handleSearch(newValue);
+        });
     }
+
+        private void handleSearch(String query) {
+            ObservableList<CreateClub> filteredClubs = FXCollections.observableArrayList();
+
+            for (CreateClub club : tblManage.getItems()) {
+                if (club.getClubName().toLowerCase().contains(query.toLowerCase())) {
+                    filteredClubs.add(club);
+                }
+            }
+            tblManage.getItems().setAll(filteredClubs);
+        }
 
     @FXML
     void updateClubs(ActionEvent event) {
@@ -353,7 +366,6 @@ public class HelloController implements Initializable {
             showAlert("No Club Selected", "Please select a club to update.");
             return;
         }
-
         txtUpdateClubID.setText(selectedClub.getClubID());
         txtUpdateClubName.setText(selectedClub.getClubName());
         txtUpdateDescription.setText(selectedClub.getDescription());
@@ -366,7 +378,6 @@ public class HelloController implements Initializable {
     }
 
     private void saveUpdatedClub(CreateClub selectedClub) {
-        // Retrieve updated values from the text fields
         String updatedClubID = txtUpdateClubID.getText();
         String updatedClubName = txtUpdateClubName.getText();
         String updatedDescription = txtUpdateDescription.getText();
@@ -403,10 +414,75 @@ public class HelloController implements Initializable {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
         clearUpdateFields();
         settingTheTable();
         btnUpdate.setOnAction(this::updateClubs);
+    }
+
+    @FXML
+    void selectRow(MouseEvent event) {
+        if (event.getClickCount() == 1) {
+            updateClubs(new ActionEvent());
+
+            CreateClub selectedClub = tblManage.getSelectionModel().getSelectedItem();
+            if (selectedClub != null) {
+                pnlAddEvent.setVisible(true);
+                pnlClubProfiles.setVisible(true);
+            }
+        }
+    }
+
+    @FXML
+    void deleteClubs(ActionEvent event) {
+        CreateClub selectedClub = tblManage.getSelectionModel().getSelectedItem();
+
+        if (selectedClub == null) {
+            showAlert("No Club Selected", "Please select a club to delete.");
+            return;
+        }
+
+        DatabaseConnection databaseHandler = new DatabaseConnection("jdbc:mysql://localhost:3306/sacms", "root", "");
+        try {
+            databaseHandler.connect();
+            databaseHandler.deleteClub(selectedClub);
+            databaseHandler.disconnect();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        clearUpdateFields();
+        settingTheTable();
+    }
+
+    @FXML
+    void goToUpdate(ActionEvent event) {
+        if (event.getSource() == btnEditClubs) {
+            pnlAddEvent.setVisible(false);
+            pnlUpdate.setVisible(true);
+        }
+    }
+
+    private void resetStyles() {
+        txtClubID.setStyle("");
+        txtClubName.setStyle("");
+        txtDescription.setStyle("");
+        txtCategory.setStyle("");
+        txtAdvisor.setStyle("");
+        txtEmail.setStyle("");
+        txtContact.setStyle("");
+    }
+
+    private void clearFields() {
+        txtClubID.clear();
+        txtClubName.clear();
+        txtDescription.clear();
+        txtCategory.clear();
+        txtAdvisor.clear();
+        txtEmail.clear();
+        txtContact.clear();
+        imgView.setImage(null);
+
+        resetStyles();
     }
 
     private void clearUpdateFields() {
@@ -417,17 +493,18 @@ public class HelloController implements Initializable {
         txtUpdateAdvisor.clear();
         txtUpdateEmail.clear();
         txtUpdateContact.clear();
+        imgUpdateImage.setImage(null);
+
+        resetUpdateStyles();
     }
 
-    @FXML
-    void selectRow(MouseEvent event) {
-        if (event.getClickCount() == 1) {
-            updateClubs(new ActionEvent());
-        }
-    }
-
-    @FXML
-    void deleteClubs(ActionEvent event) {
-
+    private void resetUpdateStyles(){
+        txtUpdateClubID.setStyle("");
+        txtUpdateClubName.setStyle("");
+        txtUpdateDescription.setStyle("");
+        txtUpdateType.setStyle("");
+        txtUpdateAdvisor.setStyle("");
+        txtUpdateEmail.setStyle("");
+        txtUpdateContact.setStyle("");
     }
 }
