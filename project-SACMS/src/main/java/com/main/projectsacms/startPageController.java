@@ -537,11 +537,11 @@ public class startPageController {
             String AID = advisorTeachingID.getText();
             String FirstnameA = advisorFirstName.getText();
             String LastnameA = advisorLastName.getText();
-            String EmailA = advisorEmail.getText();
             String UsernameA = advisorUsername.getText();
-            String Pass1A = advisorPassword.getText();
             String BirthA = String.valueOf(advisorDOB.getValue());
+            String EmailA = advisorEmail.getText();
             String Departments = String.valueOf(advisorDepartment.getValue());
+            String Pass1A = advisorPassword.getText();
             Advisor advisor = new Advisor(AID, FirstnameA, LastnameA, UsernameA, BirthA, EmailA, Departments, Pass1A);
             DatabaseConnection.InsertAdvisor(advisor.getAdvisorId(), advisor.getFirstName(), advisor.getLastName(), advisor.getUserName(), advisor.getDob(), advisor.getEmail(), advisor.getDepartment(), advisor.getPassword());
         } else {
@@ -565,11 +565,11 @@ public class startPageController {
             String SID = studentID.getText();
             String Firstname = studentFirstName.getText();
             String LastName = studentLastName.getText();
-            String Email = studentEmailAddress.getText();
             String UserName = studentUsername.getText();
-            String Pass1 = studentPassword.getText();
             String Birth = String.valueOf(studentDOB.getValue());
+            String Email = studentEmailAddress.getText();
             String Grades = String.valueOf(studentGrade.getValue());
+            String Pass1 = studentPassword.getText();
             Student student = new Student(SID, Firstname, LastName, UserName, Birth, Email,  Grades, Pass1 );
             DatabaseConnection.insertStudent(student.getStudentId(), student.getFirstName(), student.getLastName(), student.getUserName(), student.getDob(), student.getEmail(), student.getGrade(), student.getPassword());
         } else {
