@@ -186,11 +186,12 @@ public class AttendanceTrackingController implements PredefinedObjects {
         displayEvents();
 
 
-        ObservableList<String> choices = FXCollections.observableArrayList(
-                "Club A",
-                "Club B", "Club C");
-
-        clubChoosingDropBox.setItems(choices);
+        for (Map<String,String> event : events){
+            String clubName = event.get("clubName");
+            if (!clubChoosingDropBox.getItems().contains(clubName)) {
+                clubChoosingDropBox.getItems().add(event.get("clubName"));
+            }
+        }
 
     }
 
