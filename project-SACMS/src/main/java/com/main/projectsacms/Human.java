@@ -5,11 +5,11 @@ public class Human {
     private String lastName;
     private String userName;
     private String email;
-    private int dob;
+    private String dob;
     private String password;
     private String confirm_password;
 
-    public Human(String firstName, String lastName, String userName, String email, String email1, int dob, String password, String confirmPassword, String studentId) {
+    public Human(String firstName, String lastName, String userName, String email, String email1, String dob, String password, String confirmPassword) {
     }
 
     public String getFirstName() {
@@ -44,11 +44,11 @@ public class Human {
         this.email = email;
     }
 
-    public int getDob() {
+    public String getDob() {
         return dob;
     }
 
-    public void setDob(int dob) {
+    public void setDob(String dob) {
         this.dob = dob;
     }
 

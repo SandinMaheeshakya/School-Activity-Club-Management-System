@@ -33,7 +33,7 @@
                   <Font name="Calibri Bold" size="22.0" />
                </font>
             </Button>
-            <Button fx:id="loginButton" layoutX="384.0" layoutY="666.0" mnemonicParsing="false" onMouseEntered="#loginButtonMouseEnter" onMouseExited="#loginButtonMouseExit" prefHeight="53.0" prefWidth="170.0" style="-fx-background-radius: 30;" styleClass="RegisterButtons" stylesheets="@../CSS%20Files/Dashboard.css" text="Login" textFill="WHITE">
+            <Button fx:id="loginButton" layoutX="384.0" layoutY="666.0" mnemonicParsing="false" onAction="#OnloginButtonClick" onMouseEntered="#loginButtonMouseEnter" onMouseExited="#loginButtonMouseExit" prefHeight="53.0" prefWidth="170.0" style="-fx-background-radius: 30;" styleClass="RegisterButtons" stylesheets="@../CSS%20Files/Dashboard.css" text="Login" textFill="WHITE">
                <font>
                   <Font name="Calibri Bold" size="22.0" />
                </font>
@@ -103,10 +103,10 @@
       </Group>
       <Group fx:id="advisorDetails" disable="true" layoutX="757.0" layoutY="209.0" opacity="0.0">
          <children>
-            <TextField fx:id="LastNameA" layoutX="247.0" layoutY="22.0" prefHeight="40.0" prefWidth="207.0" style="-fx-background-radius: 30;" styleClass="form-area" stylesheets="@../CSS%20Files/Dashboard.css" />
-            <TextField fx:id="FirstNameA" layoutY="22.0" prefHeight="40.0" prefWidth="207.0" styleClass="form-area" stylesheets="@../CSS%20Files/Dashboard.css" />
-            <TextField fx:id="EmailAddressA" layoutY="166.0" prefHeight="40.0" prefWidth="331.0" style="-fx-background-radius: 30;" styleClass="form-area" stylesheets="@../CSS%20Files/Dashboard.css" />
-            <Button fx:id="registerButton1" layoutX="142.0" layoutY="398.0" mnemonicParsing="false" onAction="#OnClickAdvisorRegister" onMouseEntered="#registerButtonMouseEnter" onMouseExited="#registerButtonMouseExit" prefHeight="53.0" prefWidth="170.0" style="-fx-background-radius: 30;" styleClass="RegisterButtons" stylesheets="@../CSS%20Files/Dashboard.css" text="Register" textFill="WHITE">
+            <TextField fx:id="advisorLastName" layoutX="247.0" layoutY="22.0" prefHeight="40.0" prefWidth="207.0" style="-fx-background-radius: 30;" styleClass="form-area" stylesheets="@../CSS%20Files/Dashboard.css" />
+            <TextField fx:id="advisorFirstName" layoutY="22.0" prefHeight="40.0" prefWidth="207.0" styleClass="form-area" stylesheets="@../CSS%20Files/Dashboard.css" />
+            <TextField fx:id="advisorEmail" layoutY="166.0" prefHeight="40.0" prefWidth="331.0" style="-fx-background-radius: 30;" styleClass="form-area" stylesheets="@../CSS%20Files/Dashboard.css" />
+            <Button fx:id="advisorRegisterButton" layoutX="142.0" layoutY="398.0" mnemonicParsing="false" onAction="#OnClickAdvisorRegister" onMouseEntered="#registerButtonMouseEnter" onMouseExited="#registerButtonMouseExit" prefHeight="53.0" prefWidth="170.0" style="-fx-background-radius: 30;" styleClass="RegisterButtons" stylesheets="@../CSS%20Files/Dashboard.css" text="Register" textFill="WHITE">
                <font>
                   <Font name="Calibri Bold" size="22.0" />
                </font>
@@ -115,24 +115,24 @@
             <Text fill="WHITE" layoutX="256.0" layoutY="15.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Last Name" />
             <Text fill="WHITE" layoutX="14.0" layoutY="85.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username" />
             <Text fill="WHITE" layoutX="15.0" layoutY="155.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email Adress" />
-            <TextField fx:id="UserNameA" layoutY="96.0" prefHeight="40.0" prefWidth="279.0" style="-fx-background-radius: 30;" styleClass="form-area" stylesheets="@../CSS%20Files/Dashboard.css" />
-            <TextField fx:id="ConfirmPasswordA" layoutX="252.0" layoutY="327.0" prefHeight="40.0" prefWidth="198.0" styleClass="form-area" stylesheets="@../CSS%20Files/Dashboard.css" />
+            <TextField fx:id="advisorUsername" layoutY="96.0" prefHeight="40.0" prefWidth="279.0" style="-fx-background-radius: 30;" styleClass="form-area" stylesheets="@../CSS%20Files/Dashboard.css" />
+            <TextField fx:id="advisorConfirmPassword" layoutX="252.0" layoutY="327.0" prefHeight="40.0" prefWidth="198.0" styleClass="form-area" stylesheets="@../CSS%20Files/Dashboard.css" />
             <Text fill="WHITE" layoutX="270.0" layoutY="311.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Confirm Password" />
             <Text fill="WHITE" layoutX="16.0" layoutY="311.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" />
-            <TextField fx:id="PasswordA" layoutX="5.0" layoutY="327.0" prefHeight="40.0" prefWidth="198.0" styleClass="form-area" stylesheets="@../CSS%20Files/Dashboard.css" />
-            <TextField fx:id="TeachingId" layoutX="306.0" layoutY="96.0" prefHeight="40.0" prefWidth="146.0" styleClass="form-area" stylesheets="@../CSS%20Files/Dashboard.css" />
+            <TextField fx:id="advisorPassword" layoutX="5.0" layoutY="327.0" prefHeight="40.0" prefWidth="198.0" styleClass="form-area" stylesheets="@../CSS%20Files/Dashboard.css" />
+            <TextField fx:id="advisorTeachingID" layoutX="306.0" layoutY="96.0" prefHeight="40.0" prefWidth="146.0" styleClass="form-area" stylesheets="@../CSS%20Files/Dashboard.css" />
             <Text fill="WHITE" layoutX="320.0" layoutY="85.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Teaching ID" />
             <Text fill="WHITE" layoutX="17.0" layoutY="231.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Department" />
-            <ChoiceBox fx:id="Department" layoutX="2.0" layoutY="245.0" prefHeight="37.0" prefWidth="204.0" styleClass="form-area" stylesheets="@../CSS%20Files/Dashboard.css" />
+            <ChoiceBox fx:id="advisorDepartment" layoutX="2.0" layoutY="245.0" prefHeight="37.0" prefWidth="204.0" styleClass="form-area" stylesheets="@../CSS%20Files/Dashboard.css" />
             <Text fill="WHITE" layoutX="256.0" layoutY="231.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date of Birth" />
-            <DatePicker fx:id="AdvisorDOB" layoutX="256.0" layoutY="246.0" prefHeight="36.0" prefWidth="191.0" styleClass="formDate" stylesheets="@../CSS%20Files/Dashboard.css" />
+            <DatePicker fx:id="advisorDOB" layoutX="256.0" layoutY="246.0" prefHeight="36.0" prefWidth="191.0" styleClass="formDate" stylesheets="@../CSS%20Files/Dashboard.css" />
          </children>
       </Group>
       <Group fx:id="studentDetails" disable="true" layoutX="757.0" layoutY="209.0" opacity="0.0">
          <children>
-            <TextField fx:id="LastNameS" layoutX="247.0" layoutY="22.0" prefHeight="40.0" prefWidth="207.0" style="-fx-background-radius: 30;" styleClass="form-area" stylesheets="@../CSS%20Files/Dashboard.css" />
-            <TextField fx:id="FirstNameS" layoutY="22.0" prefHeight="40.0" prefWidth="207.0" styleClass="form-area" stylesheets="@../CSS%20Files/Dashboard.css" />
-            <TextField fx:id="EmailAdressStudent" layoutY="166.0" prefHeight="40.0" prefWidth="331.0" style="-fx-background-radius: 30;" styleClass="form-area" stylesheets="@../CSS%20Files/Dashboard.css" />
+            <TextField fx:id="studentLastName" layoutX="247.0" layoutY="22.0" prefHeight="40.0" prefWidth="207.0" style="-fx-background-radius: 30;" styleClass="form-area" stylesheets="@../CSS%20Files/Dashboard.css" />
+            <TextField fx:id="studentFirstName" layoutY="22.0" prefHeight="40.0" prefWidth="207.0" styleClass="form-area" stylesheets="@../CSS%20Files/Dashboard.css" />
+            <TextField fx:id="studentEmailAddress" layoutY="166.0" prefHeight="40.0" prefWidth="331.0" style="-fx-background-radius: 30;" styleClass="form-area" stylesheets="@../CSS%20Files/Dashboard.css" />
             <Button fx:id="registerButton11" layoutX="142.0" layoutY="398.0" mnemonicParsing="false" onAction="#OnClickStudentRegister" onMouseEntered="#registerButtonMouseEnter" onMouseExited="#registerButtonMouseExit" prefHeight="53.0" prefWidth="170.0" style="-fx-background-radius: 30;" styleClass="RegisterButtons" stylesheets="@../CSS%20Files/Dashboard.css" text="Register" textFill="WHITE">
                <font>
                   <Font name="Calibri Bold" size="22.0" />
@@ -142,17 +142,78 @@
             <Text fill="WHITE" layoutX="256.0" layoutY="15.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Last Name" />
             <Text fill="WHITE" layoutX="14.0" layoutY="85.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username" />
             <Text fill="WHITE" layoutX="15.0" layoutY="155.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email Adress" />
-            <TextField fx:id="UserNameStudent" layoutY="96.0" prefHeight="40.0" prefWidth="279.0" style="-fx-background-radius: 30;" styleClass="form-area" stylesheets="@../CSS%20Files/Dashboard.css" />
-            <TextField fx:id="StudentConfirmPassword" layoutX="252.0" layoutY="327.0" prefHeight="40.0" prefWidth="198.0" styleClass="form-area" stylesheets="@../CSS%20Files/Dashboard.css" />
+            <TextField fx:id="studentUsername" layoutY="96.0" prefHeight="40.0" prefWidth="279.0" style="-fx-background-radius: 30;" styleClass="form-area" stylesheets="@../CSS%20Files/Dashboard.css" />
+            <TextField fx:id="studentConfirmPassword" layoutX="252.0" layoutY="327.0" prefHeight="40.0" prefWidth="198.0" styleClass="form-area" stylesheets="@../CSS%20Files/Dashboard.css" />
             <Text fill="WHITE" layoutX="270.0" layoutY="311.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Confirm Password" />
             <Text fill="WHITE" layoutX="16.0" layoutY="311.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" />
-            <TextField fx:id="StudentPassword" layoutX="5.0" layoutY="327.0" prefHeight="40.0" prefWidth="198.0" styleClass="form-area" stylesheets="@../CSS%20Files/Dashboard.css" />
-            <TextField fx:id="StudentID" layoutX="306.0" layoutY="96.0" prefHeight="40.0" prefWidth="146.0" styleClass="form-area" stylesheets="@../CSS%20Files/Dashboard.css" />
+            <TextField fx:id="studentPassword" layoutX="5.0" layoutY="327.0" prefHeight="40.0" prefWidth="198.0" styleClass="form-area" stylesheets="@../CSS%20Files/Dashboard.css" />
+            <TextField fx:id="studentID" layoutX="306.0" layoutY="96.0" prefHeight="40.0" prefWidth="146.0" styleClass="form-area" stylesheets="@../CSS%20Files/Dashboard.css" />
             <Text fill="WHITE" layoutX="320.0" layoutY="85.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Student ID" />
             <Text fill="WHITE" layoutX="17.0" layoutY="231.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Grade" />
-            <ChoiceBox fx:id="Grade" layoutX="2.0" layoutY="245.0" prefHeight="37.0" prefWidth="204.0" styleClass="form-area" stylesheets="@../CSS%20Files/Dashboard.css" />
+            <ChoiceBox fx:id="studentGrade" layoutX="2.0" layoutY="245.0" prefHeight="37.0" prefWidth="204.0" styleClass="form-area" stylesheets="@../CSS%20Files/Dashboard.css" />
             <Text fill="WHITE" layoutX="256.0" layoutY="231.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date of Birth" />
-            <DatePicker fx:id="StudentDOB" layoutX="256.0" layoutY="246.0" prefHeight="36.0" prefWidth="191.0" styleClass="formDate" stylesheets="@../CSS%20Files/Dashboard.css" />
+            <DatePicker fx:id="studentDOB" layoutX="256.0" layoutY="246.0" prefHeight="36.0" prefWidth="191.0" styleClass="formDate" stylesheets="@../CSS%20Files/Dashboard.css" />
+         </children>
+      </Group>
+      <Group fx:id="ThirdGroup" disable="true" layoutX="830.0" layoutY="317.0" opacity="0.0">
+         <children>
+            <Text fx:id="quote111" layoutX="108.0" layoutY="14.0" strokeType="OUTSIDE" strokeWidth="0.0" text="You Are" wrappingWidth="155.0">
+               <font>
+                  <Font name="Calibri Bold" size="44.0" />
+               </font>
+               <fill>
+                  <LinearGradient endX="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.25" green="0.8357142806053162" blue="1.0" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.7894737124443054" blue="0.7763158082962036" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </fill>
+            </Text>
+            <Button fx:id="advisorLoginButton" layoutY="66.0" mnemonicParsing="false" onAction="#onAdvisorLoginButtonClick" onMouseEntered="#advisorButtonMouseEnter" onMouseExited="#advisorButtonMouseExit" prefHeight="60.0" prefWidth="170.0" styleClass="role-Buttons" stylesheets="@../CSS%20Files/Dashboard.css" text="Advisor" textFill="WHITE">
+               <font>
+                  <Font name="Calibri Bold" size="30.0" />
+               </font>
+            </Button>
+            <Button fx:id="studentLoginButton" layoutX="200.0" layoutY="66.0" mnemonicParsing="false" onAction="#onStudentLoginButtonClick" onMouseEntered="#studentButtonMouseEnter" onMouseExited="#studentButtonMouseExit" prefHeight="60.0" prefWidth="170.0" styleClass="role-Buttons" stylesheets="@../CSS%20Files/Dashboard.css" text="Student" textFill="WHITE">
+               <font>
+                  <Font name="Calibri Bold" size="30.0" />
+               </font>
+            </Button>
+         </children>
+      </Group>
+      <Group fx:id="advisorLogin" disable="true" layoutX="767.0" layoutY="219.0" opacity="0.0">
+         <children>
+            <Button fx:id="ConfirmAdvisorLogin" layoutX="143.0" layoutY="376.0" mnemonicParsing="false" onAction="#onclickAdvisorConfirmLogin" onMouseEntered="#registerButtonMouseEnter" onMouseExited="#registerButtonMouseExit" prefHeight="53.0" prefWidth="170.0" style="-fx-background-radius: 30;" styleClass="RegisterButtons" stylesheets="@../CSS%20Files/Dashboard.css" text="Login" textFill="WHITE">
+               <font>
+                  <Font name="Calibri Bold" size="22.0" />
+               </font>
+            </Button>
+            <Text fill="WHITE" layoutX="26.0" layoutY="204.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username" />
+            <TextField fx:id="advisorUsernameLogin" layoutX="88.0" layoutY="180.0" prefHeight="40.0" prefWidth="279.0" style="-fx-background-radius: 30;" styleClass="form-area" stylesheets="@../CSS%20Files/Dashboard.css" />
+            <Text fill="WHITE" layoutX="40.0" layoutY="283.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" />
+            <TextField fx:id="advisorPasswordLogin" layoutX="129.0" layoutY="258.0" prefHeight="40.0" prefWidth="198.0" styleClass="form-area" stylesheets="@../CSS%20Files/Dashboard.css" />
+         </children>
+      </Group>
+      <Group fx:id="StudentLogin" disable="true" layoutX="777.0" layoutY="229.0" opacity="0.0">
+         <children>
+            <Button fx:id="ConfirmStudentLogin" layoutX="143.0" layoutY="376.0" mnemonicParsing="false" onAction="#onclickStudentConfirmLogin" onMouseEntered="#registerButtonMouseEnter" onMouseExited="#registerButtonMouseExit" prefHeight="53.0" prefWidth="170.0" style="-fx-background-radius: 30;" styleClass="RegisterButtons" stylesheets="@../CSS%20Files/Dashboard.css" text="Login" textFill="WHITE">
+               <font>
+                  <Font name="Calibri Bold" size="22.0" />
+               </font>
+            </Button>
+            <Text fill="WHITE" layoutX="26.0" layoutY="204.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username" />
+            <TextField fx:id="studentUsernameLogin" layoutX="88.0" layoutY="180.0" prefHeight="40.0" prefWidth="279.0" style="-fx-background-radius: 30;" styleClass="form-area" stylesheets="@../CSS%20Files/Dashboard.css" />
+            <Text fill="WHITE" layoutX="40.0" layoutY="283.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" />
+            <TextField fx:id="studentPasswordLogin" layoutX="129.0" layoutY="258.0" prefHeight="40.0" prefWidth="198.0" styleClass="form-area" stylesheets="@../CSS%20Files/Dashboard.css" />
          </children>
       </Group>
    </children>

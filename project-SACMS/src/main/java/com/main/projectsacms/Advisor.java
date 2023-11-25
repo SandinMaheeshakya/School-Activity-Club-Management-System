@@ -20,8 +20,8 @@ public class Advisor extends Human {
         this.department = department;
     }
 
-    public Advisor(String firstName, String lastName, String userName, String email, String dob, int password, String confirm_password, String advisorId, String department) {
-        super(firstName, lastName, userName, email, dob, password, confirm_password, advisorId, department);
+    public Advisor(String advisorId, String firstName, String lastName, String userName, String dob, String email, String department, String password) {
+        super(advisorId, firstName, lastName, userName, dob, email, department, password);
         this.advisorId = advisorId;
         this.department = department;
     }
