@@ -21,7 +21,7 @@ public class Advisor extends Human {
     }
 
     public Advisor(String advisorId, String firstName, String lastName, String userName, String dob, String email, String department, String password) {
-        super(advisorId, firstName, lastName, userName, dob, email, department, password);
+        super(firstName, lastName, userName, dob, email,password);
         this.advisorId = advisorId;
         this.department = department;
     }

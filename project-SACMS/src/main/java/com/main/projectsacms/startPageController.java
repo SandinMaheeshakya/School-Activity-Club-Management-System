@@ -142,6 +142,9 @@ public class startPageController {
 
     public void initialize(){
 
+        gradeSetValue();
+        departmentSetValue();
+
         FadeTransition quote1Transition = new FadeTransition(Duration.seconds(3), quote1);
         quote1Transition.setFromValue(0);
         quote1Transition.setToValue(1);
@@ -526,7 +529,6 @@ public class startPageController {
         advisorTeachingIDValidation();
         advisorPasswordValidation();
         advisorDepartmentValidation();
-        departmentSetValue();
 
 
         // Check if all validations passed
@@ -557,7 +559,7 @@ public class startPageController {
         studentPasswordValidation();
         studentIDValidation();
         studentGradeValidation();
-        gradeSetValue();
+
 
         if (allValidatedAdvisor) {
             String SID = studentID.getText();
