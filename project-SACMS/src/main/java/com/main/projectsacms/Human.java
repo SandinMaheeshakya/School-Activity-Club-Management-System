@@ -8,6 +8,7 @@ public class Human {
     private String dob;
     private String password;
     private String confirm_password;
+    private String currentId;
 
 
     public Human(String firstName, String lastName, String userName, String email, String dob, String password) {
@@ -74,4 +75,13 @@ public class Human {
     public void setConfirm_password(String confirm_password) {
         this.confirm_password = confirm_password;
     }
+
+    public String getCurrentId() {
+        return currentId;
+    }
+
+    public void setCurrentId(String currentId) {
+        this.currentId = currentId;
+    }
+
 }
