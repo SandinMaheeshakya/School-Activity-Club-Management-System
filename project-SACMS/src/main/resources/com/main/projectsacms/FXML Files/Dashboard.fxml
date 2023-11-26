@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: black;" stylesheets="@../CSS%20Files/AttendencePage.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.main.projectsacms.AttendenceTracking.AttendanceTrackingController">
+    <children>
+        <Pane prefHeight="39.0" prefWidth="1280.0" style="-fx-background-color: #75e3eb;">
+            <children>
+                <ImageView fitHeight="17.0" fitWidth="17.0" layoutX="1241.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../Icons/Functional/close.png" />
+                    </image>
+                </ImageView>
+                <ImageView fitHeight="31.0" fitWidth="17.0" layoutX="1217.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../Icons/Functional/minimize.png" />
+                    </image>
+                </ImageView>
+            </children>
+        </Pane>
+        <ImageView fitHeight="252.0" fitWidth="317.0" layoutX="-20.0" layoutY="-106.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../Icons/Functional/logo.png" />
+            </image>
+        </ImageView>
+        <Rectangle arcHeight="20.0" arcWidth="20.0" height="195.0" layoutX="287.0" layoutY="146.0" stroke="#00fff7" strokeType="INSIDE" strokeWidth="4.0" width="206.0" />
+        <ImageView fitHeight="85.0" fitWidth="90.0" layoutX="348.0" layoutY="181.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../Icons/Functional/Clubs.png" />
+            </image>
+        </ImageView>
+        <Label layoutX="369.0" layoutY="273.0" text="Home" textFill="WHITE">
+            <font>
+                <Font name="Calibri Bold" size="17.0" />
+            </font>
+        </Label>
+        <Rectangle arcHeight="20.0" arcWidth="20.0" height="195.0" layoutX="774.0" layoutY="146.0" stroke="#00fff7" strokeType="INSIDE" strokeWidth="4.0" width="206.0" />
+        <ImageView fitHeight="85.0" fitWidth="83.0" layoutX="836.0" layoutY="170.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../Icons/Functional/ClubManage.png" />
+            </image>
+        </ImageView>
+        <Label layoutX="858.0" layoutY="273.0" text="Clubs" textFill="WHITE">
+            <font>
+                <Font name="Calibri Bold" size="17.0" />
+            </font>
+        </Label>
+        <Rectangle arcHeight="20.0" arcWidth="20.0" height="195.0" layoutX="288.0" layoutY="461.0" stroke="#00fff7" strokeType="INSIDE" strokeWidth="4.0" width="206.0" />
+        <ImageView fitHeight="85.0" fitWidth="71.0" layoutX="355.0" layoutY="497.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../Icons/Functional/Events.png" />
+            </image>
+        </ImageView>
+        <Label layoutX="367.0" layoutY="591.0" text="Events" textFill="WHITE">
+            <font>
+                <Font name="Calibri Bold" size="17.0" />
+            </font>
+        </Label>
+        <Rectangle arcHeight="20.0" arcWidth="20.0" height="195.0" layoutX="775.0" layoutY="461.0" stroke="#00fff7" strokeType="INSIDE" strokeWidth="4.0" width="206.0" />
+        <ImageView fitHeight="83.0" fitWidth="71.0" layoutX="843.0" layoutY="497.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../Icons/Functional/Attendence.png" />
+            </image>
+        </ImageView>
+        <Label layoutX="843.0" layoutY="578.0" text="Attendence" textFill="WHITE">
+            <font>
+                <Font name="Calibri Bold" size="17.0" />
+            </font>
+        </Label>
+    </children>
+</AnchorPane>

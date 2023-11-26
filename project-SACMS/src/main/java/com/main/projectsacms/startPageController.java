@@ -8,13 +8,19 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Group;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import javafx.util.Duration;
 
+import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Date;
@@ -618,7 +624,7 @@ public class startPageController {
 
     }
 
-    public void onclickStudentConfirmLogin(ActionEvent actionEvent) {
+    public void onclickStudentConfirmLogin(ActionEvent actionEvent) throws IOException {
             String username = studentUsernameLogin.getText();
             String password = studentPasswordLogin.getText();
 
@@ -626,11 +632,21 @@ public class startPageController {
                 // Successful login
                 // Add your logic to navigate to the student's home/dashboard
                 System.out.println("Student login successful!");
+
+                FXMLLoader mainPageLoader = new FXMLLoader(getClass().getResource("FXML Files/Dashboard.fxml"));
+                Parent mainPage = mainPageLoader.load();
+                // Create a new stage or replace the current scene content
+                Stage mainstage = new Stage();
+                mainstage.setTitle("Main Page");
+                mainstage.initStyle(StageStyle.UNDECORATED);
+                mainstage.setScene(new Scene(mainPage));
+                mainstage.show();
             } else {
                 // Failed login
                 // Display an error message or take appropriate action
                 System.out.println("Student login failed. Invalid credentials.");
             }
+
         }
 
     public void onclickAdvisorConfirmLogin(ActionEvent actionEvent) {
