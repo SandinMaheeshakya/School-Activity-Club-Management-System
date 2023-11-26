@@ -6,7 +6,10 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Group;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.DatePicker;
@@ -17,12 +20,16 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
+import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
+import java.io.IOException;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 public class AttendanceTrackingController implements PredefinedObjects {
 
@@ -356,7 +363,7 @@ public class AttendanceTrackingController implements PredefinedObjects {
         displayEvents();
     }
 
-    public void onFilterButtonClick() throws SQLException {
+    public void onFilterButtonClick() throws SQLException, IOException {
 
         clearPanesEvents();
         displayEvents();
@@ -398,7 +405,6 @@ public class AttendanceTrackingController implements PredefinedObjects {
                             putClubImage(currentPane,"D:\\2nd Year\\Object Oriented Development\\CW\\CW Git\\School-Activity-Club-Management-System\\project-SACMS\\src\\main\\resources\\com\\main\\projectsacms\\Icons\\Functional\\physical event logo.png");
 
                         }
-
                         count++;
                         eventCount++;
 
@@ -610,12 +616,7 @@ public class AttendanceTrackingController implements PredefinedObjects {
 
                 ChoiceBox<String> choice = putStudentAttendance(currentPane);
 
-                if (attendanceStatus != null) {
-                    choice.setValue(attendanceStatus);
-
-                }else {
-                    choice.setValue("Not marked");
-                }
+                choice.setValue(Objects.requireNonNullElse(attendanceStatus, "Not marked"));
 
                 if (choice.getValue().equals("Not marked")){
                     choice.setLayoutX(680);
