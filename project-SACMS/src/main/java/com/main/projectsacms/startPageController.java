@@ -14,6 +14,7 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 import javafx.util.Duration;
 
@@ -159,6 +160,9 @@ public class startPageController {
     private TableColumn<CreateClub, Integer> clubContactJoin;
 
     @FXML
+    private AnchorPane clubDisplayPage;
+
+    @FXML
     private Button clubJoin;
     ScaleTransition loginButtonIncrease;
     ScaleTransition loginButtonDecrease;
@@ -177,6 +181,8 @@ public class startPageController {
 
     ScaleTransition advisorButtonIncrease;
     ScaleTransition advisorButtonDecrease;
+
+
 
     ArrayList<Student> studentDetail = new ArrayList<>();
 
@@ -749,12 +755,12 @@ public class startPageController {
 
     public void onclickViewJoinTables(MouseEvent mouseEvent) {
         Dashboardpage.setVisible(false);
-        joinClub.setVisible(true);
-        joinClub.setDisable(false);
-        FadeTransition joinClubTransition = new FadeTransition(Duration.seconds(3), joinClub);
-        joinClubTransition.setFromValue(0);
-        joinClubTransition.setToValue(1);
-        joinClubTransition.play();
+        clubDisplayPage.setVisible(true);
+        clubDisplayPage.setDisable(false);
+        FadeTransition clubDisplayPageTransition = new FadeTransition(Duration.seconds(3), clubDisplayPage);
+        clubDisplayPageTransition.setFromValue(0);
+        clubDisplayPageTransition.setToValue(1);
+        clubDisplayPageTransition.play();
 
     }
 }

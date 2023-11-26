@@ -9,6 +9,8 @@ import java.util.List;
 
 public class DatabaseConnection extends com.main.projectsacms.Database.Connection {
 
+    private static String currentConnectionId;
+
     public static void insertStudent(String studentId, String firstname, String lastname, String username, String dob, String email, String grade, String password) throws SQLException {
         establishConnection();
          try  {
@@ -68,25 +70,30 @@ public class DatabaseConnection extends com.main.projectsacms.Database.Connectio
             return false;
         }
     }
+    
 
     public static boolean validateStudentLogin(String username, String password) {
         String query = "SELECT * FROM students WHERE user_name = ? AND password = ?";
         establishConnection();
 
-        try (
-             PreparedStatement preparedStatement = connection.prepareStatement(query)) {
+        try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
             preparedStatement.setString(1, username);
             preparedStatement.setString(2, password);
 
             try (ResultSet resultSet = preparedStatement.executeQuery()) {
-                return resultSet.next();
+                if (resultSet.next()) {
+                    currentConnectionId = resultSet.getString("student_id");
+                    System.out.println(currentConnectionId);
+                    return true;
+                }
+                return false;
             }
         } catch (SQLException e) {
             e.printStackTrace();
             return false;
         }
-
     }
+
     public static List<CreateClub> getAllClubs() {
         List<CreateClub> clubs = new ArrayList<>();
 
