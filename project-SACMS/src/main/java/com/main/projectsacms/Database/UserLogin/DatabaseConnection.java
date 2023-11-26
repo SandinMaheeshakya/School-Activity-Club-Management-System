@@ -1,6 +1,7 @@
 package com.main.projectsacms.Database.UserLogin;
 
 import com.main.projectsacms.CreateClub;
+import javafx.scene.control.TableView;
 
 import java.sql.*;
 import java.sql.Connection;
@@ -70,7 +71,29 @@ public class DatabaseConnection extends com.main.projectsacms.Database.Connectio
             return false;
         }
     }
-    
+
+    public static void addClubStudentDataToDatabase(TableView<CreateClub> tableJoin){
+        String query = "INSERT INTO student_club (student_id, club_id) VALUES (?, ?)";
+        establishConnection();
+
+        try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
+            preparedStatement.setString(1, currentConnectionId); // Assuming currentConnectionId is the student ID
+            preparedStatement.setString(2, String.valueOf(tableJoin.getSelectionModel().getSelectedItem().getClubID()));
+
+            // Execute the update statement to perform the insertion
+            int rowsAffected = preparedStatement.executeUpdate();
+
+            if (rowsAffected > 0) {
+                System.out.println("Data inserted successfully.");
+            } else {
+                System.out.println("Failed to insert data.");
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
 
     public static boolean validateStudentLogin(String username, String password) {
         String query = "SELECT * FROM students WHERE user_name = ? AND password = ?";

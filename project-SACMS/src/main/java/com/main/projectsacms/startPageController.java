@@ -22,6 +22,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.main.projectsacms.Database.UserLogin.DatabaseConnection.addClubStudentDataToDatabase;
 import static com.main.projectsacms.Database.UserLogin.DatabaseConnection.joinClub;
 
 public class startPageController {
@@ -726,7 +727,7 @@ public class startPageController {
     }
 
     private void onClickJoinClub() {
-
+        addClubStudentDataToDatabase(Tablejoin);
     }
 
     private void loadClubData() {
