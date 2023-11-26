@@ -11,7 +11,7 @@ public abstract class Connection {
 
     protected static java.sql.Connection connection = null;
 
-    public static void establishConnection() {
+    public static java.sql.Connection establishConnection() {
 
         try {
              connection = DriverManager.getConnection(DB_URL, DB_Username, DB_Password);
@@ -20,6 +20,7 @@ public abstract class Connection {
             e.printStackTrace();
 
         }
+        return connection;
     }
 
     public static void closeConnection(){

@@ -347,6 +347,15 @@ public class AttendanceTrackingController implements PredefinedObjects {
 
     }
 
+    public void onResetButtonClick() throws SQLException {
+        clubChoosingDropBox.setValue(null);
+        filterEventDateTo.setValue(null);
+        filterEventDateFrom.setValue(null);
+
+        clearPanesEvents();
+        displayEvents();
+    }
+
     public void onFilterButtonClick() throws SQLException {
 
         clearPanesEvents();
@@ -364,12 +373,7 @@ public class AttendanceTrackingController implements PredefinedObjects {
 
             Pane currentPane = PaneMap.get(getEventPages(eventPageNumbers).get(count));
 
-            if (Attendance.checkEventType(eventCount).equals("Online")){
-                putClubImage(currentPane,"D:\\2nd Year\\Object Oriented Development\\CW\\CW Git\\School-Activity-Club-Management-System\\project-SACMS\\src\\main\\resources\\com\\main\\projectsacms\\Icons\\Functional\\online logo.png");
-            }else {
-                putClubImage(currentPane,"D:\\2nd Year\\Object Oriented Development\\CW\\CW Git\\School-Activity-Club-Management-System\\project-SACMS\\src\\main\\resources\\com\\main\\projectsacms\\Icons\\Functional\\physical event logo.png");
 
-            }
             //Filtering Process Begun
             if (clubChoosingDropBox.getValue() != null) {
 
@@ -387,6 +391,14 @@ public class AttendanceTrackingController implements PredefinedObjects {
                         putClubName(currentPane, events.get(eventCount).get("clubName"));
                         putEventDate(currentPane, events.get(eventCount).get("eventDate"));
 
+                        //Put Images
+                        if (Attendance.checkEventType(eventCount).equals("Online")){
+                            putClubImage(currentPane,"D:\\2nd Year\\Object Oriented Development\\CW\\CW Git\\School-Activity-Club-Management-System\\project-SACMS\\src\\main\\resources\\com\\main\\projectsacms\\Icons\\Functional\\online logo.png");
+                        }else {
+                            putClubImage(currentPane,"D:\\2nd Year\\Object Oriented Development\\CW\\CW Git\\School-Activity-Club-Management-System\\project-SACMS\\src\\main\\resources\\com\\main\\projectsacms\\Icons\\Functional\\physical event logo.png");
+
+                        }
+
                         count++;
                         eventCount++;
 
@@ -402,6 +414,15 @@ public class AttendanceTrackingController implements PredefinedObjects {
                     putEventDetails(currentPane, events.get(eventCount).get("eventsDescription"));
                     putClubName(currentPane, events.get(eventCount).get("clubName"));
                     putEventDate(currentPane, events.get(eventCount).get("eventDate"));
+
+
+                    //Put Images
+                    if (Attendance.checkEventType(eventCount).equals("Online")){
+                        putClubImage(currentPane,"D:\\2nd Year\\Object Oriented Development\\CW\\CW Git\\School-Activity-Club-Management-System\\project-SACMS\\src\\main\\resources\\com\\main\\projectsacms\\Icons\\Functional\\online logo.png");
+                    }else {
+                        putClubImage(currentPane,"D:\\2nd Year\\Object Oriented Development\\CW\\CW Git\\School-Activity-Club-Management-System\\project-SACMS\\src\\main\\resources\\com\\main\\projectsacms\\Icons\\Functional\\physical event logo.png");
+
+                    }
 
                     count++;
                     eventCount++;
@@ -423,6 +444,14 @@ public class AttendanceTrackingController implements PredefinedObjects {
                     putClubName(currentPane, events.get(eventCount).get("clubName"));
                     putEventDate(currentPane, events.get(eventCount).get("eventDate"));
 
+                    //Put Images
+                    if (Attendance.checkEventType(eventCount).equals("Online")){
+                        putClubImage(currentPane,"D:\\2nd Year\\Object Oriented Development\\CW\\CW Git\\School-Activity-Club-Management-System\\project-SACMS\\src\\main\\resources\\com\\main\\projectsacms\\Icons\\Functional\\online logo.png");
+                    }else {
+                        putClubImage(currentPane,"D:\\2nd Year\\Object Oriented Development\\CW\\CW Git\\School-Activity-Club-Management-System\\project-SACMS\\src\\main\\resources\\com\\main\\projectsacms\\Icons\\Functional\\physical event logo.png");
+
+                    }
+
                     count++;
                     eventCount++;
 
@@ -437,6 +466,15 @@ public class AttendanceTrackingController implements PredefinedObjects {
                 putEventDetails(currentPane, events.get(eventCount).get("eventsDescription"));
                 putClubName(currentPane, events.get(eventCount).get("clubName"));
                 putEventDate(currentPane, events.get(eventCount).get("eventDate"));
+
+
+                //Put Images
+                if (Attendance.checkEventType(eventCount).equals("Online")){
+                    putClubImage(currentPane,"D:\\2nd Year\\Object Oriented Development\\CW\\CW Git\\School-Activity-Club-Management-System\\project-SACMS\\src\\main\\resources\\com\\main\\projectsacms\\Icons\\Functional\\online logo.png");
+                }else {
+                    putClubImage(currentPane,"D:\\2nd Year\\Object Oriented Development\\CW\\CW Git\\School-Activity-Club-Management-System\\project-SACMS\\src\\main\\resources\\com\\main\\projectsacms\\Icons\\Functional\\physical event logo.png");
+
+                }
 
                 count++;
                 eventCount++;
@@ -516,6 +554,12 @@ public class AttendanceTrackingController implements PredefinedObjects {
         OnlineAttendance.saveAttendance(OnlineAttendance.trackAttendance(choiceBoxArrayList,studentIDMapList,currentEventID));
     }
 
+    public void resetButtonInStudentsTableOnClick() throws SQLException{
+        Attendance.clearAttendanceTable();
+        OnlineAttendance.saveAttendance(OnlineAttendance.trackAttendance(choiceBoxArrayList,studentIDMapList,currentEventID));
+
+    }
+
     String currentEventID;
     String eventType;
 
@@ -566,7 +610,17 @@ public class AttendanceTrackingController implements PredefinedObjects {
 
                 ChoiceBox<String> choice = putStudentAttendance(currentPane);
 
-                choice.setValue(attendanceStatus);
+                if (attendanceStatus != null) {
+                    choice.setValue(attendanceStatus);
+
+                }else {
+                    choice.setValue("Not marked");
+                }
+
+                if (choice.getValue().equals("Not marked")){
+                    choice.setLayoutX(680);
+
+                }
 
                 attendedStudents.add(attendedStudentsDetails);
                 choiceBoxArrayList.add(choice);

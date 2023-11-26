@@ -1,5 +1,6 @@
 package com.main.projectsacms.AttendanceTracking;
 
+import com.main.projectsacms.Database.Attendance.InputData;
 import com.main.projectsacms.Database.Attendance.RetrieveData;
 import javafx.scene.layout.Pane;
 import java.sql.SQLException;
@@ -89,11 +90,11 @@ public abstract class Attendance implements PredefinedObjects {
 
     }
 
-    public static String checkEventType(int eventNumber) throws SQLException {
+    public static String checkEventType(int eventNumber) {
 
-        ArrayList<Map<String,String>> eventDetails = RetrieveData.getEventsData();
+        Map<String, String> event = AttendanceTrackingController.getEvents().get(eventNumber);
 
-        if (eventDetails.get(eventNumber).get("eventType").equals("Online")){
+        if (event.get("eventType").equals("Online")){
             return "Online";
 
         }else {
@@ -131,5 +132,12 @@ public abstract class Attendance implements PredefinedObjects {
     public static String retrieveAttendanceData(String eventID,String studentID){
         return RetrieveData.retrieveAttendanceDataFromDatabase(eventID,studentID);
     }
+
+    public static void clearAttendanceTable(){
+        InputData.truncateAttendanceTable();
+    }
+
+
+
 
 }

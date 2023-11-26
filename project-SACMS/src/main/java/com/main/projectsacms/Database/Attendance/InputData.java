@@ -37,5 +37,22 @@ public class InputData extends Connection {
 
     }
 
+    public static void truncateAttendanceTable() {
+        establishConnection();
+
+        try {
+            String sql = "TRUNCATE TABLE event_attendance";
+
+            try (PreparedStatement statement = connection.prepareStatement(sql)) {
+                statement.executeUpdate();
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            closeConnection();
+        }
+    }
+
 
 }

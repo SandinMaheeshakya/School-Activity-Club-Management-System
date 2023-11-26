@@ -82,32 +82,27 @@
          <children>
             <Group>
                <children>
-                  <Rectangle arcHeight="40.0" arcWidth="40.0" fill="#1b2b32" height="119.0" stroke="BLACK" strokeType="INSIDE" width="874.0" />
-                  <TextField layoutX="199.0" layoutY="25.0" prefHeight="25.0" prefWidth="396.0" />
-                  <ChoiceBox fx:id="clubChoosingDropBox" layoutX="105.0" layoutY="80.0" prefHeight="25.0" prefWidth="174.0" />
-                  <Button layoutX="705.0" layoutY="40.0" mnemonicParsing="false" onAction="#onFilterButtonClick" prefHeight="39.0" prefWidth="83.0" text="Filter" />
-                  <Label layoutX="212.0" layoutY="5.0" prefHeight="17.0" prefWidth="68.0" text="Search" textFill="WHITE">
+                  <Rectangle arcHeight="40.0" arcWidth="40.0" fill="#1b2b32" height="84.0" layoutX="-37.0" layoutY="25.0" stroke="BLACK" strokeType="INSIDE" width="908.0" />
+                  <ChoiceBox fx:id="clubChoosingDropBox" layoutX="136.0" layoutY="60.0" prefHeight="25.0" prefWidth="174.0" />
+                  <Button layoutX="731.0" layoutY="47.0" mnemonicParsing="false" onAction="#onFilterButtonClick" prefHeight="39.0" prefWidth="109.0" style="-fx-background-radius: 40;" text="Filter" />
+                  <Label layoutX="136.0" layoutY="39.0" prefHeight="17.0" prefWidth="68.0" text="Club" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>
                   </Label>
-                  <Label layoutX="105.0" layoutY="59.0" prefHeight="17.0" prefWidth="68.0" text="Club" textFill="WHITE">
+                  <DatePicker fx:id="filterEventDateFrom" layoutX="329.0" layoutY="60.0" />
+                  <DatePicker fx:id="filterEventDateTo" layoutX="524.0" layoutY="60.0" />
+                  <Label layoutX="329.0" layoutY="39.0" prefHeight="17.0" prefWidth="68.0" text="From" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>
                   </Label>
-                  <DatePicker fx:id="filterEventDateFrom" layoutX="298.0" layoutY="80.0" />
-                  <DatePicker fx:id="filterEventDateTo" layoutX="493.0" layoutY="80.0" />
-                  <Label layoutX="298.0" layoutY="59.0" prefHeight="17.0" prefWidth="68.0" text="From" textFill="WHITE">
+                  <Label layoutX="524.0" layoutY="39.0" prefHeight="17.0" prefWidth="68.0" text="To" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>
                   </Label>
-                  <Label layoutX="493.0" layoutY="59.0" prefHeight="17.0" prefWidth="68.0" text="To" textFill="WHITE">
-                     <font>
-                        <Font name="System Bold" size="14.0" />
-                     </font>
-                  </Label>
+                  <Button layoutX="-7.0" layoutY="47.0" mnemonicParsing="false" onAction="#onResetButtonClick" prefHeight="39.0" prefWidth="109.0" style="-fx-background-radius: 40;" text="Reset" />
                </children>
             </Group>
             <AnchorPane fx:id="EventsDisplayPageOne" layoutX="5.0" layoutY="128.0" prefHeight="354.0" prefWidth="874.0">
@@ -194,10 +189,10 @@
             </ImageView>
             <Group fx:id="studentsPageOne1" layoutX="-51.0" layoutY="115.0">
                <children>
-                  <Pane fx:id="StudentDetailsPaneTwo" layoutX="5.0" layoutY="58.0" prefHeight="59.0" prefWidth="947.0" />
+                  <Pane fx:id="StudentDetailsPaneTwo" layoutY="58.0" prefHeight="59.0" prefWidth="947.0" />
                   <Pane fx:id="StudentDetailsPaneThree" layoutY="116.0" prefHeight="59.0" prefWidth="947.0" />
                   <Pane fx:id="StudentDetailsPaneFour" layoutY="173.0" prefHeight="59.0" prefWidth="947.0" />
-                  <Pane fx:id="StudentDetailsPaneFive" layoutX="2.0" layoutY="231.0" prefHeight="59.0" prefWidth="947.0" />
+                  <Pane fx:id="StudentDetailsPaneFive" layoutY="231.0" prefHeight="59.0" prefWidth="947.0" />
                   <Pane fx:id="StudentDetailsPaneSix" layoutY="288.0" prefHeight="59.0" prefWidth="947.0" />
                   <Pane fx:id="StudentDetailsPaneOne" prefHeight="59.0" prefWidth="947.0" />
                   <Rectangle arcHeight="20.0" arcWidth="20.0" height="408.0" layoutX="159.0" layoutY="-59.0" stroke="BLACK" strokeType="INSIDE" width="5.0" />
@@ -212,8 +207,8 @@
                   <Font name="System Bold" size="15.0" />
                </font>
             </Label>
-            <Button fx:id="onSaveButtonClick" layoutX="727.0" layoutY="16.0" mnemonicParsing="false" onAction="#saveButtonOnClick" text="Save" />
-            <Button fx:id="onSaveButtonClick1" layoutX="788.0" layoutY="12.0" mnemonicParsing="false" onAction="#saveButtonOnClick" text="Reset" />
+            <Button fx:id="onSaveButtonClick" layoutX="720.0" layoutY="16.0" mnemonicParsing="false" onAction="#saveButtonOnClick" text="Save" />
+            <Button fx:id="onResetButtonClick" layoutX="779.0" layoutY="16.0" mnemonicParsing="false" onAction="#resetButtonInStudentsTableOnClick" text="Reset" />
          </children>
       </Group>
       <Button fx:id="switchToPageOneButton" layoutX="925.0" layoutY="661.0" mnemonicParsing="false" onAction="#switchToPageOne" prefHeight="25.0" prefWidth="26.0" text="1" />

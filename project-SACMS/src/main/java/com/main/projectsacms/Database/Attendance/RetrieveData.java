@@ -1,6 +1,7 @@
 package com.main.projectsacms.Database.Attendance;
 import com.main.projectsacms.Database.Connection;
 
+import java.io.InputStream;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -128,7 +129,6 @@ public class RetrieveData extends Connection {
 
     public static String retrieveAttendanceDataFromDatabase(String eventID,String studentID) {
         establishConnection();
-        ArrayList<HashMap<String, String>> attendanceList = new ArrayList<>();
 
         String attendanceStatus = null;
         try {
@@ -155,6 +155,26 @@ public class RetrieveData extends Connection {
         return attendanceStatus;
     }
 
+
+
+    public static InputStream retrieveReportData(String reportName, String columnName){
+        InputStream inputStream = null;
+        String query = "SELECT"+columnName+" FROM jasper_reports WHERE report_name '"+reportName+"'";
+
+        try {
+            establishConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement(query);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                inputStream = resultSet.getBinaryStream(1);
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+        return inputStream;
+
+    }
 
 }
 
