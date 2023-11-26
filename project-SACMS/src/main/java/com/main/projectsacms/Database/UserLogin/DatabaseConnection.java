@@ -1,38 +1,17 @@
-package com.main.projectsacms;
+package com.main.projectsacms.Database.UserLogin;
+
+import com.main.projectsacms.CreateClub;
 
 import java.sql.*;
 import java.sql.Connection;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DatabaseConnection {
-
-     private static final String DB_URL = "jdbc:mysql://localhost:3306/sacms";
-     private static final String DB_USER = "root";
-     private static final String DB_PASS = "";
-
-     String currentStudentId;
-
-
-
-     private static Connection connection;
-
-    static {
-        try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            connection = DriverManager.getConnection(DB_URL, DB_USER, DB_PASS);
-            System.out.println("Connected to the database successfully");
-        } catch (ClassNotFoundException | SQLException e) {
-            System.err.println("Failed to connect to the database: " + e.getMessage());
-        }
-    }
-    public static Connection getConnection() {
-        return connection;
-    }
-
+public class DatabaseConnection extends com.main.projectsacms.Database.Connection {
 
     public static void insertStudent(String studentId, String firstname, String lastname, String username, String dob, String email, String grade, String password) throws SQLException {
-         try (Connection connection = getConnection()) {
+        establishConnection();
+         try  {
              String query = "INSERT INTO students (student_id, first_name, last_name, user_name, dob, email, grade, password) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
              PreparedStatement preparedStatement = connection.prepareStatement(query);
              preparedStatement.setString(1, studentId);
@@ -47,11 +26,13 @@ public class DatabaseConnection {
          } catch (SQLException e) {
              e.printStackTrace();
          }
-         connection.close();
+         closeConnection();
      }
 
      public static void InsertAdvisor(String advisorId, String firstName, String lastName, String userName, String dob, String email, String department, String password) throws SQLException{
-         try (Connection connection = getConnection()){
+        establishConnection();
+
+         try {
              String query2 = "INSERT INTO club_advisors (advisor_id, first_name, last_name, user_name, dob, email, department, password) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
              PreparedStatement preparedStatements = connection.prepareStatement(query2);
              preparedStatements.setString(1, advisorId);
@@ -66,13 +47,15 @@ public class DatabaseConnection {
          } catch (SQLException e) {
              e.printStackTrace();
          }
-         connection.close();
-     }
+         closeConnection();
+    }
 
     public static boolean validateAdvisorLogin(String username, String password) throws SQLException {
         String query = "SELECT * FROM club_advisors WHERE user_name = ? AND password = ?";
 
-        try (Connection connection = getConnection();
+        establishConnection();
+
+        try (
              PreparedStatement preparedStatement = connection.prepareStatement(query)) {
             preparedStatement.setString(1, username);
             preparedStatement.setString(2, password);
@@ -88,8 +71,9 @@ public class DatabaseConnection {
 
     public static boolean validateStudentLogin(String username, String password) {
         String query = "SELECT * FROM students WHERE user_name = ? AND password = ?";
+        establishConnection();
 
-        try (Connection connection = getConnection();
+        try (
              PreparedStatement preparedStatement = connection.prepareStatement(query)) {
             preparedStatement.setString(1, username);
             preparedStatement.setString(2, password);
@@ -108,7 +92,8 @@ public class DatabaseConnection {
 
         String query = "SELECT * FROM clubs"; // Assuming your table is named 'create_club'
 
-        try (Connection connection = getConnection();
+        establishConnection();
+        try (
              PreparedStatement preparedStatement = connection.prepareStatement(query);
              ResultSet resultSet = preparedStatement.executeQuery()) {
 
@@ -132,7 +117,8 @@ public class DatabaseConnection {
         return clubs;
     }
     public static void joinClub(String studentId, String clubId) {
-        try (Connection connection = getConnection()) {
+        establishConnection();
+        try  {
             // Assuming there's a table named 'student_club' to store the association
             String query = "INSERT INTO student_club (student_id, club_id) VALUES (?, ?)";
             PreparedStatement preparedStatement = connection.prepareStatement(query);

@@ -6,4 +6,6 @@ module com.main.projectsacms {
 
     opens com.main.projectsacms to javafx.fxml;
     exports com.main.projectsacms;
+    exports com.main.projectsacms.Database.UserLogin;
+    opens com.main.projectsacms.Database.UserLogin to javafx.fxml;
 }

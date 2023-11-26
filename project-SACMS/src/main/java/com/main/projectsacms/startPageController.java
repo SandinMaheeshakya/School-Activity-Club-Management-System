@@ -1,5 +1,6 @@
 package com.main.projectsacms;
 
+import com.main.projectsacms.Database.UserLogin.DatabaseConnection;
 import javafx.animation.FadeTransition;
 import javafx.animation.PauseTransition;
 import javafx.animation.ScaleTransition;
@@ -18,10 +19,9 @@ import javafx.util.Duration;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
-import static com.main.projectsacms.DatabaseConnection.joinClub;
+import static com.main.projectsacms.Database.UserLogin.DatabaseConnection.joinClub;
 
 public class startPageController {
 
@@ -683,22 +683,24 @@ public class startPageController {
                 // Successful login
                 // Add your logic to navigate to the student's home/dashboard
                 System.out.println("Student login successful!");
+
+                StudentLogin.setOpacity(0);
+                FirstGroup.setOpacity(0);
+                Dashboardpage.setVisible(true);
+                attendenceGroup.setVisible(false);
+
+                Dashboardpage.setDisable(false);
+
+                FadeTransition DashboardTransition = new FadeTransition(Duration.seconds(3), Dashboardpage);
+                DashboardTransition.setFromValue(0);
+                DashboardTransition.setToValue(1);
+                DashboardTransition.play();
+
             } else {
                 // Failed login
                 // Display an error message or take appropriate action
                 System.out.println("Student login failed. Invalid credentials.");
             }
-        StudentLogin.setOpacity(0);
-        FirstGroup.setOpacity(0);
-        Dashboardpage.setVisible(true);
-        attendenceGroup.setVisible(false);
-
-        Dashboardpage.setDisable(false);
-
-        FadeTransition DashboardTransition = new FadeTransition(Duration.seconds(3), Dashboardpage);
-        DashboardTransition.setFromValue(0);
-        DashboardTransition.setToValue(1);
-        DashboardTransition.play();
 
         }
 
