@@ -77,7 +77,7 @@ public class CreateClub {
     public CreateClub(String clubID, String clubName, String description, String clubCategory, String clubAdvisor, String email, int contact, String image){
         this.clubID = clubID;
         this.clubName = clubName;
-        this.clubCategory = clubAdvisor;
+        this.clubCategory = clubCategory;
         this.description = description;
         this.clubAdvisor = clubAdvisor;
         this.email = email;

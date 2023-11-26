@@ -223,6 +223,12 @@ public class HelloController implements Initializable {
                 isValid = false;
                 txtEmail.setStyle("-fx-border-color: #a33a3a");
                 errorMessage += "Please enter your email.\n";
+            } else {
+                if (!email.matches("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$")) {
+                    isValid = false;
+                    txtEmail.setStyle("-fx-border-color: #a33a3a");
+                    errorMessage += "Please enter valid email.\n";
+                }
             }
             if (description.isEmpty()) {
                 isValid = false;
@@ -259,7 +265,7 @@ public class HelloController implements Initializable {
                 } catch (SQLException e) {
                     e.printStackTrace();
                 }
-
+                showMessage("Success", "Club data added successfully.");
                 clearFields();
                 settingTheTable();
             }
@@ -269,9 +275,16 @@ public class HelloController implements Initializable {
         }
     }
 
-
     private void showAlert(String title, String message) {
         Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle(title);
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.showAndWait();
+    }
+
+    private void showMessage(String title, String message) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle(title);
         alert.setHeaderText(null);
         alert.setContentText(message);
@@ -366,7 +379,18 @@ public class HelloController implements Initializable {
             showAlert("No Club Selected", "Please select a club to update.");
             return;
         }
+
+        String updatedClubID = txtUpdateClubID.getText();
+        String updatedClubName = txtUpdateClubName.getText();
+        String updatedDescription = txtUpdateDescription.getText();
+        String updatedType = txtUpdateType.getText();
+        String updatedAdvisor = txtUpdateAdvisor.getText();
+        String updatedEmail = txtUpdateEmail.getText();
+        String updatedContactText = txtUpdateContact.getText();
+        String updatedImage = imgView.getImage() != null ? imgView.getImage().toString() : "";
+
         txtUpdateClubID.setText(selectedClub.getClubID());
+        txtUpdateClubID.setDisable(true);
         txtUpdateClubName.setText(selectedClub.getClubName());
         txtUpdateDescription.setText(selectedClub.getDescription());
         txtUpdateType.setText(selectedClub.getClubCategory());
@@ -374,8 +398,94 @@ public class HelloController implements Initializable {
         txtUpdateEmail.setText(selectedClub.getEmail());
         txtUpdateContact.setText(String.valueOf(selectedClub.getContact()));
 
-        btnUpdate.setOnAction(e -> saveUpdatedClub(selectedClub));
+        boolean isValid = true;
+        String errorMessage = "";
+
+        if (updatedClubName.isEmpty()) {
+            isValid = false;
+            txtClubName.setStyle("-fx-border-color: #a33a3a");
+            errorMessage += "Please enter proper name for the club.\n";
+        } else {
+            if (!updatedClubName.matches("[a-zA-Z ]+")) {
+                isValid = false;
+                txtClubName.setStyle("-fx-border-color: #a33a3a");
+                errorMessage += "Club name should be only letters.\n";
+            }
+        }
+        if (updatedClubID.isEmpty()) {
+            isValid = false;
+            txtClubID.setStyle("-fx-border-color: #a33a3a");
+            errorMessage += "Please enter Club ID.\n";
+        }
+        if (updatedAdvisor.isEmpty()) {
+            isValid = false;
+            txtAdvisor.setStyle("-fx-border-color: #a33a3a");
+            errorMessage += "Please enter advisor name.\n";
+        }
+        if (updatedType.isEmpty()) {
+            isValid = false;
+            txtCategory.setStyle("-fx-border-color: #a33a3a");
+            errorMessage += "Please enter type of the club.\n";
+        }
+        if (updatedEmail.isEmpty()) {
+            isValid = false;
+            txtEmail.setStyle("-fx-border-color: #a33a3a");
+            errorMessage += "Please enter your email.\n";
+        } else {
+            if (!updatedEmail.matches("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$")) {
+                isValid = false;
+                txtEmail.setStyle("-fx-border-color: #a33a3a");
+                errorMessage += "Please enter valid email.\n";
+            }
+        }
+        if (updatedDescription.isEmpty()) {
+            isValid = false;
+            txtDescription.setStyle("-fx-border-color: #a33a3a");
+            errorMessage += "Please enter a description.\n";
+        }
+        int clubContact = 0;
+        if (updatedContactText.isEmpty()) {
+            isValid = false;
+            txtContact.setStyle("-fx-border-color: #a33a3a");
+            errorMessage += "Please enter a valid contact.\n";
+        } else {
+            try {
+                clubContact = Integer.parseInt(updatedContactText);
+                if (clubContact < 0) {
+                    isValid = false;
+                    txtContact.setStyle("-fx-border-color: #a33a3a");
+                    errorMessage += "Please enter a valid contact.\n";
+                }
+            } catch (NumberFormatException e) {
+                isValid = false;
+                txtContact.setStyle("-fx-border-color: #a33a3a");
+                errorMessage += "Please enter a valid contact.\n";
+            }
+        }
+        if (isValid) {CreateClub club = new CreateClub(updatedClubID, updatedClubName, updatedDescription, updatedType, updatedAdvisor, updatedEmail, Integer.parseInt(updatedContactText), updatedImage);
+
+            DatabaseConnection databaseHandler = new DatabaseConnection("jdbc:mysql://localhost:3306/sacms", "root", "");
+            try {
+                databaseHandler.connect();
+                databaseHandler.updateClub(club);
+                databaseHandler.disconnect();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+
+            btnUpdate.setOnAction(e -> saveUpdatedClub(selectedClub));
+            showMessage("Success", "Club data updated successfully.");
+            clearFields();
+        }
+        else {
+            showAlert("Invalid Input", errorMessage);
+        }
+
+        settingTheTable();
+        tblManage.refresh();
+
     }
+
 
     private void saveUpdatedClub(CreateClub selectedClub) {
         String updatedClubID = txtUpdateClubID.getText();
@@ -422,12 +532,14 @@ public class HelloController implements Initializable {
     @FXML
     void selectRow(MouseEvent event) {
         if (event.getClickCount() == 1) {
-            updateClubs(new ActionEvent());
-
             CreateClub selectedClub = tblManage.getSelectionModel().getSelectedItem();
             if (selectedClub != null) {
                 pnlAddEvent.setVisible(true);
                 pnlClubProfiles.setVisible(true);
+            }
+
+            if (pnlUpdate.isVisible()){
+                pnlAddEvent.setVisible(false);
             }
         }
     }
@@ -459,6 +571,7 @@ public class HelloController implements Initializable {
         if (event.getSource() == btnEditClubs) {
             pnlAddEvent.setVisible(false);
             pnlUpdate.setVisible(true);
+            updateClubs(new ActionEvent());
         }
     }
 

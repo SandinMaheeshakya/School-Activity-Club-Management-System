@@ -25,13 +25,13 @@ public class DatabaseConnection extends BaseDatabaseConnection {
 
     public void insertClub(CreateClub club ) throws SQLException{
         if (advisorIdExists(club.getClubAdvisor())) {
-            String insertQuery = "INSERT INTO club_creation (clubID, advisor_id, clubName, description, clubCategory, email, contact, image) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+            String insertQuery = "INSERT INTO club_creation (clubID, clubName, description, clubCategory, advisor_id, email, contact, image) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
             try (PreparedStatement statement = connection.prepareStatement(insertQuery)) {
                 statement.setString(1, club.getClubID());
-                statement.setString(2, club.getClubAdvisor());
-                statement.setString(3, club.getClubName());
-                statement.setString(4, club.getDescription());
-                statement.setString(5, club.getClubCategory());
+                statement.setString(2, club.getClubName());
+                statement.setString(3, club.getDescription());
+                statement.setString(4, club.getClubCategory());
+                statement.setString(5, club.getClubAdvisor());
                 statement.setString(6, club.getEmail());
                 statement.setInt(7, club.getContact());
                 statement.setString(8, club.getImage());
@@ -90,6 +90,7 @@ public class DatabaseConnection extends BaseDatabaseConnection {
             preparedStatement.executeUpdate();
 
         } finally {
+
             closeResources(connection, preparedStatement, null);
         }
     }
@@ -124,10 +125,10 @@ public class DatabaseConnection extends BaseDatabaseConnection {
                 while (resultSet.next()) {
                     CreateClub createClub = new CreateClub(
                             resultSet.getString("clubID"),
-                            resultSet.getString("advisor_id"),
                             resultSet.getString("clubName"),
                             resultSet.getString("description"),
                             resultSet.getString("clubCategory"),
+                            resultSet.getString("advisor_id"),
                             resultSet.getNString("email"),
                             resultSet.getInt("contact"),
                             resultSet.getString("image")
