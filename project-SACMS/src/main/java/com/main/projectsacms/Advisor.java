@@ -1,11 +1,5 @@
 package com.main.projectsacms;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
-
-import static com.main.projectsacms.DatabaseConnection.getConnection;
-
 public class Advisor extends Human {
     private String advisorId;
     private String department;
@@ -31,9 +25,4 @@ public class Advisor extends Human {
         this.advisorId = advisorId;
         this.department = department;
     }
-
-
-
-
-
 }

@@ -5,9 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="341b03f4-a410-43dd-b493-2580ae4c8f54" name="Changes" comment="update Registration part and do validations for all Student and Advisors and change the locations of email and the dob in correct way">
-      <change afterPath="$PROJECT_DIR$/project-SACMS/src/main/resources/com/main/projectsacms/FXML Files/Dashboard.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-SACMS/src/main/java/com/main/projectsacms/startPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/project-SACMS/src/main/java/com/main/projectsacms/startPageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-SACMS/src/main/resources/com/main/projectsacms/FXML Files/Dashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/project-SACMS/src/main/resources/com/main/projectsacms/FXML Files/Dashboard.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,6 +101,7 @@
       <workItem from="1700539400393" duration="1138000" />
       <workItem from="1700890640069" duration="2501000" />
       <workItem from="1700975668617" duration="4845000" />
+      <workItem from="1700987964430" duration="761000" />
     </task>
     <task id="LOCAL-00001" summary="update Registration part and do validations for all Student and Advisors and change the locations of email and the dob in correct way">
       <created>1700892514392</created>

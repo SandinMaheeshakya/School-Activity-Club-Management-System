@@ -8,22 +8,20 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.Group;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
-import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 import javafx.util.Duration;
 
-import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
+
+import static com.main.projectsacms.DatabaseConnection.joinClub;
 
 public class startPageController {
 
@@ -67,6 +65,18 @@ public class startPageController {
     private Group StudentLogin;
     @FXML
     private Group advisorDetails;
+    @FXML
+    private Group joinClub;
+    @FXML
+    private Group Dashboardpage;
+    @FXML
+    private Group homeGroup;
+    @FXML
+    private Group clubGroup;
+    @FXML
+    private Group eventGroup;
+    @FXML
+    private Group attendenceGroup;
     @FXML
     private TextField advisorEmail;
     @FXML
@@ -123,6 +133,33 @@ public class startPageController {
     private TextField studentUsernameLogin;
     @FXML
     private TextField studentPasswordLogin;
+
+    //JoinTable details
+    @FXML
+    private TableView<CreateClub> Tablejoin;
+    @FXML
+    private TableColumn<CreateClub, String> clubIdJoin;
+
+    @FXML
+    private TableColumn<CreateClub, String> clubNameJoin;
+
+    @FXML
+    private TableColumn<CreateClub, String> clubDescriptionJoin;
+
+    @FXML
+    private TableColumn<CreateClub, String> clubCategoryJoin;
+
+    @FXML
+    private TableColumn<CreateClub, String> clubAdvisorJoin;
+
+    @FXML
+    private TableColumn<CreateClub, String> clubEmailJoin;
+
+    @FXML
+    private TableColumn<CreateClub, Integer> clubContactJoin;
+
+    @FXML
+    private Button clubJoin;
     ScaleTransition loginButtonIncrease;
     ScaleTransition loginButtonDecrease;
 
@@ -147,9 +184,9 @@ public class startPageController {
     }
 
     public void initialize(){
-
         gradeSetValue();
         departmentSetValue();
+
 
         FadeTransition quote1Transition = new FadeTransition(Duration.seconds(3), quote1);
         quote1Transition.setFromValue(0);
@@ -235,6 +272,21 @@ public class startPageController {
         advisorButtonDecrease = new ScaleTransition(Duration.millis(200), advisorSignUpButton);
         advisorButtonDecrease.setToX(0.9);
         advisorButtonDecrease.setToY(0.9);
+
+        // Set up the columns
+        clubIdJoin.setCellValueFactory(new PropertyValueFactory<>("clubID"));
+        clubNameJoin.setCellValueFactory(new PropertyValueFactory<>("clubName"));
+        clubDescriptionJoin.setCellValueFactory(new PropertyValueFactory<>("description"));
+        clubCategoryJoin.setCellValueFactory(new PropertyValueFactory<>("clubCategory"));
+        clubAdvisorJoin.setCellValueFactory(new PropertyValueFactory<>("clubAdvisor"));
+        clubEmailJoin.setCellValueFactory(new PropertyValueFactory<>("email"));
+        clubContactJoin.setCellValueFactory(new PropertyValueFactory<>("contact"));
+
+        // Load club data into the table
+        loadClubData();
+
+        // Set up the event handler for joining a club
+        clubJoin.setOnAction(event -> onClickJoinClub());
 
     }
 
@@ -528,14 +580,13 @@ public class startPageController {
     @FXML
     public void OnClickAdvisorRegister(ActionEvent actionEvent) throws SQLException {
         // Call validation methods
+        advisorTeachingIDValidation();
         advisorFirstNameValidation();
         advisorLastNameValidation();
-        advisorUserNameValidation();
         advisorEmailValidation();
-        advisorTeachingIDValidation();
+        advisorUserNameValidation();
         advisorPasswordValidation();
         advisorDepartmentValidation();
-
 
         // Check if all validations passed
         if (allValidatedAdvisor) {
@@ -566,8 +617,7 @@ public class startPageController {
         studentIDValidation();
         studentGradeValidation();
 
-
-        if (allValidatedAdvisor) {
+        if (allValidatedStudent) {
             String SID = studentID.getText();
             String Firstname = studentFirstName.getText();
             String LastName = studentLastName.getText();
@@ -584,6 +634,7 @@ public class startPageController {
             System.out.println("Advisor registration failed due to validation errors.");
         }
     }
+    @FXML
     public void OnloginButtonClick(ActionEvent actionEvent) {
         FirstGroup.setOpacity(0);
         ThirdGroup.setOpacity(100);
@@ -624,7 +675,7 @@ public class startPageController {
 
     }
 
-    public void onclickStudentConfirmLogin(ActionEvent actionEvent) throws IOException {
+    public void onclickStudentConfirmLogin(ActionEvent actionEvent) {
             String username = studentUsernameLogin.getText();
             String password = studentPasswordLogin.getText();
 
@@ -632,24 +683,26 @@ public class startPageController {
                 // Successful login
                 // Add your logic to navigate to the student's home/dashboard
                 System.out.println("Student login successful!");
-
-                FXMLLoader mainPageLoader = new FXMLLoader(getClass().getResource("FXML Files/Dashboard.fxml"));
-                Parent mainPage = mainPageLoader.load();
-                // Create a new stage or replace the current scene content
-                Stage mainstage = new Stage();
-                mainstage.setTitle("Main Page");
-                mainstage.initStyle(StageStyle.UNDECORATED);
-                mainstage.setScene(new Scene(mainPage));
-                mainstage.show();
             } else {
                 // Failed login
                 // Display an error message or take appropriate action
                 System.out.println("Student login failed. Invalid credentials.");
             }
+        StudentLogin.setOpacity(0);
+        FirstGroup.setOpacity(0);
+        Dashboardpage.setVisible(true);
+        attendenceGroup.setVisible(false);
+
+        Dashboardpage.setDisable(false);
+
+        FadeTransition DashboardTransition = new FadeTransition(Duration.seconds(3), Dashboardpage);
+        DashboardTransition.setFromValue(0);
+        DashboardTransition.setToValue(1);
+        DashboardTransition.play();
 
         }
 
-    public void onclickAdvisorConfirmLogin(ActionEvent actionEvent) {
+    public void onclickAdvisorConfirmLogin(ActionEvent actionEvent) throws SQLException {
         String username = advisorUsernameLogin.getText();
         String password = advisorPasswordLogin.getText();
 
@@ -664,11 +717,42 @@ public class startPageController {
         }
     }
 
-    public void onClickJoinClub(ActionEvent actionEvent) {
+    private void onClickJoinClub() {
 
     }
 
-    public void onClickSearchClubClickToJoin(ActionEvent actionEvent) {
+    private void loadClubData() {
+        // Fetch club data from the database
+        List<CreateClub> clubs = DatabaseConnection.getAllClubs();
+
+        // Populate the table with club data
+        Tablejoin.getItems().addAll(clubs);
+    }
+
+    public void onClickJoinClub(ActionEvent actionEvent) {
+        CreateClub selectedClub = Tablejoin.getSelectionModel().getSelectedItem();
+        if (selectedClub != null) {
+            // Get student ID from your authentication system (replace "123" with actual student ID)
+            String studentId = "123";
+            String clubName = selectedClub.getClubName();
+
+            // Call the method to join the club
+            joinClub(studentId, clubName);
+
+            // You can add further logic here, e.g., display a confirmation message
+            System.out.println("Joined the club: " + clubName);
+        }
+
+    }
+
+    public void onclickViewJoinTables(MouseEvent mouseEvent) {
+        Dashboardpage.setVisible(false);
+        joinClub.setVisible(true);
+        joinClub.setDisable(false);
+        FadeTransition joinClubTransition = new FadeTransition(Duration.seconds(3), joinClub);
+        joinClubTransition.setFromValue(0);
+        joinClubTransition.setToValue(1);
+        joinClubTransition.play();
 
     }
 }

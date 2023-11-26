@@ -75,7 +75,6 @@ public class Human {
     public void setConfirm_password(String confirm_password) {
         this.confirm_password = confirm_password;
     }
-
     public String getCurrentId() {
         return currentId;
     }
@@ -83,5 +82,4 @@ public class Human {
     public void setCurrentId(String currentId) {
         this.currentId = currentId;
     }
-
 }

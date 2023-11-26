@@ -2,12 +2,18 @@ package com.main.projectsacms;
 
 import java.sql.*;
 import java.sql.Connection;
+import java.util.ArrayList;
+import java.util.List;
 
 public class DatabaseConnection {
 
      private static final String DB_URL = "jdbc:mysql://localhost:3306/sacms";
      private static final String DB_USER = "root";
      private static final String DB_PASS = "";
+
+     String currentStudentId;
+
+
 
      private static Connection connection;
 
@@ -47,23 +53,23 @@ public class DatabaseConnection {
      public static void InsertAdvisor(String advisorId, String firstName, String lastName, String userName, String dob, String email, String department, String password) throws SQLException{
          try (Connection connection = getConnection()){
              String query2 = "INSERT INTO club_advisors (advisor_id, first_name, last_name, user_name, dob, email, department, password) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
-             PreparedStatement preparedStatement = connection.prepareStatement(query2);
-             preparedStatement.setString(1, advisorId);
-             preparedStatement.setString(2, firstName);
-             preparedStatement.setString(3, lastName);
-             preparedStatement.setString(4, userName);
-             preparedStatement.setString(5, dob);
-             preparedStatement.setString(6, email);
-             preparedStatement.setString(7, department);
-             preparedStatement.setString(8, password);
-             preparedStatement.executeUpdate();
+             PreparedStatement preparedStatements = connection.prepareStatement(query2);
+             preparedStatements.setString(1, advisorId);
+             preparedStatements.setString(2, firstName);
+             preparedStatements.setString(3, lastName);
+             preparedStatements.setString(4, userName);
+             preparedStatements.setString(5, dob);
+             preparedStatements.setString(6, email);
+             preparedStatements.setString(7, department);
+             preparedStatements.setString(8, password);
+             preparedStatements.executeUpdate();
          } catch (SQLException e) {
              e.printStackTrace();
          }
          connection.close();
      }
 
-    public static boolean validateAdvisorLogin(String username, String password) {
+    public static boolean validateAdvisorLogin(String username, String password) throws SQLException {
         String query = "SELECT * FROM club_advisors WHERE user_name = ? AND password = ?";
 
         try (Connection connection = getConnection();
@@ -95,10 +101,48 @@ public class DatabaseConnection {
             e.printStackTrace();
             return false;
         }
+
+    }
+    public static List<CreateClub> getAllClubs() {
+        List<CreateClub> clubs = new ArrayList<>();
+
+        String query = "SELECT * FROM clubs"; // Assuming your table is named 'create_club'
+
+        try (Connection connection = getConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement(query);
+             ResultSet resultSet = preparedStatement.executeQuery()) {
+
+            while (resultSet.next()) {
+                CreateClub club = new CreateClub();
+                club.setClubID(resultSet.getString("club_ID"));
+                club.setClubName(resultSet.getString("club_name"));
+                club.setDescription(resultSet.getString("club_details"));
+                club.setClubCategory(resultSet.getString("club_category"));
+                club.setClubAdvisor(resultSet.getString("club_advisor"));
+                club.setEmail(resultSet.getString("club_email"));
+                club.setContact(Integer.parseInt(resultSet.getString("club_contact")));
+
+                clubs.add(club);
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return clubs;
+    }
+    public static void joinClub(String studentId, String clubId) {
+        try (Connection connection = getConnection()) {
+            // Assuming there's a table named 'student_club' to store the association
+            String query = "INSERT INTO student_club (student_id, club_id) VALUES (?, ?)";
+            PreparedStatement preparedStatement = connection.prepareStatement(query);
+            preparedStatement.setString(1, studentId);
+            preparedStatement.setString(2, clubId);
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
-     /*public static void main(String[] args) throws SQLException {
-         DatabaseConnection.insertStudent("baba","ff", "dd", "dd", "dd", "ddedd", "ee", "dddd");
-         DatabaseConnection.InsertAdvisor("baba","ff", "dd", "dd", "dd", "ddedd", "ee", "dddd");
-     }*/
 }
+
