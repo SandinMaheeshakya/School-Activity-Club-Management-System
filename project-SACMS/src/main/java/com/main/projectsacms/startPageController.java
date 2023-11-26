@@ -629,9 +629,9 @@ public class startPageController {
             String Firstname = studentFirstName.getText();
             String LastName = studentLastName.getText();
             String UserName = studentUsername.getText();
-            String Birth = String.valueOf(studentDOB.getValue());
-            String Email = studentEmailAddress.getText();
-            String Grades = String.valueOf(studentGrade.getValue());
+            String Birth =  studentEmailAddress.getText();
+            String Email = String.valueOf(studentDOB.getValue());
+            int Grades = Integer.parseInt(studentGrade.getValue());
             String Pass1 = studentPassword.getText();
             Student student = new Student(SID, Firstname, LastName, UserName, Birth, Email,  Grades, Pass1 );
             DatabaseConnection.insertStudent(student.getStudentId(), student.getFirstName(), student.getLastName(), student.getUserName(), student.getDob(), student.getEmail(), student.getGrade(), student.getPassword());
@@ -719,6 +719,17 @@ public class startPageController {
             // Successful login
             // Add your logic to navigate to the advisor's home/dashboard
             System.out.println("Advisor login successful!");
+
+            advisorLogin.setOpacity(0);
+            FirstGroup.setOpacity(0);
+            Dashboardpage.setVisible(true);
+
+            Dashboardpage.setDisable(false);
+
+            FadeTransition DashboardTransition = new FadeTransition(Duration.seconds(3), Dashboardpage);
+            DashboardTransition.setFromValue(0);
+            DashboardTransition.setToValue(1);
+            DashboardTransition.play();
         } else {
             // Failed login
             // Display an error message or take appropriate action

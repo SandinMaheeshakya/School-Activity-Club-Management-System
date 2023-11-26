@@ -33,10 +33,10 @@ public class Student extends Human {
         this.grade = grade;
     }
 
-    public Student(String studentId, String firstname, String lastname, String username, String dob, String email, String grade, String password) {
+    public Student(String studentId, String firstname, String lastname, String username, String dob, String email, int grade, String password) {
         super(firstname, lastname, username, dob, email, password);
         this.studentId = studentId;
-        this.grade = grade;
+        this.grade = String.valueOf(grade);
         this.selectedClubs = new ArrayList<>();
     }
 }
