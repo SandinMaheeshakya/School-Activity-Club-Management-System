@@ -99,12 +99,6 @@ public class CreateClub {
         this.image.set(image);
     }
 
-    public void setImageData(byte[] imageData) {
-        this.imageData = imageData;
-        if (imageData != null && imageData.length > 0) {
-            this.image = new Image(new ByteArrayInputStream(imageData));
-        }
-    }
 
     public byte[] getImageData() {
         return imageData;
