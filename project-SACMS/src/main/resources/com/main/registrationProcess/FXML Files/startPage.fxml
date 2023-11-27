@@ -221,7 +221,7 @@
             <TextField fx:id="studentPasswordLogin" layoutX="129.0" layoutY="258.0" prefHeight="40.0" prefWidth="198.0" styleClass="form-area" stylesheets="@../CSS%20Files/Dashboard.css" />
          </children>
       </Group>
-      <Group fx:id="Dashboardpage" layoutX="-11.0" layoutY="-99.0" visible="false">
+      <Group fx:id="DashboardPage" layoutX="-11.0" layoutY="-99.0" visible="false">
          <children>
             <AnchorPane layoutX="3.0" layoutY="100.0" prefHeight="735.0" prefWidth="1292.0" style="-fx-background-color: black;" stylesheets="@../../../../../../../../../../Second%20Year/OOP%20Programming/coursework/School-Activity-Club-Management-System/project-SACMS/src/main/resources/com/main/projectsacms/CSS%20Files/AttendencePage.css">
                <children>

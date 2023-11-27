@@ -3,6 +3,7 @@ package com.main.registrationProcess;
 import com.main.Database.UserLogin.DatabaseConnection;
 import com.main.clubcreation.DisplayClubs;
 import com.main.mainAttendance.AttendancePage;
+import com.main.mainAttendance.AttendanceTracking.AttendanceTrackingController;
 import javafx.animation.FadeTransition;
 import javafx.animation.PauseTransition;
 import javafx.animation.ScaleTransition;
@@ -77,7 +78,8 @@ public class startPageController {
     @FXML
     private Group joinClub;
     @FXML
-    private Group Dashboardpage;
+    private Group DashboardPage;
+
     @FXML
     private Group homeGroup;
     @FXML
@@ -197,7 +199,12 @@ public class startPageController {
     public startPageController() {
     }
 
+    public static boolean backStatus;
     public void initialize(){
+
+        if (backStatus){
+            DashboardPage.setVisible(true);
+        }
         gradeSetValue();
         departmentSetValue();
 
@@ -703,12 +710,12 @@ public class startPageController {
 
                 StudentLogin.setOpacity(0);
                 FirstGroup.setOpacity(0);
-                Dashboardpage.setVisible(true);
+                DashboardPage.setVisible(true);
                 attendenceGroup.setVisible(false);
 
-                Dashboardpage.setDisable(false);
+                DashboardPage.setDisable(false);
 
-                FadeTransition DashboardTransition = new FadeTransition(Duration.seconds(3), Dashboardpage);
+                FadeTransition DashboardTransition = new FadeTransition(Duration.seconds(3), DashboardPage);
                 DashboardTransition.setFromValue(0);
                 DashboardTransition.setToValue(1);
                 DashboardTransition.play();
@@ -732,11 +739,11 @@ public class startPageController {
 
             advisorLogin.setOpacity(0);
             FirstGroup.setOpacity(0);
-            Dashboardpage.setVisible(true);
+            DashboardPage.setVisible(true);
 
-            Dashboardpage.setDisable(false);
+            DashboardPage.setDisable(false);
 
-            FadeTransition DashboardTransition = new FadeTransition(Duration.seconds(3), Dashboardpage);
+            FadeTransition DashboardTransition = new FadeTransition(Duration.seconds(3), DashboardPage);
             DashboardTransition.setFromValue(0);
             DashboardTransition.setToValue(1);
             DashboardTransition.play();
@@ -777,8 +784,8 @@ public class startPageController {
 
     public void onclickViewJoinTables() throws IOException {
 
-        if (currentMember.equals("Student")) {
-            Dashboardpage.setVisible(false);
+        if ("Student".equals(currentMember)) {
+            DashboardPage.setVisible(false);
             clubDisplayPage.setVisible(true);
             clubDisplayPage.setDisable(false);
             FadeTransition clubDisplayPageTransition = new FadeTransition(Duration.seconds(3), clubDisplayPage);
@@ -793,6 +800,8 @@ public class startPageController {
         }
 
     }
+
+
 
 
     public void onAttendanceButtonClick(MouseEvent event) throws IOException {

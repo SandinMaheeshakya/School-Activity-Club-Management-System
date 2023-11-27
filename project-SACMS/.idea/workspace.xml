@@ -6,32 +6,14 @@
   <component name="ChangeListManager">
     <list default="true" id="160022ca-5992-48fb-a410-4036c377095f" name="Changes" comment="edited doc">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/main/mainAttendance/AttendanceTracking/Attendance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/main/mainAttendance/AttendanceTracking/Attendance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/main/clubcreation/ClubManagementController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/main/clubcreation/ClubManagementController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/main/mainAttendance/AttendanceTracking/AttendanceTrackingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/main/mainAttendance/AttendanceTracking/AttendanceTrackingController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/main/mainAttendance/AttendanceTracking/OnlineAttendance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/main/mainAttendance/AttendanceTracking/OnlineAttendance.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/main/mainAttendance/Database/Attendance/InputData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/main/Database/Attendance/InputData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/main/mainAttendance/Database/Attendance/RetrieveData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/main/Database/Attendance/RetrieveData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/main/mainAttendance/Database/Connection.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/main/mainAttendance/Database/JasperReports/JasperDBConnection.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/main/registrationProcess/startPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/main/registrationProcess/startPageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/main/mainAttendance/FXML Files/Attendance/AttendancePage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/main/mainAttendance/FXML Files/Attendance/AttendancePage.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/main/mainAttendance/FXML Files/Dashboard.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/main/mainAttendance/FXML Files/startPage.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/main/registrationProcess/FXML Files/AttendancePage.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/main/registrationProcess/FXML Files/Dashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/main/registrationProcess/FXML Files/Dashboard.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/main/registrationProcess/FXML Files/chooseClub.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/main/clubcreation/clubManagement.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/main/clubcreation/clubManagement.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/main/registrationProcess/FXML Files/startPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/main/registrationProcess/FXML Files/startPage.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/main/mainAttendance/AttendanceTracking/Attendance.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/main/mainAttendance/AttendanceTracking/Attendance.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/main/mainAttendance/AttendanceTracking/AttendanceTrackingController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/main/mainAttendance/AttendanceTracking/AttendanceTrackingController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/main/mainAttendance/AttendanceTracking/OnlineAttendance.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/main/mainAttendance/AttendanceTracking/OnlineAttendance.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/main/mainAttendance/Database/Attendance/InputData.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/main/mainAttendance/Database/Attendance/RetrieveData.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/main/mainAttendance/Database/Connection.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/main/mainAttendance/FXML Files/Attendance/AttendancePage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/main/mainAttendance/FXML Files/Attendance/AttendancePage.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/main/registrationProcess/FXML Files/startPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/main/registrationProcess/FXML Files/startPage.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/main/registrationProcess/startPageController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/main/registrationProcess/startPageController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/module-info.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -299,6 +281,21 @@
     <MESSAGE value="edited doc" />
     <MESSAGE value="Sql database" />
     <option name="LAST_COMMIT_MESSAGE" value="edited doc" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/com/main/mainAttendance/AttendanceTracking/AttendanceTrackingController.java</url>
+          <line>876</line>
+          <properties class="com.main.mainAttendance.AttendanceTracking.AttendanceTrackingController" method="onBackButtonClick">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -1,9 +1,8 @@
 package com.main.mainAttendance.AttendanceTracking;
 
 import com.main.Database.Attendance.RetrieveData;
-import com.main.clubcreation.DisplayClubs;
-import com.main.registrationProcess.CreateClub;
 import com.main.registrationProcess.SACMS;
+import com.main.registrationProcess.startPageController;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -878,7 +877,11 @@ public class AttendanceTrackingController implements PredefinedObjects {
     public void onBackButtonClick() throws IOException {
         SACMS sacms = new SACMS();
         Stage stage = new Stage();
+        startPageController.backStatus = true;
+
         sacms.start(stage);
+
+
 
     }
 }

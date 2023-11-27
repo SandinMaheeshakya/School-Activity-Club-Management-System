@@ -1,6 +1,8 @@
 package com.main.clubcreation;
 
 import com.main.EventCreation.Menu;
+import com.main.registrationProcess.SACMS;
+import com.main.registrationProcess.startPageController;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -677,5 +679,14 @@ public class ClubManagementController implements Initializable {
     public  void onAddEventButtonClick(){
         Menu menu = new Menu();
         Stage stage = new Stage();
-        menu.start(stage);    }
+        menu.start(stage);
+    }
+
+    public void onBackButtonClickInMainPage() throws IOException {
+        SACMS sacms = new SACMS();
+        Stage stage = new Stage();
+        startPageController.backStatus = true;
+        sacms.start(stage);
+
+    }
 }

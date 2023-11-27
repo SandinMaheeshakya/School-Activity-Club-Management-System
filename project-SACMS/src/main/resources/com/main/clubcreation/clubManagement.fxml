@@ -252,6 +252,7 @@
                         <Font name="Arial" size="14.0" />
                      </font>
                   </Button>
+                  <Button layoutX="477.0" layoutY="589.0" mnemonicParsing="false" onAction="#onBackButtonClickInMainPage" prefHeight="52.0" prefWidth="147.0" style="-fx-background-color: black;" text="Back" textFill="WHITE" />
                </children>
             </Pane>
          </children>
