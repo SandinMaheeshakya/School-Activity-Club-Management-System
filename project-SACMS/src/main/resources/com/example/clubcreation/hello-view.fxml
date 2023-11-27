@@ -22,19 +22,17 @@
          <children>
             <Pane fx:id="pnlCreateClub" prefHeight="593.0" prefWidth="1023.0" style="-fx-background-radius: 15px;" styleClass="linear-grad" stylesheets="@../../main/projectsacms/CSS%20Files/styles.css" visible="false">
                <children>
-                  <Pane prefHeight="236.0" prefWidth="998.0" style="-fx-background-radius: 15px 15px 0px 0px;" styleClass="pane2" stylesheets="@../../main/projectsacms/CSS%20Files/styles.css">
+                  <Pane prefHeight="236.0" prefWidth="998.0" style="-fx-background-radius: 15px 15px 0px 0px;" styleClass="overlay" stylesheets="@../../main/projectsacms/CSS%20Files/styles.css">
                      <children>
-                        <ImageView fx:id="imgView" fitHeight="200.0" fitWidth="200.0" layoutX="17.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true" styleClass="image">
+                        <ImageView fitHeight="252.0" fitWidth="418.0" layoutX="581.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../main/projectsacms/IMG/background.png" />
-                           </image></ImageView>
-                        <Button fx:id="btnChooseImage" layoutX="53.0" layoutY="107.0" mnemonicParsing="false" onAction="#choosePhoto" text="Select Profile Picture" textFill="WHITE">
-                           <font>
-                              <Font name="Arial Bold" size="12.0" />
-                           </font>
-                        </Button>
-                     </children></Pane>
-                  <VBox layoutX="58.0" layoutY="334.0" prefHeight="228.0" prefWidth="141.0">
+                              <Image url="@../../main/projectsacms/GIF/Untitled%20video%20-%20Made%20with%20Clipchamp%20(2).gif" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="31.0" layoutY="34.0" styleClass="createClub" stylesheets="@../../main/projectsacms/CSS%20Files/styles.css" text="Create Club" />
+                     </children>
+                  </Pane>
+                  <VBox layoutX="279.0" layoutY="334.0" prefHeight="228.0" prefWidth="141.0">
                      <children>
                         <Label text="Club ID:" textFill="WHITE">
                            <font>
@@ -79,7 +77,7 @@
                         </Label>
                      </children>
                   </VBox>
-                  <VBox layoutX="288.0" layoutY="307.0" prefHeight="270.0" prefWidth="642.0">
+                  <VBox layoutX="474.0" layoutY="307.0" prefHeight="270.0" prefWidth="468.0">
                      <children>
                         <Pane prefHeight="38.0" prefWidth="386.0" />
                         <TextField fx:id="txtClubID" prefHeight="25.0" prefWidth="400.0" styleClass="input" stylesheets="@../../main/projectsacms/CSS%20Files/styles.css" />
@@ -100,33 +98,39 @@
                   </VBox>
                   <Button fx:id="btnCreate" layoutX="708.0" layoutY="606.0" mnemonicParsing="false" onAction="#createProfile" prefHeight="34.0" prefWidth="76.0" styleClass="spotifyButton" stylesheets="@../../main/projectsacms/CSS%20Files/styles.css" text="Create" textFill="WHITE" />
                   <Button fx:id="btnClear" layoutX="833.0" layoutY="606.0" mnemonicParsing="false" onAction="#clearProfile" prefHeight="34.0" prefWidth="76.0" styleClass="closeButton" stylesheets="@../../main/projectsacms/CSS%20Files/styles.css" text="Clear" textFill="WHITE" />
+                  <ImageView fx:id="imgView" fitHeight="200.0" fitWidth="200.0" layoutX="31.0" layoutY="348.0" opacity="0.77" pickOnBounds="true" preserveRatio="true" styleClass="image" />
+                  <Button fx:id="btnChooseImage" layoutX="67.0" layoutY="435.0" mnemonicParsing="false" onAction="#choosePhoto" text="Select Profile Picture" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Bold" size="12.0" />
+                     </font>
+                  </Button>
                </children>
             </Pane>
             <Pane fx:id="pnlWelcomePage" prefHeight="606.0" prefWidth="1023.0" style="-fx-background-radius: 15px;" styleClass="pane2" stylesheets="@../../main/projectsacms/CSS%20Files/styles.css">
                <children>
-                  <ImageView fitHeight="228.0" fitWidth="236.0" layoutX="213.0" layoutY="296.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="484.0" fitWidth="329.0" layoutX="150.0" layoutY="122.0" pickOnBounds="true" preserveRatio="true" style="-fx-background-radius: 0;" styleClass="curvedImageView">
                      <image>
-                        <Image url="@../../main/projectsacms/IMG/Create.png" />
+                        <Image url="@../../main/projectsacms/IMG/Premium%20Vector%20_%20Man%20working%20at%20home.jpeg" />
                      </image>
                   </ImageView>
-                  <Button fx:id="btnClubCreate" layoutX="257.0" layoutY="544.0" mnemonicParsing="false" onAction="#goToCreateClub" prefWidth="140.0" styleClass="pageButton" stylesheets="@../../main/projectsacms/CSS%20Files/styles.css" text="Create a new club" textFill="WHITE">
+                  <Button fx:id="btnClubCreate" layoutX="245.0" layoutY="495.0" mnemonicParsing="false" onAction="#goToCreateClub" prefWidth="140.0" styleClass="pageButton" stylesheets="@../../main/projectsacms/CSS%20Files/styles.css" text="Create a new club" textFill="WHITE">
                      <font>
                         <Font name="Arial" size="14.0" />
                      </font>
                   </Button>
-                  <ImageView fitHeight="200.0" fitWidth="208.0" layoutX="645.0" layoutY="324.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="484.0" fitWidth="329.0" layoutX="535.0" layoutY="121.0" pickOnBounds="true" preserveRatio="true" styleClass="curvedImageView">
                      <image>
-                        <Image url="@../../main/projectsacms/IMG/Manage.png" />
+                        <Image url="@../../main/projectsacms/IMG/Download%20Cartoon%20character,%20Businessman%20hand%20on%20computer%20laptop%20for%20free.jpeg" />
                      </image>
                   </ImageView>
-                  <Button fx:id="btnClubProfile" layoutX="675.0" layoutY="544.0" mnemonicParsing="false" onAction="#goToManageClub" prefWidth="147.0" styleClass="pageButton" stylesheets="@../../main/projectsacms/CSS%20Files/styles.css" text="Mange club profiles" textFill="WHITE">
+                  <Button fx:id="btnClubProfile" layoutX="630.0" layoutY="495.0" mnemonicParsing="false" onAction="#goToManageClub" prefWidth="147.0" styleClass="pageButton" stylesheets="@../../main/projectsacms/CSS%20Files/styles.css" text="Mange club profiles" textFill="WHITE">
                      <font>
                         <Font name="Arial" size="14.0" />
                      </font>
                   </Button>
                </children>
             </Pane>
-            <Pane fx:id="pnlClubProfiles" prefHeight="606.0" prefWidth="1023.0" style="-fx-background-radius: 15px;" styleClass="linear-grad" stylesheets="@../../main/projectsacms/CSS%20Files/styles.css">
+            <Pane fx:id="pnlClubProfiles" prefHeight="606.0" prefWidth="1023.0" style="-fx-background-radius: 15px;" styleClass="linear-grad" stylesheets="@../../main/projectsacms/CSS%20Files/styles.css" visible="false">
                <children>
                   <Label layoutX="48.0" layoutY="32.0" prefHeight="22.0" prefWidth="113.0" text="Clubs" textFill="WHITE">
                      <font>
@@ -144,7 +148,7 @@
                         </ImageView>
                      </children>
                   </HBox>
-                  <TableView fx:id="tblManage" layoutX="-1.0" layoutY="89.0" onMouseClicked="#selectRow" prefHeight="200.0" prefWidth="998.0">
+                  <TableView fx:id="tblManage" layoutY="89.0" onMouseClicked="#selectRow" prefHeight="200.0" prefWidth="998.0">
                     <columns>
                       <TableColumn fx:id="colClubID" prefWidth="69.60000610351562" text="Club ID" />
                       <TableColumn fx:id="colClubName" prefWidth="154.39999389648438" text="Club Name" />
@@ -156,7 +160,7 @@
                         <TableColumn fx:id="colProfilePicture" prefWidth="112.7999267578125" text="Profile Picture" />
                     </columns>
                   </TableView>
-                  <Pane fx:id="pnlUpdate" layoutX="-1.0" layoutY="289.0" prefHeight="384.0" prefWidth="998.0">
+                  <Pane fx:id="pnlUpdate" layoutX="-1.0" layoutY="289.0" prefHeight="384.0" prefWidth="998.0" visible="false">
                      <children>
                         <VBox layoutX="428.0" layoutY="32.0" prefHeight="300.0" prefWidth="528.0">
                            <children>
@@ -267,5 +271,10 @@
             </Button>
          </children>
       </Pane>
+      <ImageView fx:id="btnClose" fitHeight="15.0" fitWidth="15.0" layoutX="1260.0" layoutY="5.0" onMouseClicked="#handleClose" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../main/projectsacms/IMG/x-mobile-hero-1.jpg" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

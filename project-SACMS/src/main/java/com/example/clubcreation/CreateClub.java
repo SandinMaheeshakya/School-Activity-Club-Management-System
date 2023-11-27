@@ -1,14 +1,38 @@
 package com.example.clubcreation;
 
+import javafx.beans.property.ObjectProperty;
+import javafx.beans.property.SimpleObjectProperty;
+import javafx.scene.image.Image;
+
+import java.io.ByteArrayInputStream;
+
 public class CreateClub {
-    String clubID;
-    String clubName;
-    String description;
-    String clubCategory;
-    String clubAdvisor;
-    String email;
-    int contact;
-    String image;
+    private String clubID;
+    private String clubName;
+    private String description;
+    private String clubCategory;
+    private String clubAdvisor;
+    private String email;
+    private int contact;
+    private ObjectProperty<Image> image = new SimpleObjectProperty<>();
+    private byte[] imageData;
+
+    public CreateClub(String clubID, String clubName, String description, String clubCategory, String clubAdvisor, String email, int contact, String imagePath){
+        this.clubID = clubID;
+        this.clubName = clubName;
+        this.clubCategory = clubCategory;
+        this.description = description;
+        this.clubAdvisor = clubAdvisor;
+        this.email = email;
+        this.contact = contact;
+
+        if (imagePath != null && !imagePath.isEmpty()) {
+            this.image = new SimpleObjectProperty<>(new Image(imagePath));
+        } else {
+            this.image = new SimpleObjectProperty<>(null);
+        }
+
+    }
 
     public String getClubID() {
         return clubID;
@@ -65,24 +89,25 @@ public class CreateClub {
     public void setContact(int contact) {
         this.contact = contact;
     }
-
-    public String getImage() {
+    public ObjectProperty<Image> imageProperty() {
         return image;
     }
 
-    public void setImage(String image) {
-        this.image = image;
+    public Image getImage() {return image.get();}
+
+    public void setImage(Image image) {
+        this.image.set(image);
     }
 
-    public CreateClub(String clubID, String clubName, String description, String clubCategory, String clubAdvisor, String email, int contact, String image){
-        this.clubID = clubID;
-        this.clubName = clubName;
-        this.clubCategory = clubCategory;
-        this.description = description;
-        this.clubAdvisor = clubAdvisor;
-        this.email = email;
-        this.contact = contact;
-        this.image = image;
+    public void setImageData(byte[] imageData) {
+        this.imageData = imageData;
+        if (imageData != null && imageData.length > 0) {
+            this.image = new Image(new ByteArrayInputStream(imageData));
+        }
+    }
+
+    public byte[] getImageData() {
+        return imageData;
     }
 
 }

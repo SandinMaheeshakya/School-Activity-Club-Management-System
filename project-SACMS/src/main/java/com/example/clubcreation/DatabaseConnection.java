@@ -1,5 +1,10 @@
 package com.example.clubcreation;
 
+import javafx.scene.image.Image;
+
+import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.StandardCopyOption;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -34,7 +39,13 @@ public class DatabaseConnection extends BaseDatabaseConnection {
                 statement.setString(5, club.getClubAdvisor());
                 statement.setString(6, club.getEmail());
                 statement.setInt(7, club.getContact());
-                statement.setString(8, club.getImage());
+                File imageFile = new File(String.valueOf(club.getImage()));
+                if (imageFile.exists()) {
+                    statement.setString(8, String.valueOf(club.getImage()));
+                } else {
+                    System.out.println("Image file not found: " + club.getImage());
+                    statement.setString(8, " ");
+                }
 
                 statement.executeUpdate();
             }
@@ -84,14 +95,14 @@ public class DatabaseConnection extends BaseDatabaseConnection {
             preparedStatement.setString(4, club.getClubAdvisor());
             preparedStatement.setString(5, club.getEmail());
             preparedStatement.setInt(6, club.getContact());
-            preparedStatement.setString(7, club.getImage());
+            preparedStatement.setString(7, String.valueOf(club.getImage()));
             preparedStatement.setString(8, club.getClubID());
 
             preparedStatement.executeUpdate();
 
-        } finally {
-
-            closeResources(connection, preparedStatement, null);
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw new RuntimeException(e);
         }
     }
 
@@ -131,13 +142,19 @@ public class DatabaseConnection extends BaseDatabaseConnection {
                             resultSet.getString("advisor_id"),
                             resultSet.getNString("email"),
                             resultSet.getInt("contact"),
-                            resultSet.getString("image")
+                            null
                     );
+                    Blob imageBlob = resultSet.getBlob("image");
+                    if (imageBlob != null) {
+                        try (InputStream inputStream = imageBlob.getBinaryStream()) {
+                            Image image = new Image(inputStream);
+                            createClub.setImage(image);
+                        }
+                    }
                     clubList.add(createClub);
                 }
             }
-            connection.close();
-        } catch (SQLException e) {
+        } catch (SQLException | IOException e) {
             e.printStackTrace();
         }
         return clubList;
@@ -145,4 +162,3 @@ public class DatabaseConnection extends BaseDatabaseConnection {
 
 
 }
-

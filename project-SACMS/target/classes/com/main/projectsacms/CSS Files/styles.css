@@ -138,6 +138,64 @@
     -fx-border-width: 0 0 4px 0; /* Bottom border only */
 }
 
+.createClub {
+    -fx-font-family: "Yanone Kaffeesatz";
+    -fx-font-size: 100px;
+    -fx-display: flex;
+    -fx-position: absolute;
+    -fx-bottom: 20vh;
+    -fx-left: 50%;
+    -fx-transform: translateX(-50%);
+    -fx-user-select: none;
+}
+
+.createClub .wrapper {
+    -fx-padding-left: 20px;
+    -fx-padding-right: 20px;
+    -fx-padding-top: 20px;
+}
+
+.createClub .wrapper .letter {
+    -fx-transition: ease-out 1s;
+    -fx-transform: translateY(40%);
+}
+
+.createClub .wrapper .shadow {
+    -fx-transform: scaleY(-1);
+    -fx-text-fill: #999;
+    -fx-transition: ease-in 5s, ease-out 5s;
+}
+
+.createClub:hover .wrapper .letter {
+    -fx-transform: translateY(-200%);
+}
+
+.createClub:hover .wrapper .shadow {
+    -fx-opacity: 0;
+    -fx-transform: translateY(200%);
+}
+
+.overlay {
+    -fx-position: absolute;
+    -fx-bottom: 0;
+    -fx-left: 0;
+    -fx-width: 100%;
+    -fx-height: 30vh;
+    -fx-z-index: 100;
+
+    -fx-background-color: linear-gradient(
+            rgba(255, 255, 255, 1) 75%,
+            rgba(255, 255, 255, 0.9) 80%,
+            rgba(255, 255, 255, 0.25) 95%,
+            rgba(255, 255, 255, 0) 100%
+    );
+}
+
+.curvedImageView{
+    -fx-background-radius: 20px;
+}
+
+
 
 
 

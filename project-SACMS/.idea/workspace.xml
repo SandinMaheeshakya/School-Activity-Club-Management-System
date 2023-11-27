@@ -4,7 +4,33 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="160022ca-5992-48fb-a410-4036c377095f" name="Changes" comment="edited doc" />
+    <list default="true" id="160022ca-5992-48fb-a410-4036c377095f" name="Changes" comment="edited doc">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/main/projectsacms/GIF/Untitled video - Made with Clipchamp (2).gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/main/projectsacms/IMG/Burning.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/main/projectsacms/IMG/Design.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/main/projectsacms/IMG/Design2.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/main/projectsacms/IMG/Download Cartoon character, Businessman hand on computer laptop for free.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/main/projectsacms/IMG/Premium Vector _ Man working at home.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/main/projectsacms/IMG/x-mobile-hero-1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/clubcreation/CreateClub.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/clubcreation/CreateClub.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/clubcreation/DatabaseConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/clubcreation/DatabaseConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/clubcreation/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/clubcreation/HelloApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/clubcreation/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/clubcreation/HelloController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/clubcreation/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/clubcreation/hello-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/main/projectsacms/CSS Files/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/main/projectsacms/CSS Files/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/main/projectsacms/FXML Files/startPage.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/main/projectsacms/GIF/rocket-158_512.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/clubcreation/CreateClub.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/clubcreation/CreateClub.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/clubcreation/DatabaseConnection.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/clubcreation/DatabaseConnection.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/clubcreation/HelloApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/clubcreation/HelloApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/clubcreation/HelloController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/clubcreation/HelloController$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/clubcreation/HelloController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/clubcreation/HelloController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/clubcreation/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/clubcreation/hello-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/main/projectsacms/CSS Files/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/main/projectsacms/CSS Files/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/main/projectsacms/FXML Files/startPage.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/main/projectsacms/GIF/rocket-158_512.gif" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -146,7 +172,8 @@
       <workItem from="1700834259492" duration="2186000" />
       <workItem from="1700921456200" duration="12512000" />
       <workItem from="1700973031820" duration="16289000" />
-      <workItem from="1701008244568" duration="605000" />
+      <workItem from="1701008244568" duration="14177000" />
+      <workItem from="1701060396132" duration="3527000" />
     </task>
     <task id="LOCAL-00001" summary="edited doc">
       <option name="closed" value="true" />
