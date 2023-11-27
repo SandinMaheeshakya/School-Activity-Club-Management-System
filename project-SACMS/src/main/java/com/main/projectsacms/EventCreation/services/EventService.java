@@ -1,6 +1,6 @@
-package com.main.services;
+package com.main.projectsacms.EventCreation.services;
 
-import com.main.models.Event;
+import com.main.projectsacms.EventCreation.models.Event;
 import java.text.SimpleDateFormat;
 import java.time.LocalTime;
 import java.util.ArrayList;

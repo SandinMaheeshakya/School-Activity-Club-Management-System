@@ -5,8 +5,8 @@ module com.main.projectsacms {
     requires mysql.connector.java;
 
 
+    opens com.main.projectsacms.EventCreation.models to javafx.base;
     opens com.main.projectsacms to javafx.fxml;
-    opens com.main.models to javafx.base;
-
-    exports com.main;
+    exports com.main.projectsacms.EventCreation;
+    opens com.main.projectsacms.EventCreation to javafx.fxml;
 }

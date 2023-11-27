@@ -1,6 +1,6 @@
-package com.main.Views;
+package com.main.projectsacms.EventCreation.Views;
 
-import com.main.Controllers.EventController;
+import com.main.projectsacms.EventCreation.Controllers.EventController;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
@@ -9,7 +9,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
-import com.main.models.Event;
+import com.main.projectsacms.EventCreation.models.Event;
 
 import java.util.List;
 

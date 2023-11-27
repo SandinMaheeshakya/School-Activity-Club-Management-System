@@ -1,17 +1,13 @@
-package com.main.Views;
+package com.main.projectsacms.EventCreation.Views;
 
-import com.main.Controllers.EventController;
-import com.mysql.cj.protocol.Message;
+import com.main.projectsacms.EventCreation.Controllers.EventController;
 import javafx.collections.FXCollections;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
-import javafx.event.EventType;
 import javafx.geometry.Insets;
 import javafx.geometry.VPos;
 import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
-import com.main.models.Event;
+import com.main.projectsacms.EventCreation.models.Event;
 
 import java.time.LocalDate;
 

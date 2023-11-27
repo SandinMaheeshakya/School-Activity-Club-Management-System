@@ -1,7 +1,7 @@
-package com.main.Controllers;
+package com.main.projectsacms.EventCreation.Controllers;
 
-import com.main.models.DatabaseConnector;
-import com.main.models.Event;
+import com.main.projectsacms.EventCreation.models.DatabaseConnector;
+import com.main.projectsacms.EventCreation.models.Event;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
