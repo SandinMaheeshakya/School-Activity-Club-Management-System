@@ -27,7 +27,7 @@ public class Menu extends Application {
         viewEventsTab.setClosable(false); // This makes the tab not closable
 
         // Add tabs to the tab pane
-        tabPane.getTabs().addAll(createNewEventTab, viewEventsTab); // Add tabs together
+        tabPane.getTabs().addAll(createNewEventTab,viewEventsTab); // Add tabs together
 
         // Set the gradient background
         String bgColour = "black";
@@ -38,6 +38,8 @@ public class Menu extends Application {
         primaryStage.setFullScreen(true); // This will make the window full screen
         primaryStage.setTitle("Event Management");
         primaryStage.show();
+
+
     }
 
     public static void main(String[] args) {

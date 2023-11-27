@@ -216,7 +216,7 @@
                   </Pane>
                   <Pane fx:id="pnlAddEvent" layoutX="1.0" layoutY="289.0" prefHeight="384.0" prefWidth="998.0" visible="false">
                      <children>
-                        <Button fx:id="btnAddEvent" layoutX="234.0" layoutY="166.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="215.0" styleClass="spotifyButton" stylesheets="@../../main/projectsacms/CSS%20Files/styles.css" text="Add Events" textFill="WHITE">
+                        <Button fx:id="btnAddEvent" layoutX="234.0" layoutY="166.0" mnemonicParsing="false" onAction="#onAddEventButtonClick" prefHeight="52.0" prefWidth="215.0" styleClass="spotifyButton" stylesheets="@../../main/projectsacms/CSS%20Files/styles.css" text="Add Events" textFill="WHITE">
                            <font>
                               <Font name="System Bold" size="24.0" />
                            </font>

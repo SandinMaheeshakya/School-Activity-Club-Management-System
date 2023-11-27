@@ -1,5 +1,6 @@
 package com.main.clubcreation;
 
+import com.main.EventCreation.Menu;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -12,6 +13,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.stage.FileChooser;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
 
 import java.io.*;
 import java.net.URL;
@@ -669,4 +671,11 @@ public class ClubManagementController implements Initializable {
         txtUpdateEmail.setStyle("");
         txtUpdateContact.setStyle("");
     }
+
+
+    //Add EventButton
+    public  void onAddEventButtonClick(){
+        Menu menu = new Menu();
+        Stage stage = new Stage();
+        menu.start(stage);    }
 }

@@ -6,14 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="160022ca-5992-48fb-a410-4036c377095f" name="Changes" comment="edited doc">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/main/clubcreation/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/main/clubcreation/DisplayClubs.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/main/clubcreation/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/main/clubcreation/ClubManagementController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/main/clubcreation/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/main/clubcreation/clubManagement.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/main/clubcreation/HelloApplication.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/main/clubcreation/HelloController$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/main/clubcreation/HelloController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/main/clubcreation/hello-view.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/main/EventCreation/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/main/EventCreation/Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/main/clubcreation/ClubManagementController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/main/clubcreation/ClubManagementController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/main/clubcreation/clubManagement.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/main/clubcreation/clubManagement.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,7 +72,7 @@
       <recent name="C:\Users\ASUS\IdeaProjects\clubCreation\src\main\resources\com\example\clubcreation\FXML Files" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Menu">
+  <component name="RunManager" selected="Application.DisplayClubs">
     <configuration name="DisplayClubs" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.main.clubcreation.DisplayClubs" />
       <module name="clubCreation" />
@@ -121,8 +116,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Menu" />
         <item itemvalue="Application.DisplayClubs" />
+        <item itemvalue="Application.Menu" />
       </list>
     </recent_temporary>
   </component>
@@ -191,6 +186,7 @@
       <workItem from="1701008244568" duration="14177000" />
       <workItem from="1701060396132" duration="3527000" />
       <workItem from="1701074256770" duration="1923000" />
+      <workItem from="1701094915893" duration="2617000" />
     </task>
     <task id="LOCAL-00001" summary="edited doc">
       <option name="closed" value="true" />
