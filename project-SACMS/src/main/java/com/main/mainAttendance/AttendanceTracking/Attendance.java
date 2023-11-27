@@ -1,7 +1,7 @@
 package com.main.mainAttendance.AttendanceTracking;
 
-import com.main.mainAttendance.Database.Attendance.InputData;
-import com.main.mainAttendance.Database.Attendance.RetrieveData;
+import com.main.Database.Attendance.InputData;
+import com.main.Database.Attendance.RetrieveData;
 import javafx.scene.layout.Pane;
 import java.sql.SQLException;
 import java.util.ArrayList;

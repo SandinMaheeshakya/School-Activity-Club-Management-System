@@ -1,5 +1,5 @@
 package com.main.mainAttendance.AttendanceTracking;
-import com.main.mainAttendance.Database.Attendance.InputData;
+import com.main.Database.Attendance.InputData;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.layout.Pane;
 

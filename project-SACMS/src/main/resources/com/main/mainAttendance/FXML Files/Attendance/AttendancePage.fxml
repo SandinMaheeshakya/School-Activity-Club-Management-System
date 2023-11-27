@@ -216,5 +216,6 @@
       <Button fx:id="switchToPageTwoButton" layoutX="957.0" layoutY="661.0" mnemonicParsing="false" onAction="#switchToPageTwo" prefHeight="25.0" prefWidth="26.0" text="2" />
       <Button fx:id="switchToPageThreeButton" layoutX="989.0" layoutY="661.0" mnemonicParsing="false" onAction="#switchToPageThree" prefHeight="25.0" prefWidth="26.0" text="3" />
       <Button fx:id="switchToPageFiveButton" layoutX="1056.0" layoutY="661.0" mnemonicParsing="false" onAction="#switchToPageFive" prefHeight="25.0" prefWidth="26.0" text="5" />
+      <Button layoutX="211.0" layoutY="661.0" mnemonicParsing="false" onAction="#onBackButtonClick" text="Back" />
    </children>
 </AnchorPane>

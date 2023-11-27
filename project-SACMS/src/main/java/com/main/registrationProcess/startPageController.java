@@ -2,6 +2,7 @@ package com.main.registrationProcess;
 
 import com.main.Database.UserLogin.DatabaseConnection;
 import com.main.clubcreation.DisplayClubs;
+import com.main.mainAttendance.AttendancePage;
 import javafx.animation.FadeTransition;
 import javafx.animation.PauseTransition;
 import javafx.animation.ScaleTransition;
@@ -11,6 +12,8 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Group;
+import javafx.scene.Node;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
@@ -18,6 +21,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import javafx.stage.Window;
 import javafx.util.Duration;
 
 import java.io.IOException;
@@ -788,5 +792,12 @@ public class startPageController {
             displayClubs.start(stage);
         }
 
+    }
+
+
+    public void onAttendanceButtonClick(MouseEvent event) throws IOException {
+        Stage stage = new Stage();
+        AttendancePage attendancePage = new AttendancePage();
+        attendancePage.start(stage);
     }
 }

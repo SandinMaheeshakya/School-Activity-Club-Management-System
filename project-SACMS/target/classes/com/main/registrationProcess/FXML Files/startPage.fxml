@@ -289,7 +289,7 @@
                         </Label>
                      </children>
                   </Group>
-                  <Group fx:id="attendenceGroup" layoutX="775.0" layoutY="461.0">
+                  <Group fx:id="attendenceGroup" layoutX="775.0" layoutY="461.0" onMouseClicked="#onAttendanceButtonClick">
                      <children>
                         <Rectangle arcHeight="20.0" arcWidth="20.0" height="195.0" stroke="#00fff7" strokeType="INSIDE" strokeWidth="4.0" width="206.0" />
                         <ImageView fitHeight="83.0" fitWidth="71.0" layoutX="68.0" layoutY="36.0" pickOnBounds="true" preserveRatio="true">

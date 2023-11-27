@@ -20,5 +20,10 @@ module com.main {
     exports com.main.Database.UserLogin;
     opens com.main.Database.UserLogin to javafx.fxml;
 
+    opens com.main.mainAttendance to javafx.fxml;
+    exports com.main.mainAttendance;
+
+    exports com.main.mainAttendance.AttendanceTracking;
+    opens com.main.mainAttendance.AttendanceTracking to javafx.fxml;
 
 }

@@ -1,22 +1,28 @@
 package com.main.mainAttendance.AttendanceTracking;
 
-import com.main.mainAttendance.Database.Attendance.RetrieveData;
+import com.main.Database.Attendance.RetrieveData;
+import com.main.clubcreation.DisplayClubs;
+import com.main.registrationProcess.CreateClub;
+import com.main.registrationProcess.SACMS;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 
 import javafx.scene.Group;
+import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -866,6 +872,13 @@ public class AttendanceTrackingController implements PredefinedObjects {
 
     public void eventTwelveOnClick() throws SQLException {
         currentEventID = Attendance.checkEventID(11);
+
+    }
+
+    public void onBackButtonClick() throws IOException {
+        SACMS sacms = new SACMS();
+        Stage stage = new Stage();
+        sacms.start(stage);
 
     }
 }
