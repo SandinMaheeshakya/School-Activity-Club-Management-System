@@ -5,28 +5,40 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="160022ca-5992-48fb-a410-4036c377095f" name="Changes" comment="edited doc">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/main/Database/Connection.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/main/Database/UserLogin/DatabaseConnection.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/main/registrationProcess/Advisor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/main/registrationProcess/CreateClub.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/main/registrationProcess/Human.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/main/registrationProcess/SACMS.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/main/registrationProcess/Student.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/main/registrationProcess/startPageController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/main/registrationProcess/CSS Files/Dashboard.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/main/registrationProcess/FXML Files/AttendancePage.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/main/registrationProcess/FXML Files/Dashboard.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/main/registrationProcess/FXML Files/chooseClub.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/main/registrationProcess/FXML Files/startPage.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/main/registrationProcess/Icons/Background/neon gif.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/main/registrationProcess/Icons/Functional/close.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/main/registrationProcess/Icons/Functional/fit to screen.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/main/registrationProcess/Icons/Functional/logo.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/main/registrationProcess/Icons/Functional/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/main/registrationProcess/Icons/Functional/minimize.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/main/mainAttendance/AttendancePage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/main/mainAttendance/AttendanceTracking/Attendance.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/main/mainAttendance/AttendanceTracking/AttendanceTrackingController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/main/mainAttendance/AttendanceTracking/OnlineAttendance.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/main/mainAttendance/AttendanceTracking/PhysicalEventsAttendance.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/main/mainAttendance/AttendanceTracking/PredefinedObjects.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/main/mainAttendance/Database/Attendance/InputData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/main/mainAttendance/Database/Attendance/RetrieveData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/main/mainAttendance/Database/Connection.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/main/mainAttendance/Database/JasperReports/JasperDBConnection.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/main/mainAttendance/CSS Files/AttendencePage.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/main/mainAttendance/CSS Files/Dashboard.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/main/mainAttendance/FXML Files/Attendance/AttendancePage.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/main/mainAttendance/FXML Files/Dashboard.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/main/mainAttendance/FXML Files/startPage.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/main/mainAttendance/Icons/Background/neon gif.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/main/mainAttendance/Icons/Functional/Attendence.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/main/mainAttendance/Icons/Functional/ClubManage.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/main/mainAttendance/Icons/Functional/Clubs.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/main/mainAttendance/Icons/Functional/Events.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/main/mainAttendance/Icons/Functional/OnlineEvents.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/main/mainAttendance/Icons/Functional/UserProfile.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/main/mainAttendance/Icons/Functional/close.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/main/mainAttendance/Icons/Functional/fit to screen.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/main/mainAttendance/Icons/Functional/logo.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/main/mainAttendance/Icons/Functional/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/main/mainAttendance/Icons/Functional/minimize.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/main/mainAttendance/Icons/Functional/online logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/main/mainAttendance/Icons/Functional/physical event logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/main/mainAttendance/Icons/Functional/search.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/main/mainAttendance/Reports/Attendance Report.jasper" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/main/mainAttendance/Reports/Attendance Report.jrxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/module-info.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,7 +106,20 @@
       <recent name="com.main.registrationProcess" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.com.main.registrationProcess.SACMS">
+  <component name="RunManager" selected="Application.AttendancePage">
+    <configuration name="AttendancePage" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.main.mainAttendance.AttendancePage" />
+      <module name="project-SACMS" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.main.mainAttendance.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="DisplayClubs" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.main.clubcreation.DisplayClubs" />
       <module name="project-SACMS" />
@@ -177,7 +202,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.com.main.registrationProcess.SACMS" />
+        <item itemvalue="Application.AttendancePage" />
         <item itemvalue="Application.SACMS" />
         <item itemvalue="Application.DisplayClubs" />
         <item itemvalue="Application.Menu" />

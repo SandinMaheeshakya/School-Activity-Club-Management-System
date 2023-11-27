@@ -1,0 +1,61 @@
+.RegisterButtons{
+    -fx-background-color: linear-gradient(from 0.0% 0.0% to 100.0% 100.0%, #00bfff 0.0%, #ff00e9 100.0%);
+
+}
+
+.RegisterButtons:hover{
+    -fx-background-color: linear-gradient(from 0.0% 0.0% to 100.0% 100.0%, #ff00e9 0.0%, #00bfff 100.0%);
+
+}
+
+.form-area{
+    -fx-text-fill: white;
+    -fx-background-color: black;
+    -fx-background-radius: 30;
+    -fx-border-radius: 30;
+    -fx-border-color: linear-gradient(from 0.0% 0.0% to 100.0% 100.0%, #ff00e9 0.0%, #00bfff 100.0%);
+}
+
+.form-area:focused{
+    -fx-border-color:  #00d5ff;
+}
+
+.role-Buttons{
+    -fx-background-radius: 30;
+    -fx-border-radius: 30;
+    -fx-background-color: black;
+    -fx-border-color: linear-gradient(from 0.0% 0.0% to 100.0% 100.0%, #ff00e9 0.0%, #00bfff 100.0%);
+}
+
+.role-Buttons:hover{
+    -fx-background-color: linear-gradient(from 0.0% 0.0% to 100.0% 100.0%, #ff00e9 0.0%, #00bfff 100.0%);
+
+}
+
+.formDate{
+    -fx-border-color: linear-gradient(from 0.0% 0.0% to 100.0% 100.0%, #ff00e9 0.0%, #00bfff 100.0%);
+}
+
+.formDate .text-field {
+    -fx-control-inner-background: black;
+}
+
+.formDate .arrow-button {
+    -fx-background-color: linear-gradient(from 0.0% 0.0% to 100.0% 100.0%, #ff00e9 0.0%, #00bfff 100.0%);
+}
+
+.choice-box .context-menu{
+    -fx-text-fill: white;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-pref-width: 204px;
+    -fx-background-color: linear-gradient(from 0.0% 0.0% to 100.0% 100.0%, #ff00e9 0.0%, #00bfff 100.0%);
+}
+
+.choice-box .menu-item:focused {
+    -fx-background-color:  #00d5ff;
+    -fx-background-radius: 6;
+    -fx-border-radius: 6;
+}
+.choice-box .menu-item > .label {
+    -fx-text-fill: white; }
