@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<Group fx:id="joinClub" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.main.registrationProcess.startPageController">
+   <children>
+      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0">
+         <children>
+            <BorderPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: grey;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <left>
+                  <VBox prefHeight="200.0" prefWidth="300.0" style="-fx-background-color: black;" BorderPane.alignment="CENTER">
+                     <children>
+                        <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: black;">
+                           <children>
+                              <Label prefHeight="52.0" prefWidth="164.0" text="CLUBS" textFill="#46e15a">
+                                 <font>
+                                    <Font name="Agency FB Bold" size="42.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <Pane prefHeight="33.0" prefWidth="300.0" />
+                        <VBox alignment="CENTER" prefHeight="392.0" prefWidth="261.0" style="-fx-background-color: green; -fx-background-radius: 20;">
+                           <VBox.margin>
+                              <Insets left="50.0" right="50.0" />
+                           </VBox.margin>
+                           <children>
+                              <HBox alignment="TOP_CENTER" prefHeight="8.0" prefWidth="200.0">
+                                 <opaqueInsets>
+                                    <Insets left="20.0" />
+                                 </opaqueInsets>
+                                 <children>
+                                    <Label fx:id="ClubnameDisplay" alignment="TOP_LEFT" text="Sports Club" textFill="WHITE">
+                                       <font>
+                                          <Font name="Agency FB Bold" size="39.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                              <Pane prefHeight="82.0" prefWidth="200.0" />
+                              <ImageView fitHeight="150.0" fitWidth="174.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../Icons/Background/neon%20gif.gif" />
+                                 </image>
+                              </ImageView>
+                              <Pane prefHeight="33.0" prefWidth="200.0" />
+                              <Button fx:id="JoinClubbutton" mnemonicParsing="false" onAction="#onClickJoinClub" prefHeight="0.0" prefWidth="130.0" style="-fx-background-color: black; -fx-background-radius: 20;" text="Join" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Button>
+                              <Pane prefHeight="36.0" prefWidth="200.0" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </VBox>
+               </left>
+               <center>
+                  <TableView fx:id="joinTable" prefHeight="500.0" prefWidth="548.0" style="-fx-background-color: black;" BorderPane.alignment="CENTER">
+                    <columns>
+                      <TableColumn fx:id="clubnamecolumnjoin" prefWidth="77.0" style="-fx-background-color: Green;" text="Club Name" />
+                      <TableColumn fx:id="clubdescriptioncolumnjoin" prefWidth="110.0" style="-fx-background-color: Green;" text="Club Description" />
+                        <TableColumn fx:id="categorycolumnjoin" prefWidth="66.0" style="-fx-background-color: Green;" text="Category" />
+                        <TableColumn fx:id="clubadvisorcolumnjoin" prefWidth="77.0" style="-fx-background-color: Green;" text="Club Advisor" />
+                        <TableColumn fx:id="clunemailcolumnjoin" prefWidth="84.0" style="-fx-background-color: Green;" text="Email" />
+                        <TableColumn fx:id="clubcontactcolumnjoin" prefWidth="84.0" style="-fx-background-color: Green;" text="Contact" />
+                    </columns>
+                  </TableView>
+               </center>
+            </BorderPane>
+         </children>
+      </AnchorPane>
+   </children>
+</Group>
