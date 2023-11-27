@@ -386,7 +386,12 @@
                         <TableColumn fx:id="clubContactJoin" prefWidth="130.0" text="Contact" />
                     </columns>
                   </TableView>
-                  <Button fx:id="clubJoin" layoutX="168.0" layoutY="361.0" mnemonicParsing="false" onAction="#onClickJoinClub" onMouseEntered="#registerButtonMouseEnter" onMouseExited="#registerButtonMouseExit" prefHeight="53.0" prefWidth="170.0" style="-fx-background-radius: 30;" styleClass="RegisterButtons" stylesheets="@../CSS%20Files/Dashboard.css" text="Join" textFill="WHITE">
+                  <Button fx:id="clubJoinBack" layoutX="31.0" layoutY="359.0" mnemonicParsing="false" onAction="#onClickBackButtonInStudentChoosingClubs" onMouseEntered="#registerButtonMouseEnter" onMouseExited="#registerButtonMouseExit" prefHeight="53.0" prefWidth="170.0" style="-fx-background-radius: 30;" styleClass="RegisterButtons" stylesheets="@../CSS%20Files/Dashboard.css" text="Back" textFill="WHITE">
+                     <font>
+                        <Font name="Calibri Bold" size="22.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="clubJoin" layoutX="302.0" layoutY="359.0" mnemonicParsing="false" onAction="#onClickJoinClub" onMouseEntered="#registerButtonMouseEnter" onMouseExited="#registerButtonMouseExit" prefHeight="53.0" prefWidth="170.0" style="-fx-background-radius: 30;" styleClass="RegisterButtons" stylesheets="@../CSS%20Files/Dashboard.css" text="Join" textFill="WHITE">
                      <font>
                         <Font name="Calibri Bold" size="22.0" />
                      </font>

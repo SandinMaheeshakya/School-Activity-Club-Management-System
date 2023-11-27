@@ -801,12 +801,14 @@ public class startPageController {
 
     }
 
-
-
-
     public void onAttendanceButtonClick(MouseEvent event) throws IOException {
         Stage stage = new Stage();
         AttendancePage attendancePage = new AttendancePage();
         attendancePage.start(stage);
+    }
+
+    public void onClickBackButtonInStudentChoosingClubs(){
+        DashboardPage.setVisible(true);
+        clubDisplayPage.setVisible(false);
     }
 }
