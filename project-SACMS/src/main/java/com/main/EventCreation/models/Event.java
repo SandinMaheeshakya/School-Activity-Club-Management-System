@@ -1,4 +1,4 @@
-package com.main.projectsacms.EventCreation.models;
+package com.main.EventCreation.models;
 
 public class Event {
     private String eventID;

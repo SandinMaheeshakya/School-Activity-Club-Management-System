@@ -1,4 +1,4 @@
-package com.main.projectsacms.EventCreation.models;
+package com.main.EventCreation.models;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

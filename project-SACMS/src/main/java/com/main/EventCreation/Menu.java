@@ -1,7 +1,7 @@
-package com.main.projectsacms.EventCreation;
+package com.main.EventCreation;
 
-import com.main.projectsacms.EventCreation.Views.CreateEventPanel;
-import com.main.projectsacms.EventCreation.Views.ViewEventsPanel;
+import com.main.EventCreation.Views.CreateEventPanel;
+import com.main.EventCreation.Views.ViewEventsPanel;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.Tab;

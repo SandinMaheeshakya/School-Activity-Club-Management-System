@@ -1,13 +1,13 @@
-package com.main.projectsacms.EventCreation.Views;
+package com.main.EventCreation.Views;
 
-import com.main.projectsacms.EventCreation.Controllers.EventController;
+import com.main.EventCreation.Controllers.EventController;
 import javafx.collections.FXCollections;
 import javafx.geometry.Insets;
 import javafx.geometry.VPos;
 import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
-import com.main.projectsacms.EventCreation.models.Event;
+import com.main.EventCreation.models.Event;
 
 import java.time.LocalDate;
 
