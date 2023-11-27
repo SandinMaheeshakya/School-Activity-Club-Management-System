@@ -19,7 +19,7 @@ import java.sql.SQLException;
 import java.util.List;
 import java.util.ResourceBundle;
 
-public class HelloController implements Initializable {
+public class ClubManagementController implements Initializable {
 
     @FXML
     private Button btnClear;
