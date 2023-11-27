@@ -4,6 +4,6 @@ module com.example.clubcreation {
     requires java.sql;
 
 
-    opens com.example.clubcreation to javafx.fxml;
-    exports com.example.clubcreation;
+    opens com.main.clubcreation to javafx.fxml;
+    exports com.main.clubcreation;
 }

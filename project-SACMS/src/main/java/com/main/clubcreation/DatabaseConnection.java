@@ -1,10 +1,8 @@
-package com.example.clubcreation;
+package com.main.clubcreation;
 
 import javafx.scene.image.Image;
 
 import java.io.*;
-import java.nio.file.Files;
-import java.nio.file.StandardCopyOption;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;

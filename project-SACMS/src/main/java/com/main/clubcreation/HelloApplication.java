@@ -1,4 +1,4 @@
-package com.example.clubcreation;
+package com.main.clubcreation;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;

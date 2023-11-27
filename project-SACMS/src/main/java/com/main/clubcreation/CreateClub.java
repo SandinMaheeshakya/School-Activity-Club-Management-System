@@ -1,4 +1,4 @@
-package com.example.clubcreation;
+package com.main.clubcreation;
 
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;

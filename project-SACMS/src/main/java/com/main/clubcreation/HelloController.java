@@ -1,6 +1,5 @@
-package com.example.clubcreation;
+package com.main.clubcreation;
 
-import javafx.beans.property.SimpleObjectProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -15,10 +14,7 @@ import javafx.stage.FileChooser;
 import javafx.scene.input.MouseEvent;
 
 import java.io.*;
-import java.net.MalformedURLException;
-import java.net.URISyntaxException;
 import java.net.URL;
-import java.net.URLDecoder;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.ResourceBundle;
