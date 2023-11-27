@@ -1,7 +1,7 @@
 package com.main.projectsacms.Database;
 import java.sql.*;
 
-public abstract class Connection {
+public class Connection {
 
     //Class Attributes
     private static final String DB_URL = "jdbc:mysql://localhost:3306/sacms";
@@ -10,6 +10,10 @@ public abstract class Connection {
 
 
     protected static java.sql.Connection connection = null;
+
+    public static java.sql.Connection getConnection() {
+        return connection;
+    }
 
     public static void establishConnection() {
 
@@ -20,6 +24,7 @@ public abstract class Connection {
             e.printStackTrace();
 
         }
+
     }
 
     public static void closeConnection(){
