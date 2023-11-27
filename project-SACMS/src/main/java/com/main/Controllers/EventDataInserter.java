@@ -9,7 +9,7 @@ import java.sql.SQLException;
 
     public class EventDataInserter {
         private static final String INSERT_SQL = "INSERT INTO events \n" +
-                "(EventName, EventDescription, EventType, EventDate, StartTime, EndTime, Duration, Mode, Location, MeetingLink, MeetingID, MeetingPassword) \n" +
+                "(EventName, EventDescription, EventType,Club_Name, EventDate, StartTime, EndTime, Duration, Mode, Location, MeetingLink, MeetingID, MeetingPassword) \n" +
                 "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
 
         public static void insertEvent(Event event) {

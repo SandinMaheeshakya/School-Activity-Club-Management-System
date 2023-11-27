@@ -14,24 +14,25 @@ public class EventController {
 
     public Boolean saveEvent(Event event) {
         String insertEventSQL = "INSERT INTO events (" +
-                "EventName,EventDescription,EventType,EventDate,StartTime,EndTime,Duration,Mode,Location,MeetingLink,MeetingID,MeetingPassword" +
+                "EventName,EventDescription,EventType,Club_Name,EventDate,StartTime,EndTime,Duration,Mode,Location,MeetingLink,MeetingID,MeetingPassword" +
                 ") " +
-                "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         try (Connection connection = DatabaseConnector.getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(insertEventSQL)) {
 
             preparedStatement.setString(1, event.getEventName());
             preparedStatement.setString(2, event.getDescription());
             preparedStatement.setString(3, event.getEventType());
-            preparedStatement.setString(4, event.getEventDate());
-            preparedStatement.setString(5, event.getStartTime());
-            preparedStatement.setString(6, event.getEndTime());
-            preparedStatement.setString(7, event.getDuration());
-            preparedStatement.setString(8, event.getMode());
-            preparedStatement.setString(9, event.getPhysicalLocation());
-            preparedStatement.setString(10, event.getOnlineMeetingLink());
-            preparedStatement.setString(11, event.getOnlineMeetingID());
-            preparedStatement.setString(12, event.getOnlineMeetingPassword());
+            preparedStatement.setString(4, "Rotaract Club");
+            preparedStatement.setString(5, event.getEventDate());
+            preparedStatement.setString(6, event.getStartTime());
+            preparedStatement.setString(7, event.getEndTime());
+            preparedStatement.setString(8, event.getDuration());
+            preparedStatement.setString(9, event.getMode());
+            preparedStatement.setString(10, event.getPhysicalLocation());
+            preparedStatement.setString(11, event.getOnlineMeetingLink());
+            preparedStatement.setString(12, event.getOnlineMeetingID());
+            preparedStatement.setString(13, event.getOnlineMeetingPassword());
 
             int result = preparedStatement.executeUpdate();
 

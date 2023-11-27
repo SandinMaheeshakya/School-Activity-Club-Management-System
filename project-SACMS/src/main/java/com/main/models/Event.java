@@ -5,6 +5,7 @@ public class Event {
     private String eventName;
     private String description;
     private String eventType;
+    private String clubName;
     private String eventDate;
     private String startTime;
     private String duration; // duration in minutes
@@ -136,5 +137,13 @@ public class Event {
 
     public void setOnlineMeetingPassword(String onlineMeetingPassword) {
         this.onlineMeetingPassword = onlineMeetingPassword;
+    }
+
+    public String getClubName() {
+        return clubName;
+    }
+
+    public void setClubName(String clubName) {
+        this.clubName = clubName;
     }
 }
