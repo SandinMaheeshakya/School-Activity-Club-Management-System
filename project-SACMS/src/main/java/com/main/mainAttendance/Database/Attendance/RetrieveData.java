@@ -1,5 +1,5 @@
-package com.main.projectsacms.Database.Attendance;
-import com.main.projectsacms.Database.Connection;
+package com.main.mainAttendance.Database.Attendance;
+import com.main.mainAttendance.Database.Connection;
 
 import java.io.InputStream;
 import java.sql.PreparedStatement;

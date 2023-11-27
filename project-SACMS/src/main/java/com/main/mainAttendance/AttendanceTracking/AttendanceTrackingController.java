@@ -1,16 +1,12 @@
-package com.main.projectsacms.AttendanceTracking;
+package com.main.mainAttendance.AttendanceTracking;
 
-import com.main.projectsacms.Database.Attendance.RetrieveData;
-import com.main.projectsacms.Database.Connection;
+import com.main.mainAttendance.Database.Attendance.RetrieveData;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 
-import javafx.fxml.FXMLLoader;
 import javafx.scene.Group;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.DatePicker;
@@ -21,8 +17,6 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
-import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -478,9 +472,9 @@ public class AttendanceTrackingController implements PredefinedObjects {
 
                 //Put Images
                 if (Attendance.checkEventType(eventCount).equals("Online")){
-                    putClubImage(currentPane,"D:\\2nd Year\\Object Oriented Development\\CW\\CW Git\\School-Activity-Club-Management-System\\project-SACMS\\src\\main\\resources\\com\\main\\projectsacms\\Icons\\Functional\\online logo.png");
+                    putClubImage(currentPane,"D:\\2nd Year\\Object Oriented Development\\CW\\CW Git\\School-Activity-Club-Management-System\\project-SACMS\\src\\main\\resources\\com\\main\\mainAttendance\\Icons\\Functional\\online logo.png");
                 }else {
-                    putClubImage(currentPane,"D:\\2nd Year\\Object Oriented Development\\CW\\CW Git\\School-Activity-Club-Management-System\\project-SACMS\\src\\main\\resources\\com\\main\\projectsacms\\Icons\\Functional\\physical event logo.png");
+                    putClubImage(currentPane,"D:\\2nd Year\\Object Oriented Development\\CW\\CW Git\\School-Activity-Club-Management-System\\project-SACMS\\src\\main\\resources\\com\\main\\mainAttendance\\Icons\\Functional\\physical event logo.png");
 
                 }
 

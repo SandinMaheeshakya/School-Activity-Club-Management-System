@@ -1,6 +1,4 @@
-package com.main.projectsacms.AttendanceTracking;
-
-import java.util.ArrayList;
+package com.main.mainAttendance.AttendanceTracking;
 
 public interface PredefinedObjects {
 

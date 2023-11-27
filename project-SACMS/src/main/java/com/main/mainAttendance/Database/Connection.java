@@ -1,4 +1,4 @@
-package com.main.projectsacms.Database;
+package com.main.mainAttendance.Database;
 import java.sql.*;
 
 public class Connection {

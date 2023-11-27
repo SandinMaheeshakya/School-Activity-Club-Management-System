@@ -13,7 +13,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.main.projectsacms.AttendanceTracking.AttendanceTrackingController">
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.main.mainAttendance.AttendanceTracking.AttendanceTrackingController">
    <children>
       <Pane prefHeight="39.0" prefWidth="1283.0" style="-fx-background-color: #75e3eb;">
          <children>

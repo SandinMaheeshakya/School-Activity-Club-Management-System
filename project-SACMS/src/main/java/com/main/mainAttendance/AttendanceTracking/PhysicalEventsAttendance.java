@@ -1,9 +1,8 @@
-package com.main.projectsacms.AttendanceTracking;
+package com.main.mainAttendance.AttendanceTracking;
 
 import javafx.scene.layout.Pane;
 
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
