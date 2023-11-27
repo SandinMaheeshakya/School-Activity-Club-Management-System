@@ -1,6 +1,11 @@
 package com.main.Views;
 
+import com.main.Controllers.EventController;
+import com.mysql.cj.protocol.Message;
 import javafx.collections.FXCollections;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.event.EventType;
 import javafx.geometry.Insets;
 import javafx.geometry.VPos;
 import javafx.scene.control.*;
@@ -13,6 +18,8 @@ import java.time.LocalDate;
 public class CreateEventPanel {
 
     private VBox panel;
+
+    private TextField eventIDField;
     private TextField eventNameField;
     private TextArea eventDescriptionArea;
     private ComboBox<String> eventModeCombo;
@@ -30,6 +37,7 @@ public class CreateEventPanel {
     private TextField meetingIdField;
     private TextField meetingPasswordField;
     private Button saveButton;
+    private Button updateButton;
     private Button clearButton;
 
     public CreateEventPanel() {
@@ -37,10 +45,70 @@ public class CreateEventPanel {
         panel = new VBox(10);
         panel.setPadding(new Insets(20));
 
+        eventModeCombo = new ComboBox<>();
+        eventModeCombo.getItems().addAll("Physical", "Online"); //Added newly
+
+        meetingLinkField = new TextField();
+        meetingIdField = new TextField();
+        meetingPasswordField = new TextField();
+
+        meetingLinkField.setPromptText("Meeting Link");
+        meetingIdField.setPromptText("Meeting ID");
+        meetingPasswordField.setPromptText("Meeting Password");
+
+        Label locationLabel = new Label("Location:");
+        locationLabel.setVisible(false);
+//        locationField.setVisible(false);
+
+        Label meetingDetailsLabel = new Label("MEETING DETAILS");
+        meetingDetailsLabel.setVisible(false);
+
+//        meetingLinkField.setVisible(false);
+//        meetingIdField.setVisible(false);
+//        meetingPasswordField.setVisible(false);
+
+
+
+
+        // Set a listener on the mode combo box
+        eventModeCombo.valueProperty().addListener((obs, oldMode, newMode) -> {
+
+
+            if ("Online".equals(newMode)) {
+                // Show online meeting details
+                meetingDetailsLabel.setVisible(true);
+                meetingLinkField.setVisible(true);
+                meetingIdField.setVisible(true);
+                meetingDetailsLabel.setStyle("-fx-text-fill: white; -fx-font-weight: bold; -fx-underline: true;");
+                meetingPasswordField.setVisible(true);
+                locationLabel.setVisible(false);
+
+                // Hide physical location
+                locationField.setVisible(false);
+            } else if ("Physical".equals(newMode)) {
+                // Hide online meeting details
+                meetingLinkField.setVisible(false);
+                meetingIdField.setVisible(false);
+                meetingPasswordField.setVisible(false);
+                locationLabel.setStyle("-fx-text-fill: white;");
+                locationLabel.setVisible(true);
+                meetingDetailsLabel.setVisible(false);
+
+                // Show physical location
+                locationField.setVisible(true);
+            }
+        });
+
+
+
         Label eventNameLabel = new Label("Event Name:");
         Label eventDescriptionLabel = new Label("Event Description:");
         eventNameLabel.setStyle("-fx-text-fill: white;");
         eventDescriptionLabel.setStyle("-fx-text-fill: white;");
+
+        Label eventIDLabel = new Label("Event ID:");
+        eventIDLabel.setStyle("-fx-text-fill: white;");
+
 
         Label modeLabel = new Label("Mode:");
         modeLabel.setStyle("-fx-text-fill: white;");
@@ -51,11 +119,11 @@ public class CreateEventPanel {
         dateLabel.setStyle("-fx-text-fill: white;");
         Label durationLabel = new Label("Duration:");
         durationLabel.setStyle("-fx-text-fill: white;");
-        Label locationLabel = new Label("Location:");
-        locationLabel.setStyle("-fx-text-fill: white;");
+//        Label locationLabel = new Label("Location:");
+//        locationLabel.setStyle("-fx-text-fill: white;");
 
-        Label meetingDetailsLabel = new Label("MEETING DETAILS");
-        meetingDetailsLabel.setStyle("-fx-text-fill: white; -fx-font-weight: bold; -fx-underline: true;");
+//        Label meetingDetailsLabel = new Label("MEETING DETAILS");
+//        meetingDetailsLabel.setStyle("-fx-text-fill: white; -fx-font-weight: bold; -fx-underline: true;");
 
         Label timeDetailsLabel = new Label("TIME DETAILS");
         timeDetailsLabel.setStyle("-fx-text-fill: white; -fx-font-weight: bold; -fx-underline: true;");
@@ -78,6 +146,9 @@ public class CreateEventPanel {
         Label endTimeAmPmLabel = new Label("End Time AM/PM:");
         endTimeAmPmLabel.setStyle("-fx-text-fill: white;");
 
+        eventIDField = new TextField();
+        eventIDField.setPromptText("Event ID");
+
         eventNameField = new TextField();
         eventNameField.setPromptText("Event Name");
 
@@ -85,9 +156,9 @@ public class CreateEventPanel {
         eventDescriptionArea.setPromptText("Event Description");
         eventDescriptionArea.setWrapText(true);
 
-        eventModeCombo = new ComboBox<>();
-        eventModeCombo.setItems(FXCollections.observableArrayList("Online", "Physical"));
-        eventModeCombo.setValue("Physical");
+//        eventModeCombo = new ComboBox<>();
+//        eventModeCombo.setItems(FXCollections.observableArrayList("Online", "Physical"));
+//        eventModeCombo.setValue("Physical");
 
         eventTypeCombo = new ComboBox<>();
         eventTypeCombo.setItems(FXCollections.observableArrayList("Events", "Meetings", "Activities"));
@@ -102,18 +173,21 @@ public class CreateEventPanel {
 
         locationField = new TextField();
         locationField.setPromptText("Location");
-
-        meetingLinkField = new TextField();
-        meetingLinkField.setPromptText("Meeting Link");
-
-        meetingIdField = new TextField();
-        meetingIdField.setPromptText("Meeting ID");
-
-        meetingPasswordField = new TextField();
-        meetingPasswordField.setPromptText("Meeting Password");
+//
+//        meetingLinkField = new TextField();
+//        meetingLinkField.setPromptText("Meeting Link");
+//
+//        meetingIdField = new TextField();
+//        meetingIdField.setPromptText("Meeting ID");
+//
+//        meetingPasswordField = new TextField();
+//        meetingPasswordField.setPromptText("Meeting Password");
 
         saveButton = new Button("Save");
         saveButton.setOnAction(event -> saveEvent());
+
+        updateButton = new Button("Update");
+        updateButton.setOnAction(event -> updateEvent());
 
         clearButton = new Button("Clear");
         clearButton.setOnAction(event -> clearForm());
@@ -121,10 +195,13 @@ public class CreateEventPanel {
         String gradientStyle = "-fx-background-color: " +
                 "linear-gradient(to bottom right, #0062DD, #FF0084, #000000);";
         saveButton.setStyle(gradientStyle + "-fx-text-fill: white; -fx-font-size: 16px; -fx-padding: 10px;");
+        updateButton.setStyle(gradientStyle + "-fx-text-fill: white; -fx-font-size: 16px; -fx-padding: 10px;");
         clearButton.setStyle(gradientStyle + "-fx-text-fill: white; -fx-font-size: 16px; -fx-padding: 10px;");
         saveButton.setPrefWidth(100);
+        updateButton.setPrefWidth(100);
         clearButton.setPrefWidth(100);
         saveButton.setMaxWidth(Double.MAX_VALUE);
+        updateButton.setMaxWidth(Double.MAX_VALUE);
         clearButton.setMaxWidth(Double.MAX_VALUE);
 
         initializeTimeComboBoxes();
@@ -136,18 +213,21 @@ public class CreateEventPanel {
         gridPane.setVgap(10);
         GridPane.setValignment(eventNameField, VPos.TOP);
         gridPane.add(eventNameLabel, 0, 0); // Column 0, Row 0
-        gridPane.add(eventNameField, 0, 1); // Column 0, Row 1
+        gridPane.add(eventNameField, 0, 1); // Column 0, Row 2
+        GridPane.setValignment(eventIDField, VPos.TOP);
+        gridPane.add(eventIDLabel, 0, 2); // Column 0, Row 0
+        gridPane.add(eventIDField, 0, 3); // Column 0, Row 1
         gridPane.add(eventDescriptionLabel, 1, 0); // Column 1, Row 0
         gridPane.add(eventDescriptionArea, 1, 1); // Column 1, Row 1
         GridPane.setColumnSpan(eventDescriptionArea, 2); // Span 2 columns
 
-        gridPane.add(modeLabel, 0, 3); // Column 0, Row 0
-        gridPane.add(eventModeCombo, 0, 4); // Column 0, Row 1
-        gridPane.add(typeLabel, 1, 3); // Column 1, Row 0
-        gridPane.add(eventTypeCombo, 1, 4); // Column 1, Row 1
+        gridPane.add(modeLabel, 1, 2); // Column 0, Row 0
+        gridPane.add(eventModeCombo, 1,3 ); // Column 0, Row 1
+        gridPane.add(typeLabel, 2, 2); // Column 1, Row 0
+        gridPane.add(eventTypeCombo, 2, 3); // Column 1, Row 1
 
         gridPane.add(dateLabel, 0, 5); // Column 0, Row 0
-        gridPane.add(eventDate, 0, 6);
+//        gridPane.add(eventDate, 0, 6);
 
         gridPane.add(locationLabel, 0, 8); // Column 0, Row 0
         gridPane.add(locationField, 0, 9);
@@ -176,11 +256,26 @@ public class CreateEventPanel {
         gridPane.add(durationField, 0, 24);
 
         gridPane.add(saveButton, 20, 9);
-        gridPane.add(clearButton, 20, 10);
+        gridPane.add(updateButton, 20, 10);
+        gridPane.add(clearButton, 20, 11);
 
         panel.getChildren().addAll(gridPane);
     }
+    private void updateFieldVisibilityBasedOnMode(String mode) {
+        if ("Online".equals(mode)) {
+            meetingLinkField.setVisible(true);
+            meetingIdField.setVisible(true);
+            meetingPasswordField.setVisible(true);
 
+            locationField.setVisible(false);
+        } else if ("Physical".equals(mode)) {
+            meetingLinkField.setVisible(false);
+            meetingIdField.setVisible(false);
+            meetingPasswordField.setVisible(false);
+
+            locationField.setVisible(true);
+        }
+    }
     private void setupDurationCalculation() {
         // Add listeners to the start and end time ComboBoxes
         startTimeHourCombo.valueProperty().addListener((observable, oldValue, newValue) -> calculateDuration());
@@ -307,23 +402,82 @@ public class CreateEventPanel {
             // Handle invalid end time (e.g., show an error, reset end time, etc.)
         }
     }
+
     private void saveEvent() {
         //Gather event data
+        String eventID = eventIDField.getText();
         String eventName = eventNameField.getText();
         String description = eventDescriptionArea.getText();
         String eventType = eventTypeCombo.getValue();
-        String eventDate = "-";
+        String eventDate = LocalDate.now().toString();
         String startTime = startTimeHourCombo.getValue() + ":" + startTimeMinuteCombo.getValue() +" "+ startTimeAmPmCombo.getValue();
-        String duration = durationField.getText();
         String endTime = endTimeHourCombo.getValue() + ":" + endTimeMinuteCombo.getValue() +" "+ endTimeAmPmCombo.getValue();
+        String duration = durationField.getText();
         String mode = eventModeCombo.getValue();
         String physicalLocation = locationField.getText();
-        String onlineMeetingDetails = meetingLinkField.getText() + meetingIdField.getText() + meetingPasswordField.getText();
+        String onlineMeetingLink = meetingLinkField.getText();
+        String onlineMeetingID = meetingIdField.getText();
+        String onlineMeetingPassword = meetingPasswordField.getText();
 
-        Event event = new Event( eventName,  description,  eventType,  eventDate,  startTime,  duration,  endTime,   mode,  physicalLocation,  onlineMeetingDetails);
+        Event event = new Event("0", eventName, description,  eventType,  eventDate,  startTime,  endTime, duration,  mode,  physicalLocation, onlineMeetingLink,onlineMeetingID,onlineMeetingPassword);
 
+        EventController e = new EventController();
+        boolean result = e.saveEvent(event);
+
+        if(result == true){
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Success");
+            alert.setContentText("Event Created");
+            alert.showAndWait();
+        }else{
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Failure");
+            alert.setContentText("Unable to create event!");
+            alert.showAndWait();
+        }
+        clearForm();
+    }
+    private void updateEvent() {
+        //Gather event data
+        String eventID = eventIDField.getText();
+        String eventName = eventNameField.getText();
+        String description = eventDescriptionArea.getText();
+        String eventType = eventTypeCombo.getValue();
+        String eventDate = LocalDate.now().toString();
+        String startTime = startTimeHourCombo.getValue() + ":" + startTimeMinuteCombo.getValue() +" "+ startTimeAmPmCombo.getValue();
+        String endTime = endTimeHourCombo.getValue() + ":" + endTimeMinuteCombo.getValue() +" "+ endTimeAmPmCombo.getValue();
+        String duration = durationField.getText();
+        String mode = eventModeCombo.getValue();
+        String physicalLocation = locationField.getText();
+        String onlineMeetingLink = meetingLinkField.getText();
+        String onlineMeetingID = meetingIdField.getText();
+        String onlineMeetingPassword = meetingPasswordField.getText();
+
+        Event event = new Event(eventID, eventName, description,  eventType,  eventDate,  startTime,  endTime, duration,  mode,  physicalLocation, onlineMeetingLink,onlineMeetingID,onlineMeetingPassword);
+
+        EventController e = new EventController();
+        boolean result = e.updateEvent(event);
+
+        if(result == true){
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Update Success");
+            alert.setContentText("Event Update");
+            alert.showAndWait();
+        }else{
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Failure");
+            alert.setContentText("Unable to update event!");
+            alert.showAndWait();
+        }
+        clearForm();
     }
     private void clearForm() {
+        eventIDField.setText("");
+        eventNameField.setText("");
+        meetingPasswordField.setText("");
+        meetingIdField.setText("");
+        meetingLinkField.setText("");
+        eventDescriptionArea.setText("");
     }
     public VBox getPanel() {
         return panel;
