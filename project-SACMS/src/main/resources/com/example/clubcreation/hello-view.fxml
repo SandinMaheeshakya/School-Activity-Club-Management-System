@@ -17,7 +17,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #000000;" stylesheets="@../../main/projectsacms/CSS%20Files/styles.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.clubcreation.HelloController">
    <children>
-      <StackPane layoutX="-7.0" layoutY="25.0" prefHeight="686.0" prefWidth="1280.0" style="-fx-background-radius: 15px;">
+      <StackPane layoutX="82.0" layoutY="28.0" prefHeight="665.0" prefWidth="1116.0" style="-fx-background-radius: 15px;">
          <children>
             <Pane fx:id="pnlCreateClub" prefHeight="593.0" prefWidth="1023.0" style="-fx-background-radius: 15px;" styleClass="linear-grad" stylesheets="@../../main/projectsacms/CSS%20Files/styles.css" visible="false">
                <children>
@@ -230,24 +230,24 @@
                   </Pane>
                </children>
             </Pane>
-            <Pane fx:id="pnlWelcomePage" prefHeight="686.0" prefWidth="1186.0" style="-fx-background-radius: 15px;" styleClass="pane2" stylesheets="@../../main/projectsacms/CSS%20Files/styles.css">
+            <Pane fx:id="pnlWelcomePage" prefHeight="656.0" prefWidth="1280.0" style="-fx-background-radius: 15px;" styleClass="pane2" stylesheets="@../../main/projectsacms/CSS%20Files/styles.css">
                <children>
-                  <ImageView fitHeight="484.0" fitWidth="329.0" layoutX="260.0" layoutY="124.0" pickOnBounds="true" preserveRatio="true" style="-fx-background-radius: 0;" styleClass="curvedImageView">
+                  <ImageView fitHeight="484.0" fitWidth="329.0" layoutX="156.0" layoutY="114.0" pickOnBounds="true" preserveRatio="true" style="-fx-background-radius: 0;" styleClass="curvedImageView">
                      <image>
                         <Image url="@../../main/projectsacms/IMG/Premium%20Vector%20_%20Man%20working%20at%20home.jpeg" />
                      </image>
                   </ImageView>
-                  <Button fx:id="btnClubCreate" layoutX="355.0" layoutY="497.0" mnemonicParsing="false" onAction="#goToCreateClub" prefWidth="140.0" styleClass="pageButton" stylesheets="@../../main/projectsacms/CSS%20Files/styles.css" text="Create a new club" textFill="WHITE">
+                  <Button fx:id="btnClubCreate" layoutX="251.0" layoutY="487.0" mnemonicParsing="false" onAction="#goToCreateClub" prefWidth="140.0" styleClass="pageButton" stylesheets="@../../main/projectsacms/CSS%20Files/styles.css" text="Create a new club" textFill="WHITE">
                      <font>
                         <Font name="Arial" size="14.0" />
                      </font>
                   </Button>
-                  <ImageView fitHeight="484.0" fitWidth="329.0" layoutX="735.0" layoutY="122.0" pickOnBounds="true" preserveRatio="true" styleClass="curvedImageView">
+                  <ImageView fitHeight="484.0" fitWidth="329.0" layoutX="631.0" layoutY="112.0" pickOnBounds="true" preserveRatio="true" styleClass="curvedImageView">
                      <image>
                         <Image url="@../../main/projectsacms/IMG/Download%20Cartoon%20character,%20Businessman%20hand%20on%20computer%20laptop%20for%20free.jpeg" />
                      </image>
                   </ImageView>
-                  <Button fx:id="btnClubProfile" layoutX="830.0" layoutY="496.0" mnemonicParsing="false" onAction="#goToManageClub" prefWidth="147.0" styleClass="pageButton" stylesheets="@../../main/projectsacms/CSS%20Files/styles.css" text="Mange club profiles" textFill="WHITE">
+                  <Button fx:id="btnClubProfile" layoutX="726.0" layoutY="486.0" mnemonicParsing="false" onAction="#goToManageClub" prefWidth="147.0" styleClass="pageButton" stylesheets="@../../main/projectsacms/CSS%20Files/styles.css" text="Mange club profiles" textFill="WHITE">
                      <font>
                         <Font name="Arial" size="14.0" />
                      </font>

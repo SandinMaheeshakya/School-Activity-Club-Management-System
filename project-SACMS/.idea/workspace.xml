@@ -5,13 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="160022ca-5992-48fb-a410-4036c377095f" name="Changes" comment="edited doc">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/clubcreation/CreateClub.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/clubcreation/CreateClub.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/clubcreation/CreateClub.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/clubcreation/CreateClub.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/clubcreation/HelloController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/clubcreation/HelloController$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/clubcreation/HelloController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/clubcreation/HelloController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/module-info.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/clubcreation/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/clubcreation/hello-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -156,7 +150,7 @@
       <workItem from="1700973031820" duration="16289000" />
       <workItem from="1701008244568" duration="14177000" />
       <workItem from="1701060396132" duration="3527000" />
-      <workItem from="1701074256770" duration="1617000" />
+      <workItem from="1701074256770" duration="1923000" />
     </task>
     <task id="LOCAL-00001" summary="edited doc">
       <option name="closed" value="true" />
