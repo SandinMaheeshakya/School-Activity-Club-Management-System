@@ -691,7 +691,6 @@ public class ClubManagementController implements Initializable {
         Stage stage = new Stage();
         startPageController.backStatus = true;
         sacms.start(stage);
-
     }
 
     public void onBackButtonClickInDisplayClubs(){
@@ -702,6 +701,5 @@ public class ClubManagementController implements Initializable {
     public void onBackButtonInCreateClubClick(){
         pnlCreateClub.setVisible(false);
         pnlWelcomePage.setVisible(true);
-
     }
 }

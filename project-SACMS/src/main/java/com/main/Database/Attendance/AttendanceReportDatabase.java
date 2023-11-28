@@ -13,7 +13,7 @@ import java.util.Map;
 
 public class AttendanceReportDatabase extends Connection {
 
-    public static List<Map<String, String>> getAllAttendanceData() {
+    public static List<Map<String, String>> getAttendanceData() {
         List<Map<String, String>> allAttendanceData = new ArrayList<>();
 
         try {

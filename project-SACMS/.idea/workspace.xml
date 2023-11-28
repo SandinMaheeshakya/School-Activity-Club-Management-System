@@ -5,30 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="160022ca-5992-48fb-a410-4036c377095f" name="Changes" comment="edited doc">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/main/Database/Attendance/AttendanceReportDatabase.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/main/mainAttendance/AttendanceTracking/AttendanceReport.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/main/mainAttendance/Reports/Attendance Report.jrxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/main/mainAttendance/Reports/logo.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/main/Database/Attendance/AttendanceReportDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/main/Database/Attendance/AttendanceReportDatabase.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/main/clubcreation/ClubManagementController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/main/clubcreation/ClubManagementController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/main/mainAttendance/AttendanceTracking/AttendanceReport.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/main/mainAttendance/AttendanceTracking/AttendanceReport.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/main/mainAttendance/AttendanceTracking/AttendanceTrackingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/main/mainAttendance/AttendanceTracking/AttendanceTrackingController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/main/registrationProcess/startPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/main/registrationProcess/startPageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/main/clubcreation/clubManagement.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/main/clubcreation/clubManagement.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/main/mainAttendance/Reports/Attendance Report.jasper" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/main/mainAttendance/Reports/Attendance Report.jrxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/main/mainAttendance/Reports/AttendanceReport.jrxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/main/projectsacms/CSS Files/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/main/projectsacms/CSS Files/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/main/registrationProcess/CSS Files/Dashboard.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/main/registrationProcess/CSS Files/Dashboard.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/main/registrationProcess/FXML Files/startPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/main/registrationProcess/FXML Files/startPage.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/main/mainAttendance/Reports/AttendanceReport.jrxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/main/Database/Attendance/AttendanceReportDatabase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/main/Database/Attendance/AttendanceReportDatabase.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/main/clubcreation/ClubManagementController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/main/clubcreation/ClubManagementController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/main/clubcreation/clubManagement.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/main/clubcreation/clubManagement.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/main/mainAttendance/AttendanceTracking/AttendanceReport.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/main/mainAttendance/AttendanceTracking/AttendanceReport.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/main/mainAttendance/AttendanceTracking/AttendanceTrackingController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/main/mainAttendance/AttendanceTracking/AttendanceTrackingController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/main/mainAttendance/Reports/Attendance Report.jasper" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/main/mainAttendance/Reports/Attendance Report.jrxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/main/projectsacms/CSS Files/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/main/projectsacms/CSS Files/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/main/registrationProcess/CSS Files/Dashboard.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/main/registrationProcess/CSS Files/Dashboard.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/main/registrationProcess/FXML Files/startPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/main/registrationProcess/FXML Files/startPage.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/main/registrationProcess/startPageController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/main/registrationProcess/startPageController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/module-info.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/main/mainAttendance/Reports/AttendanceReport.jrxml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,7 +60,7 @@
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "Student-1",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "D:/2nd Year/Object Oriented Development/CW/mysql-connector-java-8.0.28.jar",
+    "last_opened_file_path": "D:/2nd Year/Object Oriented Development/CW/CW Git/School-Activity-Club-Management-System/project-SACMS/src/main/resources/com/main/mainAttendance/Reports",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -85,7 +74,11 @@
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\2nd Year\Object Oriented Development\CW\CW Git\School-Activity-Club-Management-System\project-SACMS\src\main\resources\com\main\mainAttendance\Reports" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\2nd Year\Object Oriented Development\CW\CW Git\School-Activity-Club-Management-System\project-SACMS\src\main\resources\com\main\mainAttendance\Reports" />
       <recent name="C:\Users\ASUS\IdeaProjects\clubCreation\src\main\resources\com\example\clubcreation" />
       <recent name="C:\Users\ASUS\IdeaProjects\clubCreation\src\main\java\IMG" />
       <recent name="C:\Users\ASUS\IdeaProjects\clubCreation\src\main\java\CSS" />

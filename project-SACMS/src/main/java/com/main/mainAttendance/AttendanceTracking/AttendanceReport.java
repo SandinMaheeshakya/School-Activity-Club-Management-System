@@ -17,9 +17,9 @@ public class AttendanceReport {
 
     public void generateAttendanceReport(List<Map<String, String>> allAttendanceData) {
         try {
-            // Load JRXML template
+            // Load JR XML template
 
-            String reportTemplatePath = "src/main/resources/com/main/mainAttendance/Reports/AttendanceReport.jrxml";
+            String reportTemplatePath = "src/main/resources/com/main/mainAttendance/Reports/Attendance Report.jrxml";
             JasperReport jasperReport = JasperCompileManager.compileReport(reportTemplatePath);
 
             // Fill the report with data
@@ -36,11 +36,8 @@ public class AttendanceReport {
             // Show the report using JasperViewer
             JasperViewer.viewReport(jasperPrint, false);
 
-            System.out.println("Report displayed successfully.");
-
         } catch (Exception e) {
             e.printStackTrace();
-            System.out.println("Error displaying the report.");
 
         }
     }

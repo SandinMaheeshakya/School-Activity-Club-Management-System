@@ -556,7 +556,7 @@ public class AttendanceTrackingController implements PredefinedObjects {
         OnlineAttendance.saveAttendance(OnlineAttendance.trackAttendance(choiceBoxArrayList,studentIDMapList,currentEventID));
 
         // Generate and display the report
-        List<Map<String,String>> allAttendanceData = AttendanceReportDatabase.getAllAttendanceData();
+        List<Map<String,String>> allAttendanceData = AttendanceReportDatabase.getAttendanceData();
         AttendanceReport generatedReport = new AttendanceReport();
         generatedReport.generateAttendanceReport(allAttendanceData);
     }
