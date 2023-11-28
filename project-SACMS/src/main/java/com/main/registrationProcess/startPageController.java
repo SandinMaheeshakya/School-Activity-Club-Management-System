@@ -720,6 +720,13 @@ public class startPageController {
                 DashboardPage.setVisible(true);
                 attendenceGroup.setVisible(false);
 
+                eventGroup.setLayoutX(426);
+                eventGroup.setLayoutY(340);
+
+                clubGroup.setLayoutX(717);
+                clubGroup.setLayoutY(340);
+
+
                 DashboardPage.setDisable(false);
 
                 FadeTransition DashboardTransition = new FadeTransition(Duration.seconds(3), DashboardPage);
@@ -830,5 +837,13 @@ public class startPageController {
         viewEventsTab.setClosable(false);
 
         eventsDisplayTab.getTabs().add(viewEventsTab);
+    }
+
+    public void onBackButtonClickInEvents() throws IOException {
+        backStatus = true;
+
+        SACMS sacms = new SACMS();
+        Stage stage = new Stage();
+        sacms.start(stage);
     }
 }

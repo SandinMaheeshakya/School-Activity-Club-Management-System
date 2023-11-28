@@ -5,17 +5,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="160022ca-5992-48fb-a410-4036c377095f" name="Changes" comment="edited doc">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/main/Database/Attendance/AttendanceReportDatabase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/main/mainAttendance/AttendanceTracking/AttendanceReport.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/main/Database/Attendance/RetrieveData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/main/Database/Attendance/RetrieveData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/main/Database/UserLogin/DatabaseConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/main/Database/UserLogin/DatabaseConnection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/main/EventCreation/Controllers/EventController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/main/EventCreation/Controllers/EventController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/main/EventCreation/models/DatabaseConnector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/main/EventCreation/models/DatabaseConnector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/main/clubcreation/ClubManagementController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/main/clubcreation/ClubManagementController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/main/mainAttendance/AttendanceTracking/Attendance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/main/mainAttendance/AttendanceTracking/Attendance.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/main/mainAttendance/AttendanceTracking/AttendanceTrackingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/main/mainAttendance/AttendanceTracking/AttendanceTrackingController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/main/mainAttendance/AttendanceTracking/OnlineAttendance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/main/mainAttendance/AttendanceTracking/OnlineAttendance.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/main/registrationProcess/startPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/main/registrationProcess/startPageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/main/clubcreation/clubManagement.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/main/clubcreation/clubManagement.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/main/mainAttendance/Reports/Attendance Report.jasper" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/main/mainAttendance/Reports/Attendance Report.jrxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/main/mainAttendance/Reports/AttendanceReport.jrxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/main/projectsacms/CSS Files/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/main/projectsacms/CSS Files/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/main/registrationProcess/CSS Files/Dashboard.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/main/registrationProcess/CSS Files/Dashboard.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/main/registrationProcess/FXML Files/startPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/main/registrationProcess/FXML Files/startPage.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/main/clubcreation/ClubManagementController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/main/clubcreation/ClubManagementController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/main/clubcreation/clubManagement.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/main/clubcreation/clubManagement.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/main/mainAttendance/AttendanceTracking/AttendanceTrackingController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/main/mainAttendance/AttendanceTracking/AttendanceTrackingController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/main/mainAttendance/Reports/Attendance Report.jasper" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/main/mainAttendance/Reports/Attendance Report.jrxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/main/projectsacms/CSS Files/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/main/projectsacms/CSS Files/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/main/registrationProcess/CSS Files/Dashboard.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/main/registrationProcess/CSS Files/Dashboard.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/main/registrationProcess/FXML Files/startPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/main/registrationProcess/FXML Files/startPage.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/main/registrationProcess/startPageController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/main/registrationProcess/startPageController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/module-info.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,27 +63,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Student-1&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/2nd Year/Object Oriented Development/CW/mysql-connector-java-8.0.28.jar&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;advanced.settings&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "Student-1",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "D:/2nd Year/Object Oriented Development/CW/mysql-connector-java-8.0.28.jar",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "advanced.settings",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\ASUS\IdeaProjects\clubCreation\src\main\resources\com\example\clubcreation" />
@@ -160,6 +173,19 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="clubCreation" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="clubCreation" />
+      <option name="filePath" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -275,20 +301,6 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/com/main/mainAttendance/AttendanceTracking/AttendanceTrackingController.java</url>
-          <line>874</line>
-          <properties class="com.main.mainAttendance.AttendanceTracking.AttendanceTrackingController" method="onBackButtonClick">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/main/mainAttendance/AttendanceTracking/Attendance.java</url>
-          <line>27</line>
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/main/Database/Attendance/InputData.java</url>
           <line>29</line>

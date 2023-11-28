@@ -693,4 +693,15 @@ public class ClubManagementController implements Initializable {
         sacms.start(stage);
 
     }
+
+    public void onBackButtonClickInDisplayClubs(){
+        pnlWelcomePage.setVisible(true);
+        pnlClubProfiles.setVisible(false);
+    }
+
+    public void onBackButtonInCreateClubClick(){
+        pnlCreateClub.setVisible(false);
+        pnlWelcomePage.setVisible(true);
+
+    }
 }

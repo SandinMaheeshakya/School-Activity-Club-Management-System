@@ -72,6 +72,11 @@
     -fx-font-weight: bold;
 }
 
+.backButton {
+    -fx-background-color: linear-gradient(from 0% 0% to 100% 100%,  #000000 60%, #FF6666 70%, #FF0000);
+    -fx-background-radius: 8px;
+}
+
 .closeButton:hover{
     -fx-background-color: linear-gradient(from 0% 0% to 100% 100%, #FF3333, #FF6666 50%, #FF0000);
     -fx-background-radius: 8px;

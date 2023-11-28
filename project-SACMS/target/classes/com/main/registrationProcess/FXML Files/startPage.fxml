@@ -9,6 +9,8 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Bloom?>
+<?import javafx.scene.effect.GaussianBlur?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -196,7 +198,7 @@
             </Button>
          </children>
       </Group>
-      <Group fx:id="advisorLogin" disable="true" layoutX="767.0" layoutY="219.0" opacity="0.0">
+      <Group fx:id="advisorLogin" disable="true" layoutX="770.0" layoutY="160.0" opacity="0.0">
          <children>
             <Button fx:id="ConfirmAdvisorLogin" layoutX="143.0" layoutY="376.0" mnemonicParsing="false" onAction="#onclickAdvisorConfirmLogin" onMouseEntered="#registerButtonMouseEnter" onMouseExited="#registerButtonMouseExit" prefHeight="53.0" prefWidth="170.0" style="-fx-background-radius: 30;" styleClass="RegisterButtons" stylesheets="@../CSS%20Files/Dashboard.css" text="Login" textFill="WHITE">
                <font>
@@ -207,9 +209,14 @@
             <TextField fx:id="advisorUsernameLogin" layoutX="88.0" layoutY="180.0" prefHeight="40.0" prefWidth="279.0" style="-fx-background-radius: 30;" styleClass="form-area" stylesheets="@../CSS%20Files/Dashboard.css" />
             <Text fill="WHITE" layoutX="40.0" layoutY="283.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" />
             <TextField fx:id="advisorPasswordLogin" layoutX="129.0" layoutY="258.0" prefHeight="40.0" prefWidth="198.0" styleClass="form-area" stylesheets="@../CSS%20Files/Dashboard.css" />
+            <Label layoutX="178.0" layoutY="95.0" prefHeight="64.0" prefWidth="248.0" text="Log In" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="26.0" />
+               </font>
+            </Label>
          </children>
       </Group>
-      <Group fx:id="StudentLogin" disable="true" layoutX="777.0" layoutY="229.0" opacity="0.0">
+      <Group fx:id="StudentLogin" disable="true" layoutX="770.0" layoutY="160.0" opacity="0.0">
          <children>
             <Button fx:id="ConfirmStudentLogin" layoutX="143.0" layoutY="376.0" mnemonicParsing="false" onAction="#onclickStudentConfirmLogin" onMouseEntered="#registerButtonMouseEnter" onMouseExited="#registerButtonMouseExit" prefHeight="53.0" prefWidth="170.0" style="-fx-background-radius: 30;" styleClass="RegisterButtons" stylesheets="@../CSS%20Files/Dashboard.css" text="Login" textFill="WHITE">
                <font>
@@ -220,6 +227,11 @@
             <TextField fx:id="studentUsernameLogin" layoutX="88.0" layoutY="180.0" prefHeight="40.0" prefWidth="279.0" style="-fx-background-radius: 30;" styleClass="form-area" stylesheets="@../CSS%20Files/Dashboard.css" />
             <Text fill="WHITE" layoutX="40.0" layoutY="283.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" />
             <TextField fx:id="studentPasswordLogin" layoutX="129.0" layoutY="258.0" prefHeight="40.0" prefWidth="198.0" styleClass="form-area" stylesheets="@../CSS%20Files/Dashboard.css" />
+            <Label layoutX="178.0" layoutY="95.0" prefHeight="64.0" prefWidth="248.0" text="Log In" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="26.0" />
+               </font>
+            </Label>
          </children>
       </Group>
       <Group fx:id="DashboardPage" layoutX="-11.0" layoutY="-99.0" visible="false">
@@ -228,44 +240,30 @@
                <children>
                   <Pane prefHeight="39.0" prefWidth="1292.0" style="-fx-background-color: #75e3eb;">
                      <children>
-                        <ImageView fitHeight="17.0" fitWidth="17.0" layoutX="1241.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="17.0" fitWidth="17.0" layoutX="1251.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../../../../../../../../Second%20Year/OOP%20Programming/coursework/School-Activity-Club-Management-System/project-SACMS/src/main/resources/com/main/projectsacms/Icons/Functional/close.png" />
+                              <Image url="@../Icons/Functional/close.png" />
                            </image>
                         </ImageView>
-                        <ImageView fitHeight="31.0" fitWidth="17.0" layoutX="1217.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="31.0" fitWidth="17.0" layoutX="1227.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../../../../../../../../Second%20Year/OOP%20Programming/coursework/School-Activity-Club-Management-System/project-SACMS/src/main/resources/com/main/projectsacms/Icons/Functional/minimize.png" />
+                              <Image url="@../Icons/Functional/minimize.png" />
                            </image>
                         </ImageView>
                      </children>
                   </Pane>
                   <ImageView fitHeight="252.0" fitWidth="317.0" layoutX="-20.0" layoutY="-106.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../../../../../../../../Second%20Year/OOP%20Programming/coursework/School-Activity-Club-Management-System/project-SACMS/src/main/resources/com/main/projectsacms/Icons/Functional/logo.png" />
+                        <Image url="@../Icons/Functional/logo.png" />
                      </image>
                   </ImageView>
-                  <Group fx:id="homeGroup" layoutX="287.0" layoutY="146.0">
-                     <children>
-                        <Rectangle arcHeight="20.0" arcWidth="20.0" height="195.0" stroke="#00fff7" strokeType="INSIDE" strokeWidth="4.0" width="206.0" />
-                        <ImageView fitHeight="85.0" fitWidth="90.0" layoutX="61.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../../../../../../../../../../Second%20Year/OOP%20Programming/coursework/School-Activity-Club-Management-System/project-SACMS/src/main/resources/com/main/projectsacms/Icons/Functional/Clubs.png" />
-                           </image>
-                        </ImageView>
-                        <Label layoutX="82.0" layoutY="127.0" text="Home" textFill="WHITE">
-                           <font>
-                              <Font name="Calibri Bold" size="17.0" />
-                           </font>
-                        </Label>
-                     </children>
-                  </Group>
-                  <Group fx:id="clubGroup" layoutX="774.0" layoutY="146.0" onMouseClicked="#onclickViewJoinTables">
+                  <Group fx:id="homeGroup" layoutX="287.0" layoutY="146.0" />
+                  <Group fx:id="clubGroup" layoutX="543.0" layoutY="340.0" onMouseClicked="#onclickViewJoinTables">
                      <children>
                         <Rectangle arcHeight="20.0" arcWidth="20.0" height="195.0" stroke="#00fff7" strokeType="INSIDE" strokeWidth="4.0" width="206.0" />
                         <ImageView fitHeight="85.0" fitWidth="83.0" layoutX="62.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../../../../../../../../Second%20Year/OOP%20Programming/coursework/School-Activity-Club-Management-System/project-SACMS/src/main/resources/com/main/projectsacms/Icons/Functional/ClubManage.png" />
+                              <Image url="@../../mainAttendance/Icons/Functional/ClubManage.png" />
                            </image>
                         </ImageView>
                         <Label layoutX="84.0" layoutY="127.0" text="Clubs" textFill="WHITE">
@@ -275,12 +273,12 @@
                         </Label>
                      </children>
                   </Group>
-                  <Group fx:id="eventGroup" layoutX="288.0" layoutY="461.0" onMouseClicked="#onEventButtonClick">
+                  <Group fx:id="eventGroup" layoutX="242.0" layoutY="340.0" onMouseClicked="#onEventButtonClick">
                      <children>
                         <Rectangle arcHeight="20.0" arcWidth="20.0" height="195.0" stroke="#00fff7" strokeType="INSIDE" strokeWidth="4.0" width="206.0" />
                         <ImageView fitHeight="85.0" fitWidth="71.0" layoutX="67.0" layoutY="36.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../../../../../../../../Second%20Year/OOP%20Programming/coursework/School-Activity-Club-Management-System/project-SACMS/src/main/resources/com/main/projectsacms/Icons/Functional/Events.png" />
+                              <Image url="@../../mainAttendance/Icons/Functional/Events.png" />
                            </image>
                         </ImageView>
                         <Label layoutX="79.0" layoutY="130.0" text="Events" textFill="WHITE">
@@ -290,12 +288,12 @@
                         </Label>
                      </children>
                   </Group>
-                  <Group fx:id="attendenceGroup" layoutX="775.0" layoutY="461.0" onMouseClicked="#onAttendanceButtonClick">
+                  <Group fx:id="attendenceGroup" layoutX="845.0" layoutY="340.0" onMouseClicked="#onAttendanceButtonClick">
                      <children>
                         <Rectangle arcHeight="20.0" arcWidth="20.0" height="195.0" stroke="#00fff7" strokeType="INSIDE" strokeWidth="4.0" width="206.0" />
                         <ImageView fitHeight="83.0" fitWidth="71.0" layoutX="68.0" layoutY="36.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../../../../../../../../Second%20Year/OOP%20Programming/coursework/School-Activity-Club-Management-System/project-SACMS/src/main/resources/com/main/projectsacms/Icons/Functional/Attendence.png" />
+                              <Image url="@../../mainAttendance/Icons/Functional/Attendence.png" />
                            </image>
                         </ImageView>
                         <Label layoutX="68.0" layoutY="117.0" text="Attendence" textFill="WHITE">
@@ -305,6 +303,22 @@
                         </Label>
                      </children>
                   </Group>
+                  <Label layoutX="417.0" layoutY="169.0" prefHeight="77.0" prefWidth="580.0" text="WELCOME TO SACMS!!" textFill="WHITE">
+                     <font>
+                        <Font name="Calibri Bold" size="53.0" />
+                     </font>
+                     <effect>
+                        <Bloom threshold="0.81" />
+                     </effect>
+                  </Label>
+                  <Label layoutX="551.0" layoutY="260.0" prefHeight="27.0" prefWidth="262.0" text="enjoy the ultimate experience!" textFill="#00d4ff">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <effect>
+                        <GaussianBlur radius="3.0" />
+                     </effect>
+                  </Label>
                </children>
             </AnchorPane>
          </children>
@@ -425,7 +439,7 @@
             <Rectangle arcHeight="20.0" arcWidth="20.0" height="75.0" layoutX="211.0" layoutY="81.0" stroke="#00fff7" strokeType="INSIDE" strokeWidth="4.0" width="151.0" />
             <ImageView fitHeight="47.0" fitWidth="39.0" layoutX="265.0" layoutY="88.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../Icons/Functional/Clubs.png" />
+                  <Image url="@../../mainAttendance/Icons/Functional/Clubs.png" />
                </image>
             </ImageView>
             <Label layoutX="263.0" layoutY="127.0" text="Home" textFill="WHITE">
@@ -438,7 +452,7 @@
             <Rectangle arcHeight="20.0" arcWidth="20.0" height="75.0" layoutX="428.0" layoutY="81.0" stroke="#00fff7" strokeType="INSIDE" strokeWidth="4.0" width="151.0" />
             <ImageView fitHeight="39.0" fitWidth="39.0" layoutX="484.0" layoutY="88.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../Icons/Functional/ClubManage.png" />
+                  <Image url="@../../mainAttendance/Icons/Functional/ClubManage.png" />
                </image>
             </ImageView>
             <Label layoutX="484.0" layoutY="127.0" text="Clubs" textFill="WHITE">
@@ -448,7 +462,7 @@
             </Label>
             <ImageView fitHeight="39.0" fitWidth="39.0" layoutX="731.0" layoutY="88.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../Icons/Functional/Events.png" />
+                  <Image url="@../../mainAttendance/Icons/Functional/Events.png" />
                </image>
             </ImageView>
             <Label layoutX="727.0" layoutY="129.0" text="Events" textFill="WHITE">
@@ -458,7 +472,7 @@
             </Label>
             <ImageView fitHeight="39.0" fitWidth="39.0" layoutX="984.0" layoutY="88.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../Icons/Functional/Attendence.png" />
+                  <Image url="@../../mainAttendance/Icons/Functional/Attendence.png" />
                </image>
             </ImageView>
             <Label layoutX="962.0" layoutY="129.0" text="Attendence" textFill="WHITE">
@@ -467,6 +481,11 @@
                </font>
             </Label>
             <TabPane fx:id="eventsDisplayTab" layoutX="195.0" layoutY="189.0" prefHeight="398.0" prefWidth="902.0" tabClosingPolicy="UNAVAILABLE" />
+            <Button layoutX="561.0" layoutY="626.0" mnemonicParsing="false" onAction="#onBackButtonClickInEvents" onMouseEntered="#registerButtonMouseEnter" onMouseExited="#registerButtonMouseExit" prefHeight="53.0" prefWidth="170.0" style="-fx-background-radius: 30;" styleClass="RegisterButtons" stylesheets="@../CSS%20Files/Dashboard.css" text="Back" textFill="WHITE">
+               <font>
+                  <Font name="Calibri Bold" size="22.0" />
+               </font>
+            </Button>
          </children>
       </AnchorPane>
    </children>

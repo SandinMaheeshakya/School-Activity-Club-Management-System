@@ -4,6 +4,7 @@ module com.main {
     requires javafx.graphics;
     requires java.sql;
     requires mysql.connector.java;
+    requires jasperreports;
 
 
     opens com.main.EventCreation.models to javafx.base;

@@ -1,5 +1,6 @@
 package com.main.mainAttendance.AttendanceTracking;
 
+import com.main.Database.Attendance.AttendanceReportDatabase;
 import com.main.Database.Attendance.RetrieveData;
 import com.main.registrationProcess.SACMS;
 import com.main.registrationProcess.startPageController;
@@ -24,10 +25,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Objects;
+import java.util.*;
 
 public class AttendanceTrackingController implements PredefinedObjects {
 
@@ -133,7 +131,6 @@ public class AttendanceTrackingController implements PredefinedObjects {
 
     @FXML
     private Button switchToPageTwoButton;
-
 
     @FXML
     private Group eventsGroup;
@@ -557,6 +554,11 @@ public class AttendanceTrackingController implements PredefinedObjects {
     public void saveButtonOnClick() throws SQLException {
 
         OnlineAttendance.saveAttendance(OnlineAttendance.trackAttendance(choiceBoxArrayList,studentIDMapList,currentEventID));
+
+        // Generate and display the report
+        List<Map<String,String>> allAttendanceData = AttendanceReportDatabase.getAllAttendanceData();
+        AttendanceReport generatedReport = new AttendanceReport();
+        generatedReport.generateAttendanceReport(allAttendanceData);
     }
 
     public void resetButtonInStudentsTableOnClick() throws SQLException{
