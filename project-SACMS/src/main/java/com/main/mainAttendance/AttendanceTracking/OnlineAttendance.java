@@ -41,7 +41,7 @@ public class OnlineAttendance extends Attendance{
             HashMap<String,String> studentDetailsMap = new HashMap<>();
             studentDetailsMap.put("studentID",studentsAttended.get(count).get("studentID"));
             studentDetailsMap.put("attendance",choice.getValue());
-            studentDetailsMap.put("eventID",eventID);
+            studentDetailsMap.put("eventID", eventID);
             attendedStudents.add(studentDetailsMap);
             count++;
         }

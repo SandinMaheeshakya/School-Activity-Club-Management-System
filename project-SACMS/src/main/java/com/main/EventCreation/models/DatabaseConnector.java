@@ -5,7 +5,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class DatabaseConnector {
-    private static final String DATABASE_URL = "jdbc:mysql://localhost:3306/sacms_db";
+    private static final String DATABASE_URL = "jdbc:mysql://localhost:3306/sacms";
     private static final String DATABASE_USER = "root";
     private static final String DATABASE_PASSWORD = "";
 

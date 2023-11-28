@@ -72,12 +72,13 @@ public class DatabaseConnection extends com.main.Database.Connection {
     }
 
     public static void addClubStudentDataToDatabase(TableView<CreateClub> tableJoin){
-        String query = "INSERT INTO student_club (student_id, club_id) VALUES (?, ?)";
+        String query = "INSERT INTO student_club (student_id, club_id,club_name) VALUES (?, ?,?)";
         establishConnection();
 
         try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
             preparedStatement.setString(1, currentConnectionId); // Assuming currentConnectionId is the student ID
             preparedStatement.setString(2, String.valueOf(tableJoin.getSelectionModel().getSelectedItem().getClubID()));
+            preparedStatement.setString(3, String.valueOf(tableJoin.getSelectionModel().getSelectedItem().getClubName()));
 
             // Execute the update statement to perform the insertion
             int rowsAffected = preparedStatement.executeUpdate();
@@ -119,7 +120,7 @@ public class DatabaseConnection extends com.main.Database.Connection {
     public static List<CreateClub> getAllClubs() {
         List<CreateClub> clubs = new ArrayList<>();
 
-        String query = "SELECT * FROM clubs"; // Assuming your table is named 'create_club'
+        String query = "SELECT * FROM club_creation";
 
         establishConnection();
         try (
@@ -128,13 +129,13 @@ public class DatabaseConnection extends com.main.Database.Connection {
 
             while (resultSet.next()) {
                 CreateClub club = new CreateClub();
-                club.setClubID(resultSet.getString("club_ID"));
-                club.setClubName(resultSet.getString("club_name"));
-                club.setDescription(resultSet.getString("club_details"));
-                club.setClubCategory(resultSet.getString("club_category"));
-                club.setClubAdvisor(resultSet.getString("club_advisor"));
-                club.setEmail(resultSet.getString("club_email"));
-                club.setContact(Integer.parseInt(resultSet.getString("club_contact")));
+                club.setClubID(resultSet.getString("clubID"));
+                club.setClubName(resultSet.getString("clubName"));
+                club.setDescription(resultSet.getString("description"));
+                club.setClubCategory(resultSet.getString("clubCategory"));
+                club.setClubAdvisor(resultSet.getString("advisor_id"));
+                club.setEmail(resultSet.getString("email"));
+                club.setContact(Integer.parseInt(resultSet.getString("contact")));
 
                 clubs.add(club);
             }
@@ -149,7 +150,7 @@ public class DatabaseConnection extends com.main.Database.Connection {
         establishConnection();
         try  {
             // Assuming there's a table named 'student_club' to store the association
-            String query = "INSERT INTO student_club (student_id, club_id) VALUES (?, ?)";
+            String query = "INSERT INTO student_club (student_id, club_id, club_Name) VALUES (?, ?)";
             PreparedStatement preparedStatement = connection.prepareStatement(query);
             preparedStatement.setString(1, studentId);
             preparedStatement.setString(2, clubId);

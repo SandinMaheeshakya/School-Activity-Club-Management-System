@@ -9,14 +9,12 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 
 import javafx.scene.Group;
-import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
@@ -719,7 +717,7 @@ public class AttendanceTrackingController implements PredefinedObjects {
     public void eventOneOnClick() throws SQLException {
         eventsGroup.setVisible(false);
 
-        currentEventID = Attendance.checkEventID(0);
+        currentEventID = Attendance.checkEventId(0);
 
         //Store data
         Attendance.setCurrentEventNumber(0); // this is the piece I need to change
@@ -738,7 +736,7 @@ public class AttendanceTrackingController implements PredefinedObjects {
 
     public void eventTwoOnClick() throws SQLException {
 
-        currentEventID = Attendance.checkEventID(1);
+        currentEventID = Attendance.checkEventId(1);
 
         eventsGroup.setVisible(false);
 
@@ -760,7 +758,7 @@ public class AttendanceTrackingController implements PredefinedObjects {
     public void eventThreeOnClick() throws SQLException {
         eventsGroup.setVisible(false);
 
-        currentEventID = Attendance.checkEventID(2);
+        currentEventID = Attendance.checkEventId(2);
 
         //Store data
         Attendance.setCurrentEventNumber(2);
@@ -779,7 +777,7 @@ public class AttendanceTrackingController implements PredefinedObjects {
 
     public void eventFourOnClick() throws SQLException {
 
-        currentEventID = Attendance.checkEventID(3);
+        currentEventID = Attendance.checkEventId(3);
 
         eventsGroup.setVisible(false);
 
@@ -800,7 +798,7 @@ public class AttendanceTrackingController implements PredefinedObjects {
 
     public void eventFiveOnClick() throws SQLException {
 
-        currentEventID = Attendance.checkEventID(4);
+        currentEventID = Attendance.checkEventId(4);
 
         eventsGroup.setVisible(false);
 
@@ -822,7 +820,7 @@ public class AttendanceTrackingController implements PredefinedObjects {
 
     public void eventSixOnClick() throws SQLException {
 
-        currentEventID = Attendance.checkEventID(5);
+        currentEventID = Attendance.checkEventId(5);
 
         eventsGroup.setVisible(false);
 
@@ -845,32 +843,32 @@ public class AttendanceTrackingController implements PredefinedObjects {
 
     public void eventSevenOnClick() throws SQLException {
 
-        currentEventID = Attendance.checkEventID(6);
+        currentEventID = Attendance.checkEventId(6);
 
     }
 
     public void eventEightOnClick() throws SQLException {
-        currentEventID = Attendance.checkEventID(7);
+        currentEventID = Attendance.checkEventId(7);
 
     }
 
     public void eventNineOnClick() throws SQLException {
-        currentEventID = Attendance.checkEventID(8);
+        currentEventID = Attendance.checkEventId(8);
 
     }
 
     public void eventTenOnClick() throws SQLException {
-        currentEventID = Attendance.checkEventID(9);
+        currentEventID = Attendance.checkEventId(9);
 
     }
 
     public void eventElevenOnClick() throws SQLException {
-        currentEventID = Attendance.checkEventID(10);
+        currentEventID = Attendance.checkEventId(10);
 
     }
 
     public void eventTwelveOnClick() throws SQLException {
-        currentEventID = Attendance.checkEventID(11);
+        currentEventID = Attendance.checkEventId(11);
 
     }
 

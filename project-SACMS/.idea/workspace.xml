@@ -6,10 +6,16 @@
   <component name="ChangeListManager">
     <list default="true" id="160022ca-5992-48fb-a410-4036c377095f" name="Changes" comment="edited doc">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/main/Database/Attendance/RetrieveData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/main/Database/Attendance/RetrieveData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/main/Database/UserLogin/DatabaseConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/main/Database/UserLogin/DatabaseConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/main/EventCreation/Controllers/EventController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/main/EventCreation/Controllers/EventController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/main/EventCreation/models/DatabaseConnector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/main/EventCreation/models/DatabaseConnector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/main/clubcreation/ClubManagementController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/main/clubcreation/ClubManagementController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/main/mainAttendance/AttendanceTracking/Attendance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/main/mainAttendance/AttendanceTracking/Attendance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/main/mainAttendance/AttendanceTracking/AttendanceTrackingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/main/mainAttendance/AttendanceTracking/AttendanceTrackingController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/main/mainAttendance/AttendanceTracking/OnlineAttendance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/main/mainAttendance/AttendanceTracking/OnlineAttendance.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/main/registrationProcess/startPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/main/registrationProcess/startPageController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/main/registrationProcess/FXML Files/startPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/main/registrationProcess/FXML Files/startPage.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/main/registrationProcess/FXML Files/startPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/main/registrationProcess/FXML Files/startPage.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/main/registrationProcess/startPageController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/main/registrationProcess/startPageController.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,7 +99,7 @@
     </configuration>
     <configuration name="DisplayClubs" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.main.clubcreation.DisplayClubs" />
-      <module name="project-SACMS" />
+      <module name="clubCreation" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.main.clubcreation.*" />
@@ -134,7 +140,7 @@
     </configuration>
     <configuration name="SACMS" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.main.registrationProcess.SACMS" />
-      <module name="project-SACMS" />
+      <module name="clubCreation" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.main.registrationProcess.*" />
@@ -158,24 +164,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="project-SACMS" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="project-SACMS" />
-      <option name="filePath" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.SACMS" />
-        <item itemvalue="Application.AttendancePage" />
         <item itemvalue="Application.DisplayClubs" />
+        <item itemvalue="Application.AttendancePage" />
         <item itemvalue="Application.Menu" />
       </list>
     </recent_temporary>
@@ -246,6 +239,7 @@
       <workItem from="1701060396132" duration="3527000" />
       <workItem from="1701074256770" duration="1923000" />
       <workItem from="1701094915893" duration="2617000" />
+      <workItem from="1701133715297" duration="12248000" />
     </task>
     <task id="LOCAL-00001" summary="edited doc">
       <option name="closed" value="true" />
@@ -283,12 +277,22 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/com/main/mainAttendance/AttendanceTracking/AttendanceTrackingController.java</url>
-          <line>876</line>
+          <line>874</line>
           <properties class="com.main.mainAttendance.AttendanceTracking.AttendanceTrackingController" method="onBackButtonClick">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
           <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/main/mainAttendance/AttendanceTracking/Attendance.java</url>
+          <line>27</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/main/Database/Attendance/InputData.java</url>
+          <line>29</line>
+          <option name="timeStamp" value="11" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

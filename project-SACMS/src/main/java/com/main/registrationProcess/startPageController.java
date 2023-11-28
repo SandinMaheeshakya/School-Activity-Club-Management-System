@@ -1,6 +1,7 @@
 package com.main.registrationProcess;
 
 import com.main.Database.UserLogin.DatabaseConnection;
+import com.main.EventCreation.Views.ViewEventsPanel;
 import com.main.clubcreation.DisplayClubs;
 import com.main.mainAttendance.AttendancePage;
 import com.main.mainAttendance.AttendanceTracking.AttendanceTrackingController;
@@ -171,6 +172,12 @@ public class startPageController {
 
     @FXML
     private AnchorPane clubDisplayPage;
+
+    @FXML
+    private AnchorPane eventsDisplayPage;
+
+    @FXML
+    private TabPane eventsDisplayTab;
 
     @FXML
     private Button clubJoin;
@@ -771,10 +778,12 @@ public class startPageController {
         if (selectedClub != null) {
             // Get student ID from your authentication system (replace "123" with actual student ID)
             String studentId = "123";
+            String clubId = selectedClub.getClubID();
             String clubName = selectedClub.getClubName();
 
+
             // Call the method to join the club
-            joinClub(studentId, clubName);
+            joinClub(studentId, clubId);
 
             // You can add further logic here, e.g., display a confirmation message
             System.out.println("Joined the club: " + clubName);
@@ -810,5 +819,16 @@ public class startPageController {
     public void onClickBackButtonInStudentChoosingClubs(){
         DashboardPage.setVisible(true);
         clubDisplayPage.setVisible(false);
+    }
+
+    public void onEventButtonClick(){
+        eventsDisplayPage.setVisible(true);
+
+        Tab viewEventsTab = new Tab("View Events");
+        ViewEventsPanel viewEventPanel = new ViewEventsPanel();
+        viewEventsTab.setContent(viewEventPanel.getPanel());
+        viewEventsTab.setClosable(false);
+
+        eventsDisplayTab.getTabs().add(viewEventsTab);
     }
 }

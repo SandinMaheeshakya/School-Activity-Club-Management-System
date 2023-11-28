@@ -577,7 +577,8 @@ public class ClubManagementController implements Initializable {
         settingTheTable();
         btnUpdate.setOnAction(this::updateClubs);
     }
-
+    public static String currentClubId;
+    public static String currentClubName;
     @FXML
     void selectRow(MouseEvent event) {
         if (event.getClickCount() == 1) {
@@ -585,6 +586,9 @@ public class ClubManagementController implements Initializable {
             if (selectedClub != null) {
                 pnlAddEvent.setVisible(true);
                 pnlClubProfiles.setVisible(true);
+
+                currentClubId = selectedClub.getClubID();
+                currentClubName = selectedClub.getClubName();
             }
             updateTextFields(selectedClub);
 

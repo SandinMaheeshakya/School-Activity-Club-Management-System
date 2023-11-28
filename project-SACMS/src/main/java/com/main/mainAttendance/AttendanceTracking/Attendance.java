@@ -79,16 +79,20 @@ public abstract class Attendance implements PredefinedObjects {
 
     //Gathering Data from the Database
     public ArrayList<ArrayList<Map<String,String>>> currentEventStudentsData() throws SQLException {
-       return RetrieveData.getStudentsData(checkEventID(currentEventNumber));
+       return RetrieveData.getStudentsData(checkClubName(currentEventNumber));
     }
 
     //Checking types and IDs
 
-    public static String checkEventID(int eventNumber)  {
-       return AttendanceTrackingController.getEvents().get(eventNumber).get("eventID");
+    public static String checkClubName(int eventNumber)  {
+       return AttendanceTrackingController.getEvents().get(eventNumber).get("clubName");
 
     }
 
+    public static String checkEventId(int eventNumber)  {
+        return AttendanceTrackingController.getEvents().get(eventNumber).get("eventID");
+
+    }
     public static String checkEventType(int eventNumber) {
 
         Map<String, String> event = AttendanceTrackingController.getEvents().get(eventNumber);

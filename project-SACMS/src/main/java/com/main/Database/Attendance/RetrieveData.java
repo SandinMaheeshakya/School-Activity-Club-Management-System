@@ -32,21 +32,21 @@ public class RetrieveData extends Connection {
             Statement statement = connection.createStatement();
 
             //SQL query
-            String query = "SELECT Event_Name, Event_Description, Event_ID, Event_Date, event_type, Club_Name FROM events";
+            String query = "SELECT EventName, EventDescription, EventID, EventDate, Mode, Club_Name FROM events";
 
             //Results
             ResultSet resultSet = statement.executeQuery(query);
 
             while (resultSet.next()) {
-                String eventName = resultSet.getString("Event_Name");
-                String eventsDescription = resultSet.getString("Event_Description");
-                String eventID = resultSet.getString("Event_ID");
-                String eventDate = resultSet.getString("Event_Date");
+                String eventName = resultSet.getString("EventName");
+                String eventsDescription = resultSet.getString("EventDescription");
+                int eventID = resultSet.getInt("EventID");
+                String eventDate = resultSet.getString("EventDate");
                 String clubName = resultSet.getString("Club_Name");
-                String eventType = resultSet.getString("event_type");
+                String eventType = resultSet.getString("Mode");
 
                 Map<String, String> eventDetails = new HashMap<>();
-                eventDetails.put("eventID", eventID);
+                eventDetails.put("eventID", String.valueOf(eventID));
                 eventDetails.put("eventName", eventName);
                 eventDetails.put("eventsDescription", eventsDescription);
                 eventDetails.put("eventDate", eventDate);
@@ -73,7 +73,7 @@ public class RetrieveData extends Connection {
     // Retrieving Student Data
 
     //getting the IDs of Students who Registered in the Events
-    public static ArrayList<ArrayList<Map<String, String>>> getStudentsData(String eventId) {
+    public static ArrayList<ArrayList<Map<String, String>>> getStudentsData(String clubName) {
         ArrayList<ArrayList<Map<String, String>>> students = new ArrayList<>();
         int count = 0;
         int groupCount = 0;
@@ -81,12 +81,14 @@ public class RetrieveData extends Connection {
         try {
             establishConnection();
 
-            String query = "SELECT students.* FROM students " +
-                    "INNER JOIN student_events ON students.student_id = student_events.student_id " +
-                    "WHERE student_events.event_id = ?";
+            String query = "SELECT students.* " +
+                    "FROM students " +
+                    "INNER JOIN student_club ON students.student_id = student_club.student_id " +
+                    "INNER JOIN events ON student_club.club_Name = events.Club_Name " +
+                    "WHERE events.Club_Name = ?";
 
             PreparedStatement preparedStatement = connection.prepareStatement(query);
-            preparedStatement.setString(1, eventId);
+            preparedStatement.setString(1, clubName);
 
             ResultSet resultSet = preparedStatement.executeQuery();
 

@@ -2,6 +2,7 @@ package com.main.EventCreation.Controllers;
 
 import com.main.EventCreation.models.DatabaseConnector;
 import com.main.EventCreation.models.Event;
+import com.main.clubcreation.ClubManagementController;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -23,7 +24,7 @@ public class EventController {
             preparedStatement.setString(1, event.getEventName());
             preparedStatement.setString(2, event.getDescription());
             preparedStatement.setString(3, event.getEventType());
-            preparedStatement.setString(4, "Rotaract Club");
+            preparedStatement.setString(4, ClubManagementController.currentClubName);
             preparedStatement.setString(5, event.getEventDate());
             preparedStatement.setString(6, event.getStartTime());
             preparedStatement.setString(7, event.getEndTime());
