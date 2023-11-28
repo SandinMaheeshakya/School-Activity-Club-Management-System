@@ -58,7 +58,7 @@ public class EventService {
         }
         }
 
-    private void validateDateFormat(String date, List<String> errors) {
+    public void validateDateFormat(String date, List<String> errors) {
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         dateFormat.setLenient(false);
         try {
@@ -68,7 +68,7 @@ public class EventService {
         }
     }
 
-    private void validateTimeFormat(String time, String fieldName, List<String> errors) {
+    public void validateTimeFormat(String time, String fieldName, List<String> errors) {
         SimpleDateFormat timeFormat = new SimpleDateFormat("HH:mm");
         timeFormat.setLenient(false);
         try {
@@ -78,7 +78,7 @@ public class EventService {
         }
     }
 
-    private void validateDuration(String duration, List<String> errors) {
+    public void validateDuration(String duration, List<String> errors) {
         try {
             int durationMinutes = Integer.parseInt(duration);
             if (durationMinutes <= 0) {
@@ -89,7 +89,7 @@ public class EventService {
         }
     }
 
-    private void validateTimeConsistency(String startTime, String endTime, List<String> errors) {
+    public void validateTimeConsistency(String startTime, String endTime, List<String> errors) {
         LocalTime start = LocalTime.parse(startTime);
         LocalTime end = LocalTime.parse(endTime);
         if (end.isBefore(start)) {

@@ -19,8 +19,6 @@ public abstract class Attendance implements PredefinedObjects {
     private String eventID;
     private static int currentEventNumber;
 
-    private int registeredStudentsCount;
-
     //Set values for each attribute from the data received from database (Constructor)
     public Attendance(int groupNumber,int studentNumber) throws SQLException {
 
@@ -35,9 +33,6 @@ public abstract class Attendance implements PredefinedObjects {
 
     }
 
-    public Attendance (int noOfStudents){
-        this.registeredStudentsCount = noOfStudents;
-    }
 
     //Getters and Setters
     public String getStudentID() {
@@ -71,8 +66,6 @@ public abstract class Attendance implements PredefinedObjects {
     public void setEventID(String eventID) {
         this.eventID = eventID;
     }
-
-    public abstract void editAttendance(Pane studentPane, Boolean attendance);
 
     public abstract Map<String,String> registeredStudentLog();
 

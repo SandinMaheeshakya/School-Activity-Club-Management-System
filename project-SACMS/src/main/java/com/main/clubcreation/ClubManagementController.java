@@ -1,5 +1,7 @@
 package com.main.clubcreation;
 
+import com.main.Database.ClubCreation.ClubCreationReportDatabase;
+import com.main.Database.ClubCreation.DatabaseConnection;
 import com.main.EventCreation.Menu;
 import com.main.registrationProcess.SACMS;
 import com.main.registrationProcess.startPageController;
@@ -21,6 +23,7 @@ import java.io.*;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.List;
+import java.util.Map;
 import java.util.ResourceBundle;
 
 public class ClubManagementController implements Initializable {
@@ -213,7 +216,6 @@ public class ClubManagementController implements Initializable {
                     e.printStackTrace();
                 }
             }
-
 
             boolean isValid = true;
             String errorMessage = "";
@@ -606,7 +608,6 @@ public class ClubManagementController implements Initializable {
         txtUpdateAdvisor.setText(club.getClubAdvisor());
         txtUpdateEmail.setText(club.getEmail());
         txtUpdateContact.setText(String.valueOf(club.getContact()));
-
     }
 
 
@@ -701,5 +702,12 @@ public class ClubManagementController implements Initializable {
     public void onBackButtonInCreateClubClick(){
         pnlCreateClub.setVisible(false);
         pnlWelcomePage.setVisible(true);
+    }
+
+    public void onGenerateReportButtonClick(){
+        // Generate and display the report
+        List<Map<String,String>> allClubData = ClubCreationReportDatabase.getClubDetails();
+        ClubCreationReport generatedClubDetailsReport = new ClubCreationReport();
+        generatedClubDetailsReport.generateAttendanceReport(allClubData);
     }
 }

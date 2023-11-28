@@ -1,5 +1,7 @@
-package com.main.clubcreation;
+package com.main.Database.ClubCreation;
 
+import com.main.Database.ClubCreation.BaseDatabaseConnection;
+import com.main.clubcreation.CreateClub;
 import javafx.scene.image.Image;
 
 import java.io.*;

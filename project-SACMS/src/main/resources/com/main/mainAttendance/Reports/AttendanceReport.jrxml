@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.20.6.final using JasperReports Library version 6.20.6-5c96b6aa8a39ac1dc6b6bea4b81168e16dd39231  -->
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Invoice" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="4eedbb89-b4f6-4469-9ab6-f642a1688cf7">
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="AttendanceReport" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="4eedbb89-b4f6-4469-9ab6-f642a1688cf7">
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Attendance Tracking Adapter"/>
 	<style name="Title" forecolor="#FFFFFF" fontName="Times New Roman" fontSize="50" isBold="false" pdfFontName="Times-Bold"/>
@@ -59,9 +59,9 @@
 		</queryString>
 	</subDataset>
 	<queryString language="SQL">
-		<![CDATA[SELECT ea.event_id, s.student_id, s.first_name, s.last_name, ea.attendance
+		<![CDATA[SELECT ea.event_id,s.student_id, s.first_name, s.last_name, s.grade, s.email, ea.Attendance
 FROM students s
-INNER JOIN event_attendance ea ON s.student_id = ea.student_id;]]>
+INNER JOIN event_attendance ea ON s.student_id = ea.student_id]]>
 	</queryString>
 	<field name="event_id" class="java.lang.Integer">
 		<property name="com.jaspersoft.studio.field.name" value="event_id"/>
@@ -83,35 +83,39 @@ INNER JOIN event_attendance ea ON s.student_id = ea.student_id;]]>
 		<property name="com.jaspersoft.studio.field.label" value="last_name"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="students"/>
 	</field>
-	<field name="attendance" class="java.lang.String">
+	<field name="grade" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="grade"/>
+		<property name="com.jaspersoft.studio.field.label" value="grade"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="students"/>
+	</field>
+	<field name="email" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="email"/>
+		<property name="com.jaspersoft.studio.field.label" value="email"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="students"/>
+	</field>
+	<field name="Attendance" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.name" value="Attendance"/>
-		<property name="com.jaspersoft.studio.field.label" value="attendance"/>
+		<property name="com.jaspersoft.studio.field.label" value="Attendance"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="event_attendance"/>
 	</field>
 	<title>
-		<band height="260" splitType="Stretch">
-			<line>
-				<reportElement x="0" y="80" width="556" height="1" uuid="806ce5df-1219-4876-ae0c-ca7405b1f246">
-					<property name="local_mesure_unitheight" value="pixel"/>
-					<property name="com.jaspersoft.studio.unit.height" value="px"/>
-				</reportElement>
-			</line>
+		<band height="196" splitType="Stretch">
 			<staticText>
-				<reportElement x="423" y="33" width="50" height="20" uuid="0f86baff-6386-4f3f-b3fe-2388707babe8"/>
+				<reportElement x="410" y="32" width="50" height="20" uuid="0f86baff-6386-4f3f-b3fe-2388707babe8"/>
 				<box rightPadding="4"/>
 				<textElement textAlignment="Right"/>
 				<text><![CDATA[Date:]]></text>
 			</staticText>
 			<textField pattern="EEEEE dd MMMMM yyyy">
-				<reportElement x="473" y="33" width="84" height="20" uuid="bb10dbe1-0a4f-4722-9953-c163b63cf979"/>
+				<reportElement x="460" y="32" width="84" height="20" uuid="bb10dbe1-0a4f-4722-9953-c163b63cf979"/>
 				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
 			</textField>
 			<image hAlign="Center">
-				<reportElement x="-30" y="-75" width="240" height="230" uuid="94883631-a913-43e2-b182-ab8d77d0181e"/>
-				<imageExpression><![CDATA["D:/2nd Year/Object Oriented Development/CW/CW Git/School-Activity-Club-Management-System/project-SACMS/src/main/resources/com/main/mainAttendance/Reports/logo.png"]]></imageExpression>
+				<reportElement x="-30" y="-37" width="193" height="158" uuid="94883631-a913-43e2-b182-ab8d77d0181e"/>
+				<imageExpression><![CDATA["C:/Users/Sandin Maheeshakya/Desktop/logo.png"]]></imageExpression>
 			</image>
 			<staticText>
-				<reportElement x="200" y="28" width="210" height="25" uuid="e622555d-198b-4ccd-a4a1-c59c53304058">
+				<reportElement x="140" y="30" width="210" height="25" uuid="e622555d-198b-4ccd-a4a1-c59c53304058">
 					<property name="local_mesure_unitheight" value="pixel"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
@@ -125,8 +129,17 @@ INNER JOIN event_attendance ea ON s.student_id = ea.student_id;]]>
 	<columnHeader>
 		<band height="20">
 			<staticText>
-				<reportElement style="Column header" positionType="Float" x="58" y="-180" width="111" height="20" forecolor="#000000" uuid="f9fff1b6-c19d-4ce0-b445-6975276947f7">
-					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="eff3c358-3570-4e5d-bc9a-0c932951a56f"/>
+				<reportElement style="Column header" positionType="Float" x="52" y="-110" width="79" height="20" forecolor="#000000" uuid="860ccf39-b739-4a7b-a9ba-419b4fe11283">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="a05a52b4-a15f-4c19-9114-3e5fa82ccd90"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[event_id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" positionType="Float" x="131" y="-110" width="79" height="20" forecolor="#000000" uuid="f42042a3-2f97-41e1-ab1e-22a5e4f949d5">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="f46cf5f4-7e7d-431c-8f54-568db260f4c3"/>
 				</reportElement>
 				<textElement>
 					<font fontName="Arial" size="12" isBold="true"/>
@@ -134,8 +147,8 @@ INNER JOIN event_attendance ea ON s.student_id = ea.student_id;]]>
 				<text><![CDATA[student_id]]></text>
 			</staticText>
 			<staticText>
-				<reportElement style="Column header" positionType="Float" x="169" y="-180" width="111" height="20" forecolor="#000000" uuid="d855d627-e6d9-4266-a8b5-610b3f7753b5">
-					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ce68b191-cb2d-4f2c-8682-cea68b40f4f1"/>
+				<reportElement style="Column header" positionType="Float" x="210" y="-110" width="79" height="20" forecolor="#000000" uuid="e7542a67-0577-450e-b033-135c88ea7b41">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="6d05ce77-a061-4aee-b02b-d7e155ff61f1"/>
 				</reportElement>
 				<textElement>
 					<font fontName="Arial" size="12" isBold="true"/>
@@ -143,8 +156,8 @@ INNER JOIN event_attendance ea ON s.student_id = ea.student_id;]]>
 				<text><![CDATA[first_name]]></text>
 			</staticText>
 			<staticText>
-				<reportElement style="Column header" positionType="Float" x="280" y="-180" width="111" height="20" forecolor="#000000" uuid="22b2024c-a85a-4137-989e-6c096d5d64f7">
-					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="846ffbe4-1dd9-4298-ad50-def00710b9b1"/>
+				<reportElement style="Column header" positionType="Float" x="289" y="-110" width="79" height="20" forecolor="#000000" uuid="3aa58c44-934c-44d0-94f4-d0990b4e3ade">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="84371a85-fdc2-4d51-94c4-8689159c9390"/>
 				</reportElement>
 				<textElement>
 					<font fontName="Arial" size="12" isBold="true"/>
@@ -152,21 +165,39 @@ INNER JOIN event_attendance ea ON s.student_id = ea.student_id;]]>
 				<text><![CDATA[last_name]]></text>
 			</staticText>
 			<staticText>
-				<reportElement style="Column header" positionType="Float" x="391" y="-180" width="111" height="20" forecolor="#000000" uuid="d19d0ae2-1404-4375-918e-d991d5ecc618">
-					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="806177ee-2daa-4c5e-a259-138939217cf8"/>
+				<reportElement style="Column header" positionType="Float" x="368" y="-110" width="79" height="20" forecolor="#000000" uuid="3426f0cd-9120-41e4-ab54-67a3137d84a5">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="075467e9-4c43-4380-9d85-8ba503067e14"/>
 				</reportElement>
 				<textElement>
 					<font fontName="Arial" size="12" isBold="true"/>
 				</textElement>
-				<text><![CDATA[attendance]]></text>
+				<text><![CDATA[grade]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" positionType="Float" x="447" y="-110" width="79" height="20" forecolor="#000000" uuid="3449f09b-b123-4bc4-9c0e-d6373e67101e">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="85c5bd2d-6a84-44cc-b039-1ee50bab602a"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Attendance]]></text>
 			</staticText>
 		</band>
 	</columnHeader>
 	<detail>
 		<band height="20">
 			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
-				<reportElement style="Detail" positionType="Float" x="58" y="-180" width="111" height="20" uuid="a305c211-78e7-48d4-89a2-c897473122a6">
-					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="eff3c358-3570-4e5d-bc9a-0c932951a56f"/>
+				<reportElement style="Detail" positionType="Float" x="70" y="-110" width="60" height="20" uuid="f2721fe9-8951-45e7-9d10-4f760561d773">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="a05a52b4-a15f-4c19-9114-3e5fa82ccd90"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{event_id}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement style="Detail" positionType="Float" x="131" y="-110" width="79" height="20" uuid="3630b081-4081-486a-90ea-afc638885cab">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="f46cf5f4-7e7d-431c-8f54-568db260f4c3"/>
 				</reportElement>
 				<textElement>
 					<font fontName="Arial" size="12" isBold="false"/>
@@ -174,8 +205,8 @@ INNER JOIN event_attendance ea ON s.student_id = ea.student_id;]]>
 				<textFieldExpression><![CDATA[$F{student_id}]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
-				<reportElement style="Detail" positionType="Float" x="169" y="-180" width="111" height="20" uuid="60b6b34a-742c-4053-a4ba-c61a8aad1b30">
-					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ce68b191-cb2d-4f2c-8682-cea68b40f4f1"/>
+				<reportElement style="Detail" positionType="Float" x="210" y="-110" width="79" height="20" uuid="4fae293a-084e-4fbf-b16c-185cbe27809c">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="6d05ce77-a061-4aee-b02b-d7e155ff61f1"/>
 				</reportElement>
 				<textElement>
 					<font fontName="Arial" size="12" isBold="false"/>
@@ -183,8 +214,8 @@ INNER JOIN event_attendance ea ON s.student_id = ea.student_id;]]>
 				<textFieldExpression><![CDATA[$F{first_name}]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
-				<reportElement style="Detail" positionType="Float" x="280" y="-180" width="111" height="20" uuid="0d4a4336-07a7-4092-9ebf-d0843d21fb5f">
-					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="846ffbe4-1dd9-4298-ad50-def00710b9b1"/>
+				<reportElement style="Detail" positionType="Float" x="289" y="-110" width="79" height="20" uuid="da874add-e6de-4879-81a8-086b60ec29c7">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="84371a85-fdc2-4d51-94c4-8689159c9390"/>
 				</reportElement>
 				<textElement>
 					<font fontName="Arial" size="12" isBold="false"/>
@@ -192,17 +223,34 @@ INNER JOIN event_attendance ea ON s.student_id = ea.student_id;]]>
 				<textFieldExpression><![CDATA[$F{last_name}]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
-				<reportElement style="Detail" positionType="Float" x="391" y="-180" width="111" height="20" uuid="7b4b4e5f-e1f2-474a-9b85-a73d28e5f3b4">
-					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="806177ee-2daa-4c5e-a259-138939217cf8"/>
+				<reportElement style="Detail" positionType="Float" x="380" y="-110" width="67" height="20" uuid="e84ba485-519d-401d-8428-7c982db1d8ad">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="075467e9-4c43-4380-9d85-8ba503067e14"/>
 				</reportElement>
 				<textElement>
 					<font fontName="Arial" size="12" isBold="false"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{attendance}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{grade}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement style="Detail" positionType="Float" x="447" y="-110" width="79" height="20" uuid="2292a8a7-2a0e-43a8-acd1-560a7a6c4bda">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="85c5bd2d-6a84-44cc-b039-1ee50bab602a"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Attendance}]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>
 	<lastPageFooter>
-		<band height="177"/>
+		<band height="177">
+			<staticText>
+				<reportElement positionType="Float" mode="Opaque" x="0" y="147" width="556" height="30" backcolor="#E6E8E9" uuid="36aa233d-4305-48e6-974a-1bbf89bb3c8f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Serif" size="9" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[THANKYOU FOR YOUR BUSINESS]]></text>
+			</staticText>
+		</band>
 	</lastPageFooter>
 </jasperReport>

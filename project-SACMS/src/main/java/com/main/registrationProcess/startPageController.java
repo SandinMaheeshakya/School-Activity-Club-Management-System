@@ -1,10 +1,11 @@
 package com.main.registrationProcess;
 
+import com.main.Database.UserLogin.AdvisorReportDatabase;
 import com.main.Database.UserLogin.DatabaseConnection;
+import com.main.Database.UserLogin.StudentReportDatabase;
 import com.main.EventCreation.Views.ViewEventsPanel;
 import com.main.clubcreation.DisplayClubs;
 import com.main.mainAttendance.AttendancePage;
-import com.main.mainAttendance.AttendanceTracking.AttendanceTrackingController;
 import javafx.animation.FadeTransition;
 import javafx.animation.PauseTransition;
 import javafx.animation.ScaleTransition;
@@ -14,8 +15,6 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Group;
-import javafx.scene.Node;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
@@ -23,13 +22,13 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
-import javafx.stage.Window;
 import javafx.util.Duration;
 
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import static com.main.Database.UserLogin.DatabaseConnection.addClubStudentDataToDatabase;
 import static com.main.Database.UserLogin.DatabaseConnection.joinClub;
@@ -181,6 +180,13 @@ public class startPageController {
 
     @FXML
     private Button clubJoin;
+
+    @FXML
+    private Group advisorReportGroup;
+
+    @FXML
+    private Group studentReportGroup;
+
     ScaleTransition loginButtonIncrease;
     ScaleTransition loginButtonDecrease;
 
@@ -200,6 +206,38 @@ public class startPageController {
     ScaleTransition advisorButtonDecrease;
 
 
+    public TextField getAdvisorEmail() {
+        return advisorEmail;
+    }
+
+    public TextField getAdvisorUsername() {
+        return advisorUsername;
+    }
+
+    public TextField getAdvisorFirstName() {
+        return advisorFirstName;
+    }
+
+    public TextField getAdvisorLastName() {
+        return advisorLastName;
+    }
+
+    public TextField getAdvisorTeachingID() {
+        return advisorTeachingID;
+    }
+
+    public TextField getAdvisorPassword() {
+        return advisorPassword;
+    }
+
+    public TextField getAdvisorUsernameLogin() {
+        return advisorUsernameLogin;
+    }
+
+    public TextField getAdvisorPasswordLogin() {
+        return advisorPasswordLogin;
+    }
+
     String currentMember;
     ArrayList<Student> studentDetail = new ArrayList<>();
 
@@ -212,9 +250,9 @@ public class startPageController {
         if (backStatus){
             DashboardPage.setVisible(true);
         }
+
         gradeSetValue();
         departmentSetValue();
-
 
         FadeTransition quote1Transition = new FadeTransition(Duration.seconds(3), quote1);
         quote1Transition.setFromValue(0);
@@ -420,9 +458,10 @@ public class startPageController {
 
         // Add values to the advisorDepartment ChoiceBox
         ObservableList<String> departmentOptions = FXCollections.observableArrayList(
-                "Department A",
-                "Department B",
-                "Department C"
+                "IT",
+                "Agriculture",
+                "Accounting",
+                "Science"
         );
         advisorDepartment.setItems(departmentOptions);
 
@@ -601,10 +640,6 @@ public class startPageController {
             allValidatedStudent = true;
         }
     }
-
-
-
-    private DatabaseConnection databaseConnection = new DatabaseConnection();
     @FXML
     public void OnClickAdvisorRegister(ActionEvent actionEvent) throws SQLException {
         // Call validation methods
@@ -702,6 +737,10 @@ public class startPageController {
         ThirdGroup.setVisible(false);
         ThirdGroup.setDisable(true);
 
+
+        advisorReportGroup.setVisible(false);
+        studentReportGroup.setVisible(false);
+
         currentMember = "Student";
 
     }
@@ -738,6 +777,9 @@ public class startPageController {
                 // Failed login
                 // Display an error message or take appropriate action
                 System.out.println("Student login failed. Invalid credentials.");
+
+                studentUsernameLogin.setStyle("-fx-border-color: red");
+                studentPasswordLogin.setStyle("-fx-border-color: red");
             }
 
         }
@@ -765,6 +807,10 @@ public class startPageController {
             // Failed login
             // Display an error message or take appropriate action
             System.out.println("Advisor login failed. Invalid credentials.");
+
+            advisorUsernameLogin.setStyle("-fx-border-color: red");
+            advisorPasswordLogin.setStyle("-fx-border-color: red");
+
         }
     }
 
@@ -801,6 +847,7 @@ public class startPageController {
     public void onclickViewJoinTables() throws IOException {
 
         if ("Student".equals(currentMember)) {
+
             DashboardPage.setVisible(false);
             clubDisplayPage.setVisible(true);
             clubDisplayPage.setDisable(false);
@@ -808,6 +855,9 @@ public class startPageController {
             clubDisplayPageTransition.setFromValue(0);
             clubDisplayPageTransition.setToValue(1);
             clubDisplayPageTransition.play();
+
+
+
 
         }else {
             DisplayClubs displayClubs = new DisplayClubs();
@@ -845,5 +895,23 @@ public class startPageController {
         SACMS sacms = new SACMS();
         Stage stage = new Stage();
         sacms.start(stage);
+    }
+
+    public void onGenerateAdvisorReportClick(){
+
+        // Generate and display the report
+        List<Map<String,String>> allAdvisorData = AdvisorReportDatabase.getAdvisorDetails();
+        AdvisorReport generatedAdvisorDetailsReport = new AdvisorReport();
+        generatedAdvisorDetailsReport.generateAdvisorReport(allAdvisorData);
+
+    }
+
+    public void onGenerateStudentReportClick(){
+
+        // Generate and display the report
+        List<Map<String,String>> allStudentData = StudentReportDatabase.getStudentDetails();
+        StudentReport generatedStudentDetailsReport = new StudentReport();
+        generatedStudentDetailsReport.generateStudentReport(allStudentData);
+
     }
 }

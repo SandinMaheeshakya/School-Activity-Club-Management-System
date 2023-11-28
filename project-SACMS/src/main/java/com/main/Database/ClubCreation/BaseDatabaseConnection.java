@@ -1,4 +1,4 @@
-package com.main.clubcreation;
+package com.main.Database.ClubCreation;
 
 import java.sql.Connection;
 

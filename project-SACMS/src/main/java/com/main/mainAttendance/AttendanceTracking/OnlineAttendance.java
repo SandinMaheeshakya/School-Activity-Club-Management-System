@@ -27,8 +27,6 @@ public class OnlineAttendance extends Attendance{
         return logTime;
     }
 
-
-
     public void setLogTime(String logTime) {
         this.logTime = logTime;
     }
@@ -55,10 +53,6 @@ public class OnlineAttendance extends Attendance{
 
 
     @Override
-    public void editAttendance(Pane studentPane, Boolean attendance) {
-    }
-
-    @Override
     public Map<String,String> registeredStudentLog() {
 
         Map<String,String> studentDetails = new HashMap<>();
@@ -68,8 +62,6 @@ public class OnlineAttendance extends Attendance{
         studentDetails.put("studentJoinStatus", String.valueOf(isJoinStatus()));
         studentDetails.put("studentLogTime", getLogTime());
         return studentDetails;
-
-
 
     }
 

@@ -319,6 +319,26 @@
                         <GaussianBlur radius="3.0" />
                      </effect>
                   </Label>
+                  <Group fx:id="advisorReportGroup" layoutX="338.0" layoutY="606.0" onMousePressed="#onGenerateAdvisorReportClick">
+                     <children>
+                        <Rectangle arcHeight="40.0" arcWidth="40.0" height="64.0" layoutX="14.0" stroke="#00e1ff" strokeType="INSIDE" strokeWidth="6.0" width="306.0" />
+                        <Label layoutX="35.0" layoutY="14.0" prefHeight="36.0" prefWidth="317.0" text="Generate Advisor Report" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="22.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Group>
+                  <Group fx:id="studentReportGroup" layoutX="705.0" layoutY="606.0" onMousePressed="#onGenerateStudentReportClick">
+                     <children>
+                        <Rectangle arcHeight="40.0" arcWidth="40.0" height="64.0" stroke="#00e1ff" strokeType="INSIDE" strokeWidth="6.0" width="306.0" />
+                        <Label layoutX="23.0" layoutY="14.0" prefHeight="36.0" prefWidth="317.0" text="Generate Student Report" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="22.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Group>
                </children>
             </AnchorPane>
          </children>

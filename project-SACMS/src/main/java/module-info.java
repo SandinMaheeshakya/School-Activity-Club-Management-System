@@ -26,5 +26,7 @@ module com.main {
 
     exports com.main.mainAttendance.AttendanceTracking;
     opens com.main.mainAttendance.AttendanceTracking to javafx.fxml;
+    exports com.main.Database.ClubCreation;
+    opens com.main.Database.ClubCreation to javafx.fxml;
 
 }

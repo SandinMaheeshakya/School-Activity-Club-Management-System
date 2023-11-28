@@ -254,8 +254,6 @@ public class AttendanceTrackingController implements PredefinedObjects {
         return StudentDetailsPanes;
     }
 
-
-
     //Events Data Add
     public void putClubImage(Pane currentPane, String ImageURL) {
         Image ClubImage = new Image(ImageURL);
@@ -396,9 +394,10 @@ public class AttendanceTrackingController implements PredefinedObjects {
 
                         //Put Images
                         if (Attendance.checkEventType(eventCount).equals("Online")){
-                            putClubImage(currentPane,"D:\\2nd Year\\Object Oriented Development\\CW\\CW Git\\School-Activity-Club-Management-System\\project-SACMS\\src\\main\\resources\\com\\main\\projectsacms\\Icons\\Functional\\online logo.png");
+                            putClubImage(currentPane,"D:\\2nd Year\\Object Oriented Development\\CW\\CW Git\\School-Activity-Club-Management-System\\project-SACMS\\src\\main\\resources\\com\\main\\mainAttendance\\Icons\\Functional\\online logo.png");
+
                         }else {
-                            putClubImage(currentPane,"D:\\2nd Year\\Object Oriented Development\\CW\\CW Git\\School-Activity-Club-Management-System\\project-SACMS\\src\\main\\resources\\com\\main\\projectsacms\\Icons\\Functional\\physical event logo.png");
+                            putClubImage(currentPane,"D:\\2nd Year\\Object Oriented Development\\CW\\CW Git\\School-Activity-Club-Management-System\\project-SACMS\\src\\main\\resources\\com\\main\\mainAttendance\\Icons\\Functional\\physical event logo.png");
 
                         }
                         count++;
@@ -420,9 +419,10 @@ public class AttendanceTrackingController implements PredefinedObjects {
 
                     //Put Images
                     if (Attendance.checkEventType(eventCount).equals("Online")){
-                        putClubImage(currentPane,"D:\\2nd Year\\Object Oriented Development\\CW\\CW Git\\School-Activity-Club-Management-System\\project-SACMS\\src\\main\\resources\\com\\main\\projectsacms\\Icons\\Functional\\online logo.png");
+                        putClubImage(currentPane,"D:\\2nd Year\\Object Oriented Development\\CW\\CW Git\\School-Activity-Club-Management-System\\project-SACMS\\src\\main\\resources\\com\\main\\mainAttendance\\Icons\\Functional\\online logo.png");
+
                     }else {
-                        putClubImage(currentPane,"D:\\2nd Year\\Object Oriented Development\\CW\\CW Git\\School-Activity-Club-Management-System\\project-SACMS\\src\\main\\resources\\com\\main\\projectsacms\\Icons\\Functional\\physical event logo.png");
+                        putClubImage(currentPane,"D:\\2nd Year\\Object Oriented Development\\CW\\CW Git\\School-Activity-Club-Management-System\\project-SACMS\\src\\main\\resources\\com\\main\\mainAttendance\\Icons\\Functional\\physical event logo.png");
 
                     }
 
@@ -448,9 +448,10 @@ public class AttendanceTrackingController implements PredefinedObjects {
 
                     //Put Images
                     if (Attendance.checkEventType(eventCount).equals("Online")){
-                        putClubImage(currentPane,"D:\\2nd Year\\Object Oriented Development\\CW\\CW Git\\School-Activity-Club-Management-System\\project-SACMS\\src\\main\\resources\\com\\main\\projectsacms\\Icons\\Functional\\online logo.png");
+                        putClubImage(currentPane,"D:\\2nd Year\\Object Oriented Development\\CW\\CW Git\\School-Activity-Club-Management-System\\project-SACMS\\src\\main\\resources\\com\\main\\mainAttendance\\Icons\\Functional\\online logo.png");
+
                     }else {
-                        putClubImage(currentPane,"D:\\2nd Year\\Object Oriented Development\\CW\\CW Git\\School-Activity-Club-Management-System\\project-SACMS\\src\\main\\resources\\com\\main\\projectsacms\\Icons\\Functional\\physical event logo.png");
+                        putClubImage(currentPane,"D:\\2nd Year\\Object Oriented Development\\CW\\CW Git\\School-Activity-Club-Management-System\\project-SACMS\\src\\main\\resources\\com\\main\\mainAttendance\\Icons\\Functional\\physical event logo.png");
 
                     }
 
@@ -473,6 +474,7 @@ public class AttendanceTrackingController implements PredefinedObjects {
                 //Put Images
                 if (Attendance.checkEventType(eventCount).equals("Online")){
                     putClubImage(currentPane,"D:\\2nd Year\\Object Oriented Development\\CW\\CW Git\\School-Activity-Club-Management-System\\project-SACMS\\src\\main\\resources\\com\\main\\mainAttendance\\Icons\\Functional\\online logo.png");
+
                 }else {
                     putClubImage(currentPane,"D:\\2nd Year\\Object Oriented Development\\CW\\CW Git\\School-Activity-Club-Management-System\\project-SACMS\\src\\main\\resources\\com\\main\\mainAttendance\\Icons\\Functional\\physical event logo.png");
 
@@ -529,8 +531,6 @@ public class AttendanceTrackingController implements PredefinedObjects {
         currentPane.getChildren().add(studentRegisterLabel);
 
     }
-
-    ArrayList<ArrayList<ChoiceBox<String>>> groupedChoicesBoxList = new ArrayList<>();
     ArrayList<ChoiceBox<String>> choiceBoxArrayList = new ArrayList<>();
     public ChoiceBox<String> putStudentAttendance(Pane currentPane) {
 
@@ -722,7 +722,7 @@ public class AttendanceTrackingController implements PredefinedObjects {
         currentEventID = Attendance.checkEventId(0);
 
         //Store data
-        Attendance.setCurrentEventNumber(0); // this is the piece I need to change
+        Attendance.setCurrentEventNumber(0);
 
         eventType = events.get(0).get("eventType");
 
@@ -817,7 +817,6 @@ public class AttendanceTrackingController implements PredefinedObjects {
         studentsGroup.setVisible(true);
         displayStudents(0);
 
-
     }
 
     public void eventSixOnClick() throws SQLException {
@@ -838,8 +837,6 @@ public class AttendanceTrackingController implements PredefinedObjects {
         }
         studentsGroup.setVisible(true);
         displayStudents(0);
-
-
 
     }
 
@@ -881,8 +878,8 @@ public class AttendanceTrackingController implements PredefinedObjects {
 
         sacms.start(stage);
 
-
-
     }
+
+
 }
 

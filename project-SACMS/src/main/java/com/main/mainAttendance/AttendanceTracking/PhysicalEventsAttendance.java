@@ -27,10 +27,6 @@ public class PhysicalEventsAttendance extends Attendance {
         this.venue = venue;
     }
 
-    @Override
-    public void editAttendance(Pane studentPane, Boolean attendance){
-
-    }
 
     @Override
     public Map<String,String> registeredStudentLog() {
@@ -49,9 +45,5 @@ public class PhysicalEventsAttendance extends Attendance {
 
     public boolean isJoinStatus() {
         return joinStatus;
-    }
-
-    public void setJoinStatus(boolean joinStatus) {
-        this.joinStatus = joinStatus;
     }
 }

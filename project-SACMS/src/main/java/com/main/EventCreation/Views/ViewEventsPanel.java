@@ -1,6 +1,10 @@
 package com.main.EventCreation.Views;
 
+import com.main.Database.EventCreation.EventCreationDatabase;
+import com.main.Database.UserLogin.StudentReportDatabase;
 import com.main.EventCreation.Controllers.EventController;
+import com.main.EventCreation.EventReport.EventReport;
+import com.main.registrationProcess.StudentReport;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
@@ -12,6 +16,7 @@ import javafx.scene.layout.VBox;
 import com.main.EventCreation.models.Event;
 
 import java.util.List;
+import java.util.Map;
 
 public class ViewEventsPanel {
 
@@ -19,9 +24,10 @@ public class ViewEventsPanel {
     private TableView<Event> eventTable;
     private TextField searchField;
     private Button searchButton;
-    private Button attendButton;
+    private Button generateReportButton;
     private Button deleteButton;
     private Button reloadButton;
+
     private TextField deleteEventIdField;
     private String event_id;
 
@@ -41,13 +47,23 @@ public class ViewEventsPanel {
         searchButton = new Button("Search Event by name");
         searchButton.setOnAction(event -> setupEventTable(searchField.getText()));
 
-        attendButton = new Button("ATTEND");;
+        generateReportButton = new Button("Generate Report");
+        generateReportButton.setOnAction(event ->{
+
+            // Generate and display the report
+            List<Map<String,String>> allEventsData = EventCreationDatabase.getEventDetails();
+            EventReport generatedEventDetailsReport = new EventReport();
+            generatedEventDetailsReport.generateEventReport(allEventsData);
+
+        });
 
         deleteButton = new Button("Delete");
         deleteButton.setOnAction(event -> deleteEvent(deleteEventIdField.getText()));
 
         reloadButton = new Button("Load");
         reloadButton.setOnAction(event -> setupEventTable("0"));
+
+
 
         HBox searchBar = new HBox(10);
         searchBar.getChildren().addAll(searchField, searchButton);
@@ -58,7 +74,7 @@ public class ViewEventsPanel {
 
         gridPane.add(searchBar, 0, 1);
         gridPane.add(reloadButton, 1, 1);
-        gridPane.add(attendButton, 2, 1);
+        gridPane.add(generateReportButton, 2, 1);
         gridPane.add(deleteEventIdField, 3, 1);
         gridPane.add(deleteButton, 4, 1);
         gridPane.add(eventTable, 0, 2);
@@ -113,6 +129,8 @@ public class ViewEventsPanel {
 
         eventTable.getColumns().clear();
         eventTable.getColumns().addAll(EventID, EventName,description,EventType, EventDate, StartTime,EndTime,Duration,Mode, physicalLocation,onlineMeetingLink,onlineMeetingID, onlineMeetingPassword );
+
+
 
         if (eventTable.getItems() != null) {
             eventTable.getItems().clear();
