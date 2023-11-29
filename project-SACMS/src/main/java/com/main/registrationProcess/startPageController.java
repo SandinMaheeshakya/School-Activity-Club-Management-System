@@ -3,6 +3,7 @@ package com.main.registrationProcess;
 import com.main.Database.UserLogin.AdvisorReportDatabase;
 import com.main.Database.UserLogin.DatabaseConnection;
 import com.main.Database.UserLogin.StudentReportDatabase;
+import com.main.EventCreation.Menu;
 import com.main.EventCreation.Views.ViewEventsPanel;
 import com.main.clubcreation.DisplayClubs;
 import com.main.mainAttendance.AttendancePage;
@@ -913,5 +914,32 @@ public class startPageController {
         StudentReport generatedStudentDetailsReport = new StudentReport();
         generatedStudentDetailsReport.generateStudentReport(allStudentData);
 
+    }
+
+
+    public void onMouseClickHome() throws IOException {
+        SACMS sacms = new SACMS();
+        Stage stage = new Stage();
+        startPageController.backStatus = true;
+
+        sacms.start(stage);
+    }
+    public void onMouseClickEvents() {
+        com.main.EventCreation.Menu menu = new Menu();
+        Stage stage = new Stage();
+        menu.start(stage);
+
+    }
+
+    public void onMouseClickClub() throws IOException {
+        DisplayClubs clubs = new DisplayClubs();
+        Stage stage = new Stage();
+        clubs.start(stage);
+    }
+
+    public void onMouseClickAttendance() throws IOException {
+        AttendancePage attendancePage = new AttendancePage();
+        Stage stage = new Stage();
+        attendancePage.start(stage);
     }
 }

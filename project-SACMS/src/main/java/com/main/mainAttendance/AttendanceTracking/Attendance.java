@@ -29,8 +29,6 @@ public abstract class Attendance implements PredefinedObjects {
         studentName = studentData.get(groupNumber).get(studentNumber).get("studentName");
         studentGrade = studentData.get(groupNumber).get(studentNumber).get("grade");
 
-        // Need to add register Status
-
     }
 
 

@@ -30,7 +30,6 @@ public class AttendanceReportDatabase extends Connection {
             while (resultSet.next()) {
 
                 Map<String, String> attendanceData = new HashMap<>();
-                attendanceData.put("eventId", resultSet.getString("event_id"));
                 attendanceData.put("student_id", resultSet.getString("student_id"));
                 attendanceData.put("first_name", resultSet.getString("first_name"));
                 attendanceData.put("last_name", resultSet.getString("last_name"));

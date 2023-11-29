@@ -2,6 +2,9 @@ package com.main.mainAttendance.AttendanceTracking;
 
 import com.main.Database.Attendance.AttendanceReportDatabase;
 import com.main.Database.Attendance.RetrieveData;
+import com.main.EventCreation.Menu;
+import com.main.clubcreation.DisplayClubs;
+import com.main.mainAttendance.AttendancePage;
 import com.main.registrationProcess.SACMS;
 import com.main.registrationProcess.startPageController;
 import javafx.collections.FXCollections;
@@ -137,6 +140,7 @@ public class AttendanceTrackingController implements PredefinedObjects {
 
     @FXML
     private Group studentsGroup;
+
 
     @FXML
     private Label eventTypeLabel;
@@ -555,16 +559,20 @@ public class AttendanceTrackingController implements PredefinedObjects {
 
         OnlineAttendance.saveAttendance(OnlineAttendance.trackAttendance(choiceBoxArrayList,studentIDMapList,currentEventID));
 
-        // Generate and display the report
-        List<Map<String,String>> allAttendanceData = AttendanceReportDatabase.getAttendanceData();
-        AttendanceReport generatedReport = new AttendanceReport();
-        generatedReport.generateAttendanceReport(allAttendanceData);
     }
 
     public void resetButtonInStudentsTableOnClick() throws SQLException{
         Attendance.clearAttendanceTable();
         OnlineAttendance.saveAttendance(OnlineAttendance.trackAttendance(choiceBoxArrayList,studentIDMapList,currentEventID));
 
+    }
+
+    public void generateButtonOnClick(){
+
+        // Generate and display the report
+        List<Map<String,String>> allAttendanceData = AttendanceReportDatabase.getAttendanceData();
+        AttendanceReport generatedReport = new AttendanceReport();
+        generatedReport.generateAttendanceReport(allAttendanceData);
     }
 
     String currentEventID;
@@ -872,12 +880,45 @@ public class AttendanceTrackingController implements PredefinedObjects {
     }
 
     public void onBackButtonClick() throws IOException {
+
+        if (studentsGroup.isVisible()) {
+            studentsGroup.setVisible(false);
+            eventsGroup.setVisible(true);
+
+        }else {
+            SACMS sacms = new SACMS();
+            Stage stage = new Stage();
+            startPageController.backStatus = true;
+
+            sacms.start(stage);
+        }
+
+    }
+
+    public void onMouseClickHome() throws IOException {
         SACMS sacms = new SACMS();
         Stage stage = new Stage();
         startPageController.backStatus = true;
 
         sacms.start(stage);
+    }
+    public void onMouseClickEvents() {
+        Menu menu = new Menu();
+        Stage stage = new Stage();
+        menu.start(stage);
 
+    }
+
+    public void onMouseClickClub() throws IOException {
+        DisplayClubs clubs = new DisplayClubs();
+        Stage stage = new Stage();
+        clubs.start(stage);
+    }
+
+    public void onMouseClickAttendance() throws IOException {
+        AttendancePage attendancePage = new AttendancePage();
+        Stage stage = new Stage();
+        attendancePage.start(stage);
     }
 
 

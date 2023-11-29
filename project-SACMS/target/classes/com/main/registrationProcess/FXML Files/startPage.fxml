@@ -364,50 +364,66 @@
                   </ImageView>
                </children>
             </Pane>
-            <Rectangle arcHeight="20.0" arcWidth="20.0" height="75.0" layoutX="211.0" layoutY="81.0" stroke="#00fff7" strokeType="INSIDE" strokeWidth="4.0" width="151.0" />
-            <ImageView fitHeight="47.0" fitWidth="39.0" layoutX="265.0" layoutY="88.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../Icons/Functional/Clubs.png" />
-               </image>
-            </ImageView>
-            <Label layoutX="263.0" layoutY="127.0" text="Home" textFill="WHITE">
-               <font>
-                  <Font name="Calibri Bold" size="17.0" />
-               </font>
-            </Label>
-            <Rectangle arcHeight="20.0" arcWidth="20.0" height="75.0" layoutX="675.0" layoutY="81.0" stroke="#00fff7" strokeType="INSIDE" strokeWidth="4.0" width="151.0" />
-            <Rectangle arcHeight="20.0" arcWidth="20.0" height="75.0" layoutX="928.0" layoutY="81.0" stroke="#00fff7" strokeType="INSIDE" strokeWidth="4.0" width="151.0" />
-            <Rectangle arcHeight="20.0" arcWidth="20.0" height="75.0" layoutX="428.0" layoutY="81.0" stroke="#00fff7" strokeType="INSIDE" strokeWidth="4.0" width="151.0" />
-            <ImageView fitHeight="39.0" fitWidth="39.0" layoutX="484.0" layoutY="88.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../Icons/Functional/ClubManage.png" />
-               </image>
-            </ImageView>
-            <Label layoutX="484.0" layoutY="127.0" text="Clubs" textFill="WHITE">
-               <font>
-                  <Font name="Calibri Bold" size="17.0" />
-               </font>
-            </Label>
-            <ImageView fitHeight="39.0" fitWidth="39.0" layoutX="731.0" layoutY="88.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../Icons/Functional/Events.png" />
-               </image>
-            </ImageView>
-            <Label layoutX="727.0" layoutY="129.0" text="Events" textFill="WHITE">
-               <font>
-                  <Font name="Calibri Bold" size="17.0" />
-               </font>
-            </Label>
-            <ImageView fitHeight="39.0" fitWidth="39.0" layoutX="984.0" layoutY="88.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../Icons/Functional/Attendence.png" />
-               </image>
-            </ImageView>
-            <Label layoutX="962.0" layoutY="129.0" text="Attendence" textFill="WHITE">
-               <font>
-                  <Font name="Calibri Bold" size="17.0" />
-               </font>
-            </Label>
+            <Group layoutX="211.0" layoutY="81.0" onMouseClicked="#onMouseClickHome">
+               <children>
+                  <Rectangle arcHeight="20.0" arcWidth="20.0" height="75.0" stroke="#00fff7" strokeType="INSIDE" strokeWidth="4.0" width="151.0" />
+                  <ImageView fitHeight="47.0" fitWidth="39.0" layoutX="54.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../mainAttendance/Icons/Functional/Clubs.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="52.0" layoutY="46.0" text="Home" textFill="WHITE">
+                     <font>
+                        <Font name="Calibri Bold" size="17.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Group>
+            <Group layoutX="675.0" layoutY="81.0" onMouseClicked="#onMouseClickEvents">
+               <children>
+                  <Rectangle arcHeight="20.0" arcWidth="20.0" height="75.0" stroke="#00fff7" strokeType="INSIDE" strokeWidth="4.0" width="151.0" />
+                  <ImageView fitHeight="39.0" fitWidth="39.0" layoutX="56.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../mainAttendance/Icons/Functional/Events.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="52.0" layoutY="48.0" text="Events" textFill="WHITE">
+                     <font>
+                        <Font name="Calibri Bold" size="17.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Group>
+            <Group layoutX="928.0" layoutY="81.0" onMouseClicked="#onMouseClickAttendance">
+               <children>
+                  <Rectangle arcHeight="20.0" arcWidth="20.0" height="75.0" stroke="#00fff7" strokeType="INSIDE" strokeWidth="4.0" width="151.0" />
+                  <ImageView fitHeight="39.0" fitWidth="39.0" layoutX="56.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../mainAttendance/Icons/Functional/Attendence.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="34.0" layoutY="48.0" text="Attendence" textFill="WHITE">
+                     <font>
+                        <Font name="Calibri Bold" size="17.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Group>
+            <Group layoutX="428.0" layoutY="81.0" onMouseClicked="#onMouseClickClub">
+               <children>
+                  <Rectangle arcHeight="20.0" arcWidth="20.0" height="75.0" stroke="#00fff7" strokeType="INSIDE" strokeWidth="4.0" width="151.0" />
+                  <ImageView fitHeight="39.0" fitWidth="39.0" layoutX="56.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../mainAttendance/Icons/Functional/Attendence.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="56.0" layoutY="46.0" text="Clubs" textFill="WHITE">
+                     <font>
+                        <Font name="Calibri Bold" size="17.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Group>
             <Group fx:id="joinClub" layoutX="400.0" layoutY="245.0">
                <children>
                   <TableView fx:id="Tablejoin" layoutX="-216.0" layoutY="-56.0" prefHeight="398.0" prefWidth="938.0">

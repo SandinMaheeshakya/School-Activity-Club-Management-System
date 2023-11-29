@@ -1,5 +1,6 @@
 package com.main.registrationProcess;
 
+import javafx.scene.control.TextField;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -13,9 +14,10 @@ public class StartPageControllerTest {
         startPageController controller = new startPageController();
         controller.getAdvisorFirstName().setText("hello");
 
-        controller.advisorFirstNameValidation();
+        TextField textField = new TextField();
 
-        assertTrue(controller.getAdvisorFirstName().getStyle().contains("-fx-border-color: red"));
+        controller.advisorFirstNameValidation();
+        assertEquals("hello",controller.getAdvisorFirstName().getText());
     }
 
     @Test

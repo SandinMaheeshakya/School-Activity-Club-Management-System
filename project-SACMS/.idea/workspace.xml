@@ -5,55 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="160022ca-5992-48fb-a410-4036c377095f" name="Changes" comment="edited doc">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/main/Database/ClubCreation/ClubCreationReportDatabase.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/main/Database/EventCreation/EventCreationDatabase.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/main/Database/UserLogin/AdvisorReportDatabase.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/main/Database/UserLogin/StudentReportDatabase.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/main/EventCreation/EventReport/EventReport.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/main/clubcreation/ClubCreationReport.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/main/registrationProcess/AdvisorReport.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/main/registrationProcess/StudentReport.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/main/EventReport/EventsReport.jrxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/main/clubcreation/Reports/Club Creation Report.jrxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/main/mainAttendance/Reports/AttendanceReport.jrxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/main/registrationProcess/Reports/ClubAdvisorsReport.jrxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/main/registrationProcess/Reports/studentReport.jrxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/main/EventCreation/services/EventServiceTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/main/clubcreation/ClubManagementControllerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/main/mainAttendance/AttendanceTracking/OnlineAttendanceTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/main/mainAttendance/AttendanceTracking/PhysicalEventsAttendanceTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/main/registrationProcess/StartPageControllerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/main/EventCreation/Views/ViewEventsPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/main/EventCreation/Views/ViewEventsPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/main/EventCreation/services/EventService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/main/EventCreation/services/EventService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/main/clubcreation/BaseDatabaseConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/main/Database/ClubCreation/BaseDatabaseConnection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/main/clubcreation/ClubManagementController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/main/clubcreation/ClubManagementController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/main/clubcreation/DatabaseConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/main/Database/ClubCreation/DatabaseConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/main/Database/Attendance/AttendanceReportDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/main/Database/Attendance/AttendanceReportDatabase.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/main/mainAttendance/AttendanceTracking/Attendance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/main/mainAttendance/AttendanceTracking/Attendance.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/main/mainAttendance/AttendanceTracking/AttendanceTrackingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/main/mainAttendance/AttendanceTracking/AttendanceTrackingController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/main/mainAttendance/AttendanceTracking/OnlineAttendance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/main/mainAttendance/AttendanceTracking/OnlineAttendance.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/main/mainAttendance/AttendanceTracking/PhysicalEventsAttendance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/main/mainAttendance/AttendanceTracking/PhysicalEventsAttendance.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/main/registrationProcess/startPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/main/registrationProcess/startPageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/main/clubcreation/clubManagement.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/main/clubcreation/clubManagement.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/main/mainAttendance/Reports/Attendance Report.jrxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/main/mainAttendance/FXML Files/Attendance/AttendancePage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/main/mainAttendance/FXML Files/Attendance/AttendancePage.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/main/mainAttendance/Reports/AttendanceReport.jrxml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/main/registrationProcess/FXML Files/startPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/main/registrationProcess/FXML Files/startPage.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/main/EventCreation/Views/ViewEventsPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/main/EventCreation/Views/ViewEventsPanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/main/EventCreation/services/EventService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/main/EventCreation/services/EventService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/main/clubcreation/BaseDatabaseConnection.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/main/clubcreation/ClubManagementController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/main/clubcreation/ClubManagementController$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/main/clubcreation/ClubManagementController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/main/clubcreation/ClubManagementController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/main/clubcreation/DatabaseConnection.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/main/clubcreation/clubManagement.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/main/clubcreation/clubManagement.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/main/mainAttendance/AttendanceTracking/Attendance.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/main/mainAttendance/AttendanceTracking/Attendance.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/main/mainAttendance/AttendanceTracking/AttendanceTrackingController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/main/mainAttendance/AttendanceTracking/AttendanceTrackingController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/main/mainAttendance/AttendanceTracking/OnlineAttendance.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/main/mainAttendance/AttendanceTracking/OnlineAttendance.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/main/mainAttendance/AttendanceTracking/PhysicalEventsAttendance.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/main/mainAttendance/AttendanceTracking/PhysicalEventsAttendance.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/main/mainAttendance/Reports/Attendance Report.jrxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/main/registrationProcess/FXML Files/startPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/main/registrationProcess/FXML Files/startPage.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/main/registrationProcess/startPageController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/main/registrationProcess/startPageController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/module-info.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/main/registrationProcess/StartPageControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/main/registrationProcess/StartPageControllerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,29 +51,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "Student-1",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "D:/2nd Year/Object Oriented Development/CW/mysql-connector-java-8.0.28.jar",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "advanced.settings",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Student-1&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/2nd Year/Object Oriented Development/CW/mysql-connector-java-8.0.28.jar&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;advanced.settings&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\2nd Year\Object Oriented Development\CW\CW Git\School-Activity-Club-Management-System\project-SACMS\src\main\resources\com\main\mainAttendance\Reports" />
@@ -180,6 +142,36 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="OnlineAttendanceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="clubCreation" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.main.mainAttendance.AttendanceTracking.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.main.mainAttendance.AttendanceTracking" />
+      <option name="MAIN_CLASS_NAME" value="com.main.mainAttendance.AttendanceTracking.OnlineAttendanceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PhysicalEventsAttendanceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="clubCreation" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.main.mainAttendance.AttendanceTracking.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.main.mainAttendance.AttendanceTracking" />
+      <option name="MAIN_CLASS_NAME" value="com.main.mainAttendance.AttendanceTracking.PhysicalEventsAttendanceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="StartPageControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="clubCreation" />
       <extension name="coverage">
@@ -211,58 +203,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="StartPageControllerTest.testAdvisorTeachingIDValidation_InvalidInput" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="clubCreation" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.main.registrationProcess.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.main.registrationProcess" />
-      <option name="MAIN_CLASS_NAME" value="com.main.registrationProcess.StartPageControllerTest" />
-      <option name="METHOD_NAME" value="testAdvisorTeachingIDValidation_InvalidInput" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="startPageControllerTest.testAdvisorFirstNameValidation_ValidName_NoErrors" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="clubCreation" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.main.registrationProcess.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.main.registrationProcess" />
-      <option name="MAIN_CLASS_NAME" value="com.main.registrationProcess.startPageControllerTest" />
-      <option name="METHOD_NAME" value="testAdvisorFirstNameValidation_ValidName_NoErrors" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="clubCreation" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="clubCreation" />
-      <option name="filePath" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.SACMS" />
+        <item itemvalue="JUnit.OnlineAttendanceTest" />
+        <item itemvalue="JUnit.PhysicalEventsAttendanceTest" />
         <item itemvalue="JUnit.StartPageControllerTest.testAdvisorFirstNameValidation_EmptyInput" />
         <item itemvalue="JUnit.StartPageControllerTest" />
-        <item itemvalue="JUnit.StartPageControllerTest.testAdvisorTeachingIDValidation_InvalidInput" />
-        <item itemvalue="JUnit.startPageControllerTest.testAdvisorFirstNameValidation_ValidName_NoErrors" />
       </list>
     </recent_temporary>
   </component>
@@ -333,6 +280,7 @@
       <workItem from="1701074256770" duration="1923000" />
       <workItem from="1701094915893" duration="2617000" />
       <workItem from="1701133715297" duration="12248000" />
+      <workItem from="1701219452854" duration="10427000" />
     </task>
     <task id="LOCAL-00001" summary="edited doc">
       <option name="closed" value="true" />
