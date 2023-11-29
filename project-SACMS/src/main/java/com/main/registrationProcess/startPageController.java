@@ -678,6 +678,12 @@ public class startPageController {
             String Pass1A = advisorPassword.getText();
             Advisor advisor = new Advisor(AID, FirstnameA, LastnameA, UsernameA, BirthA, EmailA, Departments, Pass1A);
             DatabaseConnection.InsertAdvisor(advisor.getAdvisorId(), advisor.getFirstName(), advisor.getLastName(), advisor.getUserName(), advisor.getDob(), advisor.getEmail(), advisor.getDepartment(), advisor.getPassword());
+
+            advisorDetails.setVisible(false);
+            advisorLogin.setVisible(true);
+            advisorLogin.setOpacity(100);
+            advisorLogin.setDisable(false);
+
         } else {
             // If any validation failed, display an error message or take appropriate action
             // For example: show an alert or update a status message on the UI
@@ -701,10 +707,17 @@ public class startPageController {
             String UserName = studentUsername.getText();
             String Birth =  studentEmailAddress.getText();
             String Email = String.valueOf(studentDOB.getValue());
-            int Grades = Integer.parseInt(studentGrade.getValue());
+            String Grades = studentGrade.getValue();
             String Pass1 = studentPassword.getText();
             Student student = new Student(SID, Firstname, LastName, UserName, Birth, Email,  Grades, Pass1 );
             DatabaseConnection.insertStudent(student.getStudentId(), student.getFirstName(), student.getLastName(), student.getUserName(), student.getDob(), student.getEmail(), student.getGrade(), student.getPassword());
+
+            studentDetails.setVisible(false);
+            StudentLogin.setVisible(true);
+            StudentLogin.setOpacity(100);
+            StudentLogin.setDisable(false);
+
+
         } else {
             // If any validation failed, display an error message or take appropriate action
             // For example: show an alert or update a status message on the UI
@@ -715,6 +728,7 @@ public class startPageController {
     public void OnloginButtonClick(ActionEvent actionEvent) {
         FirstGroup.setOpacity(0);
         ThirdGroup.setVisible(true);
+
         ThirdGroup.setOpacity(100);
         ThirdGroup.setDisable(false);
 
@@ -891,6 +905,8 @@ public class startPageController {
     public void onClickBackButtonInStudentChoosingClubs(){
         DashboardPage.setVisible(true);
         clubDisplayPage.setVisible(false);
+
+
     }
 
     public void onEventButtonClick(){
@@ -905,11 +921,8 @@ public class startPageController {
     }
 
     public void onBackButtonClickInEvents() throws IOException {
-        backStatus = true;
-
-        SACMS sacms = new SACMS();
-        Stage stage = new Stage();
-        sacms.start(stage);
+        DashboardPage.setVisible(true);
+        eventsDisplayPage.setVisible(false);
     }
 
     public void onGenerateAdvisorReportClick(){
@@ -1059,7 +1072,6 @@ public class startPageController {
         SecondGroup.setVisible(false);
 
     }
-
 
     public void onBackButtonClickLoginRole(){
         ThirdGroup.setVisible(false);
