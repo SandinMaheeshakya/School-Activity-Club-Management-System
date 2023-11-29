@@ -7,23 +7,23 @@ import com.main.clubcreation.DisplayClubs;
 import com.main.mainAttendance.AttendancePage;
 import com.main.registrationProcess.SACMS;
 import com.main.registrationProcess.startPageController;
+import javafx.animation.FillTransition;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 
 import javafx.scene.Group;
-import javafx.scene.control.Button;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.Label;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -145,8 +145,6 @@ public class AttendanceTrackingController implements PredefinedObjects {
     @FXML
     private Label eventTypeLabel;
 
-    @FXML
-    private Label meetingTimeOrVenueLabel;
 
     @FXML
     private DatePicker filterEventDateFrom;
@@ -156,6 +154,18 @@ public class AttendanceTrackingController implements PredefinedObjects {
 
     @FXML
     private ChoiceBox<String> clubChoosingDropBox;
+
+    @FXML
+    private Rectangle homeButton;
+
+    @FXML
+    private Rectangle clubButton;
+
+    @FXML
+    private Rectangle EventButton;
+
+    @FXML
+    private Rectangle AttendanceButton;
 
     private final HashMap<String, Pane> PaneMap = new HashMap<>();
 
@@ -519,7 +529,7 @@ public class AttendanceTrackingController implements PredefinedObjects {
         studentGradeLabel.setText(studentGrade);
         studentGradeLabel.setFont(new Font("Calibri", 18));
         studentGradeLabel.setTextFill(Color.BLACK);
-        studentGradeLabel.setLayoutX(458);
+        studentGradeLabel.setLayoutX(505);
         studentGradeLabel.setLayoutY(17);
         currentPane.getChildren().add(studentGradeLabel);
 
@@ -546,7 +556,7 @@ public class AttendanceTrackingController implements PredefinedObjects {
                 "Absent"
         );
         studentAttendanceCheck.setItems(choices);
-        studentAttendanceCheck.setLayoutX(693);
+        studentAttendanceCheck.setLayoutX(750);
         studentAttendanceCheck.setLayoutY(17);
         currentPane.getChildren().add(studentAttendanceCheck);
 
@@ -557,9 +567,20 @@ public class AttendanceTrackingController implements PredefinedObjects {
 
     public void saveButtonOnClick() throws SQLException {
 
-        OnlineAttendance.saveAttendance(OnlineAttendance.trackAttendance(choiceBoxArrayList,studentIDMapList,currentEventID));
+        Alert confirmationAlert = new Alert(Alert.AlertType.CONFIRMATION);
+        confirmationAlert.setTitle("Push to the Database");
+        confirmationAlert.setHeaderText("Are you want to push these data to the database?");
+        confirmationAlert.setContentText("Press ok to confirm.");
+
+        Optional<ButtonType> result = confirmationAlert.showAndWait();
+
+        if (result.isPresent() && result.get() == ButtonType.OK) {
+            OnlineAttendance.saveAttendance(OnlineAttendance.trackAttendance(choiceBoxArrayList,studentIDMapList,currentEventID));
+        }
+
 
     }
+
 
     public void resetButtonInStudentsTableOnClick() throws SQLException{
         Attendance.clearAttendanceTable();
@@ -598,14 +619,11 @@ public class AttendanceTrackingController implements PredefinedObjects {
                 studentIDMap = new HashMap<>();
                 if (eventType.equals("Online")){
 
-                     attendance = new OnlineAttendance(groupNumber, studentNumber, true, "23:10");
-                     meetingTimeOrVenueLabel.setText("Meeting Time");
+                     attendance = new OnlineAttendance(groupNumber, studentNumber, "Z1223143");
 
                 }else {
 
-                     attendance = new PhysicalEventsAttendance(groupNumber,studentNumber,"Maharagama",true);
-                    meetingTimeOrVenueLabel.setText("Venue");
-                    meetingTimeOrVenueLabel.setLayoutX(799);
+                     attendance = new PhysicalEventsAttendance(groupNumber,studentNumber,"Wattala");
 
                 }
 
@@ -628,7 +646,7 @@ public class AttendanceTrackingController implements PredefinedObjects {
                 choice.setValue(Objects.requireNonNullElse(attendanceStatus, "Not marked"));
 
                 if (choice.getValue().equals("Not marked")){
-                    choice.setLayoutX(680);
+                    choice.setLayoutX(730);
 
                 }
 
@@ -725,161 +743,301 @@ public class AttendanceTrackingController implements PredefinedObjects {
     //Attendance Object to Access elements in Attendance Class
 
     public void eventOneOnClick() throws SQLException {
-        eventsGroup.setVisible(false);
+        clearPanesStudents();
 
-        currentEventID = Attendance.checkEventId(0);
+        try {
+            eventsGroup.setVisible(false);
 
-        //Store data
-        Attendance.setCurrentEventNumber(0);
+            currentEventID = Attendance.checkEventId(0);
 
-        eventType = events.get(0).get("eventType");
+            //Store data
+            Attendance.setCurrentEventNumber(0);
 
-        if (eventType.equals("Online")) {
-            eventTypeLabel.setText("Online Event");
-        }else {
-            eventTypeLabel.setText("Physical Event");
+            eventType = events.get(0).get("eventType");
+
+            if (eventType.equals("Online")) {
+                eventTypeLabel.setText("Online Event");
+            } else {
+                eventTypeLabel.setText("Physical Event");
+            }
+            studentsGroup.setVisible(true);
+            displayStudents(0);
+
+        }catch (IndexOutOfBoundsException e){
+            e.printStackTrace();
         }
-        studentsGroup.setVisible(true);
-        displayStudents(0);
+
 
     }
 
-    public void eventTwoOnClick() throws SQLException {
+    public void eventTwoOnClick() throws SQLException,IndexOutOfBoundsException {
+        clearPanesStudents();
 
-        currentEventID = Attendance.checkEventId(1);
+        try {
 
-        eventsGroup.setVisible(false);
+            currentEventID = Attendance.checkEventId(1);
 
-        //Store data
-        Attendance.setCurrentEventNumber(1);
+            eventsGroup.setVisible(false);
 
-        eventType = events.get(1).get("eventType");
+            //Store data
+            Attendance.setCurrentEventNumber(1);
 
-        if (eventType.equals("Online")) {
-            eventTypeLabel.setText("Online Event");
-        }else {
-            eventTypeLabel.setText("Physical Event");
+            eventType = events.get(1).get("eventType");
+
+            if (eventType.equals("Online")) {
+                eventTypeLabel.setText("Online Event");
+            }else {
+                eventTypeLabel.setText("Physical Event");
+            }
+            studentsGroup.setVisible(true);
+            displayStudents(0);
+        }catch (IndexOutOfBoundsException e){
+            e.printStackTrace();
         }
-        studentsGroup.setVisible(true);
-        displayStudents(0);
+
 
     }
 
-    public void eventThreeOnClick() throws SQLException {
-        eventsGroup.setVisible(false);
+    public void eventThreeOnClick() throws SQLException,IndexOutOfBoundsException {
+        clearPanesStudents();
 
-        currentEventID = Attendance.checkEventId(2);
+        try {
+            eventsGroup.setVisible(false);
 
-        //Store data
-        Attendance.setCurrentEventNumber(2);
+            currentEventID = Attendance.checkEventId(2);
 
-        eventType = events.get(2).get("eventType");
+            //Store data
+            Attendance.setCurrentEventNumber(2);
 
-        if (eventType.equals("Online")) {
-            eventTypeLabel.setText("Online Event");
-        }else {
-            eventTypeLabel.setText("Physical Event");
+            eventType = events.get(2).get("eventType");
+
+            if (eventType.equals("Online")) {
+                eventTypeLabel.setText("Online Event");
+            }else {
+                eventTypeLabel.setText("Physical Event");
+            }
+            studentsGroup.setVisible(true);
+            displayStudents(0);
+
+        }catch (IndexOutOfBoundsException e){
+            e.printStackTrace();
         }
-        studentsGroup.setVisible(true);
-        displayStudents(0);
+
 
     }
 
-    public void eventFourOnClick() throws SQLException {
+    public void eventFourOnClick() throws SQLException,IndexOutOfBoundsException {
+        clearPanesStudents();
 
-        currentEventID = Attendance.checkEventId(3);
+        try {
+            currentEventID = Attendance.checkEventId(3);
 
-        eventsGroup.setVisible(false);
+            eventsGroup.setVisible(false);
 
-        //Store data
-        Attendance.setCurrentEventNumber(3);
+            //Store data
+            Attendance.setCurrentEventNumber(3);
 
-        eventType = events.get(3).get("eventType");
+            eventType = events.get(3).get("eventType");
 
-        if (eventType.equals("Online")) {
-            eventTypeLabel.setText("Online Event");
-        }else {
-            eventTypeLabel.setText("Physical Event");
+            if (eventType.equals("Online")) {
+                eventTypeLabel.setText("Online Event");
+            }else {
+                eventTypeLabel.setText("Physical Event");
+            }
+            studentsGroup.setVisible(true);
+            displayStudents(0);
+        }catch (IndexOutOfBoundsException e){
+            e.printStackTrace();
         }
-        studentsGroup.setVisible(true);
-        displayStudents(0);
+
 
     }
 
-    public void eventFiveOnClick() throws SQLException {
+    public void eventFiveOnClick() throws SQLException,IndexOutOfBoundsException {
+        clearPanesStudents();
 
-        currentEventID = Attendance.checkEventId(4);
+        try {
+            currentEventID = Attendance.checkEventId(4);
 
-        eventsGroup.setVisible(false);
+            eventsGroup.setVisible(false);
 
-        //Store data
-        Attendance.setCurrentEventNumber(4);
+            //Store data
+            Attendance.setCurrentEventNumber(4);
 
-        eventType = events.get(4).get("eventType");
+            eventType = events.get(4).get("eventType");
 
-        if (eventType.equals("Online")) {
-            eventTypeLabel.setText("Online Event");
-        }else {
-            eventTypeLabel.setText("Physical Event");
+            if (eventType.equals("Online")) {
+                eventTypeLabel.setText("Online Event");
+            }else {
+                eventTypeLabel.setText("Physical Event");
+            }
+            studentsGroup.setVisible(true);
+            displayStudents(0);
+
+        }catch (IndexOutOfBoundsException e){
+            e.printStackTrace();
         }
-        studentsGroup.setVisible(true);
-        displayStudents(0);
-
     }
 
-    public void eventSixOnClick() throws SQLException {
+    public void eventSixOnClick() throws SQLException,IndexOutOfBoundsException {
+        clearPanesStudents();
 
-        currentEventID = Attendance.checkEventId(5);
+        try {
+            currentEventID = Attendance.checkEventId(5);
 
-        eventsGroup.setVisible(false);
+            eventsGroup.setVisible(false);
 
-        //Store data
-        Attendance.setCurrentEventNumber(5);
+            //Store data
+            Attendance.setCurrentEventNumber(5);
 
-        eventType = events.get(5).get("eventType");
+            eventType = events.get(5).get("eventType");
 
-        if (eventType.equals("Online")) {
-            eventTypeLabel.setText("Online Event");
-        }else {
-            eventTypeLabel.setText("Physical Event");
+            if (eventType.equals("Online")) {
+                eventTypeLabel.setText("Online Event");
+            }else {
+                eventTypeLabel.setText("Physical Event");
+            }
+            studentsGroup.setVisible(true);
+            displayStudents(0);
+
+        }catch (IndexOutOfBoundsException e){
+            e.printStackTrace();
         }
-        studentsGroup.setVisible(true);
-        displayStudents(0);
 
     }
 
-    public void eventSevenOnClick() throws SQLException {
+    public void eventSevenOnClick() throws SQLException,IndexOutOfBoundsException {
+        clearPanesStudents();
 
-        currentEventID = Attendance.checkEventId(6);
+        try {
+            currentEventID = Attendance.checkEventId(6);
+
+            eventsGroup.setVisible(false);
+
+            //Store data
+            Attendance.setCurrentEventNumber(6);
+
+            eventType = events.get(6).get("eventType");
+
+            if (eventType.equals("Online")) {
+                eventTypeLabel.setText("Online Event");
+            }else {
+                eventTypeLabel.setText("Physical Event");
+            }
+            studentsGroup.setVisible(true);
+            displayStudents(0);
+
+        }catch (IndexOutOfBoundsException e){
+            e.printStackTrace();
+        }
+
 
     }
 
-    public void eventEightOnClick() throws SQLException {
+    public void eventEightOnClick() throws SQLException,IndexOutOfBoundsException {
         currentEventID = Attendance.checkEventId(7);
+        clearPanesStudents();
+
+        eventsGroup.setVisible(false);
+
+        //Store data
+        Attendance.setCurrentEventNumber(7);
+
+        eventType = events.get(8).get("eventType");
+
+        if (eventType.equals("Online")) {
+            eventTypeLabel.setText("Online Event");
+        }else {
+            eventTypeLabel.setText("Physical Event");
+        }
+        studentsGroup.setVisible(true);
+        displayStudents(0);
 
     }
 
-    public void eventNineOnClick() throws SQLException {
+    public void eventNineOnClick() throws SQLException,IndexOutOfBoundsException {
         currentEventID = Attendance.checkEventId(8);
+        clearPanesStudents();
+
+        eventsGroup.setVisible(false);
+
+        //Store data
+        Attendance.setCurrentEventNumber(8);
+
+        eventType = events.get(8).get("eventType");
+
+        if (eventType.equals("Online")) {
+            eventTypeLabel.setText("Online Event");
+        }else {
+            eventTypeLabel.setText("Physical Event");
+        }
+        studentsGroup.setVisible(true);
+        displayStudents(0);
 
     }
+    public void eventTenOnClick() throws SQLException,IndexOutOfBoundsException {
+        currentEventID = Attendance.checkEventId(8);
+        clearPanesStudents();
 
-    public void eventTenOnClick() throws SQLException {
+        eventsGroup.setVisible(false);
+
+        //Store data
+        Attendance.setCurrentEventNumber(9);
+
+        eventType = events.get(9).get("eventType");
+
+        if (eventType.equals("Online")) {
+            eventTypeLabel.setText("Online Event");
+        }else {
+            eventTypeLabel.setText("Physical Event");
+        }
+        studentsGroup.setVisible(true);
+        displayStudents(0);
+
+    }
+    public void eventElevenOnClick() throws SQLException,IndexOutOfBoundsException {
         currentEventID = Attendance.checkEventId(9);
+        clearPanesStudents();
+
+        eventsGroup.setVisible(false);
+
+        //Store data
+        Attendance.setCurrentEventNumber(10);
+
+        eventType = events.get(10).get("eventType");
+
+        if (eventType.equals("Online")) {
+            eventTypeLabel.setText("Online Event");
+        }else {
+            eventTypeLabel.setText("Physical Event");
+        }
+        studentsGroup.setVisible(true);
+        displayStudents(0);
 
     }
 
-    public void eventElevenOnClick() throws SQLException {
-        currentEventID = Attendance.checkEventId(10);
+    public void eventTwelveOnClick() throws SQLException,IndexOutOfBoundsException {
+        currentEventID = Attendance.checkEventId(9);
+        clearPanesStudents();
+
+        eventsGroup.setVisible(false);
+
+        //Store data
+        Attendance.setCurrentEventNumber(11);
+
+        eventType = events.get(11).get("eventType");
+
+        if (eventType.equals("Online")) {
+            eventTypeLabel.setText("Online Event");
+        }else {
+            eventTypeLabel.setText("Physical Event");
+        }
+        studentsGroup.setVisible(true);
+        displayStudents(0);
 
     }
-
-    public void eventTwelveOnClick() throws SQLException {
-        currentEventID = Attendance.checkEventId(11);
-
-    }
-
-    public void onBackButtonClick() throws IOException {
+    
+    public void onBackButtonClick() throws IOException,IndexOutOfBoundsException {
 
         if (studentsGroup.isVisible()) {
             studentsGroup.setVisible(false);
@@ -920,6 +1078,93 @@ public class AttendanceTrackingController implements PredefinedObjects {
         Stage stage = new Stage();
         attendancePage.start(stage);
     }
+
+    public void onMouseEnteredInTopPaneHome(){
+        FillTransition fillTransition = new FillTransition(Duration.seconds(0.2), homeButton);
+        fillTransition.setFromValue(Color.BLACK);
+        fillTransition.setToValue(Color.valueOf("#00fff7"));
+
+        // Starting the animation
+        fillTransition.play();
+    }
+
+    public void onMouseExitedInTopPaneHome(){
+
+        FillTransition fillTransition = new FillTransition(Duration.seconds(0.2), homeButton);
+        fillTransition.setFromValue(Color.valueOf("#00fff7"));
+        fillTransition.setToValue(Color.BLACK);
+
+        // Starting the animation
+        fillTransition.play();
+    }
+
+    public void onMouseEnteredInTopPaneClubs(){
+        FillTransition fillTransition = new FillTransition(Duration.seconds(0.2), clubButton);
+        fillTransition.setFromValue(Color.BLACK);
+        fillTransition.setToValue(Color.valueOf("#00fff7"));
+
+        // Starting the animation
+        fillTransition.play();
+    }
+
+    public void onMouseExitedInTopPaneClubs(){
+
+        FillTransition fillTransition = new FillTransition(Duration.seconds(0.2), clubButton);
+        fillTransition.setFromValue(Color.valueOf("#00fff7"));
+        fillTransition.setToValue(Color.BLACK);
+
+        // Starting the animation
+        fillTransition.play();
+    }
+
+
+    public void onMouseEnteredInTopPaneEvents(){
+        FillTransition fillTransition = new FillTransition(Duration.seconds(0.2), EventButton);
+        fillTransition.setFromValue(Color.BLACK);
+        fillTransition.setToValue(Color.valueOf("#00fff7"));
+
+        // Starting the animation
+        fillTransition.play();
+    }
+
+    public void onMouseExitedInTopPaneEvents(){
+
+        FillTransition fillTransition = new FillTransition(Duration.seconds(0.2), EventButton);
+        fillTransition.setFromValue(Color.valueOf("#00fff7"));
+        fillTransition.setToValue(Color.BLACK);
+
+        // Starting the animation
+        fillTransition.play();
+    }
+
+
+    public void onMouseEnteredInTopPaneAttendance(){
+
+        FillTransition fillTransition = new FillTransition(Duration.seconds(0.2), AttendanceButton);
+        fillTransition.setFromValue(Color.BLACK);
+        fillTransition.setToValue(Color.valueOf("#00fff7"));
+
+        // Starting the animation
+        fillTransition.play();
+    }
+
+    public void onMouseExitedInTopPaneAttendance(){
+
+        FillTransition fillTransition = new FillTransition(Duration.seconds(0.2), AttendanceButton);
+        fillTransition.setFromValue(Color.valueOf("#00fff7"));
+        fillTransition.setToValue(Color.BLACK);
+
+        // Starting the animation
+        fillTransition.play();
+    }
+
+
+    public void onExitButtonClick(){
+        System.exit(0);
+    }
+
+
+
 
 
 }

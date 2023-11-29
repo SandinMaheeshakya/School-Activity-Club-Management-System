@@ -6,16 +6,16 @@
   <component name="ChangeListManager">
     <list default="true" id="160022ca-5992-48fb-a410-4036c377095f" name="Changes" comment="edited doc">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/main/Database/Attendance/AttendanceReportDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/main/Database/Attendance/AttendanceReportDatabase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/main/Database/ClubCreation/DatabaseConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/main/Database/ClubCreation/DatabaseConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/main/clubcreation/ClubManagementController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/main/clubcreation/ClubManagementController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/main/mainAttendance/AttendanceTracking/Attendance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/main/mainAttendance/AttendanceTracking/Attendance.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/main/mainAttendance/AttendanceTracking/AttendanceTrackingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/main/mainAttendance/AttendanceTracking/AttendanceTrackingController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/main/mainAttendance/AttendanceTracking/OnlineAttendance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/main/mainAttendance/AttendanceTracking/OnlineAttendance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/main/mainAttendance/AttendanceTracking/PhysicalEventsAttendance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/main/mainAttendance/AttendanceTracking/PhysicalEventsAttendance.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/main/registrationProcess/startPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/main/registrationProcess/startPageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/main/clubcreation/clubManagement.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/main/clubcreation/clubManagement.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/main/mainAttendance/CSS Files/AttendencePage.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/main/mainAttendance/CSS Files/AttendencePage.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/main/mainAttendance/FXML Files/Attendance/AttendancePage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/main/mainAttendance/FXML Files/Attendance/AttendancePage.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/main/mainAttendance/Reports/AttendanceReport.jrxml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/main/registrationProcess/FXML Files/startPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/main/registrationProcess/FXML Files/startPage.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/main/registrationProcess/StartPageControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/main/registrationProcess/StartPageControllerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -280,7 +280,7 @@
       <workItem from="1701074256770" duration="1923000" />
       <workItem from="1701094915893" duration="2617000" />
       <workItem from="1701133715297" duration="12248000" />
-      <workItem from="1701219452854" duration="10427000" />
+      <workItem from="1701219452854" duration="26155000" />
     </task>
     <task id="LOCAL-00001" summary="edited doc">
       <option name="closed" value="true" />

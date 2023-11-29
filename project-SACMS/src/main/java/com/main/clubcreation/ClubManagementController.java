@@ -26,7 +26,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.ResourceBundle;
 
-public class ClubManagementController implements Initializable {
+public class ClubManagementController implements Initializable { //controller class for club management
 
     @FXML
     private Button btnClear;
@@ -42,9 +42,6 @@ public class ClubManagementController implements Initializable {
 
     @FXML
     private Pane pnlWelcomePage;
-
-    @FXML
-    private Button btnHome;
 
     @FXML
     private TextField txtClubID;
@@ -155,14 +152,14 @@ public class ClubManagementController implements Initializable {
     private ImageView btnClose;
 
     @FXML
-    void clearProfile(ActionEvent event) {
+    void clearProfile(ActionEvent event) { //clear button for club creation
         if (event.getSource() == btnClear) {
             clearFields();
         }
     }
 
     @FXML
-    void goToCreateClub(ActionEvent event) {
+    void goToCreateClub(ActionEvent event) { //go to create club panel action
         if (event.getSource() == btnClubCreate) {
             pnlCreateClub.setVisible(true);
             pnlWelcomePage.setVisible(false);
@@ -171,7 +168,7 @@ public class ClubManagementController implements Initializable {
     }
 
     @FXML
-    void goToManageClub(ActionEvent event) {
+    void goToManageClub(ActionEvent event) { //go to manage club action
         if (event.getSource() == btnClubProfile) {
             pnlClubProfiles.setVisible(true);
             pnlWelcomePage.setVisible(false);
@@ -180,24 +177,12 @@ public class ClubManagementController implements Initializable {
     }
 
     @FXML
-    void goToHomePage(ActionEvent event) {
-        if (event.getSource() == btnHome) {
-            pnlWelcomePage.setVisible(true);
-            pnlCreateClub.setVisible(false);
-            pnlClubProfiles.setVisible(false);
-            pnlUpdate.setVisible(false);
-        }
-        resetStyles();
-    }
-
-    @FXML
     private void handleClose(MouseEvent event) { //close button
         if (event.getSource() == btnClose)
             System.exit(0);
     }
-
     @FXML
-    void createProfile(ActionEvent event) throws IOException {
+    void createProfile(ActionEvent event) throws IOException { //action for create club
         if (event.getSource() == btnCreate) {
             String clubID = txtClubID.getText();
             String clubName = txtClubName.getText();
@@ -208,7 +193,7 @@ public class ClubManagementController implements Initializable {
             String contact = txtContact.getText();
             Image image = imgView.getImage();
             String imagePath = "";
-            if (image != null) {
+            if (image != null) { //error handling part for insert data
                 try {
                     File imageFile = new File(image.getUrl());
                     imagePath = imageFile.toURI().toString();
@@ -303,7 +288,7 @@ public class ClubManagementController implements Initializable {
         }
     }
 
-    private void showAlert(String title, String message) {
+    private void showAlert(String title, String message) { //show alert dialog
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setTitle(title);
         alert.setHeaderText(null);
@@ -311,7 +296,7 @@ public class ClubManagementController implements Initializable {
         alert.showAndWait();
     }
 
-    private void showMessage(String title, String message) {
+    private void showMessage(String title, String message) { //show information dialog
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle(title);
         alert.setHeaderText(null);
@@ -320,7 +305,7 @@ public class ClubManagementController implements Initializable {
     }
 
     @FXML
-    void choosePhoto(ActionEvent event) {
+    void choosePhoto(ActionEvent event) { //action for choose photo
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Open Image File");
         fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Image Files", "*.png", "*.jpg", "*.jpeg", "*.gif"));
@@ -338,7 +323,7 @@ public class ClubManagementController implements Initializable {
         }
     }
 
-    public void settingTheTable() {
+    public void settingTheTable() { //setup the table with club details
         List<CreateClub> clubList = DatabaseConnection.clubDetails("jdbc:mysql://localhost:3306/sacms", "root", "");
         ObservableList<CreateClub> observableClubList = FXCollections.observableArrayList();
         observableClubList.addAll(clubList);
@@ -358,7 +343,7 @@ public class ClubManagementController implements Initializable {
     }
 
     @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
+    public void initialize(URL url, ResourceBundle resourceBundle) { //Initialize method for the controller
         colClubID.setCellValueFactory(new PropertyValueFactory<>("clubID"));
         colClubName.setCellValueFactory(new PropertyValueFactory<>("clubName"));
         colDescription.setCellValueFactory(new PropertyValueFactory<>("description"));
@@ -402,7 +387,7 @@ public class ClubManagementController implements Initializable {
         });
     }
 
-        private void handleSearch(String query) {
+        private void handleSearch(String query) { //handle search function
             ObservableList<CreateClub> filteredClubs = FXCollections.observableArrayList();
 
             for (CreateClub club : tblManage.getItems()) {
@@ -414,7 +399,7 @@ public class ClubManagementController implements Initializable {
         }
 
     @FXML
-    void updateClubs(ActionEvent event) {
+    void updateClubs(ActionEvent event) { //action for update clubs
         CreateClub selectedClub = tblManage.getSelectionModel().getSelectedItem();
 
         if (selectedClub == null) {
@@ -443,7 +428,7 @@ public class ClubManagementController implements Initializable {
         boolean isValid = true;
         String errorMessage = "";
 
-        if (updatedClubName.isEmpty()) {
+        if (updatedClubName.isEmpty()) {  //error handling part for update
             isValid = false;
             txtClubName.setStyle("-fx-border-color: #a33a3a");
             errorMessage += "Please enter proper name for the club.\n";
@@ -531,14 +516,14 @@ public class ClubManagementController implements Initializable {
     }
 
     @FXML
-    void goToUpdate(ActionEvent event) {
+    void goToUpdate(ActionEvent event) { //goto update panel section
         if (event.getSource() == btnEditClubs) {
             pnlAddEvent.setVisible(false);
             pnlUpdate.setVisible(true);
         }
     }
 
-    private void saveUpdatedClub(CreateClub selectedClub) {
+    private void saveUpdatedClub(CreateClub selectedClub) { //save updated club details
         String updatedClubID = txtUpdateClubID.getText();
         String updatedClubName = txtUpdateClubName.getText();
         String updatedDescription = txtUpdateDescription.getText();
@@ -582,7 +567,7 @@ public class ClubManagementController implements Initializable {
     public static String currentClubId;
     public static String currentClubName;
     @FXML
-    void selectRow(MouseEvent event) {
+    void selectRow(MouseEvent event) { //select row action
         if (event.getClickCount() == 1) {
             CreateClub selectedClub = tblManage.getSelectionModel().getSelectedItem();
             if (selectedClub != null) {
@@ -600,7 +585,7 @@ public class ClubManagementController implements Initializable {
         }
     }
 
-    private void updateTextFields(CreateClub club) {
+    private void updateTextFields(CreateClub club) { //update text filed with club details
         txtUpdateClubID.setText(club.getClubID());
         txtUpdateClubName.setText(club.getClubName());
         txtUpdateDescription.setText(club.getDescription());
@@ -612,7 +597,7 @@ public class ClubManagementController implements Initializable {
 
 
     @FXML
-    void deleteClubs(ActionEvent event) {
+    void deleteClubs(ActionEvent event) { //delete club action
         CreateClub selectedClub = tblManage.getSelectionModel().getSelectedItem();
 
         if (selectedClub == null) {
@@ -633,7 +618,7 @@ public class ClubManagementController implements Initializable {
         settingTheTable();
     }
 
-    private void resetStyles() {
+    private void resetStyles() { //reset style for text field
         txtClubID.setStyle("");
         txtClubName.setStyle("");
         txtDescription.setStyle("");
@@ -643,7 +628,7 @@ public class ClubManagementController implements Initializable {
         txtContact.setStyle("");
     }
 
-    private void clearFields() {
+    private void clearFields() { //clear all input details
         txtClubID.clear();
         txtClubName.clear();
         txtDescription.clear();
@@ -656,7 +641,7 @@ public class ClubManagementController implements Initializable {
         resetStyles();
     }
 
-    private void clearUpdateFields() {
+    private void clearUpdateFields() { //clear all updated input details
         txtUpdateClubID.clear();
         txtUpdateClubName.clear();
         txtUpdateDescription.clear();
@@ -669,7 +654,7 @@ public class ClubManagementController implements Initializable {
         resetUpdateStyles();
     }
 
-    private void resetUpdateStyles(){
+    private void resetUpdateStyles(){ //reset style for updated text field
         txtUpdateClubID.setStyle("");
         txtUpdateClubName.setStyle("");
         txtUpdateDescription.setStyle("");
@@ -681,30 +666,30 @@ public class ClubManagementController implements Initializable {
 
 
     //Add EventButton
-    public  void onAddEventButtonClick(){
+    public  void onAddEventButtonClick(){ //add event button action
         Menu menu = new Menu();
         Stage stage = new Stage();
         menu.start(stage);
     }
 
-    public void onBackButtonClickInMainPage() throws IOException {
+    public void onBackButtonClickInMainPage() throws IOException { //back button action in main page
         SACMS sacms = new SACMS();
         Stage stage = new Stage();
         startPageController.backStatus = true;
         sacms.start(stage);
     }
 
-    public void onBackButtonClickInDisplayClubs(){
+    public void onBackButtonClickInDisplayClubs(){ //back button action in display clubs
         pnlWelcomePage.setVisible(true);
         pnlClubProfiles.setVisible(false);
     }
 
-    public void onBackButtonInCreateClubClick(){
+    public void onBackButtonInCreateClubClick(){ //back button action in create club
         pnlCreateClub.setVisible(false);
         pnlWelcomePage.setVisible(true);
     }
 
-    public void onGenerateReportButtonClick(){
+    public void onGenerateReportButtonClick(){ //generate report button action
         // Generate and display the report
         List<Map<String,String>> allClubData = ClubCreationReportDatabase.getClubDetails();
         ClubCreationReport generatedClubDetailsReport = new ClubCreationReport();

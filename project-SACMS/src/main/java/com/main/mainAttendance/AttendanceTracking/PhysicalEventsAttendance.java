@@ -9,13 +9,11 @@ import java.util.Map;
 public class PhysicalEventsAttendance extends Attendance {
 
     private String venue;
-    private boolean joinStatus;
 
 
-    public PhysicalEventsAttendance(int groupNumber, int studentNumber, String venue, boolean joinStatus) throws SQLException {
+    public PhysicalEventsAttendance(int groupNumber, int studentNumber, String venue) throws SQLException {
         super(groupNumber,studentNumber);
         this.venue = venue;
-        this.joinStatus = joinStatus;
     }
 
     //Getters and Setters
@@ -35,7 +33,6 @@ public class PhysicalEventsAttendance extends Attendance {
         studentDetails.put("studentID", getStudentID());
         studentDetails.put("studentName", getStudentName());
         studentDetails.put("studentGrade", getStudentGrade());
-        studentDetails.put("studentJoinStatus", String.valueOf(isJoinStatus()));
         studentDetails.put("eventVenue", getVenue());
 
         return studentDetails;
@@ -43,7 +40,4 @@ public class PhysicalEventsAttendance extends Attendance {
 
     }
 
-    public boolean isJoinStatus() {
-        return joinStatus;
-    }
 }

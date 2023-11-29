@@ -9,29 +9,30 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DatabaseConnection extends BaseDatabaseConnection {
+public class DatabaseConnection extends BaseDatabaseConnection { //database connection class for club creation, extends BaseDatabaseConnection
 
-    public DatabaseConnection(String url, String userName, String password) {
+    public DatabaseConnection(String url, String userName, String password) { //constructor that sets the database connection parameters
         this.url = url;
         this.userName = userName;
         this.password = password;
     }
 
 
-    public void connect() throws SQLException {
+    public void connect() throws SQLException { //establish a database connection
         connection = DriverManager.getConnection(url, userName, password);
     }
 
     public void disconnect() throws SQLException {
-        if (connection != null && !connection.isClosed()) {
+        if (connection != null && !connection.isClosed()) { //disconnect from the database
             connection.close();
         }
     }
 
-    public void insertClub(CreateClub club ) throws SQLException{
-        if (advisorIdExists(club.getClubAdvisor())) {
+    public void insertClub(CreateClub club ) throws SQLException{ //insert data into the database
+        if (advisorIdExists(club.getClubAdvisor())) { //check if the advisor id exists before inserting
             String insertQuery = "INSERT INTO club_creation (clubID, clubName, description, clubCategory, advisor_id, email, contact, image) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
             try (PreparedStatement statement = connection.prepareStatement(insertQuery)) {
+                //set values for the prepared statement
                 statement.setString(1, club.getClubID());
                 statement.setString(2, club.getClubName());
                 statement.setString(3, club.getDescription());
@@ -47,14 +48,14 @@ public class DatabaseConnection extends BaseDatabaseConnection {
                     statement.setString(8, " ");
                 }
 
-                statement.executeUpdate();
+                statement.executeUpdate(); //execute the insert query
             }
         } else {
             System.out.println("Invalid advisor_id. Please enter a valid advisor_id.");
         }
     }
 
-    public Connection getConnection() throws SQLException {
+    public Connection getConnection() throws SQLException { //get a database connection
         String url = "jdbc:mysql://localhost:3306/sacms";
         String user = "root";
         String password = "";
@@ -62,7 +63,7 @@ public class DatabaseConnection extends BaseDatabaseConnection {
         return DriverManager.getConnection(url, user, password);
     }
 
-    public void closeResources(Connection connection, PreparedStatement preparedStatement, AutoCloseable resultSet) {
+    public void closeResources(Connection connection, PreparedStatement preparedStatement, AutoCloseable resultSet) { //close database resource
         try {
             if (resultSet != null) {
                 resultSet.close();
@@ -80,7 +81,7 @@ public class DatabaseConnection extends BaseDatabaseConnection {
         }
     }
 
-    public void updateClub(CreateClub club) throws SQLException {
+    public void updateClub(CreateClub club) throws SQLException { //update club details in the database
         Connection connection = null;
         PreparedStatement preparedStatement = null;
 
@@ -106,7 +107,7 @@ public class DatabaseConnection extends BaseDatabaseConnection {
         }
     }
 
-    public void deleteClub(CreateClub club) throws SQLException {
+    public void deleteClub(CreateClub club) throws SQLException { //delete a club from the database
         String deleteQuery = "DELETE FROM club_creation WHERE clubID = ?";
         try (PreparedStatement preparedStatement = connection.prepareStatement(deleteQuery)) {
             preparedStatement.setString(1, club.getClubID());
@@ -114,7 +115,7 @@ public class DatabaseConnection extends BaseDatabaseConnection {
         }
     }
 
-    private boolean advisorIdExists(String advisorId) throws SQLException {
+    private boolean advisorIdExists(String advisorId) throws SQLException { //check if an advisor id exists in the database
         String insertQuery = "SELECT advisor_id FROM club_advisors WHERE advisor_id = ?";
         String selectQuery = "SELECT * FROM club_creation";
 
@@ -125,7 +126,7 @@ public class DatabaseConnection extends BaseDatabaseConnection {
         }
     }
 
-    public static List<CreateClub> clubDetails(String url, String userName, String password) {
+    public static List<CreateClub> clubDetails(String url, String userName, String password) { //retrieve a list of club details from the database
         List<CreateClub> clubList = new ArrayList<>();
         try {
             Connection connection = DriverManager.getConnection(url, userName, password);

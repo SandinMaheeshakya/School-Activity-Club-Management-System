@@ -1,7 +1,6 @@
 package com.main.mainAttendance.AttendanceTracking;
 import com.main.Database.Attendance.InputData;
 import javafx.scene.control.ChoiceBox;
-import javafx.scene.layout.Pane;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -10,26 +9,18 @@ import java.util.Map;
 
 public class OnlineAttendance extends Attendance{
 
-    private String logTime;
+    private String meetingID;
 
     private boolean joinStatus;
 
 
-    public OnlineAttendance(int groupNumber, int studentNumber, boolean joinStatus, String logTime) throws SQLException {
+    public OnlineAttendance(int groupNumber, int studentNumber, String meetingID) throws SQLException {
         super(groupNumber,studentNumber);
-        this.joinStatus = joinStatus;
-        this.logTime = logTime;
+        this.meetingID = meetingID;
 
     }
 
     //Getters and Setters
-    public String getLogTime() {
-        return logTime;
-    }
-
-    public void setLogTime(String logTime) {
-        this.logTime = logTime;
-    }
 
 
     public static ArrayList<HashMap<String,String>> trackAttendance(ArrayList<ChoiceBox<String>> attendanceData, ArrayList<HashMap<String,String>> studentsAttended,String eventID) {
@@ -60,7 +51,7 @@ public class OnlineAttendance extends Attendance{
         studentDetails.put("studentName", getStudentName());
         studentDetails.put("studentGrade", getStudentGrade());
         studentDetails.put("studentJoinStatus", String.valueOf(isJoinStatus()));
-        studentDetails.put("studentLogTime", getLogTime());
+        studentDetails.put("meetingID", getMeetingID());
         return studentDetails;
 
     }
@@ -73,4 +64,11 @@ public class OnlineAttendance extends Attendance{
         this.joinStatus = joinStatus;
     }
 
+    public String getMeetingID() {
+        return meetingID;
+    }
+
+    public void setMeetingID(String meetingID) {
+        this.meetingID = meetingID;
+    }
 }

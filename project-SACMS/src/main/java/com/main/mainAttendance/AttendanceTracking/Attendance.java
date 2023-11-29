@@ -80,7 +80,7 @@ public abstract class Attendance implements PredefinedObjects {
 
     }
 
-    public static String checkEventId(int eventNumber)  {
+    public static String checkEventId(int eventNumber) throws IndexOutOfBoundsException {
         return AttendanceTrackingController.getEvents().get(eventNumber).get("eventID");
 
     }

@@ -7,10 +7,7 @@ import com.main.EventCreation.Menu;
 import com.main.EventCreation.Views.ViewEventsPanel;
 import com.main.clubcreation.DisplayClubs;
 import com.main.mainAttendance.AttendancePage;
-import javafx.animation.FadeTransition;
-import javafx.animation.PauseTransition;
-import javafx.animation.ScaleTransition;
-import javafx.animation.SequentialTransition;
+import javafx.animation.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -21,6 +18,8 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.util.Duration;
@@ -188,6 +187,21 @@ public class startPageController {
     @FXML
     private Group studentReportGroup;
 
+    @FXML
+    private Rectangle clubButtonRectangle;
+
+    @FXML
+    private Rectangle eventButtonRectangle;
+
+    @FXML
+    private Rectangle attendanceButtonRectangle;
+
+    @FXML
+    private Rectangle studentReportRectangle;
+
+    @FXML
+    private Rectangle advisorReportRectangle;
+
     ScaleTransition loginButtonIncrease;
     ScaleTransition loginButtonDecrease;
 
@@ -270,8 +284,6 @@ public class startPageController {
         quote3Transition.setFromValue(0);
         quote3Transition.setToValue(1);
         quote3Transition.play();
-
-
 
         FadeTransition registerButtonTransition = new FadeTransition(Duration.seconds(3), registerButton);
         registerButtonTransition.setFromValue(0);
@@ -396,6 +408,7 @@ public class startPageController {
     }
 
     public void onRegisterButtonClick() {
+        SecondGroup.setVisible(true);
         FirstGroup.setOpacity(0);
         SecondGroup.setOpacity(100);
         SecondGroup.setDisable(false);
@@ -701,6 +714,7 @@ public class startPageController {
     @FXML
     public void OnloginButtonClick(ActionEvent actionEvent) {
         FirstGroup.setOpacity(0);
+        ThirdGroup.setVisible(true);
         ThirdGroup.setOpacity(100);
         ThirdGroup.setDisable(false);
 
@@ -916,7 +930,6 @@ public class startPageController {
 
     }
 
-
     public void onMouseClickHome() throws IOException {
         SACMS sacms = new SACMS();
         Stage stage = new Stage();
@@ -942,4 +955,116 @@ public class startPageController {
         Stage stage = new Stage();
         attendancePage.start(stage);
     }
+
+
+    public void eventGroupMouseEntered(){
+        FillTransition fillTransition = new FillTransition(Duration.seconds(0.2), eventButtonRectangle);
+        fillTransition.setFromValue(Color.BLACK);
+        fillTransition.setToValue(Color.valueOf("#00fff7"));
+
+        // Starting the animation
+        fillTransition.play();
+    }
+
+    public void eventGroupMouseExited(){
+        FillTransition fillTransition = new FillTransition(Duration.seconds(0.2), eventButtonRectangle);
+        fillTransition.setFromValue(Color.valueOf("#00fff7"));
+        fillTransition.setToValue(Color.BLACK);
+
+        // Starting the animation
+        fillTransition.play();
+    }
+
+    public void clubGroupMouseEntered(){
+        FillTransition fillTransition = new FillTransition(Duration.seconds(0.2), clubButtonRectangle);
+        fillTransition.setFromValue(Color.BLACK);
+        fillTransition.setToValue(Color.valueOf("#00fff7"));
+
+        // Starting the animation
+        fillTransition.play();
+    }
+
+    public void clubGroupMouseExited(){
+        FillTransition fillTransition = new FillTransition(Duration.seconds(0.2), clubButtonRectangle);
+        fillTransition.setFromValue(Color.valueOf("#00fff7"));
+        fillTransition.setToValue(Color.BLACK);
+
+        // Starting the animation
+        fillTransition.play();
+    }
+
+    public void attendanceGroupMouseEntered(){
+        FillTransition fillTransition = new FillTransition(Duration.seconds(0.2), attendanceButtonRectangle);
+        fillTransition.setFromValue(Color.BLACK);
+        fillTransition.setToValue(Color.valueOf("#00fff7"));
+
+        // Starting the animation
+        fillTransition.play();
+    }
+
+    public void attendanceGroupMouseExited(){
+        FillTransition fillTransition = new FillTransition(Duration.seconds(0.2), attendanceButtonRectangle);
+        fillTransition.setFromValue(Color.valueOf("#00fff7"));
+        fillTransition.setToValue(Color.BLACK);
+
+        // Starting the animation
+        fillTransition.play();
+    }
+
+
+    public void advisorReportButtonMouseEntered(){
+        FillTransition fillTransition = new FillTransition(Duration.seconds(0.2), advisorReportRectangle);
+        fillTransition.setFromValue(Color.BLACK);
+        fillTransition.setToValue(Color.valueOf("#00fff7"));
+
+        // Starting the animation
+        fillTransition.play();
+    }
+
+    public void advisorReportButtonMouseExited(){
+        FillTransition fillTransition = new FillTransition(Duration.seconds(0.2), advisorReportRectangle);
+        fillTransition.setFromValue(Color.valueOf("#00fff7"));
+        fillTransition.setToValue(Color.BLACK);
+
+        // Starting the animation
+        fillTransition.play();
+    }
+
+
+    public void studentReportButtonMouseEntered(){
+        FillTransition fillTransition = new FillTransition(Duration.seconds(0.2), studentReportRectangle);
+        fillTransition.setFromValue(Color.BLACK);
+        fillTransition.setToValue(Color.valueOf("#00fff7"));
+
+        // Starting the animation
+        fillTransition.play();
+    }
+
+    public void studentReportButtonMouseExited(){
+        FillTransition fillTransition = new FillTransition(Duration.seconds(0.2), studentReportRectangle);
+        fillTransition.setFromValue(Color.valueOf("#00fff7"));
+        fillTransition.setToValue(Color.BLACK);
+
+        // Starting the animation
+        fillTransition.play();
+
+    }
+    public void onExitButtonClick(){
+        System.exit(0);
+    }
+
+
+    public void onBackButtonClickChoosingRole(){
+        FirstGroup.setOpacity(100);
+        SecondGroup.setVisible(false);
+
+    }
+
+
+    public void onBackButtonClickLoginRole(){
+        ThirdGroup.setVisible(false);
+        FirstGroup.setOpacity(100);
+
+    }
+
 }
